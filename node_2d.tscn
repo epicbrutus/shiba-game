@@ -1,0 +1,251 @@
+[gd_scene load_steps=11 format=3 uid="uid://c14qwn6rgfy23"]
+
+[ext_resource type="Script" uid="uid://b0yww47adif5y" path="res://CharacterBody2d.cs" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://8pqqkqhevguh" path="res://icon.svg" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://dynse126dpohw" path="res://Food.cs" id="3_0hol4"]
+[ext_resource type="Texture2D" uid="uid://dlks1vp6h7cjb" path="res://images/donut.png" id="4_q6r6c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
+size = Vector2(1152.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
+size = Vector2(77, 690)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_epypp"]
+radius = 42.28
+height = 139.92
+
+[sub_resource type="Gradient" id="Gradient_0e48y"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_epypp"]
+gradient = SubResource("Gradient_0e48y")
+width = 14
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kdubu"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(0, -1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Camera2D"]
+position = Vector2(-95, -372)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/StaticBody2D"]
+position = Vector2(96, 38)
+shape = SubResource("RectangleShape2D_0hol4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Camera2D/StaticBody2D"]
+position = Vector2(95, 706)
+shape = SubResource("RectangleShape2D_0hol4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Camera2D/StaticBody2D"]
+position = Vector2(710, 372)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Camera2D/StaticBody2D"]
+position = Vector2(-520, 369)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="Player" type="Node2D" parent="."]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Player" node_paths=PackedStringArray("WeightLabel")]
+motion_mode = 1
+script = ExtResource("1_0e48y")
+Speed = 1200.0
+Acceleration = 300.0
+WeightLabel = NodePath("../RichTextLabel")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_epypp")
+
+[node name="Icon" type="Sprite2D" parent="Player/CharacterBody2D"]
+position = Vector2(1, -2)
+texture = ExtResource("1_wtcfe")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Player"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -40.0
+offset_right = 153.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "Fat"
+
+[node name="Food Bar" type="Node2D" parent="."]
+position = Vector2(-124, -199)
+scale = Vector2(14.275, 14.275)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Food Bar"]
+offset_left = -26.4098
+offset_top = -5.11384
+offset_right = 13.5902
+offset_bottom = 34.8862
+scale = Vector2(5.164, 1.4428)
+value = 100.0
+texture_progress = SubResource("GradientTexture1D_epypp")
+
+[node name="Foods" type="Node" parent="."]
+
+[node name="Test Food" type="Node2D" parent="Foods"]
+position = Vector2(232, 54)
+scale = Vector2(3.72, 3.72)
+
+[node name="Area2D" type="Area2D" parent="Foods/Test Food"]
+script = ExtResource("3_0hol4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Foods/Test Food/Area2D"]
+shape = SubResource("CircleShape2D_kdubu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Foods/Test Food"]
+scale = Vector2(0.015, 0.015)
+texture = ExtResource("4_q6r6c")
+
+[node name="Test Food2" type="Node2D" parent="Foods"]
+position = Vector2(260, -52)
+scale = Vector2(3.72, 3.72)
+
+[node name="Area2D" type="Area2D" parent="Foods/Test Food2"]
+script = ExtResource("3_0hol4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Foods/Test Food2/Area2D"]
+shape = SubResource("CircleShape2D_kdubu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Foods/Test Food2"]
+scale = Vector2(0.015, 0.015)
+texture = ExtResource("4_q6r6c")
+
+[node name="Test Food3" type="Node2D" parent="Foods"]
+position = Vector2(361, 16)
+scale = Vector2(3.72, 3.72)
+
+[node name="Area2D" type="Area2D" parent="Foods/Test Food3"]
+script = ExtResource("3_0hol4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Foods/Test Food3/Area2D"]
+shape = SubResource("CircleShape2D_kdubu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Foods/Test Food3"]
+scale = Vector2(0.015, 0.015)
+texture = ExtResource("4_q6r6c")
+
+[node name="Test Food4" type="Node2D" parent="Foods"]
+position = Vector2(389, -90)
+scale = Vector2(3.72, 3.72)
+
+[node name="Area2D" type="Area2D" parent="Foods/Test Food4"]
+script = ExtResource("3_0hol4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Foods/Test Food4/Area2D"]
+shape = SubResource("CircleShape2D_kdubu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Foods/Test Food4"]
+scale = Vector2(0.015, 0.015)
+texture = ExtResource("4_q6r6c")
+
+[node name="Test Food5" type="Node2D" parent="Foods"]
+position = Vector2(297, 215)
+scale = Vector2(3.72, 3.72)
+
+[node name="Area2D" type="Area2D" parent="Foods/Test Food5"]
+script = ExtResource("3_0hol4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Foods/Test Food5/Area2D"]
+shape = SubResource("CircleShape2D_kdubu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Foods/Test Food5"]
+scale = Vector2(0.015, 0.015)
+texture = ExtResource("4_q6r6c")
+
+[node name="Test Food9" type="Node2D" parent="Foods"]
+position = Vector2(153, -3)
+scale = Vector2(3.72, 3.72)
+
+[node name="Area2D" type="Area2D" parent="Foods/Test Food9"]
+script = ExtResource("3_0hol4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Foods/Test Food9/Area2D"]
+shape = SubResource("CircleShape2D_kdubu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Foods/Test Food9"]
+scale = Vector2(0.015, 0.015)
+texture = ExtResource("4_q6r6c")
+
+[node name="Test Food10" type="Node2D" parent="Foods"]
+position = Vector2(181, -109)
+scale = Vector2(3.72, 3.72)
+
+[node name="Area2D" type="Area2D" parent="Foods/Test Food10"]
+script = ExtResource("3_0hol4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Foods/Test Food10/Area2D"]
+shape = SubResource("CircleShape2D_kdubu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Foods/Test Food10"]
+scale = Vector2(0.015, 0.015)
+texture = ExtResource("4_q6r6c")
+
+[node name="Test Food11" type="Node2D" parent="Foods"]
+position = Vector2(89, 196)
+scale = Vector2(3.72, 3.72)
+
+[node name="Area2D" type="Area2D" parent="Foods/Test Food11"]
+script = ExtResource("3_0hol4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Foods/Test Food11/Area2D"]
+shape = SubResource("CircleShape2D_kdubu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Foods/Test Food11"]
+scale = Vector2(0.015, 0.015)
+texture = ExtResource("4_q6r6c")
+
+[node name="Test Food6" type="Node2D" parent="Foods"]
+position = Vector2(325, 109)
+scale = Vector2(3.72, 3.72)
+
+[node name="Area2D" type="Area2D" parent="Foods/Test Food6"]
+script = ExtResource("3_0hol4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Foods/Test Food6/Area2D"]
+shape = SubResource("CircleShape2D_kdubu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Foods/Test Food6"]
+scale = Vector2(0.015, 0.015)
+texture = ExtResource("4_q6r6c")
+
+[node name="Test Food7" type="Node2D" parent="Foods"]
+position = Vector2(426, 177)
+scale = Vector2(3.72, 3.72)
+
+[node name="Area2D" type="Area2D" parent="Foods/Test Food7"]
+script = ExtResource("3_0hol4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Foods/Test Food7/Area2D"]
+shape = SubResource("CircleShape2D_kdubu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Foods/Test Food7"]
+scale = Vector2(0.015, 0.015)
+texture = ExtResource("4_q6r6c")
+
+[node name="Test Food8" type="Node2D" parent="Foods"]
+position = Vector2(454, 71)
+scale = Vector2(3.72, 3.72)
+
+[node name="Area2D" type="Area2D" parent="Foods/Test Food8"]
+script = ExtResource("3_0hol4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Foods/Test Food8/Area2D"]
+shape = SubResource("CircleShape2D_kdubu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Foods/Test Food8"]
+scale = Vector2(0.015, 0.015)
+texture = ExtResource("4_q6r6c")
