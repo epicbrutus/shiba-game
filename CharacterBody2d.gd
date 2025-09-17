@@ -33,7 +33,14 @@ var movement_presets = {
 @export var acceleration: float = 1500.0
 
 @export var weight_label: RichTextLabel
+@export var charSprite: Sprite2D
 
+@export var foodBar: TextureProgressBar
+
+var photosPath: String = "res://Fat_Levels/"
+
+var max_food: int = 80
+var div_by: int = max_food/4
 var food_eaten: int = 0
 
 func _ready() -> void:
@@ -42,12 +49,18 @@ func _ready() -> void:
 		# Change the path below to match your scene hierarchy
 		weight_label = get_node_or_null("WeightLabel")
 
+func getCurrentWeight() -> int:
+	return current_preset
+
 func change_food(amount: int) -> void:
-	food_eaten = clamp(food_eaten + amount, 0, 80)
-	var to_change_to: MovementPreset = food_eaten / 20
+	food_eaten = clamp(food_eaten + amount, 0, max_food)
+	var to_change_to: MovementPreset = food_eaten / div_by
 	set_movement_preset(to_change_to)
 	if weight_label != null:
 		weight_label.text = MovementPreset.keys()[to_change_to]
+
+	if foodBar != null:
+		foodBar.value = float(food_eaten) / float(max_food) * 100
 	
 	set_movement_preset(to_change_to)
 
@@ -61,6 +74,9 @@ func set_movement_preset(preset: MovementPreset) -> void:
 		friction = data.friction
 		acceleration = data.acceleration
 		current_preset = preset
+
+		var presetName: String = MovementPreset.keys()[preset]
+		charSprite.texture = load(photosPath + presetName + ".png")
 
 func _physics_process(delta: float) -> void:
 	var input_vector = get_input_vector()

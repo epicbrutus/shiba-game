@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlks1vp6h7cjb"
-path="res://.godot/imported/donut.png-38656d469e0c06b76c5552af0d09625f.ctex"
+uid="uid://dm4uiu4pqyh4d"
+path="res://.godot/imported/FAT.png-4fb3e8a293b724c210a22a6445bb5e8a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://photos/donut.png"
-dest_files=["res://.godot/imported/donut.png-38656d469e0c06b76c5552af0d09625f.ctex"]
+source_file="res://Fat_Levels/FAT.png"
+dest_files=["res://.godot/imported/FAT.png-4fb3e8a293b724c210a22a6445bb5e8a.ctex"]
 
 [params]
 

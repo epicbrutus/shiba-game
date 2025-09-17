@@ -1,22 +1,30 @@
 extends Area2D
 
+const Utils = preload("res://Utils.gd")
+
 enum FoodType {
-	DONUT,
-	BROCOLLI
+	SMALL,
+	MEDIUM,
+	LARGE,
+	BAD
 }
 
 class FoodData:
 	var value: int
 	var sprite_path: String
-	var photosPath: String = "res://photos/"
+	var photosPath: String = "res://Food_Photos"
+	var chance: float
 
-	func _init(p_value: int, p_sprite_path: String):
+	func _init(p_value: int, p_sprite_path: String, p_chance:float):
 		value = p_value
-		sprite_path = photosPath + p_sprite_path
+		sprite_path = photosPath + "/" + p_sprite_path
+		chance = p_chance
 
-var food_presets = {
-	FoodType.DONUT: FoodData.new(20, "donut.png"),
-	FoodType.BROCOLLI: FoodData.new(-20, "brocolli.png"),
+static var food_presets = {
+	FoodType.SMALL: FoodData.new(2, "Small_Foods", 0.5), 
+	FoodType.MEDIUM: FoodData.new(15, "Medium_Foods", 0.2),
+	FoodType.LARGE: FoodData.new(30, "Large_Foods", 0.1),
+	FoodType.BAD: FoodData.new(-20, "Bad_Foods", 0.2),
 }
 
 var value: int;
@@ -28,7 +36,10 @@ func _ready() -> void:
 func initialize(food_type: FoodType) -> void:
 	var data = food_presets[food_type]
 	value = data.value
-	sprite.texture = load(data.sprite_path)
+
+	var photo: String = Utils.get_random_photo_from_folder(data.sprite_path)
+	print(photo)
+	sprite.texture = load(photo)
 
 	# Set consistent size (e.g., 64x64 pixels)
 	var desired_size = Vector2(20, 20)

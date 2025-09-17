@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0mn5c7gljqy3"
-path="res://.godot/imported/brocolli.png-a7acae9c6a62c3e4d8a2f68601c97785.ctex"
+uid="uid://2ahd2jvmhqke"
+path="res://.godot/imported/chip.png-31e788bd4a0b8001dae09ef572df8b1b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://photos/brocolli.png"
-dest_files=["res://.godot/imported/brocolli.png-a7acae9c6a62c3e4d8a2f68601c97785.ctex"]
+source_file="res://Food_Photos/Small_Foods/chip.png"
+dest_files=["res://.godot/imported/chip.png-31e788bd4a0b8001dae09ef572df8b1b.ctex"]
 
 [params]
 
