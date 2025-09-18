@@ -1,6 +1,6 @@
 extends Area2D
 
-const Utils = preload("res://Utils.gd")
+const Utils = preload("res://Scripts//Utils.gd")
 
 enum FoodType {
 	SMALL,
@@ -21,10 +21,10 @@ class FoodData:
 		chance = p_chance
 
 static var food_presets = {
-	FoodType.SMALL: FoodData.new(2, "Small_Foods", 0.5), 
+	FoodType.SMALL: FoodData.new(5, "Small_Foods", 0.8), 
 	FoodType.MEDIUM: FoodData.new(15, "Medium_Foods", 0.2),
-	FoodType.LARGE: FoodData.new(30, "Large_Foods", 0.1),
-	FoodType.BAD: FoodData.new(-20, "Bad_Foods", 0.2),
+	FoodType.LARGE: FoodData.new(40, "Large_Foods", 0.03),
+	FoodType.BAD: FoodData.new(-40, "Bad_Foods", 0.5),
 }
 
 var value: int;
@@ -55,6 +55,3 @@ func _on_body_entered(body: Node2D) -> void:
 		
 		# Make the food disappear
 		get_parent().queue_free()
-
-func _process(delta: float) -> void:
-	position.y -= 40 * delta;

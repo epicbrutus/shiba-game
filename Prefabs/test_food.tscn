@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ct5gv0hehauba"]
+[gd_scene load_steps=5 format=3 uid="uid://ct5gv0hehauba"]
 
-[ext_resource type="Script" uid="uid://ce8r12cbn6swu" path="res://Food.gd" id="1_6aigm"]
+[ext_resource type="Script" uid="uid://ce8r12cbn6swu" path="res://Scripts/Food.gd" id="1_6aigm"]
 [ext_resource type="Texture2D" uid="uid://dlks1vp6h7cjb" path="res://Food_Photos/Medium_Foods/donut.png" id="2_ipcsp"]
+[ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="3_kab6h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kdubu"]
 
@@ -18,3 +19,6 @@ shape = SubResource("CircleShape2D_kdubu")
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 scale = Vector2(0.015, 0.015)
 texture = ExtResource("2_ipcsp")
+
+[node name="move_up" parent="." instance=ExtResource("3_kab6h")]
+Def_Speed = 240.0

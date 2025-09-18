@@ -19,11 +19,11 @@ class MovementData:
 		acceleration = p_acceleration
 
 var movement_presets = {
-	MovementPreset.SKINNY: MovementData.new(600.0, 600.0, 1500.0),
-	MovementPreset.NORMAL: MovementData.new(500.0, 300.0, 1000.0),
-	MovementPreset.OVERWEIGHT: MovementData.new(400.0, 100.0, 700.0),
-	MovementPreset.FAT: MovementData.new(600.0, 0.0, 500.0),
-	MovementPreset.OBESE: MovementData.new(800.0, 0.0, 300.0)
+	MovementPreset.SKINNY: MovementData.new(400, 0, 2700),
+	MovementPreset.NORMAL: MovementData.new(600, 0, 1800),
+	MovementPreset.OVERWEIGHT: MovementData.new(800, 0, 1350),
+	MovementPreset.FAT: MovementData.new(1000, 0.0, 800),
+	MovementPreset.OBESE: MovementData.new(1200, 0.0, 400)
 }
 
 @export var current_preset: MovementPreset = MovementPreset.NORMAL
@@ -105,3 +105,6 @@ func get_input_vector() -> Vector2:
 	input_vector.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	
 	return input_vector.normalized()
+
+func jumbo() -> void:
+	pass

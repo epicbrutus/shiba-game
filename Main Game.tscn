@@ -1,0 +1,316 @@
+[gd_scene load_steps=31 format=3 uid="uid://c14qwn6rgfy23"]
+
+[ext_resource type="Script" uid="uid://dygskx16dxw61" path="res://Scripts/CharacterBody2d.gd" id="1_0nebs"]
+[ext_resource type="Texture2D" uid="uid://di68fwllbu5mw" path="res://Fat_Levels/SKINNY.png" id="2_ghq7j"]
+[ext_resource type="PackedScene" uid="uid://ct5gv0hehauba" path="res://Prefabs/test_food.tscn" id="3_vcw43"]
+[ext_resource type="Script" uid="uid://r8u5tp17cdm1" path="res://Scripts/Spawner.gd" id="4_q080a"]
+[ext_resource type="Script" uid="uid://3skymg3qrpff" path="res://Scripts/ObstacleConfig.gd" id="5_k47co"]
+[ext_resource type="PackedScene" uid="uid://dqhwv1taelb4p" path="res://Prefabs/Obstacles/bumper_line_left.tscn" id="5_vcw43"]
+[ext_resource type="PackedScene" uid="uid://dqb04qeyjeghy" path="res://Prefabs/gate.tscn" id="5_xpiby"]
+[ext_resource type="PackedScene" uid="uid://bqan5vfqgrejr" path="res://Prefabs/bumper.tscn" id="6_3aqej"]
+[ext_resource type="PackedScene" uid="uid://bplr1g7xk4mkh" path="res://Prefabs/Obstacles/bumper_line_right.tscn" id="6_k47co"]
+[ext_resource type="Script" uid="uid://bdb3fxsghyjma" path="res://Scripts/wall.gd" id="7_rfjuf"]
+[ext_resource type="PackedScene" uid="uid://dwuwlhgjhs3q2" path="res://Prefabs/Obstacles/bumper_line_straight.tscn" id="8_q080a"]
+[ext_resource type="PackedScene" uid="uid://bw8o52geqt381" path="res://Prefabs/Obstacles/moving_bumper.tscn" id="8_xpiby"]
+[ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="13_xpiby"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
+size = Vector2(1152.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
+size = Vector2(77, 690)
+
+[sub_resource type="Gradient" id="Gradient_k47co"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.39308554, 0.39308554, 0.39308533, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xpiby"]
+gradient = SubResource("Gradient_k47co")
+width = 1920
+height = 1080
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_epypp"]
+radius = 25.0
+height = 121.13
+
+[sub_resource type="Gradient" id="Gradient_0e48y"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_epypp"]
+gradient = SubResource("Gradient_0e48y")
+width = 14
+
+[sub_resource type="Gradient" id="Gradient_d21ai"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.36282945, 0.36282945, 0.36282945, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rj586"]
+gradient = SubResource("Gradient_d21ai")
+width = 5
+
+[sub_resource type="Gradient" id="Gradient_kdubu"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_d21ai"]
+gradient = SubResource("Gradient_kdubu")
+width = 5
+
+[sub_resource type="Resource" id="Resource_xpiby"]
+script = ExtResource("5_k47co")
+scene = ExtResource("8_xpiby")
+chance = 1.4
+metadata/_custom_type_script = "uid://3skymg3qrpff"
+
+[sub_resource type="Resource" id="Resource_3aqej"]
+script = ExtResource("5_k47co")
+scene = ExtResource("8_q080a")
+chance = 0.08
+metadata/_custom_type_script = "uid://3skymg3qrpff"
+
+[sub_resource type="Resource" id="Resource_rfjuf"]
+script = ExtResource("5_k47co")
+scene = ExtResource("6_k47co")
+chance = 0.0
+metadata/_custom_type_script = "uid://3skymg3qrpff"
+
+[sub_resource type="Resource" id="Resource_omane"]
+script = ExtResource("5_k47co")
+scene = ExtResource("5_vcw43")
+chance = 0.0
+metadata/_custom_type_script = "uid://3skymg3qrpff"
+
+[sub_resource type="Gradient" id="Gradient_3aqej"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.18359044, 0.18359044, 0.18359044, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rfjuf"]
+gradient = SubResource("Gradient_3aqej")
+width = 120
+height = 1000
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(0, -1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Camera2D"]
+position = Vector2(-95, -372)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/StaticBody2D"]
+position = Vector2(96, 38)
+shape = SubResource("RectangleShape2D_0hol4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Camera2D/StaticBody2D"]
+position = Vector2(95, 706)
+shape = SubResource("RectangleShape2D_0hol4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Camera2D/StaticBody2D"]
+position = Vector2(710, 372)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Camera2D/StaticBody2D"]
+position = Vector2(-520, 369)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
+z_index = -10
+texture = SubResource("GradientTexture2D_xpiby")
+
+[node name="Player" type="Node2D" parent="."]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Player" node_paths=PackedStringArray("weight_label", "charSprite", "foodBar")]
+motion_mode = 1
+script = ExtResource("1_0nebs")
+current_preset = 0
+weight_label = NodePath("../RichTextLabel")
+charSprite = NodePath("Icon")
+foodBar = NodePath("../../Bars/Food Bar")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/CharacterBody2D"]
+rotation = 1.3421582
+shape = SubResource("CapsuleShape2D_epypp")
+
+[node name="Icon" type="Sprite2D" parent="Player/CharacterBody2D"]
+position = Vector2(1, -2)
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("2_ghq7j")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Player"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -40.0
+offset_right = 153.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "Fat"
+
+[node name="Bars" type="Node2D" parent="."]
+position = Vector2(-124, -199)
+scale = Vector2(14.275, 14.275)
+
+[node name="Food Bar" type="TextureProgressBar" parent="Bars"]
+offset_left = -27.390543
+offset_top = -7.8458853
+offset_right = 12.609457
+offset_bottom = 32.154152
+scale = Vector2(5.164, 1.4428)
+value = 100.0
+texture_progress = SubResource("GradientTexture1D_epypp")
+
+[node name="Distance Bar" type="TextureProgressBar" parent="Bars"]
+offset_left = 42.31174
+offset_top = 19.754816
+offset_right = 82.311745
+offset_bottom = 59.754852
+rotation = -1.5707964
+scale = Vector2(5.164, 1.4428)
+value = 100.0
+texture_under = SubResource("GradientTexture1D_rj586")
+texture_progress = SubResource("GradientTexture1D_d21ai")
+
+[node name="Foods" type="Node" parent="."]
+
+[node name="Test Food" parent="Foods" instance=ExtResource("3_vcw43")]
+position = Vector2(-400, 54)
+
+[node name="Spawner" type="Node2D" parent="." node_paths=PackedStringArray("cam", "distanceBar")]
+position = Vector2(0, 400)
+script = ExtResource("4_q080a")
+obstacle_configs = Array[ExtResource("5_k47co")]([SubResource("Resource_xpiby"), SubResource("Resource_3aqej"), SubResource("Resource_rfjuf"), SubResource("Resource_omane")])
+food = ExtResource("3_vcw43")
+gate = ExtResource("5_xpiby")
+cam = NodePath("../Camera2D")
+distanceBar = NodePath("../Bars/Distance Bar")
+
+[node name="Bumper" parent="." instance=ExtResource("6_3aqej")]
+process_mode = 4
+visible = false
+position = Vector2(-295, 88)
+
+[node name="Left_Wall" type="Area2D" parent="."]
+position = Vector2(-95, -372)
+script = ExtResource("7_rfjuf")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Left_Wall"]
+position = Vector2(-520, 369)
+scale = Vector2(2.438667, -1.1067214)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="Sprite2D" type="Sprite2D" parent="Left_Wall"]
+position = Vector2(-484, 252)
+texture = SubResource("GradientTexture2D_rfjuf")
+
+[node name="Right_Wall" type="Area2D" parent="."]
+script = ExtResource("7_rfjuf")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Right_Wall"]
+position = Vector2(580, -76)
+texture = SubResource("GradientTexture2D_rfjuf")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Right_Wall"]
+position = Vector2(615, 0)
+scale = Vector2(2.438667, -1.1067214)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="BumperLines1" type="Node2D" parent="."]
+process_mode = 4
+visible = false
+
+[node name="Bumper" parent="BumperLines1" instance=ExtResource("6_3aqej")]
+position = Vector2(-280, -217)
+
+[node name="Bumper2" parent="BumperLines1" instance=ExtResource("6_3aqej")]
+position = Vector2(-352, -175.99998)
+
+[node name="Bumper3" parent="BumperLines1" instance=ExtResource("6_3aqej")]
+position = Vector2(-136, -304)
+
+[node name="Bumper4" parent="BumperLines1" instance=ExtResource("6_3aqej")]
+position = Vector2(-208, -263)
+
+[node name="Bumper5" parent="BumperLines1" instance=ExtResource("6_3aqej")]
+position = Vector2(-38, 25)
+
+[node name="Bumper6" parent="BumperLines1" instance=ExtResource("6_3aqej")]
+position = Vector2(-110, 66.000015)
+
+[node name="Bumper7" parent="BumperLines1" instance=ExtResource("6_3aqej")]
+position = Vector2(106, -62)
+
+[node name="Bumper8" parent="BumperLines1" instance=ExtResource("6_3aqej")]
+position = Vector2(34, -20.999985)
+
+[node name="Bumper13" parent="BumperLines1" instance=ExtResource("6_3aqej")]
+position = Vector2(228, 213)
+
+[node name="Bumper14" parent="BumperLines1" instance=ExtResource("6_3aqej")]
+position = Vector2(156, 254.00002)
+
+[node name="Bumper15" parent="BumperLines1" instance=ExtResource("6_3aqej")]
+position = Vector2(372, 126)
+
+[node name="Bumper16" parent="BumperLines1" instance=ExtResource("6_3aqej")]
+position = Vector2(300, 167.00002)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(76, 577)
+
+[node name="Bumper line" type="Node2D" parent="Node2D"]
+position = Vector2(-224, -115)
+rotation = 0.7853982
+
+[node name="Bumper" parent="Node2D/Bumper line" instance=ExtResource("6_3aqej")]
+
+[node name="Bumper2" parent="Node2D/Bumper line" instance=ExtResource("6_3aqej")]
+position = Vector2(85, 0)
+
+[node name="Bumper3" parent="Node2D/Bumper line" instance=ExtResource("6_3aqej")]
+position = Vector2(-85, 0)
+
+[node name="Bumper line2" type="Node2D" parent="Node2D"]
+position = Vector2(87.99997, -115)
+rotation = 0.7853982
+
+[node name="Bumper" parent="Node2D/Bumper line2" instance=ExtResource("6_3aqej")]
+
+[node name="Bumper2" parent="Node2D/Bumper line2" instance=ExtResource("6_3aqej")]
+position = Vector2(85, 0)
+
+[node name="Bumper3" parent="Node2D/Bumper line2" instance=ExtResource("6_3aqej")]
+position = Vector2(-85, 0)
+
+[node name="Bumper line3" type="Node2D" parent="Node2D"]
+position = Vector2(-220, 90)
+rotation = -0.7853982
+
+[node name="Bumper" parent="Node2D/Bumper line3" instance=ExtResource("6_3aqej")]
+
+[node name="Bumper2" parent="Node2D/Bumper line3" instance=ExtResource("6_3aqej")]
+position = Vector2(85, 0)
+
+[node name="Bumper3" parent="Node2D/Bumper line3" instance=ExtResource("6_3aqej")]
+position = Vector2(-85, 0)
+
+[node name="Bumper line4" type="Node2D" parent="Node2D"]
+position = Vector2(91.99997, 90)
+rotation = -0.7853982
+
+[node name="Bumper" parent="Node2D/Bumper line4" instance=ExtResource("6_3aqej")]
+
+[node name="Bumper2" parent="Node2D/Bumper line4" instance=ExtResource("6_3aqej")]
+position = Vector2(85, 0)
+
+[node name="Bumper3" parent="Node2D/Bumper line4" instance=ExtResource("6_3aqej")]
+position = Vector2(-85, 0)
+
+[node name="move_up" parent="Node2D" instance=ExtResource("13_xpiby")]
+Def_Speed = 120.0

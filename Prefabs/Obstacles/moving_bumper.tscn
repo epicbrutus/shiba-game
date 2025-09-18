@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bw8o52geqt381"]
+
+[ext_resource type="Script" uid="uid://dsiqq17b2aoro" path="res://Scripts/Bumper.gd" id="1_ovvib"]
+[ext_resource type="Texture2D" uid="uid://b0u6lcwyuuaia" path="res://photos/SSBUBumper.png" id="2_s4nfg"]
+[ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="3_m0wi5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kdubu"]
+
+[node name="Bumper" type="Node2D"]
+scale = Vector2(3.72, 3.72)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_ovvib")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_kdubu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("2_s4nfg")
+
+[node name="move_up" parent="." instance=ExtResource("3_m0wi5")]
+Def_Speed = 250.0

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bplr1g7xk4mkh"]
+
+[ext_resource type="PackedScene" uid="uid://bqan5vfqgrejr" path="res://Prefabs/bumper.tscn" id="1_8lwtj"]
+[ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="2_b3nca"]
+
+[node name="Bumper line" type="Node2D"]
+rotation = 0.61086524
+
+[node name="Bumper" parent="." instance=ExtResource("1_8lwtj")]
+
+[node name="Bumper2" parent="." instance=ExtResource("1_8lwtj")]
+position = Vector2(85, 0)
+
+[node name="Bumper3" parent="." instance=ExtResource("1_8lwtj")]
+position = Vector2(-85, 0)
+
+[node name="move_up" parent="." instance=ExtResource("2_b3nca")]
+Def_Speed = 200.0

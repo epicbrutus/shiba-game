@@ -1,5 +1,8 @@
 extends Node2D
-const FoodScript = preload("res://Food.gd")
+
+const FoodScript = preload("res://Scripts//Food.gd")
+
+@export var obstacle_configs: Array[ObstacleConfig] = []
 
 @export var food: PackedScene;
 @export var gate: PackedScene
@@ -11,20 +14,21 @@ const FoodScript = preload("res://Food.gd")
 var gateCooldown: float = 20
 var gateTimer: float = gateCooldown
 
-var foodCooldown: float = 1
+var foodCooldown: float = 0.5
 var foodTimer: float = foodCooldown
 
-var obstacleCooldown: float = 2
+var obstacleCooldown: float = 0.75
 var obstacleTimer: float = obstacleCooldown
+
+func _ready() -> void:
+	randomize()
 
 func _process(delta: float) -> void:
 	gate_loop(delta)
 	food_loop(delta)
+	obstacle_loop(delta)
 
-		
-
-# func randomEnum() -> int:
-# 	return Food.FoodType.DONUT if randf() < 0.5 else Food.FoodType.BROCOLLI
+	
 
 func gate_loop(delta: float) -> void:
 	gateTimer -= delta
@@ -67,7 +71,28 @@ func obstacle_loop(delta: float):
 	obstacleTimer -= delta
 
 	if obstacleTimer <= 0:
-		pass
+		spawn_obstacle()
+		obstacleTimer = obstacleCooldown
+
+
+func spawn_obstacle() -> void:
+
+	var total_chance = 0
+	for config in obstacle_configs:
+		total_chance += config.chance
+
+	var r = randf() * total_chance
+	var acc = 0
+
+	for config in obstacle_configs:
+		acc += config.chance
+		if r < acc:
+			var obs = config.scene.instantiate()
+			add_child(obs)
+
+			var w = cam.get_viewport_rect().size.x * 0.5
+			obs.position = Vector2(randf_range(-w, w)*0.9, position.y)
+			return
 
 func spawnGate() -> void:
 	var instance = gate.instantiate()
