@@ -9,6 +9,7 @@
 scale = Vector2(3.72, 3.72)
 
 [node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(1.1, 1.1)
 script = ExtResource("1_rpxwj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

@@ -11,7 +11,7 @@ const FoodScript = preload("res://Scripts//Food.gd")
 
 @export var distanceBar: TextureProgressBar
 
-var gateCooldown: float = 20
+var gateCooldown: float = 30
 var gateTimer: float = gateCooldown
 
 var foodCooldown: float = 0.5
@@ -49,7 +49,7 @@ func food_loop(delta: float) -> void:
 		instance.get_node("Area2D").initialize(get_random_food_type())
 		add_child(instance);
 		var camera_width = cam.get_viewport_rect().size.x;
-		var spawnDistance: float = (camera_width/2)*0.9;
+		var spawnDistance: float = 500 #(camera_width/2)*0.9;
 		instance.position = Vector2(randf_range(-spawnDistance,spawnDistance), position.y);
 
 func get_random_food_type() -> int:
@@ -90,8 +90,8 @@ func spawn_obstacle() -> void:
 			var obs = config.scene.instantiate()
 			add_child(obs)
 
-			var w = cam.get_viewport_rect().size.x * 0.5
-			obs.position = Vector2(randf_range(-w, w)*0.9, position.y)
+			var w = 500 #(camera_width/2)*0.9;
+			obs.position = Vector2(randf_range(-w, w), position.y)
 			return
 
 func spawnGate() -> void:

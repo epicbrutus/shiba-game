@@ -1,5 +1,5 @@
 extends Node2D
-const FoodScript = preload("res://Food.gd")
+const FoodScript = preload("res://Scripts//Food.gd")
 
 @export var food: PackedScene;
 @export var gate: PackedScene

@@ -19,11 +19,11 @@ class MovementData:
 		acceleration = p_acceleration
 
 var movement_presets = {
-	MovementPreset.SKINNY: MovementData.new(400, 0, 2700),
-	MovementPreset.NORMAL: MovementData.new(600, 0, 1800),
-	MovementPreset.OVERWEIGHT: MovementData.new(800, 0, 1350),
-	MovementPreset.FAT: MovementData.new(1000, 0.0, 800),
-	MovementPreset.OBESE: MovementData.new(1200, 0.0, 400)
+	MovementPreset.SKINNY: MovementData.new(600, 0, 3600),
+	MovementPreset.NORMAL: MovementData.new(800, 0, 2700),
+	MovementPreset.OVERWEIGHT: MovementData.new(1000, 0, 1800),
+	MovementPreset.FAT: MovementData.new(1200, 0.0, 1350),
+	MovementPreset.OBESE: MovementData.new(1400, 0.0, 800)
 }
 
 @export var current_preset: MovementPreset = MovementPreset.NORMAL
@@ -35,6 +35,11 @@ var movement_presets = {
 @export var weight_label: RichTextLabel
 @export var charSprite: Sprite2D
 
+@onready var state_increase_sound: AudioStreamPlayer = $state_increase_sound
+@onready var state_decrease_sound: AudioStreamPlayer = $state_decrease_sound
+@onready var eat_sound: AudioStreamPlayer = $eat_sound
+@onready var bounce_sound: AudioStreamPlayer = $bounce_sound
+
 @export var foodBar: TextureProgressBar
 
 var photosPath: String = "res://Fat_Levels/"
@@ -45,6 +50,7 @@ var food_eaten: int = 0
 
 func _ready() -> void:
 	# Assign the weight_label if not set via the editor
+	change_food(0)
 	if weight_label == null:
 		# Change the path below to match your scene hierarchy
 		weight_label = get_node_or_null("WeightLabel")
@@ -56,6 +62,10 @@ func change_food(amount: int) -> void:
 	food_eaten = clamp(food_eaten + amount, 0, max_food)
 	var to_change_to: MovementPreset = food_eaten / div_by
 	set_movement_preset(to_change_to)
+
+	if amount > 0:
+		eat_sound.play()
+
 	if weight_label != null:
 		weight_label.text = MovementPreset.keys()[to_change_to]
 
@@ -66,9 +76,18 @@ func change_food(amount: int) -> void:
 
 func set_new_velocity(newVelocity: Vector2) -> void:
 	velocity = newVelocity
+	bounce_sound.play()
 
 func set_movement_preset(preset: MovementPreset) -> void:
+
 	if preset in movement_presets:
+		if current_preset < preset:
+			state_increase_sound.play()
+			state_increase_sound.seek(0.3)
+		elif current_preset > preset:
+			state_decrease_sound.play()
+			state_decrease_sound.seek(0.3)
+
 		var data = movement_presets[preset]
 		speed = data.speed
 		friction = data.friction

@@ -10,4 +10,4 @@ func set_speed(p_speed: float):
 	speed = p_speed
 
 func _process(delta: float) -> void:
-	get_parent().position.y -= speed * delta
+	get_parent().position.y -= speed * delta * 2

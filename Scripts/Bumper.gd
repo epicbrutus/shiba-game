@@ -9,7 +9,7 @@ func _on_body_entered(body: Node2D) -> void:
 	# Check if the body that entered is the player
 	if body is CharacterBody2D:
 		var direction = (body.global_position - global_position).normalized();
-		var speed = 600
+		var speed = 800
 
 		body.set_new_velocity(direction * speed);
 
