@@ -11,7 +11,9 @@ const FoodScript = preload("res://Scripts//Food.gd")
 
 @export var distanceBar: TextureProgressBar
 
-var gateCooldown: float = 30
+@export var counter_reference: RichTextLabel
+
+var gateCooldown: float = 5
 var gateTimer: float = gateCooldown
 
 var foodCooldown: float = 0.5
@@ -98,3 +100,4 @@ func spawnGate() -> void:
 	var instance = gate.instantiate()
 	add_child(instance);
 	instance.position = Vector2(position.x, 400)
+	instance.get_node("Area2D").initialize(counter_reference)

@@ -1,0 +1,31 @@
+extends Area2D
+
+var damage: int = 20
+
+var length: int = 1200
+var thickness: int = 40
+
+@onready var left_bulb: Sprite2D = $left_bulb
+@onready var right_bulb: Sprite2D = $right_bulb
+
+@onready var beam: Sprite2D = $beam
+
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
+
+func _ready() -> void:
+	left_bulb.position.x = -length/2
+	right_bulb.position.x = length/2
+
+	beam.texture.width = length
+	beam.texture.height = thickness
+
+	var rect_shape = RectangleShape2D.new()
+	rect_shape.size = Vector2(length, thickness)
+	collision_shape.shape = rect_shape
+
+	body_entered.connect(_on_body_entered)
+
+func _on_body_entered(body: Node2D) -> void:
+	# Check if the body that entered is the player
+	if body is CharacterBody2D:
+		body.change_food(-damage)

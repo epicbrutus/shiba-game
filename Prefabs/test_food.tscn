@@ -1,24 +1,59 @@
-[gd_scene load_steps=5 format=3 uid="uid://ct5gv0hehauba"]
+[gd_scene load_steps=10 format=3 uid="uid://ct5gv0hehauba"]
 
 [ext_resource type="Script" uid="uid://ce8r12cbn6swu" path="res://Scripts/Food.gd" id="1_6aigm"]
 [ext_resource type="Texture2D" uid="uid://dlks1vp6h7cjb" path="res://Food_Photos/Medium_Foods/donut.png" id="2_ipcsp"]
+[ext_resource type="Texture2D" uid="uid://hrw233kgtqmg" path="res://photos/random_selection.png" id="3_ipw0b"]
 [ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="3_kab6h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kdubu"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_kab6h"]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="Curve" id="Curve_ipw0b"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5055762, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_1rq81"]
+curve = SubResource("Curve_ipw0b")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ipw0b"]
+resource_local_to_scene = true
+particle_flag_disable_z = true
+angle_min = -179.99998
+angle_max = 180.00002
+gravity = Vector3(0, 0, 0)
+alpha_curve = SubResource("CurveTexture_1rq81")
+anim_offset_max = 1.0
+
 [node name="Test Food" type="Node2D"]
-scale = Vector2(3.72, 3.72)
+z_index = 1
 
 [node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("sprite")]
 script = ExtResource("1_6aigm")
 sprite = NodePath("Sprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(3.72, 3.72)
 shape = SubResource("CircleShape2D_kdubu")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-scale = Vector2(0.015, 0.015)
+scale = Vector2(0.056, 0.056)
 texture = ExtResource("2_ipcsp")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Area2D"]
+z_index = -1
+material = SubResource("CanvasItemMaterial_kab6h")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_ipw0b")
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_ipw0b")
 
 [node name="move_up" parent="." instance=ExtResource("3_kab6h")]
 Def_Speed = 240.0
+
+[node name="Node2D" type="Node2D" parent="."]

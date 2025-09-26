@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqrpjumefrno2"]
+
+[ext_resource type="Script" uid="uid://cqh0sesyinkhl" path="res://homing_missile.gd" id="1_isurj"]
+[ext_resource type="Texture2D" uid="uid://b8imicvkxbqw0" path="res://photos/Missile_Jammer_artwork.png" id="2_5wjdt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qbwt3"]
+radius = 15.0
+height = 43.68
+
+[node name="Homing missile" type="Area2D" node_paths=PackedStringArray("target")]
+script = ExtResource("1_isurj")
+target = NodePath("")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_qbwt3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 3.1415927
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("2_5wjdt")

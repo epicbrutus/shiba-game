@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://c14qwn6rgfy23"]
+[gd_scene load_steps=47 format=3 uid="uid://c14qwn6rgfy23"]
 
 [ext_resource type="Script" uid="uid://dygskx16dxw61" path="res://Scripts/CharacterBody2d.gd" id="1_0nebs"]
 [ext_resource type="Texture2D" uid="uid://dnik485lu3qcr" path="res://photos/rock_texture.jpg" id="1_82has"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://bdb3fxsghyjma" path="res://Scripts/wall.gd" id="7_rfjuf"]
 [ext_resource type="PackedScene" uid="uid://dwuwlhgjhs3q2" path="res://Prefabs/Obstacles/bumper_line_straight.tscn" id="8_q080a"]
 [ext_resource type="PackedScene" uid="uid://bw8o52geqt381" path="res://Prefabs/Obstacles/moving_bumper.tscn" id="8_xpiby"]
+[ext_resource type="Script" uid="uid://bp4ryh50qjci3" path="res://counter.gd" id="12_6w2og"]
 [ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="13_xpiby"]
 [ext_resource type="AudioStream" uid="uid://bblklcj710be5" path="res://sounds/flight-of-the-bumblebee.mp3" id="21_8k6a3"]
 
@@ -43,8 +44,8 @@ height = 1080
 shader = ExtResource("2_qfxsq")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_epypp"]
-radius = 25.0
-height = 121.13
+radius = 20.0
+height = 96.0
 
 [sub_resource type="Gradient" id="Gradient_o8x35"]
 offsets = PackedFloat32Array(0)
@@ -153,7 +154,7 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 
 [node name="TextureRect" type="TextureRect" parent="Camera2D"]
-z_index = -5
+z_index = -6
 texture_repeat = 2
 material = SubResource("ShaderMaterial_ed6rl")
 offset_left = -530.0
@@ -164,6 +165,7 @@ scale = Vector2(0.617831, 0.4136479)
 texture = ExtResource("1_82has")
 
 [node name="ColorRect" type="ColorRect" parent="Camera2D"]
+z_index = -5
 offset_left = -595.0
 offset_top = -296.0
 offset_right = -555.0
@@ -187,7 +189,7 @@ shape = SubResource("CapsuleShape2D_epypp")
 
 [node name="Icon" type="Sprite2D" parent="Player/CharacterBody2D"]
 position = Vector2(1, -2)
-scale = Vector2(0.135, 0.135)
+scale = Vector2(0.13, 0.13)
 texture = ExtResource("2_ghq7j")
 
 [node name="state_increase_sound" type="AudioStreamPlayer" parent="Player/CharacterBody2D"]
@@ -388,9 +390,38 @@ offset_bottom = 31.17338
 scale = Vector2(0.010484151, 0.057173327)
 color = Color(1, 1, 0, 1)
 
+[node name="Control" type="Control" parent="Bars"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.0039147, 0.89860666)
+
+[node name="Counter" type="RichTextLabel" parent="Bars/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 15.796818
+offset_top = -21.948921
+offset_right = 215.79681
+offset_bottom = 140.0213
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.04645124, 0.05168212)
+theme_override_font_sizes/normal_font_size = 50
+text = "Level:
+1"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+script = ExtResource("12_6w2og")
+
 [node name="Foods" type="Node" parent="."]
 
-[node name="Spawner" type="Node2D" parent="." node_paths=PackedStringArray("cam", "distanceBar")]
+[node name="Spawner" type="Node2D" parent="." node_paths=PackedStringArray("cam", "distanceBar", "counter_reference")]
 position = Vector2(0, 400)
 script = ExtResource("4_q080a")
 obstacle_configs = Array[ExtResource("5_k47co")]([SubResource("Resource_xpiby"), SubResource("Resource_3aqej"), SubResource("Resource_rfjuf"), SubResource("Resource_omane")])
@@ -398,6 +429,7 @@ food = ExtResource("3_vcw43")
 gate = ExtResource("5_xpiby")
 cam = NodePath("../Camera2D")
 distanceBar = NodePath("../Bars/Distance Bar")
+counter_reference = NodePath("../Bars/Control/Counter")
 
 [node name="Bumper" parent="." instance=ExtResource("6_3aqej")]
 process_mode = 4
@@ -446,7 +478,7 @@ scale = Vector2(1, 1.3600005)
 texture = SubResource("GradientTexture2D_3aqej")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Ceiling"]
-position = Vector2(615, 12.99998)
+position = Vector2(615, 12.999981)
 scale = Vector2(2.438667, -1.1067214)
 shape = SubResource("RectangleShape2D_q6r6c")
 
@@ -549,5 +581,4 @@ Def_Speed = 120.0
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_8k6a3")
 volume_db = -6.0
-autoplay = true
 parameters/looping = true

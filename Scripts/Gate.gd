@@ -4,6 +4,11 @@ extends Area2D
 @onready var death_sound: AudioStreamPlayer = $death_sound
 @onready var smash_sound: AudioStreamPlayer = $smash_sound
 
+var counter: RichTextLabel
+
+func initialize(p_counter: RichTextLabel) -> void:
+	counter = p_counter
+
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 
@@ -11,6 +16,11 @@ func _on_body_entered(body: Node2D) -> void:
 	# Check if the body that entered is the player
 	if body is CharacterBody2D:
 		if body.getCurrentWeight() >= 3:
+
+			if counter:
+				print("gyatt ohio")
+				counter.set_count()
+
 			disable_gate()
 			smash_sound.play()
 			await smash_sound.finished

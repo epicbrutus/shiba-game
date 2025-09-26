@@ -16,21 +16,24 @@ class FoodData:
     var value: int
     var image_list: Array
     var chance: float
+    var color: Color
 
-    func _init(p_value: int, p_image_list: Array, p_chance:float):
+    func _init(p_value: int, p_image_list: Array, p_chance:float, p_color:Color):
         value = p_value
         image_list = p_image_list
         chance = p_chance
+        color = p_color
 
 static var food_presets = {
-    FoodType.SMALL: FoodData.new(10, SMALL_FOODS, 0.8), 
-    FoodType.MEDIUM: FoodData.new(20, MEDIUM_FOODS, 0.2),
-    FoodType.LARGE: FoodData.new(40, LARGE_FOODS, 0.03),
-    FoodType.BAD: FoodData.new(-20, BAD_FOODS, 0.5),
+    FoodType.SMALL: FoodData.new(10, SMALL_FOODS, 0.8, Color.WHITE), 
+    FoodType.MEDIUM: FoodData.new(20, MEDIUM_FOODS, 0.2, Color.BLUE),
+    FoodType.LARGE: FoodData.new(40, LARGE_FOODS, 0.03, Color.GOLD),
+    FoodType.BAD: FoodData.new(-20, BAD_FOODS, 0.5, Color.RED),
 }
 
 var value: int;
 @export var sprite: Sprite2D;
+@onready var particles: GPUParticles2D
 
 func _ready() -> void:
     body_entered.connect(_on_body_entered)
@@ -44,9 +47,16 @@ func initialize(food_type: FoodType) -> void:
         sprite.texture = load(photo_path)
 
         # Set consistent size (e.g., 64x64 pixels)
-        var desired_size = Vector2(20, 20)
+        var desired_size = Vector2(74, 74)
         var tex_size = sprite.texture.get_size()
         sprite.scale = desired_size / tex_size
+
+    particles = $GPUParticles2D
+
+    if particles and particles.process_material:
+        #print("running")
+        particles.process_material.color = data.color
+
 
 
 func _on_body_entered(body: Node2D) -> void:
