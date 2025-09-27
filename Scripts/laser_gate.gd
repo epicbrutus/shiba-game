@@ -2,7 +2,10 @@ extends Area2D
 
 var damage: int = 20
 
-var length: int = 1200
+static var MIN_LENGTH: int = 300
+static var MAX_LENGTH: int = 600
+
+var length: int
 var thickness: int = 40
 
 @onready var left_bulb: Sprite2D = $left_bulb
@@ -13,9 +16,14 @@ var thickness: int = 40
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
 func _ready() -> void:
+	length = randi_range(MIN_LENGTH, MAX_LENGTH)
+	rotation = deg_to_rad(randi_range(-45, 45))
+
+
 	left_bulb.position.x = -length/2
 	right_bulb.position.x = length/2
 
+	beam.texture = beam.texture.duplicate()
 	beam.texture.width = length
 	beam.texture.height = thickness
 

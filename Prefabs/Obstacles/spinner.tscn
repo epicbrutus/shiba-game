@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://h0lw1ng2k4w5"]
 
-[ext_resource type="Script" uid="uid://bvl30fy4s43mn" path="res://blade.gd" id="1_lkaap"]
+[ext_resource type="Script" uid="uid://bvl30fy4s43mn" path="res://Scripts/blade.gd" id="1_lkaap"]
 [ext_resource type="PackedScene" uid="uid://bqan5vfqgrejr" path="res://Prefabs/bumper.tscn" id="2_o4h3o"]
 [ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="3_6vjme"]
 
@@ -28,3 +28,4 @@ texture = SubResource("PlaceholderTexture2D_qbwt3")
 [node name="Bumper" parent="." instance=ExtResource("2_o4h3o")]
 
 [node name="move_up" parent="." instance=ExtResource("3_6vjme")]
+Def_Speed = 100.0

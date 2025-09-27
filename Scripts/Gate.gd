@@ -17,6 +17,8 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		if body.getCurrentWeight() >= 3:
 
+			body.change_food(-40)
+
 			if counter:
 				print("gyatt ohio")
 				counter.set_count()

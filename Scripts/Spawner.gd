@@ -13,17 +13,20 @@ const FoodScript = preload("res://Scripts//Food.gd")
 
 @export var counter_reference: RichTextLabel
 
-var gateCooldown: float = 5
+var gateCooldown: float = 30
 var gateTimer: float = gateCooldown
 
 var foodCooldown: float = 0.5
 var foodTimer: float = foodCooldown
 
-var obstacleCooldown: float = 0.75
+var obstacleCooldown: float = 1
 var obstacleTimer: float = obstacleCooldown
+
+@onready var area_safe = cam.get_viewport_rect().size.x * 0.8 * 0.5
 
 func _ready() -> void:
 	randomize()
+	print(area_safe)
 
 func _process(delta: float) -> void:
 	gate_loop(delta)
@@ -50,8 +53,7 @@ func food_loop(delta: float) -> void:
 		var instance = food.instantiate();
 		instance.get_node("Area2D").initialize(get_random_food_type())
 		add_child(instance);
-		var camera_width = cam.get_viewport_rect().size.x;
-		var spawnDistance: float = 500 #(camera_width/2)*0.9;
+		var spawnDistance: float = area_safe #(camera_width/2)*0.9;
 		instance.position = Vector2(randf_range(-spawnDistance,spawnDistance), position.y);
 
 func get_random_food_type() -> int:
@@ -92,8 +94,8 @@ func spawn_obstacle() -> void:
 			var obs = config.scene.instantiate()
 			add_child(obs)
 
-			var w = 500 #(camera_width/2)*0.9;
-			obs.position = Vector2(randf_range(-w, w), position.y)
+			var w = area_safe #(camera_width/2)*0.9;
+			obs.position = Vector2(randf_range(-w, w), position.y + config.negativeOffset)
 			return
 
 func spawnGate() -> void:
