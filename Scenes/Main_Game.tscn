@@ -1,16 +1,13 @@
-[gd_scene load_steps=49 format=3 uid="uid://c14qwn6rgfy23"]
+[gd_scene load_steps=51 format=3 uid="uid://c14qwn6rgfy23"]
 
 [ext_resource type="Shader" uid="uid://ci8wfbw02mu88" path="res://scroll.gdshader" id="1_woxae"]
 [ext_resource type="Texture2D" uid="uid://dnik485lu3qcr" path="res://photos/rock_texture.jpg" id="2_8melw"]
 [ext_resource type="Script" uid="uid://dygskx16dxw61" path="res://Scripts/CharacterBody2d.gd" id="3_k078o"]
-[ext_resource type="Texture2D" uid="uid://di68fwllbu5mw" path="res://Fat_Levels/SKINNY.png" id="4_oh02o"]
 [ext_resource type="AudioStream" uid="uid://cmk7u1tgxt54b" path="res://sounds/fart.mp3" id="5_4ejj8"]
+[ext_resource type="Texture2D" uid="uid://ct4c457b7jv8i" path="res://Art Log 10-4/head.png" id="5_qfhdb"]
 [ext_resource type="AudioStream" uid="uid://coxhwnuy5ucjv" path="res://sounds/jaw trimmed.mp3" id="6_bdknx"]
 [ext_resource type="AudioStream" uid="uid://cgepr4tl2vbgd" path="res://sounds/nom.mp3" id="7_jtjp0"]
-[ext_resource type="Texture2D" uid="uid://c3y0x2487qajo" path="res://Fat_Levels/NORMAL.png" id="8_78gq4"]
-[ext_resource type="Texture2D" uid="uid://bp83hf867tpnx" path="res://Fat_Levels/OVERWEIGHT.png" id="9_k2mhc"]
-[ext_resource type="Texture2D" uid="uid://dm4uiu4pqyh4d" path="res://Fat_Levels/FAT.png" id="10_wlcpx"]
-[ext_resource type="Texture2D" uid="uid://txqqp5le7rgb" path="res://Fat_Levels/OBESE.png" id="11_gxae2"]
+[ext_resource type="Texture2D" uid="uid://dri03ys3ug8it" path="res://Fat_Levels/NORMAL.png" id="8_78gq4"]
 [ext_resource type="Script" uid="uid://bp4ryh50qjci3" path="res://Scripts/counter.gd" id="12_76tg3"]
 [ext_resource type="Script" uid="uid://r8u5tp17cdm1" path="res://Scripts/Spawner.gd" id="13_g8d6c"]
 [ext_resource type="Script" uid="uid://3skymg3qrpff" path="res://Scripts/ObstacleConfig.gd" id="14_56gb8"]
@@ -79,6 +76,21 @@ colors = PackedColorArray(0, 0, 0, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_d21ai"]
 gradient = SubResource("Gradient_kdubu")
 width = 5
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1cg6w"]
+load_path = "res://.godot/imported/NORMAL.png-f54edbcb786264f0dc39aaa5b971619a.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o3byv"]
+load_path = "res://.godot/imported/SKINNY.png-745679658d5b9fbb89982359e8eb6e37.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_woxae"]
+load_path = "res://.godot/imported/OVERWEIGHT.png-09b3ccbc466b79aec6343594e7437f68.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8melw"]
+load_path = "res://.godot/imported/FAT.png-4fb3e8a293b724c210a22a6445bb5e8a.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k078o"]
+load_path = "res://.godot/imported/OBESE.png-37334a5d3fdfbd140b40dd0131b266d2.ctex"
 
 [sub_resource type="Resource" id="Resource_xpiby"]
 script = ExtResource("14_56gb8")
@@ -198,7 +210,12 @@ shape = SubResource("CapsuleShape2D_epypp")
 [node name="Icon" type="Sprite2D" parent="Player/CharacterBody2D"]
 position = Vector2(1, -2)
 scale = Vector2(0.13, 0.13)
-texture = ExtResource("4_oh02o")
+texture = ExtResource("8_78gq4")
+
+[node name="Head" type="Sprite2D" parent="Player/CharacterBody2D"]
+position = Vector2(60, -9)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("5_qfhdb")
 
 [node name="state_increase_sound" type="AudioStreamPlayer" parent="Player/CharacterBody2D"]
 stream = ExtResource("5_4ejj8")
@@ -283,7 +300,7 @@ autowrap_mode = 0
 [node name="Sprite" type="Sprite2D" parent="Bars/Icons/Normal"]
 position = Vector2(-10.437829, -4.2031517)
 scale = Vector2(0.005, 0.005)
-texture = ExtResource("8_78gq4")
+texture = SubResource("CompressedTexture2D_1cg6w")
 
 [node name="Skinny" type="Node2D" parent="Bars/Icons"]
 position = Vector2(-16.322243, 0.2101574)
@@ -308,7 +325,7 @@ autowrap_mode = 0
 [node name="Sprite" type="Sprite2D" parent="Bars/Icons/Skinny"]
 position = Vector2(-10.437829, -4.2031517)
 scale = Vector2(0.005, 0.005)
-texture = ExtResource("4_oh02o")
+texture = SubResource("CompressedTexture2D_o3byv")
 
 [node name="Overweight" type="Node2D" parent="Bars/Icons"]
 position = Vector2(17.162872, 0.2101574)
@@ -333,7 +350,7 @@ autowrap_mode = 0
 [node name="Sprite" type="Sprite2D" parent="Bars/Icons/Overweight"]
 position = Vector2(-10.437829, -4.2031517)
 scale = Vector2(0.005, 0.005)
-texture = ExtResource("9_k2mhc")
+texture = SubResource("CompressedTexture2D_woxae")
 
 [node name="Fat" type="Node2D" parent="Bars/Icons"]
 position = Vector2(33.90543, 0.2101574)
@@ -358,7 +375,7 @@ autowrap_mode = 0
 [node name="Sprite" type="Sprite2D" parent="Bars/Icons/Fat"]
 position = Vector2(-10.437829, -4.2031517)
 scale = Vector2(0.005, 0.005)
-texture = ExtResource("10_wlcpx")
+texture = SubResource("CompressedTexture2D_8melw")
 
 [node name="Obese" type="Node2D" parent="Bars/Icons"]
 position = Vector2(50.718037, 0.2101574)
@@ -383,7 +400,7 @@ autowrap_mode = 0
 [node name="Sprite" type="Sprite2D" parent="Bars/Icons/Obese"]
 position = Vector2(-10.437829, -4.2031517)
 scale = Vector2(0.005, 0.005)
-texture = ExtResource("11_gxae2")
+texture = SubResource("CompressedTexture2D_k078o")
 
 [node name="Node2D" type="Node2D" parent="Bars"]
 position = Vector2(-0.21015763, 0.28021017)

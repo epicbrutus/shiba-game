@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpw48h7wdv0be"
-path="res://.godot/imported/OBESE.png-37334a5d3fdfbd140b40dd0131b266d2.ctex"
+uid="uid://cqipqqovsmhcn"
+path="res://.godot/imported/OVERWEIGHT.png-64e7ef016c894f899b0e8bc2c11e3e9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fat_Levels/OBESE.png"
-dest_files=["res://.godot/imported/OBESE.png-37334a5d3fdfbd140b40dd0131b266d2.ctex"]
+source_file="res://Art Log 10-4/OVERWEIGHT.png"
+dest_files=["res://.godot/imported/OVERWEIGHT.png-64e7ef016c894f899b0e8bc2c11e3e9a.ctex"]
 
 [params]
 

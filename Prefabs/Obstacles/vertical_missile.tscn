@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://od282gq0j8tm"]
 
 [ext_resource type="Script" uid="uid://b6acpkxrxsvht" path="res://Scripts/vertical_missile.gd" id="1_sonei"]
-[ext_resource type="Texture2D" uid="uid://mwlotc4otdn8" path="res://photos/down_arrow.png" id="2_3efgv"]
+[ext_resource type="Texture2D" uid="uid://ckpidxlmr4t0r" path="res://Art Log 10-4/warning sign.png" id="2_sonei"]
 [ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="3_vehml"]
-[ext_resource type="Texture2D" uid="uid://b8imicvkxbqw0" path="res://photos/Missile_Jammer_artwork.png" id="4_ceitn"]
+[ext_resource type="Texture2D" uid="uid://dvsed75kp0y43" path="res://Art Log 10-4/missile.png" id="4_3efgv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j8uoh"]
 radius = 15.0
@@ -16,13 +16,12 @@ script = ExtResource("1_sonei")
 shape = SubResource("CapsuleShape2D_j8uoh")
 
 [node name="WarningSprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.03, 0.03)
-texture = ExtResource("2_3efgv")
+scale = Vector2(0.215, 0.215)
+texture = ExtResource("2_sonei")
 
 [node name="move_up" parent="." instance=ExtResource("3_vehml")]
 Def_Speed = 1000.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-rotation = 1.5707964
 scale = Vector2(0.11, 0.11)
-texture = ExtResource("4_ceitn")
+texture = ExtResource("4_3efgv")
