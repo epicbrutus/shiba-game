@@ -63,7 +63,7 @@ func _on_body_entered(body: Node2D) -> void:
     # Check if the body that entered is the player
     if body is CharacterBody2D:
         # Call the player's eat food method
-        body.change_food(value)
+        body.change_food(value, global_position)
         
         # Make the food disappear
         get_parent().queue_free()

@@ -1,13 +1,15 @@
-[gd_scene load_steps=51 format=3 uid="uid://c14qwn6rgfy23"]
+[gd_scene load_steps=52 format=3 uid="uid://c14qwn6rgfy23"]
 
 [ext_resource type="Shader" uid="uid://ci8wfbw02mu88" path="res://scroll.gdshader" id="1_woxae"]
 [ext_resource type="Texture2D" uid="uid://dnik485lu3qcr" path="res://photos/rock_texture.jpg" id="2_8melw"]
 [ext_resource type="Script" uid="uid://dygskx16dxw61" path="res://Scripts/CharacterBody2d.gd" id="3_k078o"]
 [ext_resource type="AudioStream" uid="uid://cmk7u1tgxt54b" path="res://sounds/fart.mp3" id="5_4ejj8"]
+[ext_resource type="PackedScene" uid="uid://dwqgfnsocelag" path="res://Prefabs/drop_shadow.tscn" id="5_o3byv"]
 [ext_resource type="Texture2D" uid="uid://ct4c457b7jv8i" path="res://Art Log 10-4/head.png" id="5_qfhdb"]
 [ext_resource type="AudioStream" uid="uid://coxhwnuy5ucjv" path="res://sounds/jaw trimmed.mp3" id="6_bdknx"]
 [ext_resource type="AudioStream" uid="uid://cgepr4tl2vbgd" path="res://sounds/nom.mp3" id="7_jtjp0"]
 [ext_resource type="Texture2D" uid="uid://dri03ys3ug8it" path="res://Fat_Levels/NORMAL.png" id="8_78gq4"]
+[ext_resource type="Texture2D" uid="uid://b7ywjiwjc5mue" path="res://Fat_Levels/OBESE.png" id="9_1cg6w"]
 [ext_resource type="Script" uid="uid://bp4ryh50qjci3" path="res://Scripts/counter.gd" id="12_76tg3"]
 [ext_resource type="Script" uid="uid://r8u5tp17cdm1" path="res://Scripts/Spawner.gd" id="13_g8d6c"]
 [ext_resource type="Script" uid="uid://3skymg3qrpff" path="res://Scripts/ObstacleConfig.gd" id="14_56gb8"]
@@ -42,8 +44,8 @@ height = 1080
 shader = ExtResource("1_woxae")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_epypp"]
-radius = 20.0
-height = 96.0
+radius = 15.289595
+height = 70.0
 
 [sub_resource type="Gradient" id="Gradient_o8x35"]
 offsets = PackedFloat32Array(0)
@@ -88,9 +90,6 @@ load_path = "res://.godot/imported/OVERWEIGHT.png-09b3ccbc466b79aec6343594e7437f
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8melw"]
 load_path = "res://.godot/imported/FAT.png-4fb3e8a293b724c210a22a6445bb5e8a.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k078o"]
-load_path = "res://.godot/imported/OBESE.png-37334a5d3fdfbd140b40dd0131b266d2.ctex"
 
 [sub_resource type="Resource" id="Resource_xpiby"]
 script = ExtResource("14_56gb8")
@@ -195,33 +194,34 @@ color = Color(0.44291046, 0.44291088, 0.4429106, 0.94509804)
 
 [node name="Player" type="Node2D" parent="."]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Player" node_paths=PackedStringArray("weight_label", "charSprite", "foodBar")]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Player" node_paths=PackedStringArray("weight_label", "charSprite", "headPivot", "foodBar")]
 motion_mode = 1
 script = ExtResource("3_k078o")
 current_preset = 0
 weight_label = NodePath("../RichTextLabel")
-charSprite = NodePath("Icon")
+charSprite = NodePath("Body")
+headPivot = NodePath("Head Pivot")
 foodBar = NodePath("../../Bars/Food Bar")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/CharacterBody2D"]
+position = Vector2(16, 1)
 rotation = 1.3421582
 shape = SubResource("CapsuleShape2D_epypp")
 
-[node name="Icon" type="Sprite2D" parent="Player/CharacterBody2D"]
+[node name="Body" type="Sprite2D" parent="Player/CharacterBody2D"]
 position = Vector2(1, -2)
 scale = Vector2(0.13, 0.13)
 texture = ExtResource("8_78gq4")
 
-[node name="Head" type="Sprite2D" parent="Player/CharacterBody2D"]
-position = Vector2(60, -9)
-scale = Vector2(0.13, 0.13)
-texture = ExtResource("5_qfhdb")
+[node name="Drop Shadow" parent="Player/CharacterBody2D/Body" instance=ExtResource("5_o3byv")]
+texture = ExtResource("8_78gq4")
 
 [node name="state_increase_sound" type="AudioStreamPlayer" parent="Player/CharacterBody2D"]
 stream = ExtResource("5_4ejj8")
 
 [node name="state_decrease_sound" type="AudioStreamPlayer" parent="Player/CharacterBody2D"]
 stream = ExtResource("5_4ejj8")
+volume_db = 1.0
 pitch_scale = 0.5
 
 [node name="bounce_sound" type="AudioStreamPlayer" parent="Player/CharacterBody2D"]
@@ -231,6 +231,16 @@ volume_db = -4.0
 [node name="eat_sound" type="AudioStreamPlayer" parent="Player/CharacterBody2D"]
 stream = ExtResource("7_jtjp0")
 volume_db = -3.0
+
+[node name="Head Pivot" type="Node2D" parent="Player/CharacterBody2D"]
+position = Vector2(44, -6)
+
+[node name="Head" type="Sprite2D" parent="Player/CharacterBody2D/Head Pivot"]
+position = Vector2(17.999998, -2.0000029)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("5_qfhdb")
+
+[node name="Drop Shadow" parent="Player/CharacterBody2D/Head Pivot/Head" instance=ExtResource("5_o3byv")]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Player"]
 visible = false
@@ -302,6 +312,11 @@ position = Vector2(-10.437829, -4.2031517)
 scale = Vector2(0.005, 0.005)
 texture = SubResource("CompressedTexture2D_1cg6w")
 
+[node name="Head" type="Sprite2D" parent="Bars/Icons/Normal"]
+position = Vector2(-7.9159374, -4.458427)
+scale = Vector2(0.005, 0.005)
+texture = ExtResource("5_qfhdb")
+
 [node name="Skinny" type="Node2D" parent="Bars/Icons"]
 position = Vector2(-16.322243, 0.2101574)
 
@@ -326,6 +341,11 @@ autowrap_mode = 0
 position = Vector2(-10.437829, -4.2031517)
 scale = Vector2(0.005, 0.005)
 texture = SubResource("CompressedTexture2D_o3byv")
+
+[node name="Head" type="Sprite2D" parent="Bars/Icons/Skinny"]
+position = Vector2(-7.9159374, -4.458427)
+scale = Vector2(0.005, 0.005)
+texture = ExtResource("5_qfhdb")
 
 [node name="Overweight" type="Node2D" parent="Bars/Icons"]
 position = Vector2(17.162872, 0.2101574)
@@ -352,6 +372,11 @@ position = Vector2(-10.437829, -4.2031517)
 scale = Vector2(0.005, 0.005)
 texture = SubResource("CompressedTexture2D_woxae")
 
+[node name="Head" type="Sprite2D" parent="Bars/Icons/Overweight"]
+position = Vector2(-7.9159374, -4.458427)
+scale = Vector2(0.005, 0.005)
+texture = ExtResource("5_qfhdb")
+
 [node name="Fat" type="Node2D" parent="Bars/Icons"]
 position = Vector2(33.90543, 0.2101574)
 
@@ -377,6 +402,11 @@ position = Vector2(-10.437829, -4.2031517)
 scale = Vector2(0.005, 0.005)
 texture = SubResource("CompressedTexture2D_8melw")
 
+[node name="Head" type="Sprite2D" parent="Bars/Icons/Fat"]
+position = Vector2(-7.9159374, -4.458427)
+scale = Vector2(0.005, 0.005)
+texture = ExtResource("5_qfhdb")
+
 [node name="Obese" type="Node2D" parent="Bars/Icons"]
 position = Vector2(50.718037, 0.2101574)
 
@@ -398,9 +428,14 @@ text = "^"
 autowrap_mode = 0
 
 [node name="Sprite" type="Sprite2D" parent="Bars/Icons/Obese"]
-position = Vector2(-10.437829, -4.2031517)
+position = Vector2(-11.329926, -4.2544255)
 scale = Vector2(0.005, 0.005)
-texture = SubResource("CompressedTexture2D_k078o")
+texture = ExtResource("9_1cg6w")
+
+[node name="Head" type="Sprite2D" parent="Bars/Icons/Obese"]
+position = Vector2(-9.0181875, -4.509701)
+scale = Vector2(0.005, 0.005)
+texture = ExtResource("5_qfhdb")
 
 [node name="Node2D" type="Node2D" parent="Bars"]
 position = Vector2(-0.21015763, 0.28021017)

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqb04qeyjeghy"]
+[gd_scene load_steps=7 format=3 uid="uid://dqb04qeyjeghy"]
 
 [ext_resource type="Script" uid="uid://noi7epbxmn18" path="res://Scripts/Gate.gd" id="1_15vrf"]
 [ext_resource type="AudioStream" uid="uid://di35saedkx0ny" path="res://sounds/death fart.mp3" id="2_dtnh3"]
 [ext_resource type="AudioStream" uid="uid://b047feee3kpuk" path="res://sounds/smash.mp3" id="3_m6ijw"]
 [ext_resource type="Texture2D" uid="uid://drdj0pg6410w7" path="res://photos/bricks.png" id="4_m6ijw"]
+[ext_resource type="PackedScene" uid="uid://dwqgfnsocelag" path="res://Prefabs/drop_shadow.tscn" id="5_m4qkj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(1152.5, 20)
@@ -29,3 +30,5 @@ pitch_scale = 0.7
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 position = Vector2(0, 81.145)
 texture = ExtResource("4_m6ijw")
+
+[node name="Drop Shadow" parent="Area2D/Sprite2D" instance=ExtResource("5_m4qkj")]

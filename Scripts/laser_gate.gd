@@ -6,7 +6,7 @@ static var MIN_LENGTH: int = 300
 static var MAX_LENGTH: int = 600
 
 var length: int
-var thickness: int = 40
+var thickness: int = 30
 
 @onready var left_bulb: Sprite2D = $left_bulb
 @onready var right_bulb: Sprite2D = $right_bulb
@@ -24,8 +24,8 @@ func _ready() -> void:
 	right_bulb.position.x = length/2
 
 	beam.texture = beam.texture.duplicate()
-	beam.texture.width = length
-	beam.texture.height = thickness
+	beam.texture.width = thickness
+	beam.texture.height = length
 
 	var rect_shape = RectangleShape2D.new()
 	rect_shape.size = Vector2(length, thickness)

@@ -1,20 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://unnyr3aarh3b"]
+[gd_scene load_steps=8 format=3 uid="uid://unnyr3aarh3b"]
 
 [ext_resource type="Script" uid="uid://pids5h0y68dd" path="res://Scripts/laser_gate.gd" id="1_8ci8r"]
 [ext_resource type="Texture2D" uid="uid://crrmlptuvu3sj" path="res://Art Log 10-4/laser orb.png" id="2_8ci8r"]
+[ext_resource type="PackedScene" uid="uid://dwqgfnsocelag" path="res://Prefabs/drop_shadow.tscn" id="3_55jba"]
 [ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="3_f5eta"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33ool"]
 size = Vector2(400, 20)
 
 [sub_resource type="Gradient" id="Gradient_qbwt3"]
-offsets = PackedFloat32Array(0.31010452, 0.5052265, 0.66550523)
+offsets = PackedFloat32Array(0.12195122, 0.5052265, 0.8641115)
 colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_m2xkv"]
 gradient = SubResource("Gradient_qbwt3")
-width = 400
-height = 20
+width = 20
+height = 400
 
 [node name="laser gate" type="Area2D"]
 script = ExtResource("1_8ci8r")
@@ -25,16 +26,21 @@ position = Vector2(-200, 0)
 scale = Vector2(0.185, 0.185)
 texture = ExtResource("2_8ci8r")
 
+[node name="Drop Shadow" parent="left_bulb" instance=ExtResource("3_55jba")]
+
 [node name="right_bulb" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(200, 0)
 scale = Vector2(0.185, 0.185)
 texture = ExtResource("2_8ci8r")
 
+[node name="Drop Shadow" parent="right_bulb" instance=ExtResource("3_55jba")]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_33ool")
 
 [node name="beam" type="Sprite2D" parent="."]
+rotation = 1.5707964
 texture = SubResource("GradientTexture2D_m2xkv")
 
 [node name="move_up" parent="." instance=ExtResource("3_f5eta")]

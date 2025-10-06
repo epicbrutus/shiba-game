@@ -1,24 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bw8o52geqt381"]
+[gd_scene load_steps=3 format=3 uid="uid://bw8o52geqt381"]
 
-[ext_resource type="Script" uid="uid://dsiqq17b2aoro" path="res://Scripts/Bumper.gd" id="1_ovvib"]
-[ext_resource type="Texture2D" uid="uid://3apuqavkdyvu" path="res://Art Log 10-4/bumper drawing.png" id="2_m0wi5"]
 [ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="3_m0wi5"]
+[ext_resource type="PackedScene" uid="uid://bqan5vfqgrejr" path="res://Prefabs/bumper.tscn" id="4_lw5bs"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kdubu"]
+[node name="Bumper" instance=ExtResource("4_lw5bs")]
 
-[node name="Bumper" type="Node2D"]
-scale = Vector2(3.72, 3.72)
-
-[node name="Area2D" type="Area2D" parent="."]
-scale = Vector2(1.1, 1.1)
-script = ExtResource("1_ovvib")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_kdubu")
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-scale = Vector2(0.03, 0.03)
-texture = ExtResource("2_m0wi5")
-
-[node name="move_up" parent="." instance=ExtResource("3_m0wi5")]
-Def_Speed = 250.0
+[node name="move_up" parent="." index="1" instance=ExtResource("3_m0wi5")]
+Def_Speed = 180.0

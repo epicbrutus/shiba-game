@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwqgfnsocelag"]
+
+[ext_resource type="Script" uid="uid://c5rd35e731fl5" path="res://Prefabs/Obstacles/drop_shadow.gd" id="2_l7tyj"]
+
+[node name="Drop Shadow" type="Sprite2D"]
+modulate = Color(0, 0, 0, 0.19607843)
+z_index = -1
+position = Vector2(0, 15)
+scale = Vector2(1.02, 1.02)
+script = ExtResource("2_l7tyj")

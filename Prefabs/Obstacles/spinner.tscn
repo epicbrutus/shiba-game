@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://h0lw1ng2k4w5"]
+[gd_scene load_steps=7 format=3 uid="uid://h0lw1ng2k4w5"]
 
 [ext_resource type="Script" uid="uid://bvl30fy4s43mn" path="res://Scripts/blade.gd" id="1_lkaap"]
 [ext_resource type="Texture2D" uid="uid://cpx2vm3plhiq8" path="res://Art Log 10-4/blade.png" id="2_6vjme"]
 [ext_resource type="PackedScene" uid="uid://bqan5vfqgrejr" path="res://Prefabs/bumper.tscn" id="2_o4h3o"]
 [ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="3_6vjme"]
+[ext_resource type="PackedScene" uid="uid://dwqgfnsocelag" path="res://Prefabs/drop_shadow.tscn" id="3_33dev"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_33ool"]
 radius = 12.0
@@ -19,16 +20,20 @@ rotation = 1.5707964
 scale = Vector2(0.96000063, 3.559999)
 shape = SubResource("CapsuleShape2D_33ool")
 
-[node name="Sprite2D" type="Sprite2D" parent="Blade"]
-position = Vector2(143.86, 0)
+[node name="Left Blade" type="Sprite2D" parent="Blade"]
+position = Vector2(-130.86, 0)
+rotation = 3.1415927
 scale = Vector2(0.29990542, 0.20000058)
 texture = ExtResource("2_6vjme")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Blade"]
-position = Vector2(-130.86, 0)
-rotation = -3.1607912
+[node name="Drop Shadow" parent="Blade/Left Blade" instance=ExtResource("3_33dev")]
+
+[node name="Right Blade" type="Sprite2D" parent="Blade"]
+position = Vector2(143.86, 0)
 scale = Vector2(0.33063832, 0.20000058)
 texture = ExtResource("2_6vjme")
+
+[node name="Drop Shadow" parent="Blade/Right Blade" instance=ExtResource("3_33dev")]
 
 [node name="Bumper" parent="." instance=ExtResource("2_o4h3o")]
 

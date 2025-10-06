@@ -11,4 +11,4 @@ func _on_body_entered(body: Node2D) -> void:
 		body.change_food(-damage)
 
 func _physics_process(delta: float) -> void:
-	rotation += 3 * delta
+	rotation += -3 * delta

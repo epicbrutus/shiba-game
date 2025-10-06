@@ -34,6 +34,10 @@ var movement_presets = {
 
 @export var weight_label: RichTextLabel
 @export var charSprite: Sprite2D
+@export var headPivot: Node2D
+
+var EAT_ANIM_DURATION: float = 0.5
+var eatAnimTime: float = 0
 
 @onready var state_increase_sound: AudioStreamPlayer = $state_increase_sound
 @onready var state_decrease_sound: AudioStreamPlayer = $state_decrease_sound
@@ -58,13 +62,23 @@ func _ready() -> void:
 func getCurrentWeight() -> int:
 	return current_preset
 
-func change_food(amount: int) -> void:
+func change_food(amount: int, pos: Vector2 = Vector2(-9999, -9999)) -> void:
 	food_eaten = clamp(food_eaten + amount, 0, max_food)
 	var to_change_to: MovementPreset = food_eaten / div_by
 	set_movement_preset(to_change_to)
 
-	if amount > 0:
+	if pos.x != -9999:
 		eat_sound.play()
+		eatAnimTime = EAT_ANIM_DURATION
+
+		var direction = (pos - headPivot.global_position).normalized()
+		headPivot.rotation = direction.angle()
+		
+		headPivot.scale = Vector2(1.2,1.2)
+
+		if headPivot.rotation < -PI/2 || headPivot.rotation > PI/2:
+			headPivot.scale.y = -1.2
+		
 
 	if weight_label != null:
 		weight_label.text = MovementPreset.keys()[to_change_to]
@@ -116,6 +130,31 @@ func _physics_process(delta: float) -> void:
 			
 			# Reduce velocity component along the normal
 			velocity = velocity - normal * velocity.dot(normal)
+
+var head_pivot_timer := 0.0
+var head_pivot_interval := 0.04 # seconds between rotations
+var target_head_rotation := 0.0
+var head_lerp_time := 0.04
+var head_lerp_timer := 0.0
+
+func _process(delta: float) -> void:
+	if (eatAnimTime <= 0):
+		headPivot.scale = Vector2(1,1)
+
+		head_pivot_timer += delta
+		head_lerp_timer += delta
+
+		if head_pivot_timer >= head_pivot_interval:
+			target_head_rotation = deg_to_rad(randf_range(-90, -75))
+			head_pivot_timer = 0.0
+			head_lerp_timer = 0.0
+
+		if head_lerp_timer < head_lerp_time:
+			headPivot.rotation = lerp_angle(headPivot.rotation, target_head_rotation, head_lerp_timer / head_lerp_time)
+		else:
+			headPivot.rotation = target_head_rotation
+	else:
+		eatAnimTime -= delta
 
 func get_input_vector() -> Vector2:
 	var input_vector = Vector2.ZERO

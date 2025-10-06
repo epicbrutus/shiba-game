@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://ct5gv0hehauba"]
+[gd_scene load_steps=11 format=3 uid="uid://ct5gv0hehauba"]
 
 [ext_resource type="Script" uid="uid://ce8r12cbn6swu" path="res://Scripts/Food.gd" id="1_6aigm"]
 [ext_resource type="Texture2D" uid="uid://dlks1vp6h7cjb" path="res://Food_Photos/Medium_Foods/donut.png" id="2_ipcsp"]
+[ext_resource type="PackedScene" uid="uid://dwqgfnsocelag" path="res://Prefabs/drop_shadow.tscn" id="3_1rq81"]
 [ext_resource type="Texture2D" uid="uid://hrw233kgtqmg" path="res://photos/random_selection.png" id="3_ipw0b"]
 [ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="3_kab6h"]
 
@@ -44,6 +45,8 @@ shape = SubResource("CircleShape2D_kdubu")
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 scale = Vector2(0.056, 0.056)
 texture = ExtResource("2_ipcsp")
+
+[node name="Drop Shadow" parent="Area2D/Sprite2D" instance=ExtResource("3_1rq81")]
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Area2D"]
 z_index = -1
