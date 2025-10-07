@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6706y61bdyvh"]
+
+[ext_resource type="Script" uid="uid://bugwwg634r35r" path="res://Scripts/bullet.gd" id="1_htiwf"]
+[ext_resource type="Texture2D" uid="uid://bkqv5mmp0ataj" path="res://photos/waka.jpg" id="2_1ft65"]
+[ext_resource type="PackedScene" uid="uid://dwqgfnsocelag" path="res://Prefabs/drop_shadow.tscn" id="3_tuf4i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_htiwf"]
+radius = 20.0
+
+[node name="bullet" type="Area2D"]
+script = ExtResource("1_htiwf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("2_1ft65")
+
+[node name="Drop Shadow" parent="Sprite2D" instance=ExtResource("3_tuf4i")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_htiwf")

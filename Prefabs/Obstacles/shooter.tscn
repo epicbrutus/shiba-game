@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://w8ophhq103o4"]
+
+[ext_resource type="Script" uid="uid://bkvlelq8rnatv" path="res://Scripts/shooter.gd" id="1_j65pp"]
+[ext_resource type="PackedScene" uid="uid://b6706y61bdyvh" path="res://Prefabs/bullet.tscn" id="2_dg0q5"]
+[ext_resource type="Texture2D" uid="uid://bkqv5mmp0ataj" path="res://photos/waka.jpg" id="3_6fvo2"]
+[ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="4_6os8d"]
+[ext_resource type="PackedScene" uid="uid://dwqgfnsocelag" path="res://Prefabs/drop_shadow.tscn" id="4_dg0q5"]
+
+[node name="Shooter" type="Node2D"]
+script = ExtResource("1_j65pp")
+bulletPrefab = ExtResource("2_dg0q5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("3_6fvo2")
+
+[node name="Drop Shadow" parent="Sprite2D" instance=ExtResource("4_dg0q5")]
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="move_up" parent="." instance=ExtResource("4_6os8d")]
+Def_Speed = 120.0

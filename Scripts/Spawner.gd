@@ -4,7 +4,7 @@ const FoodScript = preload("res://Scripts//Food.gd")
 
 @export var obstacle_configs: Array[ObstacleConfig] = []
 
-@export var food: PackedScene;
+@export var food: PackedScene
 @export var gate: PackedScene
 
 @export var cam: Camera2D;
@@ -13,7 +13,7 @@ const FoodScript = preload("res://Scripts//Food.gd")
 
 @export var counter_reference: RichTextLabel
 
-var gateCooldown: float = 30
+var gateCooldown: float = 20
 var gateTimer: float = gateCooldown
 
 var foodCooldown: float = 0.5
