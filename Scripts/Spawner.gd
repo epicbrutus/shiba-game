@@ -13,7 +13,7 @@ const FoodScript = preload("res://Scripts//Food.gd")
 
 @export var counter_reference: RichTextLabel
 
-var gateCooldown: float = 20
+var gateCooldown: float = 30
 var gateTimer: float = gateCooldown
 
 var foodCooldown: float = 0.5

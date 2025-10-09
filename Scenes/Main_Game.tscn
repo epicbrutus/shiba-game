@@ -1,7 +1,7 @@
-[gd_scene load_steps=56 format=3 uid="uid://c14qwn6rgfy23"]
+[gd_scene load_steps=58 format=3 uid="uid://c14qwn6rgfy23"]
 
 [ext_resource type="Shader" uid="uid://ci8wfbw02mu88" path="res://scroll.gdshader" id="1_woxae"]
-[ext_resource type="Texture2D" uid="uid://dnik485lu3qcr" path="res://photos/rock_texture.jpg" id="2_8melw"]
+[ext_resource type="Texture2D" uid="uid://8apg65mbsnv" path="res://Art Log 10-8/background.JPG" id="2_8melw"]
 [ext_resource type="Script" uid="uid://dygskx16dxw61" path="res://Scripts/CharacterBody2d.gd" id="3_k078o"]
 [ext_resource type="AudioStream" uid="uid://cmk7u1tgxt54b" path="res://sounds/fart.mp3" id="5_4ejj8"]
 [ext_resource type="PackedScene" uid="uid://dwqgfnsocelag" path="res://Prefabs/drop_shadow.tscn" id="5_o3byv"]
@@ -25,7 +25,13 @@
 [ext_resource type="Script" uid="uid://bdb3fxsghyjma" path="res://Scripts/wall.gd" id="23_ek8cs"]
 [ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="24_8oyct"]
 [ext_resource type="PackedScene" uid="uid://w8ophhq103o4" path="res://Prefabs/Obstacles/shooter.tscn" id="25_8melw"]
+[ext_resource type="Texture2D" uid="uid://du3xupanuvavk" path="res://Art Log 10-8/left wall.png" id="25_bdknx"]
 [ext_resource type="AudioStream" uid="uid://bblklcj710be5" path="res://sounds/flight-of-the-bumblebee.mp3" id="25_hlwbt"]
+[ext_resource type="Material" uid="uid://cl3oo4marxdq4" path="res://Scenes/wall.tres" id="25_jtjp0"]
+[ext_resource type="Texture2D" uid="uid://d7vinmvgqd8d" path="res://Art Log 10-8/dust cloud.png" id="25_k078o"]
+[ext_resource type="Texture2D" uid="uid://cw0q44558ofqj" path="res://Art Log 10-8/right wall.png" id="26_jtjp0"]
+[ext_resource type="Texture2D" uid="uid://be5rsp60kafwb" path="res://Art Log 10-8/falling rocks.png" id="26_oh02o"]
+[ext_resource type="Script" uid="uid://c8msip6rkh2gu" path="res://Scenes/dust.gd" id="29_78gq4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(1152.5, 20)
@@ -132,25 +138,8 @@ metadata/_custom_type_script = "uid://3skymg3qrpff"
 [sub_resource type="Resource" id="Resource_k078o"]
 script = ExtResource("14_56gb8")
 scene = ExtResource("20_8melw")
+chance = 0.0
 metadata/_custom_type_script = "uid://3skymg3qrpff"
-
-[sub_resource type="Gradient" id="Gradient_3aqej"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0.18359044, 0.18359044, 0.18359044, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_rfjuf"]
-gradient = SubResource("Gradient_3aqej")
-width = 120
-height = 1000
-
-[sub_resource type="Gradient" id="Gradient_xpiby"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0.3515629, 0.3515629, 0.35156286, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_3aqej"]
-gradient = SubResource("Gradient_xpiby")
-width = 120
-height = 1000
 
 [node name="Main Game" type="Node2D"]
 
@@ -190,7 +179,7 @@ texture_repeat = 2
 material = SubResource("ShaderMaterial_ed6rl")
 offset_left = -530.0
 offset_top = -351.99997
-offset_right = 1182.0
+offset_right = 1310.0581
 offset_bottom = 1360.0
 scale = Vector2(0.617831, 0.4136479)
 texture = ExtResource("2_8melw")
@@ -202,7 +191,7 @@ offset_top = -296.0
 offset_right = -555.0
 offset_bottom = -256.0
 scale = Vector2(28.796778, 16.390018)
-color = Color(0.44291046, 0.44291088, 0.4429106, 0.94509804)
+color = Color(0, 0, 0, 0.078431375)
 
 [node name="Player" type="Node2D" parent="."]
 
@@ -520,8 +509,10 @@ scale = Vector2(2.438667, -1.1067214)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Sprite2D" type="Sprite2D" parent="Left_Wall"]
-position = Vector2(-484, 252)
-texture = SubResource("GradientTexture2D_rfjuf")
+material = ExtResource("25_jtjp0")
+position = Vector2(-466, 380.00003)
+scale = Vector2(0.47, 0.65)
+texture = ExtResource("25_bdknx")
 
 [node name="Right_Wall" type="Area2D" parent="."]
 z_index = 2
@@ -529,8 +520,10 @@ script = ExtResource("23_ek8cs")
 direction = Vector2(-1, 0)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Right_Wall"]
-position = Vector2(580, -76)
-texture = SubResource("GradientTexture2D_rfjuf")
+material = ExtResource("25_jtjp0")
+position = Vector2(575, 6.999998)
+scale = Vector2(0.47, 0.65)
+texture = ExtResource("26_jtjp0")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Right_Wall"]
 position = Vector2(615, 0)
@@ -545,14 +538,47 @@ script = ExtResource("23_ek8cs")
 direction = Vector2(0, 1)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Ceiling"]
-position = Vector2(580, -76)
-scale = Vector2(1, 1.3600005)
-texture = SubResource("GradientTexture2D_3aqej")
+modulate = Color(1, 1, 1, 0.59607846)
+position = Vector2(586.6661, -46.999977)
+rotation = 1.5707964
+scale = Vector2(1, 1.0680599)
+texture = ExtResource("25_k078o")
+script = ExtResource("29_78gq4")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Ceiling"]
+visible = false
+position = Vector2(609, -295)
+rotation = 1.5707964
+scale = Vector2(0.56071913, 0.3744711)
+texture = ExtResource("26_oh02o")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Ceiling"]
+visible = false
 position = Vector2(615, 12.999981)
 scale = Vector2(2.438667, -1.1067214)
 shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Ceiling"]
+visible = false
+position = Vector2(619, 69.00003)
+rotation = 1.5707964
+scale = Vector2(-0.35775328, 0.39021406)
+texture = ExtResource("26_oh02o")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Ceiling"]
+visible = false
+position = Vector2(613, 334.00003)
+rotation = 1.5707964
+scale = Vector2(-0.561, -0.374)
+texture = ExtResource("26_oh02o")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Ceiling"]
+modulate = Color(1, 1, 1, 0.59607846)
+position = Vector2(591.666, 65.00002)
+rotation = 1.5707964
+scale = Vector2(-1, -1.068)
+texture = ExtResource("25_k078o")
+script = ExtResource("29_78gq4")
 
 [node name="BumperLines1" type="Node2D" parent="."]
 process_mode = 4

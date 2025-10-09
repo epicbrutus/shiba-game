@@ -8,6 +8,8 @@ var canFire: bool = false
 var BULLET_COOLDOWN: float = 0.3
 @onready var bulletTimer: float = BULLET_COOLDOWN
 
+@onready var gunSprite: Sprite2D = $gunSprite
+
 var _player: Node2D = null
 var player: Node2D:
 	get:
