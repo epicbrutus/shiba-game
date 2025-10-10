@@ -17,8 +17,8 @@ script = ExtResource("1_rpxwj")
 shape = SubResource("CircleShape2D_kdubu")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-position = Vector2(-0.48875853, -0.24437927)
-scale = Vector2(0.03, 0.03)
+position = Vector2(-0.1, -0.244)
+scale = Vector2(0.031, 0.029)
 texture = ExtResource("2_kg7jm")
 
 [node name="Drop Shadow" parent="Area2D/Sprite2D" instance=ExtResource("3_ioj6o")]

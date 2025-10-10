@@ -1,6 +1,7 @@
 extends Node2D
 
 const FoodScript = preload("res://Scripts//Food.gd")
+@onready var game_state = get_tree().get_first_node_in_group("GameState")
 
 @export var obstacle_configs: Array[ObstacleConfig] = []
 
@@ -98,17 +99,11 @@ func spawn_obstacle() -> void:
 
 			w *= 1 - config.outerCushion
 
-			if config.innerCushion > 0:
-				var leftSide: bool = bool(randi() % 2)
-				var xPos: float = randf_range(w * config.innerCushion, w)
-
-				if leftSide:
-					xPos = w + xPos
-				else:
-					xPos = w - xPos
+			var side: int = pow(-1, randi() % 2)
+			var xPos: float = randf_range(w * config.innerCushion, w) * side
 
 
-			obs.position = Vector2(randf_range(-w, w), position.y + config.negativeOffset)
+			obs.position = Vector2(xPos, position.y + config.negativeOffset)
 			return
 
 func spawnGate() -> void:

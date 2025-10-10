@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://c14qwn6rgfy23"]
+[gd_scene load_steps=52 format=3 uid="uid://c14qwn6rgfy23"]
 
 [ext_resource type="Shader" uid="uid://ci8wfbw02mu88" path="res://scroll.gdshader" id="1_woxae"]
 [ext_resource type="Texture2D" uid="uid://8apg65mbsnv" path="res://Art Log 10-8/background.JPG" id="2_8melw"]
@@ -13,25 +13,26 @@
 [ext_resource type="Script" uid="uid://bp4ryh50qjci3" path="res://Scripts/counter.gd" id="12_76tg3"]
 [ext_resource type="Script" uid="uid://r8u5tp17cdm1" path="res://Scripts/Spawner.gd" id="13_g8d6c"]
 [ext_resource type="Script" uid="uid://3skymg3qrpff" path="res://Scripts/ObstacleConfig.gd" id="14_56gb8"]
-[ext_resource type="PackedScene" uid="uid://bw8o52geqt381" path="res://Prefabs/Obstacles/moving_bumper.tscn" id="15_6k8qj"]
-[ext_resource type="PackedScene" uid="uid://dwuwlhgjhs3q2" path="res://Prefabs/Obstacles/bumper_line_straight.tscn" id="16_8vuys"]
-[ext_resource type="PackedScene" uid="uid://od282gq0j8tm" path="res://Prefabs/Obstacles/vertical_missile.tscn" id="19_piesb"]
-[ext_resource type="PackedScene" uid="uid://dqrpjumefrno2" path="res://Prefabs/Obstacles/homing_missile.tscn" id="20_8melw"]
+[ext_resource type="Resource" uid="uid://cfxkix8p2j8b0" path="res://Obstacle_Configs/Moving Bumper.tres" id="14_78gq4"]
+[ext_resource type="Resource" uid="uid://d4dwbredxyu1x" path="res://Obstacle_Configs/Bumper Lift.tres" id="15_k2mhc"]
+[ext_resource type="Resource" uid="uid://cmnydtfrmh66t" path="res://Obstacle_Configs/Vertical Missile.tres" id="16_wlcpx"]
+[ext_resource type="Resource" uid="uid://86ilskw4txs8" path="res://Obstacle_Configs/Blade.tres" id="17_gxae2"]
+[ext_resource type="Resource" uid="uid://bw24lbbpodlj1" path="res://Obstacle_Configs/Laser Gate.tres" id="18_76tg3"]
+[ext_resource type="Resource" uid="uid://b852xtw3q76ns" path="res://Obstacle_Configs/Shooter.tres" id="19_g8d6c"]
+[ext_resource type="Resource" uid="uid://ccvw8vbgkfqo7" path="res://Obstacle_Configs/Homing Missile.tres" id="20_56gb8"]
 [ext_resource type="PackedScene" uid="uid://ct5gv0hehauba" path="res://Prefabs/test_food.tscn" id="20_apyqh"]
-[ext_resource type="PackedScene" uid="uid://h0lw1ng2k4w5" path="res://Prefabs/Obstacles/spinner.tscn" id="20_k078o"]
 [ext_resource type="PackedScene" uid="uid://dqb04qeyjeghy" path="res://Prefabs/gate.tscn" id="21_e62ys"]
 [ext_resource type="PackedScene" uid="uid://bqan5vfqgrejr" path="res://Prefabs/bumper.tscn" id="22_mv27k"]
-[ext_resource type="PackedScene" uid="uid://unnyr3aarh3b" path="res://Prefabs/Obstacles/laser_gate.tscn" id="22_oh02o"]
 [ext_resource type="Script" uid="uid://bdb3fxsghyjma" path="res://Scripts/wall.gd" id="23_ek8cs"]
 [ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="24_8oyct"]
-[ext_resource type="PackedScene" uid="uid://w8ophhq103o4" path="res://Prefabs/Obstacles/shooter.tscn" id="25_8melw"]
 [ext_resource type="Texture2D" uid="uid://du3xupanuvavk" path="res://Art Log 10-8/left wall.png" id="25_bdknx"]
 [ext_resource type="AudioStream" uid="uid://bblklcj710be5" path="res://sounds/flight-of-the-bumblebee.mp3" id="25_hlwbt"]
 [ext_resource type="Material" uid="uid://cl3oo4marxdq4" path="res://Scenes/wall.tres" id="25_jtjp0"]
 [ext_resource type="Texture2D" uid="uid://d7vinmvgqd8d" path="res://Art Log 10-8/dust cloud.png" id="25_k078o"]
 [ext_resource type="Texture2D" uid="uid://cw0q44558ofqj" path="res://Art Log 10-8/right wall.png" id="26_jtjp0"]
 [ext_resource type="Texture2D" uid="uid://be5rsp60kafwb" path="res://Art Log 10-8/falling rocks.png" id="26_oh02o"]
-[ext_resource type="Script" uid="uid://c8msip6rkh2gu" path="res://Scenes/dust.gd" id="29_78gq4"]
+[ext_resource type="Script" uid="uid://c8msip6rkh2gu" path="res://Scripts/dust.gd" id="29_78gq4"]
+[ext_resource type="Script" uid="uid://d2hi7whyc1tq1" path="res://Scripts/game_state.gd" id="33_k2mhc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(1152.5, 20)
@@ -98,48 +99,6 @@ load_path = "res://.godot/imported/OVERWEIGHT.png-09b3ccbc466b79aec6343594e7437f
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8melw"]
 load_path = "res://.godot/imported/FAT.png-4fb3e8a293b724c210a22a6445bb5e8a.ctex"
-
-[sub_resource type="Resource" id="Resource_xpiby"]
-script = ExtResource("14_56gb8")
-scene = ExtResource("15_6k8qj")
-chance = 0.6
-metadata/_custom_type_script = "uid://3skymg3qrpff"
-
-[sub_resource type="Resource" id="Resource_3aqej"]
-script = ExtResource("14_56gb8")
-scene = ExtResource("16_8vuys")
-chance = 0.0
-metadata/_custom_type_script = "uid://3skymg3qrpff"
-
-[sub_resource type="Resource" id="Resource_ns6we"]
-script = ExtResource("14_56gb8")
-scene = ExtResource("19_piesb")
-chance = 0.3
-negativeOffset = 2000.0
-metadata/_custom_type_script = "uid://3skymg3qrpff"
-
-[sub_resource type="Resource" id="Resource_4ejj8"]
-script = ExtResource("14_56gb8")
-scene = ExtResource("20_k078o")
-chance = 0.05
-metadata/_custom_type_script = "uid://3skymg3qrpff"
-
-[sub_resource type="Resource" id="Resource_jtjp0"]
-script = ExtResource("14_56gb8")
-scene = ExtResource("22_oh02o")
-chance = 0.05
-metadata/_custom_type_script = "uid://3skymg3qrpff"
-
-[sub_resource type="Resource" id="Resource_woxae"]
-script = ExtResource("14_56gb8")
-scene = ExtResource("25_8melw")
-metadata/_custom_type_script = "uid://3skymg3qrpff"
-
-[sub_resource type="Resource" id="Resource_k078o"]
-script = ExtResource("14_56gb8")
-scene = ExtResource("20_8melw")
-chance = 0.0
-metadata/_custom_type_script = "uid://3skymg3qrpff"
 
 [node name="Main Game" type="Node2D"]
 
@@ -485,7 +444,7 @@ script = ExtResource("12_76tg3")
 [node name="Spawner" type="Node2D" parent="." node_paths=PackedStringArray("cam", "distanceBar", "counter_reference")]
 position = Vector2(0, 400)
 script = ExtResource("13_g8d6c")
-obstacle_configs = Array[ExtResource("14_56gb8")]([SubResource("Resource_xpiby"), SubResource("Resource_3aqej"), SubResource("Resource_ns6we"), SubResource("Resource_4ejj8"), SubResource("Resource_jtjp0"), SubResource("Resource_woxae"), SubResource("Resource_k078o")])
+obstacle_configs = Array[ExtResource("14_56gb8")]([ExtResource("14_78gq4"), ExtResource("15_k2mhc"), ExtResource("16_wlcpx"), ExtResource("17_gxae2"), ExtResource("18_76tg3"), ExtResource("19_g8d6c"), ExtResource("20_56gb8")])
 food = ExtResource("20_apyqh")
 gate = ExtResource("21_e62ys")
 cam = NodePath("../Camera2D")
@@ -680,3 +639,6 @@ Def_Speed = 120.0
 stream = ExtResource("25_hlwbt")
 volume_db = -6.0
 parameters/looping = true
+
+[node name="GameState" type="Node" parent="." groups=["GameState"]]
+script = ExtResource("33_k2mhc")
