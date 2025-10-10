@@ -11,11 +11,12 @@
 script = ExtResource("1_j65pp")
 bulletPrefab = ExtResource("2_dg0q5")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="bodySprite" type="Sprite2D" parent="."]
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("3_6fvo2")
+offset = Vector2(-33.675, 0)
 
-[node name="Drop Shadow" parent="Sprite2D" instance=ExtResource("4_dg0q5")]
+[node name="Drop Shadow" parent="bodySprite" instance=ExtResource("4_dg0q5")]
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
@@ -23,7 +24,7 @@ texture = ExtResource("3_6fvo2")
 Def_Speed = 120.0
 
 [node name="gunSprite" type="Sprite2D" parent="."]
-z_index = 1
-position = Vector2(6, 5)
+position = Vector2(0, 4)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("6_6os8d")
+offset = Vector2(-2.405, 19.885)

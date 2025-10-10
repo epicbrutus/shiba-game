@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dwqgfnsocelag"]
 
-[ext_resource type="Script" uid="uid://c5rd35e731fl5" path="res://Prefabs/Obstacles/drop_shadow.gd" id="2_l7tyj"]
+[ext_resource type="Script" uid="uid://df56k0sgke5he" path="res://Scripts/drop_shadow.gd" id="2_l7tyj"]
 
 [node name="Drop Shadow" type="Sprite2D"]
 modulate = Color(0, 0, 0, 0.19607843)

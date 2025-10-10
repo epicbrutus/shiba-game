@@ -4,4 +4,4 @@
 
 [resource]
 shader = ExtResource("1_85jpv")
-shader_parameter/scroll_speed = 0.2
+shader_parameter/scroll_speed = 1.0

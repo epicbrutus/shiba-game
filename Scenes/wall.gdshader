@@ -1,6 +1,6 @@
 shader_type canvas_item;
 
-uniform float scroll_speed = 1;
+uniform float scroll_speed = 0.5;
 
 void fragment() {
 	vec2 scrolled_uv = UV;

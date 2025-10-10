@@ -95,6 +95,19 @@ func spawn_obstacle() -> void:
 			add_child(obs)
 
 			var w = area_safe #(camera_width/2)*0.9;
+
+			w *= 1 - config.outerCushion
+
+			if config.innerCushion > 0:
+				var leftSide: bool = bool(randi() % 2)
+				var xPos: float = randf_range(w * config.innerCushion, w)
+
+				if leftSide:
+					xPos = w + xPos
+				else:
+					xPos = w - xPos
+
+
 			obs.position = Vector2(randf_range(-w, w), position.y + config.negativeOffset)
 			return
 

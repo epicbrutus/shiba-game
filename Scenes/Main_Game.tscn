@@ -177,9 +177,9 @@ offset_bottom = 1080.0
 z_index = -6
 texture_repeat = 2
 material = SubResource("ShaderMaterial_ed6rl")
-offset_left = -530.0
+offset_left = -555.2631
 offset_top = -351.99997
-offset_right = 1310.0581
+offset_right = 1332.2332
 offset_bottom = 1360.0
 scale = Vector2(0.617831, 0.4136479)
 texture = ExtResource("2_8melw")
@@ -510,7 +510,7 @@ shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Sprite2D" type="Sprite2D" parent="Left_Wall"]
 material = ExtResource("25_jtjp0")
-position = Vector2(-466, 380.00003)
+position = Vector2(-479, 387)
 scale = Vector2(0.47, 0.65)
 texture = ExtResource("25_bdknx")
 
