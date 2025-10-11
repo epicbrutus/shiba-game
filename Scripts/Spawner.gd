@@ -22,8 +22,10 @@ var foodTimer: float = foodCooldown
 
 var obstacleCooldown: float = 1
 var obstacleTimer: float = obstacleCooldown
-var obstacleCooldownIncrement: float = 0.25
+var obstacleCooldownIncrement: float = 0.1
 var minObstacleCooldown: float = 0.5
+
+var midEvent: bool = false
 
 @onready var area_safe = cam.get_viewport_rect().size.x * 0.8 * 0.5
 
@@ -75,6 +77,9 @@ func get_random_food_type() -> int:
 	return food_presets.keys()[-1]
 
 func obstacle_loop(delta: float):
+	if midEvent:
+		return
+
 	obstacleTimer -= delta
 
 	if obstacleTimer <= 0:
@@ -107,6 +112,9 @@ func spawn_obstacle() -> void:
 
 			obs.position = Vector2(xPos, position.y + config.negativeOffset)
 			return
+
+func spawn_event() -> void:
+	midEvent = true
 
 func spawnGate() -> void:
 	var instance = gate.instantiate()
