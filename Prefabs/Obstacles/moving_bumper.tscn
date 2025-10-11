@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bw8o52geqt381"]
+[gd_scene load_steps=4 format=3 uid="uid://bw8o52geqt381"]
 
+[ext_resource type="PackedScene" uid="uid://d3135is2n6yig" path="res://Prefabs/cleanup.tscn" id="3_lw5bs"]
 [ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="3_m0wi5"]
 [ext_resource type="PackedScene" uid="uid://bqan5vfqgrejr" path="res://Prefabs/bumper.tscn" id="4_lw5bs"]
 
@@ -7,3 +8,5 @@
 
 [node name="move_up" parent="." index="1" instance=ExtResource("3_m0wi5")]
 Def_Speed = 180.0
+
+[node name="Cleanup" parent="." index="2" instance=ExtResource("3_lw5bs")]

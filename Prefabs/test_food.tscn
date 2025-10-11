@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://ct5gv0hehauba"]
+[gd_scene load_steps=12 format=3 uid="uid://ct5gv0hehauba"]
 
 [ext_resource type="Script" uid="uid://ce8r12cbn6swu" path="res://Scripts/Food.gd" id="1_6aigm"]
 [ext_resource type="Texture2D" uid="uid://dlks1vp6h7cjb" path="res://Food_Photos/Medium_Foods/donut.png" id="2_ipcsp"]
 [ext_resource type="PackedScene" uid="uid://dwqgfnsocelag" path="res://Prefabs/drop_shadow.tscn" id="3_1rq81"]
 [ext_resource type="Texture2D" uid="uid://hrw233kgtqmg" path="res://photos/random_selection.png" id="3_ipw0b"]
 [ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="3_kab6h"]
+[ext_resource type="PackedScene" uid="uid://d3135is2n6yig" path="res://Prefabs/cleanup.tscn" id="6_ecdh3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kdubu"]
 
@@ -60,3 +61,5 @@ process_material = SubResource("ParticleProcessMaterial_ipw0b")
 Def_Speed = 240.0
 
 [node name="Node2D" type="Node2D" parent="."]
+
+[node name="Cleanup" parent="." instance=ExtResource("6_ecdh3")]

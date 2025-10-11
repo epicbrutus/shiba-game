@@ -22,6 +22,8 @@ var foodTimer: float = foodCooldown
 
 var obstacleCooldown: float = 1
 var obstacleTimer: float = obstacleCooldown
+var obstacleCooldownIncrement: float = 0.25
+var minObstacleCooldown: float = 0.5
 
 @onready var area_safe = cam.get_viewport_rect().size.x * 0.8 * 0.5
 
@@ -77,7 +79,7 @@ func obstacle_loop(delta: float):
 
 	if obstacleTimer <= 0:
 		spawn_obstacle()
-		obstacleTimer = obstacleCooldown
+		obstacleTimer = calculateObstacleCountdown()
 
 
 func spawn_obstacle() -> void:
@@ -111,3 +113,6 @@ func spawnGate() -> void:
 	add_child(instance);
 	instance.position = Vector2(position.x, 400)
 	instance.get_node("Area2D").initialize(counter_reference)
+
+func calculateObstacleCountdown() -> float:
+	return maxf(obstacleCooldown - obstacleCooldownIncrement * (game_state.score - 1), minObstacleCooldown)

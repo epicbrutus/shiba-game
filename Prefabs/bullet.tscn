@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6706y61bdyvh"]
+[gd_scene load_steps=6 format=3 uid="uid://b6706y61bdyvh"]
 
 [ext_resource type="Script" uid="uid://bugwwg634r35r" path="res://Scripts/bullet.gd" id="1_htiwf"]
 [ext_resource type="Texture2D" uid="uid://cj75ubxmy4km1" path="res://Art Log 10-8/shooter ball.png" id="2_tuf4i"]
 [ext_resource type="PackedScene" uid="uid://dwqgfnsocelag" path="res://Prefabs/drop_shadow.tscn" id="3_tuf4i"]
+[ext_resource type="PackedScene" uid="uid://d3135is2n6yig" path="res://Prefabs/cleanup.tscn" id="4_1nxya"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_htiwf"]
 
@@ -17,3 +18,5 @@ texture = ExtResource("2_tuf4i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_htiwf")
+
+[node name="Cleanup" parent="." instance=ExtResource("4_1nxya")]

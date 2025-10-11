@@ -5,7 +5,7 @@ extends Node2D
 @onready var on_screen_notifier = $VisibleOnScreenNotifier2D
 var canFire: bool = false
 
-var BULLET_COOLDOWN: float = 0.6
+var BULLET_COOLDOWN: float = 1
 @onready var bulletTimer: float = BULLET_COOLDOWN
 
 @onready var bodySprite: Sprite2D = $bodySprite

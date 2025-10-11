@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://w8ophhq103o4"]
+[gd_scene load_steps=8 format=3 uid="uid://w8ophhq103o4"]
 
 [ext_resource type="Script" uid="uid://bkvlelq8rnatv" path="res://Scripts/shooter.gd" id="1_j65pp"]
 [ext_resource type="PackedScene" uid="uid://b6706y61bdyvh" path="res://Prefabs/bullet.tscn" id="2_dg0q5"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="4_6os8d"]
 [ext_resource type="PackedScene" uid="uid://dwqgfnsocelag" path="res://Prefabs/drop_shadow.tscn" id="4_dg0q5"]
 [ext_resource type="Texture2D" uid="uid://cpmy5m5hodqs0" path="res://Art Log 10-8/shooter arm.png" id="6_6os8d"]
+[ext_resource type="PackedScene" uid="uid://d3135is2n6yig" path="res://Prefabs/cleanup.tscn" id="7_6os8d"]
 
 [node name="Shooter" type="Node2D"]
 script = ExtResource("1_j65pp")
@@ -28,3 +29,5 @@ position = Vector2(0, 4)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("6_6os8d")
 offset = Vector2(-2.405, 19.885)
+
+[node name="Cleanup" parent="." instance=ExtResource("7_6os8d")]

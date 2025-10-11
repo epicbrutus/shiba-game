@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3135is2n6yig"]
+
+[ext_resource type="Script" uid="uid://00m8antu4dni" path="res://Scripts/cleanup.gd" id="1_merkp"]
+
+[node name="Cleanup" type="VisibleOnScreenNotifier2D"]
+script = ExtResource("1_merkp")
