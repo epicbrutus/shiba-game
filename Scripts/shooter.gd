@@ -11,6 +11,9 @@ var BULLET_COOLDOWN: float = 1
 @onready var bodySprite: Sprite2D = $bodySprite
 @onready var gunSprite: Sprite2D = $gunSprite
 
+@onready var lastPos: Vector2 = global_position
+
+@onready var velocity: Vector2
 
 @onready var body_base_scale: float = bodySprite.scale.x
 
@@ -26,6 +29,10 @@ var player: Node2D:
 func _ready() -> void:
 	on_screen_notifier.screen_entered.connect(_on_screen_entered)
 	on_screen_notifier.screen_exited.connect(_on_screen_exited)
+
+func _physics_process(delta: float) -> void:
+	velocity = global_position - lastPos
+	lastPos = global_position
 
 func _process(delta):
 	var target := player
@@ -50,10 +57,10 @@ func _process(delta):
 	if bulletTimer <= 0:
 
 		var bullet = bulletPrefab.instantiate()
-		get_parent().add_child(bullet)
+		get_tree().root.add_child(bullet)
 		bullet.global_position = global_position
 
-		bullet.initialize(direction)
+		bullet.initialize(direction, velocity)
 
 		bulletTimer = BULLET_COOLDOWN
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://c14qwn6rgfy23"]
+[gd_scene load_steps=57 format=3 uid="uid://c14qwn6rgfy23"]
 
 [ext_resource type="Shader" uid="uid://ci8wfbw02mu88" path="res://scroll.gdshader" id="1_woxae"]
 [ext_resource type="Texture2D" uid="uid://8apg65mbsnv" path="res://Art Log 10-8/background.JPG" id="2_8melw"]
@@ -34,9 +34,10 @@
 [ext_resource type="Texture2D" uid="uid://be5rsp60kafwb" path="res://Art Log 10-8/falling rocks.png" id="26_oh02o"]
 [ext_resource type="Script" uid="uid://c8msip6rkh2gu" path="res://Scripts/dust.gd" id="29_78gq4"]
 [ext_resource type="Script" uid="uid://d2hi7whyc1tq1" path="res://Scripts/game_state.gd" id="33_k2mhc"]
-[ext_resource type="Script" uid="uid://cuguo4ktfk8pt" path="res://Scripts/circle_arrangement_tool.gd" id="35_76tg3"]
+[ext_resource type="Script" uid="uid://bk5rsc22sybyy" path="res://Scripts/test_carousel.gd" id="35_56gb8"]
 [ext_resource type="Script" uid="uid://c5dy062f8cxod" path="res://Scripts/anchor.gd" id="36_56gb8"]
 [ext_resource type="PackedScene" uid="uid://w8ophhq103o4" path="res://Prefabs/Obstacles/shooter.tscn" id="36_g8d6c"]
+[ext_resource type="PackedScene" uid="uid://cwrrcqejjcprn" path="res://Prefabs/circle_arrangement_tool.tscn" id="38_56gb8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(1152.5, 20)
@@ -652,14 +653,12 @@ parameters/looping = true
 script = ExtResource("33_k2mhc")
 
 [node name="Node2D2" type="Node2D" parent="."]
-position = Vector2(0, 536)
-rotation = -0.017453292
-script = ExtResource("35_76tg3")
-anchor_script = null
-radius = 500.0
+position = Vector2(-1, 824)
+rotation = 2.5359633
+script = ExtResource("35_56gb8")
 
 [node name="Anchor_0" type="Node2D" parent="Node2D2"]
-position = Vector2(500, 0)
+position = Vector2(1000, 0)
 script = ExtResource("36_56gb8")
 
 [node name="Shooter" parent="Node2D2/Anchor_0" instance=ExtResource("36_g8d6c")]
@@ -668,7 +667,7 @@ script = ExtResource("36_56gb8")
 Def_Speed = 0.0
 
 [node name="Anchor_1" type="Node2D" parent="Node2D2"]
-position = Vector2(-2.1855694e-05, 500)
+position = Vector2(970.94183, 239.31566)
 script = ExtResource("36_56gb8")
 
 [node name="Shooter" parent="Node2D2/Anchor_1" instance=ExtResource("36_g8d6c")]
@@ -677,7 +676,7 @@ script = ExtResource("36_56gb8")
 Def_Speed = 0.0
 
 [node name="Anchor_2" type="Node2D" parent="Node2D2"]
-position = Vector2(-500, -4.371139e-05)
+position = Vector2(885.45605, 464.72318)
 script = ExtResource("36_56gb8")
 
 [node name="Shooter" parent="Node2D2/Anchor_2" instance=ExtResource("36_g8d6c")]
@@ -686,7 +685,7 @@ script = ExtResource("36_56gb8")
 Def_Speed = 0.0
 
 [node name="Anchor_3" type="Node2D" parent="Node2D2"]
-position = Vector2(5.9624404e-06, -500)
+position = Vector2(748.5108, 663.1227)
 script = ExtResource("36_56gb8")
 
 [node name="Shooter" parent="Node2D2/Anchor_3" instance=ExtResource("36_g8d6c")]
@@ -694,7 +693,29 @@ script = ExtResource("36_56gb8")
 [node name="move_up" parent="Node2D2/Anchor_3/Shooter" index="2"]
 Def_Speed = 0.0
 
+[node name="Anchor_4" type="Node2D" parent="Node2D2"]
+position = Vector2(568.06476, 822.9839)
+script = ExtResource("36_56gb8")
+
+[node name="Shooter" parent="Node2D2/Anchor_4" instance=ExtResource("36_g8d6c")]
+
+[node name="move_up" parent="Node2D2/Anchor_4/Shooter" index="2"]
+Def_Speed = 0.0
+
+[node name="Anchor_5" type="Node2D" parent="Node2D2"]
+position = Vector2(354.60486, 935.0163)
+script = ExtResource("36_56gb8")
+
+[node name="Shooter2" parent="Node2D2/Anchor_5" instance=ExtResource("36_g8d6c")]
+
+[node name="move_up" parent="Node2D2/Anchor_5/Shooter2" index="2"]
+Def_Speed = 0.0
+
+[node name="Circle Arrangement Tool" parent="Node2D2" instance=ExtResource("38_56gb8")]
+
 [editable path="Node2D2/Anchor_0/Shooter"]
 [editable path="Node2D2/Anchor_1/Shooter"]
 [editable path="Node2D2/Anchor_2/Shooter"]
 [editable path="Node2D2/Anchor_3/Shooter"]
+[editable path="Node2D2/Anchor_4/Shooter"]
+[editable path="Node2D2/Anchor_5/Shooter2"]

@@ -46,12 +46,13 @@ text = "Extras"
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_left = 110.0
-offset_top = 389.0
+offset_top = 353.0
 offset_right = 1037.0
-offset_bottom = 614.0
+offset_bottom = 623.0
 theme_override_font_sizes/normal_font_size = 32
 text = "You are falling down a pit.
 Eat the food to gain weight!
+Be warned: Fatter = slower acceleration
 Avoid hitting/walls obstacles to not lose weight!
 Bar on the right shows the distance to the next barrier; make sure you're fat enough to break through!"
 fit_content = true

@@ -2,9 +2,12 @@ extends VisibleOnScreenNotifier2D
 
 var been_on_screen: bool = false
 var cleanup_timer: SceneTreeTimer = null
-const CLEANUP_DELAY := 2.0
+@export var disabled := false
+@export var CLEANUP_DELAY := 2.0
 
 func _ready() -> void:
+	if disabled:
+		return
 	screen_entered.connect(_on_screen_entered)
 	screen_exited.connect(_on_screen_exited)
 

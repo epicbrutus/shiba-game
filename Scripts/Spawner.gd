@@ -26,6 +26,8 @@ var obstacleCooldownIncrement: float = 0.1
 var minObstacleCooldown: float = 0.5
 
 var midEvent: bool = false
+var eventCooldown: float = 10
+var eventTimer: float = eventCooldown
 
 @onready var area_safe = cam.get_viewport_rect().size.x * 0.8 * 0.5
 
@@ -37,6 +39,7 @@ func _process(delta: float) -> void:
 	gate_loop(delta)
 	food_loop(delta)
 	obstacle_loop(delta)
+	event_loop(delta)
 
 	
 
@@ -86,6 +89,16 @@ func obstacle_loop(delta: float):
 		spawn_obstacle()
 		obstacleTimer = calculateObstacleCountdown()
 
+func event_loop(delta: float):
+	if midEvent:
+		return
+
+	eventTimer -= delta
+
+	if eventTimer <= 0:
+		spawn_event()
+		eventTimer = eventCooldown
+
 
 func spawn_obstacle() -> void:
 
@@ -115,6 +128,8 @@ func spawn_obstacle() -> void:
 
 func spawn_event() -> void:
 	midEvent = true
+
+	print_debug("SPAWNED EVENT!!")
 
 func spawnGate() -> void:
 	var instance = gate.instantiate()

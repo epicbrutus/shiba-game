@@ -35,8 +35,8 @@ func _on_body_entered(body: Node2D) -> void:
 			await timer.timeout
 			get_tree().reload_current_scene()
 
-
-func _process(delta: float) -> void:
+#It clipped before so check back if it does it again
+func _physics_process(delta: float) -> void:
 	get_parent().position.y -= 1800 * delta;
 
 func disable_gate() -> void:

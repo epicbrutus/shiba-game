@@ -1,7 +1,9 @@
 @tool
-extends Node2D
+extends Node
 
+@export var enabled := false
 @export var anchor_script: Script = preload("res://Scripts/anchor.gd")
+@export var empty_spots: int = 0
 
 const ANCHOR_PREFIX := "Anchor"
 
@@ -30,11 +32,13 @@ func _ready() -> void:
         arrange_children()
 
 func arrange_children() -> void:
-    if !Engine.is_editor_hint():
+    if !Engine.is_editor_hint() or !enabled:
         return
 
+    var parent_node := get_parent()
+
     var root_owner := owner
-    var snapshot := get_children()
+    var snapshot := parent_node.get_children()
     if snapshot.is_empty():
         return
 
@@ -43,7 +47,7 @@ func arrange_children() -> void:
 
     # anchor per child
     for child in snapshot:
-        if !(child is Node2D):
+        if child == self || !(child is Node2D):
             continue
 
         var anchor := child as Node2D
@@ -62,12 +66,12 @@ func arrange_children() -> void:
         # put child in new anchor
         var new_anchor := Node2D.new()
         new_anchor.name = ANCHOR_PREFIX
-        add_child(new_anchor)
+        parent_node.add_child(new_anchor)
         if root_owner:
             new_anchor.owner = root_owner
         if anchor_script:
             new_anchor.set_script(anchor_script)
-        move_child(new_anchor, anchors.size())
+        parent_node.move_child(new_anchor, anchors.size())
         child.reparent(new_anchor)
 
         anchors.append(new_anchor)
@@ -82,13 +86,8 @@ func arrange_children() -> void:
         anchor.name = "%s_%d" % [ANCHOR_PREFIX, i]
 
     # arrange in circle
-    var step := TAU / float(anchors.size())
+    var step := TAU / float(anchors.size() + empty_spots)
     for i in range(anchors.size()):
         var anchor := anchors[i]
         anchor.position = Vector2.RIGHT.rotated(step * i) * _radius
-        anchor.rotation = 0 #step * i
-
-        # if anchor.get_child_count() > 0:
-        #     var payload := anchor.get_child(0)
-        #     if payload is Node2D:
-        #         (payload as Node2D).rotation = 0.0
+        anchor.rotation = 0
