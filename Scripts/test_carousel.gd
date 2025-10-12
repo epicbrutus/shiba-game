@@ -1,4 +1,4 @@
-extends Node2D
+extends Event
 
 func _physics_process(delta: float) -> void:
-    rotation += delta * 0.33
+    rotation += delta * 0.5
