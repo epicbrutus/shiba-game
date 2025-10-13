@@ -13,7 +13,7 @@ var spawner: Node2D:
 		_spawner = value
 
 var cleanup_timer: SceneTreeTimer = null
-var CLEANUP_DELAY := 1.0
+var CLEANUP_DELAY := 0.5
 
 var been_on_screen: bool = false
 

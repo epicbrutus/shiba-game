@@ -28,5 +28,5 @@ func _on_screen_exited() -> void:
 
 func _on_cleanup_timeout() -> void:
 	cleanup_timer = null
-	print_debug("DELETED: " +  str(get_parent().name))
+	#print_debug("DELETED: " +  str(get_parent().name))
 	get_parent().queue_free()

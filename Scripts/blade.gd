@@ -1,9 +1,18 @@
 extends Area2D
 
 var damage: int = 20
+var spin_direction: int = 1
+
+@onready var left_blade: Sprite2D = $Left_Blade
+@onready var right_blade: Sprite2D = $Right_Blade
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
+	spin_direction = pow(-1, randi() % 2)
+
+	if spin_direction < 0:
+		left_blade.scale.y *= -1
+		right_blade.scale.y *= -1
 
 func _on_body_entered(body: Node2D) -> void:
 	# Check if the body that entered is the player
@@ -11,4 +20,4 @@ func _on_body_entered(body: Node2D) -> void:
 		body.change_food(-damage)
 
 func _physics_process(delta: float) -> void:
-	rotation += -3 * delta
+	rotation += -3 * delta * spin_direction

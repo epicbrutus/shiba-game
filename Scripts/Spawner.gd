@@ -27,7 +27,7 @@ var obstacleCooldownIncrement: float = 0.1
 var minObstacleCooldown: float = 0.5
 
 var midEvent: bool = false
-var eventCooldown: float = 20
+var eventCooldown: float = 5
 var eventTimer: float = eventCooldown
 
 @onready var area_safe = cam.get_viewport_rect().size.x * 0.8 * 0.5
@@ -143,7 +143,6 @@ func spawn_event() -> void:
 			var event = config.scene.instantiate()
 			get_tree().root.add_child(event)
 
-			event.position = config.position
 			return
 
 	print_debug("SPAWNED EVENT!!")
@@ -151,6 +150,8 @@ func spawn_event() -> void:
 func end_event() -> void:
 	midEvent = false
 	eventTimer = eventCooldown
+	obstacleCooldown = 0
+	print_debug("ENDED EVENT!!")
 
 func spawnGate() -> void:
 	var instance = gate.instantiate()

@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3lrc6aiqyes1"]
+
+[ext_resource type="PackedScene" uid="uid://bxki77u8krb6n" path="res://Prefabs/Events/base_event.tscn" id="1_sc1xd"]
+[ext_resource type="PackedScene" uid="uid://unnyr3aarh3b" path="res://Prefabs/Obstacles/laser_gate.tscn" id="2_urpqt"]
+[ext_resource type="PackedScene" uid="uid://bko1uhvqhs2gt" path="res://Prefabs/Events/event_ender.tscn" id="3_644eo"]
+[ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="4_a14ym"]
+
+[node name="Base Event" node_paths=PackedStringArray("event_ender") instance=ExtResource("1_sc1xd")]
+event_ender = NodePath("Node2D/Node2D/Event Ender")
+
+[node name="Node2D" type="Node2D" parent="." index="1"]
+position = Vector2(0, 1063)
+
+[node name="laser gate" parent="Node2D" index="0" instance=ExtResource("2_urpqt")]
+position = Vector2(-266, -137)
+rotation = 0.4537856
+edited = true
+length = 600.0
+
+[node name="laser gate2" parent="Node2D" index="1" instance=ExtResource("2_urpqt")]
+position = Vector2(285, 204)
+rotation = -0.4537856
+edited = true
+length = 600.0
+
+[node name="laser gate3" parent="Node2D" index="2" instance=ExtResource("2_urpqt")]
+position = Vector2(-266, 497)
+rotation = 0.4537856
+edited = true
+length = 600.0
+
+[node name="move_up" parent="Node2D" index="3" instance=ExtResource("4_a14ym")]
+Def_Speed = 100.0
+
+[node name="Node2D" type="Node2D" parent="Node2D" index="4"]
+position = Vector2(2, 628)
+
+[node name="Event Ender" parent="Node2D/Node2D" index="0" instance=ExtResource("3_644eo")]
+position = Vector2(0, -917)

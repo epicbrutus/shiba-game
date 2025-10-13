@@ -21,20 +21,20 @@ rotation = 1.5707964
 scale = Vector2(0.96000063, 3.559999)
 shape = SubResource("CapsuleShape2D_33ool")
 
-[node name="Left Blade" type="Sprite2D" parent="Blade"]
+[node name="Left_Blade" type="Sprite2D" parent="Blade"]
 position = Vector2(-130.86, 0)
 rotation = 3.1415927
 scale = Vector2(0.29990542, 0.20000058)
 texture = ExtResource("2_6vjme")
 
-[node name="Drop Shadow" parent="Blade/Left Blade" instance=ExtResource("3_33dev")]
+[node name="Drop Shadow" parent="Blade/Left_Blade" instance=ExtResource("3_33dev")]
 
-[node name="Right Blade" type="Sprite2D" parent="Blade"]
+[node name="Right_Blade" type="Sprite2D" parent="Blade"]
 position = Vector2(143.86, 0)
 scale = Vector2(0.33063832, 0.20000058)
 texture = ExtResource("2_6vjme")
 
-[node name="Drop Shadow" parent="Blade/Right Blade" instance=ExtResource("3_33dev")]
+[node name="Drop Shadow" parent="Blade/Right_Blade" instance=ExtResource("3_33dev")]
 
 [node name="Bumper" parent="." instance=ExtResource("2_o4h3o")]
 
