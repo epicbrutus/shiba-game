@@ -57,7 +57,7 @@ func _process(delta):
 	if bulletTimer <= 0:
 
 		var bullet = bulletPrefab.instantiate()
-		get_tree().root.add_child(bullet)
+		get_tree().current_scene.add_child(bullet)
 		bullet.global_position = global_position
 
 		bullet.initialize(direction, velocity)

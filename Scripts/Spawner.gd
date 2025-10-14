@@ -145,7 +145,7 @@ func spawn_event() -> void:
 		acc += config.chance
 		if r < acc:
 			var event = config.scene.instantiate()
-			get_tree().root.add_child(event)
+			get_tree().current_scene.add_child(event)
 
 			return
 

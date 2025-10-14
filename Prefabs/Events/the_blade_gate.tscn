@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=3 uid="uid://bvv50m1fg0uro"]
+
+[ext_resource type="PackedScene" uid="uid://bxki77u8krb6n" path="res://Prefabs/Events/base_event.tscn" id="1_qfkf6"]
+[ext_resource type="Script" uid="uid://c5dy062f8cxod" path="res://Scripts/anchor.gd" id="2_mihwb"]
+[ext_resource type="PackedScene" uid="uid://bqan5vfqgrejr" path="res://Prefabs/bumper.tscn" id="3_rw2lx"]
+[ext_resource type="PackedScene" uid="uid://cwrrcqejjcprn" path="res://Prefabs/circle_arrangement_tool.tscn" id="4_84iaq"]
+[ext_resource type="PackedScene" uid="uid://h0lw1ng2k4w5" path="res://Prefabs/Obstacles/spinner.tscn" id="5_vsioh"]
+[ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="6_u3jep"]
+[ext_resource type="PackedScene" uid="uid://bko1uhvqhs2gt" path="res://Prefabs/Events/event_ender.tscn" id="7_w5jbh"]
+
+[node name="Base Event" node_paths=PackedStringArray("event_ender") instance=ExtResource("1_qfkf6")]
+event_ender = NodePath("Node2D2/Event Ender")
+
+[node name="Node2D2" type="Node2D" parent="." index="1"]
+position = Vector2(0, 820)
+
+[node name="Node2D" type="Node2D" parent="Node2D2" index="0"]
+position = Vector2(0, 69)
+rotation = 3.1415925
+
+[node name="Anchor_1" type="Node2D" parent="Node2D2/Node2D" index="0"]
+position = Vector2(173.20508, 100)
+script = ExtResource("2_mihwb")
+
+[node name="Bumper2" parent="Node2D2/Node2D/Anchor_1" index="0" instance=ExtResource("3_rw2lx")]
+
+[node name="Anchor_2" type="Node2D" parent="Node2D2/Node2D" index="1"]
+position = Vector2(99.99999, 173.2051)
+script = ExtResource("2_mihwb")
+
+[node name="Bumper3" parent="Node2D2/Node2D/Anchor_2" index="0" instance=ExtResource("3_rw2lx")]
+
+[node name="Anchor_3" type="Node2D" parent="Node2D2/Node2D" index="2"]
+position = Vector2(-8.742278e-06, 200)
+script = ExtResource("2_mihwb")
+
+[node name="Bumper4" parent="Node2D2/Node2D/Anchor_3" index="0" instance=ExtResource("3_rw2lx")]
+
+[node name="Anchor_4" type="Node2D" parent="Node2D2/Node2D" index="3"]
+position = Vector2(-100.000015, 173.20508)
+script = ExtResource("2_mihwb")
+
+[node name="Bumper5" parent="Node2D2/Node2D/Anchor_4" index="0" instance=ExtResource("3_rw2lx")]
+
+[node name="Anchor_5" type="Node2D" parent="Node2D2/Node2D" index="4"]
+position = Vector2(-173.20508, 100.000015)
+script = ExtResource("2_mihwb")
+
+[node name="Bumper" parent="Node2D2/Node2D/Anchor_5" index="0" instance=ExtResource("3_rw2lx")]
+
+[node name="Circle Arrangement Tool" parent="Node2D2/Node2D" index="5" instance=ExtResource("4_84iaq")]
+enabled = true
+empty_spots = 5
+radius = 200.0
+
+[node name="Spinner" parent="Node2D2" index="1" instance=ExtResource("5_vsioh")]
+position = Vector2(-227, 65)
+
+[node name="Blade" parent="Node2D2/Spinner" index="0"]
+spin_direction_locked = true
+
+[node name="move_up" parent="Node2D2/Spinner" index="2"]
+Def_Speed = 0.0
+
+[node name="Spinner2" parent="Node2D2" index="2" instance=ExtResource("5_vsioh")]
+position = Vector2(216, 65)
+
+[node name="Blade" parent="Node2D2/Spinner2" index="0"]
+spin_direction = -1
+spin_direction_locked = true
+
+[node name="move_up" parent="Node2D2/Spinner2" index="2"]
+Def_Speed = 0.0
+
+[node name="move_up" parent="Node2D2" index="3" instance=ExtResource("6_u3jep")]
+Def_Speed = 100.0
+
+[node name="Event Ender" parent="Node2D2" index="4" instance=ExtResource("7_w5jbh")]
+position = Vector2(0, 214)
+
+[editable path="Node2D2/Spinner"]
+[editable path="Node2D2/Spinner2"]

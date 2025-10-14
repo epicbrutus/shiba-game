@@ -1,14 +1,17 @@
 extends Area2D
 
 var damage: int = 20
-var spin_direction: int = 1
+@export var spin_direction: int = 1
+@export var spin_direction_locked: bool = false
 
 @onready var left_blade: Sprite2D = $Left_Blade
 @onready var right_blade: Sprite2D = $Right_Blade
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
-	spin_direction = pow(-1, randi() % 2)
+
+	if !spin_direction_locked:
+		spin_direction = pow(-1, randi() % 2)
 
 	if spin_direction < 0:
 		left_blade.scale.y *= -1

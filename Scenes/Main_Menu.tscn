@@ -19,9 +19,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -148.75
-offset_top = -406.0
+offset_top = -405.0
 offset_right = 148.75
-offset_bottom = -297.0
+offset_bottom = -74.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -32,14 +32,12 @@ theme_override_font_sizes/font_size = 31
 text = "Start Game"
 
 [node name="Tutorial" type="Button" parent="VBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 31
 text = "Tutorial"
 
 [node name="Extras" type="Button" parent="VBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 31
