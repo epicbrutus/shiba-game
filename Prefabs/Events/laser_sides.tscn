@@ -1,39 +1,113 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3lrc6aiqyes1"]
+[gd_scene load_steps=12 format=3 uid="uid://d3lrc6aiqyes1"]
 
 [ext_resource type="PackedScene" uid="uid://bxki77u8krb6n" path="res://Prefabs/Events/base_event.tscn" id="1_sc1xd"]
 [ext_resource type="PackedScene" uid="uid://unnyr3aarh3b" path="res://Prefabs/Obstacles/laser_gate.tscn" id="2_urpqt"]
 [ext_resource type="PackedScene" uid="uid://bko1uhvqhs2gt" path="res://Prefabs/Events/event_ender.tscn" id="3_644eo"]
 [ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="4_a14ym"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_urpqt"]
+size = Vector2(600, 30)
+
+[sub_resource type="Gradient" id="Gradient_qbwt3"]
+offsets = PackedFloat32Array(0.12195122, 0.5052265, 0.8641115)
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_644eo"]
+gradient = SubResource("Gradient_qbwt3")
+width = 30
+height = 600
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a14ym"]
+size = Vector2(600, 30)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5cdrv"]
+gradient = SubResource("Gradient_qbwt3")
+width = 30
+height = 600
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7es3"]
+size = Vector2(600, 30)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_q0bau"]
+gradient = SubResource("Gradient_qbwt3")
+width = 30
+height = 600
+
 [node name="Base Event" node_paths=PackedStringArray("event_ender") instance=ExtResource("1_sc1xd")]
-event_ender = NodePath("Node2D/Node2D/Event Ender")
+event_ender = NodePath("Node2D/Event Ender")
 
 [node name="Node2D" type="Node2D" parent="." index="1"]
 position = Vector2(0, 1063)
 
 [node name="laser gate" parent="Node2D" index="0" instance=ExtResource("2_urpqt")]
-position = Vector2(-266, -137)
+position = Vector2(-225, -137)
 rotation = 0.4537856
 edited = true
 length = 600.0
 
+[node name="left_bulb" parent="Node2D/laser gate" index="0"]
+position = Vector2(-300, 0)
+
+[node name="right_bulb" parent="Node2D/laser gate" index="1"]
+position = Vector2(300, 0)
+
+[node name="CollisionShape2D" parent="Node2D/laser gate" index="2"]
+shape = SubResource("RectangleShape2D_urpqt")
+
+[node name="beam" parent="Node2D/laser gate" index="3"]
+texture = SubResource("GradientTexture2D_644eo")
+
+[node name="move_up" parent="Node2D/laser gate" index="4"]
+Def_Speed = 0.0
+
 [node name="laser gate2" parent="Node2D" index="1" instance=ExtResource("2_urpqt")]
-position = Vector2(285, 204)
+position = Vector2(228, 242)
 rotation = -0.4537856
 edited = true
 length = 600.0
 
+[node name="left_bulb" parent="Node2D/laser gate2" index="0"]
+position = Vector2(-300, 0)
+
+[node name="right_bulb" parent="Node2D/laser gate2" index="1"]
+position = Vector2(300, 0)
+
+[node name="CollisionShape2D" parent="Node2D/laser gate2" index="2"]
+shape = SubResource("RectangleShape2D_a14ym")
+
+[node name="beam" parent="Node2D/laser gate2" index="3"]
+texture = SubResource("GradientTexture2D_5cdrv")
+
+[node name="move_up" parent="Node2D/laser gate2" index="4"]
+Def_Speed = 0.0
+
 [node name="laser gate3" parent="Node2D" index="2" instance=ExtResource("2_urpqt")]
-position = Vector2(-266, 497)
+position = Vector2(-225, 691)
 rotation = 0.4537856
 edited = true
 length = 600.0
 
+[node name="left_bulb" parent="Node2D/laser gate3" index="0"]
+position = Vector2(-300, 0)
+
+[node name="right_bulb" parent="Node2D/laser gate3" index="1"]
+position = Vector2(300, 0)
+
+[node name="CollisionShape2D" parent="Node2D/laser gate3" index="2"]
+shape = SubResource("RectangleShape2D_x7es3")
+
+[node name="beam" parent="Node2D/laser gate3" index="3"]
+texture = SubResource("GradientTexture2D_q0bau")
+
+[node name="move_up" parent="Node2D/laser gate3" index="4"]
+Def_Speed = 0.0
+
 [node name="move_up" parent="Node2D" index="3" instance=ExtResource("4_a14ym")]
-Def_Speed = 100.0
+Def_Speed = 200.0
 
-[node name="Node2D" type="Node2D" parent="Node2D" index="4"]
-position = Vector2(2, 628)
+[node name="Event Ender" parent="Node2D" index="4" instance=ExtResource("3_644eo")]
+position = Vector2(2, 827)
 
-[node name="Event Ender" parent="Node2D/Node2D" index="0" instance=ExtResource("3_644eo")]
-position = Vector2(0, -917)
+[editable path="Node2D/laser gate"]
+[editable path="Node2D/laser gate2"]
+[editable path="Node2D/laser gate3"]

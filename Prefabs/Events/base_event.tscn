@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxki77u8krb6n"]
+[gd_scene load_steps=5 format=3 uid="uid://bxki77u8krb6n"]
 
 [ext_resource type="Script" uid="uid://bs0hawpr445j2" path="res://Scripts/event.gd" id="1_4b6or"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4b6or"]
 size = Vector2(1140, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lnm4x"]
+size = Vector2(19.637245, 590.03107)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_127c2"]
+size = Vector2(20.047287, 591.8382)
 
 [node name="Base Event" type="Node2D"]
 script = ExtResource("1_4b6or")
@@ -18,3 +24,13 @@ offset_bottom = 324.0
 z_index = -10
 position = Vector2(570, 324)
 shape = SubResource("RectangleShape2D_4b6or")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Container"]
+position = Vector2(1115.0557, 323.5)
+scale = Vector2(2.438667, -1.1067214)
+shape = SubResource("RectangleShape2D_lnm4x")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Container"]
+position = Vector2(24.444336, 324.5)
+scale = Vector2(2.438667, -1.1067214)
+shape = SubResource("RectangleShape2D_127c2")

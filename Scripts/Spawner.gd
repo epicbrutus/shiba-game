@@ -113,9 +113,6 @@ func spawn_obstacle() -> void:
 	for config in obstacle_configs:
 		acc += config.chance
 		if r < acc:
-			var obs = config.scene.instantiate()
-			add_child(obs)
-
 			var w = area_safe #(camera_width/2)*0.9;
 
 			w *= 1 - config.outerCushion
@@ -124,8 +121,15 @@ func spawn_obstacle() -> void:
 			var xPos: float = randf_range(w * config.innerCushion, w) * side
 
 
-			obs.position = Vector2(xPos, position.y + config.negativeOffset)
+			var spawn_position := Vector2(xPos, position.y + config.negativeOffset)
+
+			instantiate_obstacle(config, spawn_position)
 			return
+
+func instantiate_obstacle(config: ObstacleConfig, pos: Vector2) -> void:
+	var obs = config.scene.instantiate()
+	add_child(obs)
+	obs.position = pos
 
 func spawn_event() -> void:
 	midEvent = true

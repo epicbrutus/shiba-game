@@ -6,24 +6,24 @@
 [ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="3_f5eta"]
 [ext_resource type="PackedScene" uid="uid://d3135is2n6yig" path="res://Prefabs/cleanup.tscn" id="5_f5eta"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_33ool"]
-size = Vector2(400, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5eta"]
+size = Vector2(200, 30)
 
 [sub_resource type="Gradient" id="Gradient_qbwt3"]
 offsets = PackedFloat32Array(0.12195122, 0.5052265, 0.8641115)
 colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_m2xkv"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8vsk2"]
 gradient = SubResource("Gradient_qbwt3")
-width = 20
-height = 400
+width = 30
+height = 200
 
 [node name="laser gate" type="Area2D"]
 script = ExtResource("1_8ci8r")
 
 [node name="left_bulb" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(-200, 0)
+position = Vector2(-100, 0)
 scale = Vector2(0.185, 0.185)
 texture = ExtResource("2_8ci8r")
 
@@ -31,18 +31,18 @@ texture = ExtResource("2_8ci8r")
 
 [node name="right_bulb" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(200, 0)
+position = Vector2(100, 0)
 scale = Vector2(0.185, 0.185)
 texture = ExtResource("2_8ci8r")
 
 [node name="Drop Shadow" parent="right_bulb" instance=ExtResource("3_55jba")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_33ool")
+shape = SubResource("RectangleShape2D_f5eta")
 
 [node name="beam" type="Sprite2D" parent="."]
 rotation = 1.5707964
-texture = SubResource("GradientTexture2D_m2xkv")
+texture = SubResource("GradientTexture2D_8vsk2")
 
 [node name="move_up" parent="." instance=ExtResource("3_f5eta")]
 Def_Speed = 100.0
