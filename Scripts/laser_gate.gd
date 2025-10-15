@@ -1,5 +1,6 @@
 @tool
 extends Area2D
+class_name laser_gate
 
 var damage: int = 20
 
