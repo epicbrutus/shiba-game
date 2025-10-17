@@ -17,6 +17,7 @@ const FoodScript = preload("res://Scripts//Food.gd")
 
 var gateCooldown: float = 30
 var gateTimer: float = gateCooldown
+var mid_gate: bool = false
 
 var foodCooldown: float = 0.5
 var foodTimer: float = foodCooldown
@@ -27,8 +28,10 @@ var obstacleCooldownIncrement: float = 0.1
 var minObstacleCooldown: float = 0.5
 
 var midEvent: bool = false
-var eventCooldown: float = 5
+var eventCooldown: float = 15
 var eventTimer: float = eventCooldown
+
+var mid_event_bad_food_multiplier: float = 0.5
 
 @onready var area_safe = cam.get_viewport_rect().size.x * 0.8 * 0.5
 
@@ -45,13 +48,14 @@ func _process(delta: float) -> void:
 	
 
 func gate_loop(delta: float) -> void:
-	gateTimer -= delta
-
-	distanceBar.value = gateTimer/gateCooldown * 100
-
 	if gateTimer <= 0:
-		spawnGate()
-		gateTimer = gateCooldown
+		if !mid_gate:
+			spawnGate()
+			mid_gate = true
+	else:
+		gateTimer -= delta
+
+		distanceBar.value = gateTimer/gateCooldown * 100
 
 func food_loop(delta: float) -> void:
 	foodTimer -= delta
@@ -68,14 +72,23 @@ func food_loop(delta: float) -> void:
 func get_random_food_type() -> int:
 	randf();
 	var food_presets = FoodScript.food_presets
+
+	var temp_weights: Dictionary = {}
+
 	var total_chance = 0.0
 	for key in food_presets.keys():
-		total_chance += FoodScript.food_presets[key].chance
+		var entry = food_presets[key]
+		var weight: float = entry.chance
+
+		if midEvent and key == FoodScript.FoodType.BAD:
+			weight *= mid_event_bad_food_multiplier
+		temp_weights[key] = weight
+		total_chance += weight
 
 	var r = randf() * total_chance
 	var acc = 0.0
 	for key in food_presets.keys():
-		acc += food_presets[key].chance
+		acc += temp_weights[key]
 		if r < acc:
 			return key
 	return food_presets.keys()[-1]
@@ -162,6 +175,10 @@ func spawnGate() -> void:
 	add_child(instance);
 	instance.position = Vector2(position.x, 400)
 	instance.get_node("Area2D").initialize(counter_reference)
+
+func reset_gate_timer() -> void:
+	gateTimer = gateCooldown
+	mid_gate = false
 
 func calculateObstacleCountdown() -> float:
 	return maxf(obstacleCooldown - obstacleCooldownIncrement * (game_state.score - 1), minObstacleCooldown)

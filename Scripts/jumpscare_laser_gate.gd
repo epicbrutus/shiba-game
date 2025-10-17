@@ -71,7 +71,7 @@ func _physics_process(delta: float) -> void:
 
 			if !paused_checked:
 				for number in paused_cycles:
-					if current_cycle == number:
+					if current_cycle == number: #make it so if it's always it repeats paused nums or sumthing (yknow)
 						paused = true
 				paused_checked = true
 
@@ -106,7 +106,6 @@ func _physics_process(delta: float) -> void:
 			end_laser()
 	
 
-		
 func on_enter_cooldown():
 	beam.visible = false
 

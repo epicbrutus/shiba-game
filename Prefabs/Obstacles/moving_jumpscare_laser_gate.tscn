@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://osw2ffrvd68"]
+
+[ext_resource type="PackedScene" uid="uid://ceumdfolll713" path="res://Prefabs/Obstacles/jumpscare_laser_gate.tscn" id="1_jf6eu"]
+
+[node name="laser gate" instance=ExtResource("1_jf6eu")]
+run_forever = true
+charge_up_time = 0.75
+cooldown_time = 0.5
+
+[node name="move_up" parent="." index="4"]
+Def_Speed = 100.0

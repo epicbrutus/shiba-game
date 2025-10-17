@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://c14qwn6rgfy23"]
+[gd_scene load_steps=66 format=3 uid="uid://c14qwn6rgfy23"]
 
 [ext_resource type="Shader" uid="uid://ci8wfbw02mu88" path="res://scroll.gdshader" id="1_woxae"]
 [ext_resource type="Texture2D" uid="uid://8apg65mbsnv" path="res://Art Log 10-8/background.JPG" id="2_8melw"]
@@ -23,6 +23,7 @@
 [ext_resource type="Resource" uid="uid://ccvw8vbgkfqo7" path="res://Obstacle_Configs/Homing Missile.tres" id="20_56gb8"]
 [ext_resource type="PackedScene" uid="uid://ct5gv0hehauba" path="res://Prefabs/test_food.tscn" id="20_apyqh"]
 [ext_resource type="PackedScene" uid="uid://dqb04qeyjeghy" path="res://Prefabs/gate.tscn" id="21_e62ys"]
+[ext_resource type="PackedScene" uid="uid://osw2ffrvd68" path="res://Prefabs/Obstacles/moving_jumpscare_laser_gate.tscn" id="22_2tts5"]
 [ext_resource type="Script" uid="uid://bbt8tf65tbbdt" path="res://Scripts/EventConfig.gd" id="22_76tg3"]
 [ext_resource type="PackedScene" uid="uid://bqan5vfqgrejr" path="res://Prefabs/bumper.tscn" id="22_mv27k"]
 [ext_resource type="Script" uid="uid://bdb3fxsghyjma" path="res://Scripts/wall.gd" id="23_ek8cs"]
@@ -108,28 +109,31 @@ load_path = "res://.godot/imported/OVERWEIGHT.png-09b3ccbc466b79aec6343594e7437f
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8melw"]
 load_path = "res://.godot/imported/FAT.png-4fb3e8a293b724c210a22a6445bb5e8a.ctex"
 
+[sub_resource type="Resource" id="Resource_2plm1"]
+script = ExtResource("14_56gb8")
+scene = ExtResource("22_2tts5")
+chance = 0.05
+outerCushion = 0.99
+metadata/_custom_type_script = "uid://3skymg3qrpff"
+
 [sub_resource type="Resource" id="Resource_g8d6c"]
 script = ExtResource("22_76tg3")
 scene = ExtResource("35_gxae2")
-chance = 0.0
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="Resource" id="Resource_56gb8"]
 script = ExtResource("22_76tg3")
 scene = ExtResource("24_g8d6c")
-chance = 0.0
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="Resource" id="Resource_6k8qj"]
 script = ExtResource("22_76tg3")
 scene = ExtResource("25_56gb8")
-chance = 0.0
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="Resource" id="Resource_8vuys"]
 script = ExtResource("22_76tg3")
 scene = ExtResource("26_6k8qj")
-chance = 0.0
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="Resource" id="Resource_2tts5"]
@@ -484,7 +488,7 @@ script = ExtResource("12_76tg3")
 [node name="Spawner" type="Node2D" parent="." node_paths=PackedStringArray("cam", "distanceBar", "counter_reference") groups=["spawner"]]
 position = Vector2(0, 370)
 script = ExtResource("13_g8d6c")
-obstacle_configs = Array[ExtResource("14_56gb8")]([ExtResource("14_78gq4"), ExtResource("15_k2mhc"), ExtResource("16_wlcpx"), ExtResource("17_gxae2"), ExtResource("18_76tg3"), ExtResource("19_g8d6c"), ExtResource("20_56gb8")])
+obstacle_configs = Array[ExtResource("14_56gb8")]([ExtResource("14_78gq4"), ExtResource("15_k2mhc"), ExtResource("16_wlcpx"), ExtResource("17_gxae2"), ExtResource("18_76tg3"), ExtResource("19_g8d6c"), ExtResource("20_56gb8"), SubResource("Resource_2plm1")])
 event_configs = Array[ExtResource("22_76tg3")]([SubResource("Resource_g8d6c"), SubResource("Resource_56gb8"), SubResource("Resource_6k8qj"), SubResource("Resource_8vuys"), SubResource("Resource_2tts5")])
 food = ExtResource("20_apyqh")
 gate = ExtResource("21_e62ys")
