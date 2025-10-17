@@ -36,4 +36,8 @@ func _on_cleanup_timeout() -> void:
 
 func end_event() -> void:
 	spawner.end_event()
+
+func full_end_event():
+	spawner.end_event()
+	queue_free()
 	
