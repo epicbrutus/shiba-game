@@ -67,8 +67,10 @@ enum Phase {COOLDOWN, CHARGE, HOLD}
 @export var phase : Phase = Phase.COOLDOWN
 var phase_entered := false
 
+@export var no_autochange: bool = false
+
 func _physics_process(delta: float) -> void:
-	if (in_position):
+	if (in_position && !no_autochange):
 		if (current_cycle <= cycles || run_forever):
 
 			if !paused_checked:
@@ -109,9 +111,13 @@ func _physics_process(delta: float) -> void:
 	
 
 func on_enter_cooldown():
+	if body_entered.is_connected(_on_body_entered):
+		body_entered.disconnect(_on_body_entered)
 	beam.visible = false
 
 func on_enter_charge():
+	if body_entered.is_connected(_on_body_entered):
+		body_entered.disconnect(_on_body_entered)
 	if !paused:
 		beam.visible = true
 		beam.texture.width = charging_thickness
@@ -119,6 +125,7 @@ func on_enter_charge():
 func on_enter_hold():
 	if !paused:
 		beam.texture.width = thickness
+		beam.visible = true
 		if !body_entered.is_connected(_on_body_entered):
 			body_entered.connect(_on_body_entered)
 		for body in get_overlapping_bodies():
