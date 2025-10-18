@@ -11,7 +11,7 @@ var current_cycle: int = 1
 
 var phase_time_left: float = 1
 
-var bulb_offset: float = 200
+@export var bulb_offset: float = 200
 var to_positions_speed: float = 300
 
 @onready var charging_thickness: float = thickness/3
@@ -59,10 +59,12 @@ func _process(delta):
 	right_bulb.position.x -= delta * to_positions_speed
 
 	if right_bulb.position.x <= length/2:
+		right_bulb.position.x = length/2
+		left_bulb.position.x = -length/2
 		in_position = true
 
 enum Phase {COOLDOWN, CHARGE, HOLD}
-var phase := Phase.COOLDOWN
+@export var phase : Phase = Phase.COOLDOWN
 var phase_entered := false
 
 func _physics_process(delta: float) -> void:

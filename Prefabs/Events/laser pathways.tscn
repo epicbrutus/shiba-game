@@ -1,61 +1,183 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3rkng5fu0tu8"]
+[gd_scene load_steps=13 format=3 uid="uid://c3rkng5fu0tu8"]
 
 [ext_resource type="PackedScene" uid="uid://bxki77u8krb6n" path="res://Prefabs/Events/base_event.tscn" id="1_3psfv"]
+[ext_resource type="Script" uid="uid://dwsh2hkkkhqx4" path="res://Prefabs/Events/random_flip_x.gd" id="2_103nw"]
 [ext_resource type="PackedScene" uid="uid://osw2ffrvd68" path="res://Prefabs/Obstacles/moving_jumpscare_laser_gate.tscn" id="2_rq0ik"]
+[ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="3_okup2"]
+[ext_resource type="PackedScene" uid="uid://bko1uhvqhs2gt" path="res://Prefabs/Events/event_ender.tscn" id="4_103nw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_okup2"]
-size = Vector2(475, 30)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_103nw"]
+size = Vector2(317, 30)
 
 [sub_resource type="Gradient" id="Gradient_qbwt3"]
 offsets = PackedFloat32Array(0.12195122, 0.5052265, 0.8641115)
 colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7vkj2"]
+gradient = SubResource("Gradient_qbwt3")
+width = 30
+height = 317
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvgt5"]
+size = Vector2(317, 30)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8gptf"]
+gradient = SubResource("Gradient_qbwt3")
+width = 30
+height = 317
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_okup2"]
+size = Vector2(475, 30)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_103nw"]
 gradient = SubResource("Gradient_qbwt3")
 width = 30
 height = 475
 
-[node name="Base Event" instance=ExtResource("1_3psfv")]
+[node name="Base Event" node_paths=PackedStringArray("event_ender") instance=ExtResource("1_3psfv")]
+event_ender = NodePath("Node2D/Event Ender")
 
-[node name="Laser gate pair" type="Node2D" parent="." index="1"]
+[node name="Node2D" type="Node2D" parent="." index="1"]
+position = Vector2(0, 499)
+script = ExtResource("2_103nw")
 
-[node name="laser gate" parent="Laser gate pair" index="0" instance=ExtResource("2_rq0ik")]
-position = Vector2(-238, 0)
-length = 475.0
+[node name="Laser gate pair" type="Node2D" parent="Node2D" index="0"]
+position = Vector2(0, -84)
 
-[node name="left_bulb" parent="Laser gate pair/laser gate" index="0"]
-position = Vector2(-237.5, 0)
+[node name="laser gate" parent="Node2D/Laser gate pair" index="0" instance=ExtResource("2_rq0ik")]
+position = Vector2(-320, 408)
+charge_up_time = 0.5
+hold_laser_time = 1.5
+cooldown_time = 1.0
+bulb_offset = 0.0
+phase = 1
+length = 317.0
 
-[node name="right_bulb" parent="Laser gate pair/laser gate" index="1"]
-position = Vector2(237.5, 0)
+[node name="left_bulb" parent="Node2D/Laser gate pair/laser gate" index="0"]
+position = Vector2(-158.5, 0)
 
-[node name="CollisionShape2D" parent="Laser gate pair/laser gate" index="2"]
-shape = SubResource("RectangleShape2D_okup2")
+[node name="right_bulb" parent="Node2D/Laser gate pair/laser gate" index="1"]
+position = Vector2(158.5, 0)
 
-[node name="beam" parent="Laser gate pair/laser gate" index="3"]
-texture = SubResource("GradientTexture2D_103nw")
+[node name="CollisionShape2D" parent="Node2D/Laser gate pair/laser gate" index="2"]
+shape = SubResource("RectangleShape2D_103nw")
 
-[node name="move_up" parent="Laser gate pair/laser gate" index="4"]
+[node name="beam" parent="Node2D/Laser gate pair/laser gate" index="3"]
+texture = SubResource("GradientTexture2D_7vkj2")
+
+[node name="move_up" parent="Node2D/Laser gate pair/laser gate" index="4"]
 Def_Speed = 0.0
 
-[node name="laser gate2" parent="Laser gate pair" index="1" instance=ExtResource("2_rq0ik")]
-position = Vector2(237, 0)
-length = 475.0
+[node name="laser gate2" parent="Node2D/Laser gate pair" index="1" instance=ExtResource("2_rq0ik")]
+position = Vector2(-3, 408)
+charge_up_time = 0.5
+hold_laser_time = 1.5
+cooldown_time = 1.0
+bulb_offset = 0.0
+phase = 2
+length = 317.0
 
-[node name="left_bulb" parent="Laser gate pair/laser gate2" index="0"]
-position = Vector2(-237.5, 0)
+[node name="left_bulb" parent="Node2D/Laser gate pair/laser gate2" index="0"]
+position = Vector2(-158.5, 0)
 
-[node name="right_bulb" parent="Laser gate pair/laser gate2" index="1"]
-position = Vector2(237.5, 0)
+[node name="right_bulb" parent="Node2D/Laser gate pair/laser gate2" index="1"]
+position = Vector2(158.5, 0)
 
-[node name="CollisionShape2D" parent="Laser gate pair/laser gate2" index="2"]
-shape = SubResource("RectangleShape2D_okup2")
+[node name="CollisionShape2D" parent="Node2D/Laser gate pair/laser gate2" index="2"]
+shape = SubResource("RectangleShape2D_kvgt5")
 
-[node name="beam" parent="Laser gate pair/laser gate2" index="3"]
-texture = SubResource("GradientTexture2D_103nw")
+[node name="beam" parent="Node2D/Laser gate pair/laser gate2" index="3"]
+position = Vector2(0, 1.04904175e-05)
+texture = SubResource("GradientTexture2D_8gptf")
 
-[node name="move_up" parent="Laser gate pair/laser gate2" index="4"]
+[node name="move_up" parent="Node2D/Laser gate pair/laser gate2" index="4"]
 Def_Speed = 0.0
 
-[editable path="Laser gate pair/laser gate"]
-[editable path="Laser gate pair/laser gate2"]
+[node name="laser gate3" parent="Node2D/Laser gate pair" index="2" instance=ExtResource("2_rq0ik")]
+position = Vector2(314, 408)
+charge_up_time = 0.5
+hold_laser_time = 1.5
+cooldown_time = 1.0
+bulb_offset = 0.0
+phase = 2
+length = 317.0
+
+[node name="left_bulb" parent="Node2D/Laser gate pair/laser gate3" index="0"]
+position = Vector2(-158.5, 0)
+
+[node name="right_bulb" parent="Node2D/Laser gate pair/laser gate3" index="1"]
+position = Vector2(158.5, 0)
+
+[node name="CollisionShape2D" parent="Node2D/Laser gate pair/laser gate3" index="2"]
+shape = SubResource("RectangleShape2D_kvgt5")
+
+[node name="beam" parent="Node2D/Laser gate pair/laser gate3" index="3"]
+position = Vector2(0, 1.04904175e-05)
+texture = SubResource("GradientTexture2D_8gptf")
+
+[node name="move_up" parent="Node2D/Laser gate pair/laser gate3" index="4"]
+Def_Speed = 0.0
+
+[node name="Laser gate pair2" type="Node2D" parent="Node2D" index="1"]
+position = Vector2(0, 48)
+
+[node name="laser gate3" parent="Node2D/Laser gate pair2" index="0" instance=ExtResource("2_rq0ik")]
+position = Vector2(-244, 708)
+charge_up_time = 0.5
+hold_laser_time = 1.5
+cooldown_time = 1.0
+bulb_offset = 0.0
+phase = 2
+length = 475.0
+
+[node name="left_bulb" parent="Node2D/Laser gate pair2/laser gate3" index="0"]
+position = Vector2(-237.5, 0)
+
+[node name="right_bulb" parent="Node2D/Laser gate pair2/laser gate3" index="1"]
+position = Vector2(237.5, 0)
+
+[node name="CollisionShape2D" parent="Node2D/Laser gate pair2/laser gate3" index="2"]
+shape = SubResource("RectangleShape2D_okup2")
+
+[node name="beam" parent="Node2D/Laser gate pair2/laser gate3" index="3"]
+texture = SubResource("GradientTexture2D_103nw")
+
+[node name="move_up" parent="Node2D/Laser gate pair2/laser gate3" index="4"]
+Def_Speed = 0.0
+
+[node name="laser gate4" parent="Node2D/Laser gate pair2" index="1" instance=ExtResource("2_rq0ik")]
+position = Vector2(231, 708)
+charge_up_time = 0.5
+hold_laser_time = 1.5
+cooldown_time = 1.0
+bulb_offset = 0.0
+phase = 1
+length = 475.0
+
+[node name="left_bulb" parent="Node2D/Laser gate pair2/laser gate4" index="0"]
+position = Vector2(-237.5, 0)
+
+[node name="right_bulb" parent="Node2D/Laser gate pair2/laser gate4" index="1"]
+position = Vector2(237.5, 0)
+
+[node name="CollisionShape2D" parent="Node2D/Laser gate pair2/laser gate4" index="2"]
+shape = SubResource("RectangleShape2D_okup2")
+
+[node name="beam" parent="Node2D/Laser gate pair2/laser gate4" index="3"]
+position = Vector2(0, 1.04904175e-05)
+texture = SubResource("GradientTexture2D_103nw")
+
+[node name="move_up" parent="Node2D/Laser gate pair2/laser gate4" index="4"]
+Def_Speed = 0.0
+
+[node name="move_up" parent="Node2D" index="2" instance=ExtResource("3_okup2")]
+Def_Speed = 150.0
+
+[node name="Event Ender" parent="Node2D" index="3" instance=ExtResource("4_103nw")]
+position = Vector2(0, 714)
+
+[editable path="Node2D/Laser gate pair/laser gate"]
+[editable path="Node2D/Laser gate pair/laser gate2"]
+[editable path="Node2D/Laser gate pair/laser gate3"]
+[editable path="Node2D/Laser gate pair2/laser gate3"]
+[editable path="Node2D/Laser gate pair2/laser gate4"]

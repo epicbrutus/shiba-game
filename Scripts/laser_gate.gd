@@ -4,8 +4,8 @@ class_name laser_gate
 
 var damage: int = 20
 
-static var MIN_LENGTH: int = 300
-static var MAX_LENGTH: int = 600
+static var MIN_LENGTH: int = 200
+static var MAX_LENGTH: int = 400
 
 @export var edited: bool = false
 
