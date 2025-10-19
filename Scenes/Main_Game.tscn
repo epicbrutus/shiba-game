@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://c14qwn6rgfy23"]
+[gd_scene load_steps=70 format=3 uid="uid://c14qwn6rgfy23"]
 
 [ext_resource type="Shader" uid="uid://ci8wfbw02mu88" path="res://scroll.gdshader" id="1_woxae"]
 [ext_resource type="Texture2D" uid="uid://8apg65mbsnv" path="res://Art Log 10-8/background.JPG" id="2_8melw"]
@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://cw0q44558ofqj" path="res://Art Log 10-8/right wall.png" id="26_jtjp0"]
 [ext_resource type="Texture2D" uid="uid://be5rsp60kafwb" path="res://Art Log 10-8/falling rocks.png" id="26_oh02o"]
 [ext_resource type="Script" uid="uid://c8msip6rkh2gu" path="res://Scripts/dust.gd" id="29_78gq4"]
+[ext_resource type="PackedScene" uid="uid://cse7iik4eonx7" path="res://Prefabs/Events/boss.tscn" id="30_apyqh"]
 [ext_resource type="Script" uid="uid://d2hi7whyc1tq1" path="res://Scripts/game_state.gd" id="33_k2mhc"]
 [ext_resource type="PackedScene" uid="uid://dnc8warfyjdou" path="res://Prefabs/Events/shooter_ambush.tscn" id="35_gxae2"]
 [ext_resource type="PackedScene" uid="uid://dgkcbtlnx15xx" path="res://Prefabs/Events/laser_formation.tscn" id="41_2tts5"]
@@ -145,7 +146,13 @@ metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 [sub_resource type="Resource" id="Resource_piesb"]
 script = ExtResource("22_76tg3")
 scene = ExtResource("42_2plm1")
-chance = 0.3
+chance = 1000.0
+metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
+
+[sub_resource type="Resource" id="Resource_e62ys"]
+script = ExtResource("22_76tg3")
+scene = ExtResource("30_apyqh")
+chance = 100000.0
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [node name="Main Game" type="Node2D"]
@@ -496,7 +503,7 @@ script = ExtResource("12_76tg3")
 position = Vector2(0, 370)
 script = ExtResource("13_g8d6c")
 obstacle_configs = Array[ExtResource("14_56gb8")]([ExtResource("14_78gq4"), ExtResource("15_k2mhc"), ExtResource("16_wlcpx"), ExtResource("17_gxae2"), ExtResource("18_76tg3"), ExtResource("19_g8d6c"), ExtResource("20_56gb8"), SubResource("Resource_2plm1")])
-event_configs = Array[ExtResource("22_76tg3")]([SubResource("Resource_g8d6c"), SubResource("Resource_56gb8"), SubResource("Resource_6k8qj"), SubResource("Resource_8vuys"), SubResource("Resource_2tts5"), SubResource("Resource_piesb")])
+event_configs = Array[ExtResource("22_76tg3")]([SubResource("Resource_g8d6c"), SubResource("Resource_56gb8"), SubResource("Resource_6k8qj"), SubResource("Resource_8vuys"), SubResource("Resource_2tts5"), SubResource("Resource_piesb"), SubResource("Resource_e62ys")])
 food = ExtResource("20_apyqh")
 gate = ExtResource("21_e62ys")
 cam = NodePath("../Camera2D")
@@ -690,7 +697,6 @@ Def_Speed = 120.0
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("25_hlwbt")
 volume_db = -6.0
-autoplay = true
 parameters/looping = true
 
 [node name="GameState" type="Node" parent="." groups=["GameState"]]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=7 format=3 uid="uid://cse7iik4eonx7"]
+
+[ext_resource type="PackedScene" uid="uid://bxki77u8krb6n" path="res://Prefabs/Events/base_event.tscn" id="1_tb8y7"]
+[ext_resource type="Texture2D" uid="uid://bkqv5mmp0ataj" path="res://photos/waka.jpg" id="2_pl8pm"]
+[ext_resource type="Script" uid="uid://c8m8hmpsqq3km" path="res://Scripts/boss1.gd" id="3_hbwyo"]
+[ext_resource type="Script" uid="uid://bbt8tf65tbbdt" path="res://Scripts/EventConfig.gd" id="4_177s3"]
+[ext_resource type="PackedScene" uid="uid://brcw5y04jh5yj" path="res://Prefabs/Events/Boss_Attacks/Boss1/homing_missile_spray.tscn" id="5_3wytg"]
+
+[sub_resource type="Resource" id="Resource_oigfs"]
+script = ExtResource("4_177s3")
+scene = ExtResource("5_3wytg")
+metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
+
+[node name="Base Event" instance=ExtResource("1_tb8y7")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+position = Vector2(0, 404.00003)
+scale = Vector2(1.605, 0.73)
+texture = ExtResource("2_pl8pm")
+
+[node name="Node2D" type="Node2D" parent="." index="2"]
+script = ExtResource("3_hbwyo")
+event_configs = Array[ExtResource("4_177s3")]([SubResource("Resource_oigfs")])

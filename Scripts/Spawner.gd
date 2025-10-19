@@ -28,8 +28,10 @@ var obstacleCooldownIncrement: float = 0.1
 var minObstacleCooldown: float = 0.5
 
 var midEvent: bool = false
-var eventCooldown: float = 15 #15
+var eventCooldown: float = 5 #15
 var eventTimer: float = eventCooldown
+
+var midBoss: bool = false
 
 var mid_event_bad_food_multiplier: float = 0.5
 
@@ -160,9 +162,13 @@ func spawn_event() -> void:
 			var event = config.scene.instantiate()
 			get_tree().current_scene.add_child(event)
 
+			if config.isBoss:
+				midBoss = true
+
 			return
 
 	print_debug("SPAWNED EVENT!!")
+	
 
 func end_event() -> void:
 	midEvent = false
