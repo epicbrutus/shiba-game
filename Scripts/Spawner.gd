@@ -22,7 +22,7 @@ var mid_gate: bool = false
 var foodCooldown: float = 0.5
 var foodTimer: float = foodCooldown
 
-var obstacleCooldown: float = 1
+var obstacleCooldown: float = 1.2
 var obstacleTimer: float = obstacleCooldown
 var obstacleCooldownIncrement: float = 0.1
 var minObstacleCooldown: float = 0.5

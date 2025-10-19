@@ -145,6 +145,7 @@ metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 [sub_resource type="Resource" id="Resource_piesb"]
 script = ExtResource("22_76tg3")
 scene = ExtResource("42_2plm1")
+chance = 0.3
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [node name="Main Game" type="Node2D"]
@@ -689,6 +690,7 @@ Def_Speed = 120.0
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("25_hlwbt")
 volume_db = -6.0
+autoplay = true
 parameters/looping = true
 
 [node name="GameState" type="Node" parent="." groups=["GameState"]]
