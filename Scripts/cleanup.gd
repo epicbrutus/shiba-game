@@ -3,7 +3,7 @@ extends VisibleOnScreenNotifier2D
 var been_on_screen: bool = false
 var cleanup_timer: SceneTreeTimer = null
 @export var disabled := false
-@export var CLEANUP_DELAY := 2
+@export var CLEANUP_DELAY := 2.0
 
 func _ready() -> void:
 	if disabled:
@@ -28,5 +28,5 @@ func _on_screen_exited() -> void:
 
 func _on_cleanup_timeout() -> void:
 	cleanup_timer = null
-	#print_debug("DELETED: " +  str(get_parent().name))
+	print_debug("DELETED: " +  str(get_parent().name))
 	get_parent().queue_free()
