@@ -500,14 +500,13 @@ script = ExtResource("12_76tg3")
 
 [node name="Foods" type="Node" parent="."]
 
-[node name="Spawner" type="Node2D" parent="." node_paths=PackedStringArray("cam", "distanceBar", "counter_reference") groups=["spawner"]]
+[node name="Spawner" type="Node2D" parent="." node_paths=PackedStringArray("distanceBar", "counter_reference") groups=["spawner"]]
 position = Vector2(0, 370)
 script = ExtResource("13_g8d6c")
 obstacle_configs = Array[ExtResource("14_56gb8")]([ExtResource("14_78gq4"), ExtResource("15_k2mhc"), ExtResource("16_wlcpx"), ExtResource("17_gxae2"), ExtResource("18_76tg3"), ExtResource("19_g8d6c"), ExtResource("20_56gb8"), SubResource("Resource_2plm1")])
 event_configs = Array[ExtResource("22_76tg3")]([SubResource("Resource_g8d6c"), SubResource("Resource_56gb8"), SubResource("Resource_6k8qj"), SubResource("Resource_8vuys"), SubResource("Resource_2tts5"), SubResource("Resource_piesb"), SubResource("Resource_e62ys")])
 food = ExtResource("20_apyqh")
 gate = ExtResource("21_e62ys")
-cam = NodePath("../Camera2D")
 distanceBar = NodePath("../Bars/Distance Bar")
 counter_reference = NodePath("../Bars/Control/Counter")
 

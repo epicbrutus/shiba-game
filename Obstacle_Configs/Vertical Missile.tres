@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("2_r6dy3")
 scene = ExtResource("1_16eyf")
-chance = 0.3
+chance = 0.0
 negativeOffset = 2000.0
 metadata/_custom_type_script = "uid://3skymg3qrpff"

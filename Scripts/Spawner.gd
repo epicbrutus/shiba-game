@@ -9,7 +9,7 @@ const FoodScript = preload("res://Scripts//Food.gd")
 @export var food: PackedScene
 @export var gate: PackedScene
 
-@export var cam: Camera2D;
+@onready var cam: Camera2D = get_viewport().get_camera_2d();
 
 @export var distanceBar: TextureProgressBar
 
@@ -40,6 +40,7 @@ var mid_event_bad_food_multiplier: float = 0.5
 func _ready() -> void:
 	randomize()
 	print(area_safe)
+	print(cam.get_viewport_rect().size)
 
 func _process(delta: float) -> void:
 	gate_loop(delta)
