@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://c14qwn6rgfy23"]
+[gd_scene load_steps=72 format=3 uid="uid://c14qwn6rgfy23"]
 
 [ext_resource type="Shader" uid="uid://ci8wfbw02mu88" path="res://scroll.gdshader" id="1_woxae"]
 [ext_resource type="Texture2D" uid="uid://8apg65mbsnv" path="res://Art Log 10-8/background.JPG" id="2_8melw"]
@@ -44,6 +44,7 @@
 [ext_resource type="PackedScene" uid="uid://dgkcbtlnx15xx" path="res://Prefabs/Events/laser_formation.tscn" id="41_2tts5"]
 [ext_resource type="PackedScene" uid="uid://c3rkng5fu0tu8" path="res://Prefabs/Events/laser pathways.tscn" id="42_2plm1"]
 [ext_resource type="PackedScene" uid="uid://ehtmd7vcq2sp" path="res://Prefabs/Events/Boss_Attacks/Boss1/shooter_ambush.tscn" id="44_apyqh"]
+[ext_resource type="PackedScene" uid="uid://od282gq0j8tm" path="res://Prefabs/Obstacles/vertical_missile.tscn" id="45_e62ys"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(1152.5, 20)
@@ -469,10 +470,10 @@ color = Color(1, 1, 0, 1)
 [node name="Control" type="Control" parent="Bars"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -0.2802102
-offset_top = -2.8721542
-offset_right = 39.71979
-offset_bottom = 37.127846
+offset_left = 0.070052564
+offset_top = -5.323993
+offset_right = 40.070053
+offset_bottom = 34.676006
 scale = Vector2(1.0039147, 0.89860666)
 
 [node name="Counter" type="RichTextLabel" parent="Bars/Control"]
@@ -703,3 +704,7 @@ parameters/looping = true
 script = ExtResource("33_k2mhc")
 
 [node name="Base Event" parent="." instance=ExtResource("44_apyqh")]
+
+[node name="Vertical Missile" parent="." instance=ExtResource("45_e62ys")]
+position = Vector2(-1424, 187)
+direction = Vector2(1, 0)

@@ -12,22 +12,30 @@ var new_pos_sumtin: Vector2
 
 @onready var cam: Camera2D = get_viewport().get_camera_2d();
 
-var direction: Vector2 = Vector2.UP
+@export var direction: Vector2 = Vector2.UP
 
 @onready var half_size := cam.get_viewport_rect().size * 0.5
-@onready var edge_point := half_size * direction.normalized()
+@onready var edge_point := half_size * -direction.normalized()
 
 var damage: int = 20
 @export var bottomY: float = 34
+
+
+#uses the old starting_pos. Outdated but keeping for reference in case using updated global_pos brings updates.
+@onready var warning_pos: Vector2 = edge_point + direction * bottomY + (starting_pos * Vector2(direction.y, direction.x))
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 
 
+	print("Warning pos: " + str(warning_pos))
+	print(str(starting_pos * Vector2(direction.y, direction.x)))
+	print(str(starting_pos))
+
 	if start_to_screen_time >= 0:
-		global_position.y = warning_begin_pos(start_to_screen_time)
+		global_position = start_to_screen_time * speed * -direction + warning_pos
 	else:
-		global_position.y = warning_begin_pos(warning_time)
+		global_position = warning_time * speed * -direction + warning_pos
 
 func _on_body_entered(body: Node2D) -> void:
 	# Check if the body that entered is the player
@@ -37,22 +45,24 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _process(delta: float) -> void:
 
-	if warning && global_position.y <= bottomY * 1.2:
+	if warning && global_position.length() <= warning_pos.length() * 1.2:
 		warning.queue_free()
 
 	if warning:
-		var swapped: Vector2 = starting_pos * Vector2(direction.y, direction.x)
+		var swapped: Vector2 = global_position * Vector2(direction.y, direction.x).abs()
 
-		var warning_pos: Vector2 = edge_point + edge_point.normalized() * bottomY
+		warning_pos = edge_point + direction * bottomY + swapped #edge_point.normalized() for direction?
+		print(edge_point)
 
-		if global_position.y < warning_begin_pos(warning_time):
+		if global_position.length() < warning_begin_pos(warning_time):
 			warning.visible = true
-			warning.global_position.y = bottomY
+			warning.global_position = warning_pos
 		else:
 			warning.visible = false
 
 func _physics_process(delta: float) -> void:
 	global_position += direction * speed * delta
+	print(global_position)
 
 func warning_begin_pos(p_time: float) -> float:
-	return p_time * speed
+	return (p_time * speed * -direction + warning_pos).length()

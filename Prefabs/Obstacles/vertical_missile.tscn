@@ -17,6 +17,7 @@ script = ExtResource("1_sonei")
 shape = SubResource("CapsuleShape2D_j8uoh")
 
 [node name="WarningSprite2D" type="Sprite2D" parent="."]
+z_index = 20
 scale = Vector2(0.215, 0.215)
 texture = ExtResource("2_sonei")
 
