@@ -43,8 +43,7 @@
 [ext_resource type="PackedScene" uid="uid://dnc8warfyjdou" path="res://Prefabs/Events/shooter_ambush.tscn" id="35_gxae2"]
 [ext_resource type="PackedScene" uid="uid://dgkcbtlnx15xx" path="res://Prefabs/Events/laser_formation.tscn" id="41_2tts5"]
 [ext_resource type="PackedScene" uid="uid://c3rkng5fu0tu8" path="res://Prefabs/Events/laser pathways.tscn" id="42_2plm1"]
-[ext_resource type="PackedScene" uid="uid://ehtmd7vcq2sp" path="res://Prefabs/Events/Boss_Attacks/Boss1/shooter_ambush.tscn" id="44_apyqh"]
-[ext_resource type="PackedScene" uid="uid://od282gq0j8tm" path="res://Prefabs/Obstacles/vertical_missile.tscn" id="45_e62ys"]
+[ext_resource type="PackedScene" uid="uid://5br0thflhic0" path="res://Prefabs/Events/horizontal missle formation.tscn" id="44_apyqh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(1152.5, 20)
@@ -148,13 +147,18 @@ metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 [sub_resource type="Resource" id="Resource_piesb"]
 script = ExtResource("22_76tg3")
 scene = ExtResource("42_2plm1")
-chance = 1000.0
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="Resource" id="Resource_e62ys"]
 script = ExtResource("22_76tg3")
 scene = ExtResource("30_apyqh")
-chance = 100000.0
+chance = 0.0
+metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
+
+[sub_resource type="Resource" id="Resource_apyqh"]
+script = ExtResource("22_76tg3")
+scene = ExtResource("44_apyqh")
+chance = 10000.0
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [node name="Main Game" type="Node2D"]
@@ -505,7 +509,7 @@ script = ExtResource("12_76tg3")
 position = Vector2(0, 370)
 script = ExtResource("13_g8d6c")
 obstacle_configs = Array[ExtResource("14_56gb8")]([ExtResource("14_78gq4"), ExtResource("15_k2mhc"), ExtResource("16_wlcpx"), ExtResource("17_gxae2"), ExtResource("18_76tg3"), ExtResource("19_g8d6c"), ExtResource("20_56gb8"), SubResource("Resource_2plm1")])
-event_configs = Array[ExtResource("22_76tg3")]([SubResource("Resource_g8d6c"), SubResource("Resource_56gb8"), SubResource("Resource_6k8qj"), SubResource("Resource_8vuys"), SubResource("Resource_2tts5"), SubResource("Resource_piesb"), SubResource("Resource_e62ys")])
+event_configs = Array[ExtResource("22_76tg3")]([SubResource("Resource_g8d6c"), SubResource("Resource_56gb8"), SubResource("Resource_6k8qj"), SubResource("Resource_8vuys"), SubResource("Resource_2tts5"), SubResource("Resource_piesb"), SubResource("Resource_e62ys"), SubResource("Resource_apyqh")])
 food = ExtResource("20_apyqh")
 gate = ExtResource("21_e62ys")
 distanceBar = NodePath("../Bars/Distance Bar")
@@ -702,9 +706,3 @@ parameters/looping = true
 
 [node name="GameState" type="Node" parent="." groups=["GameState"]]
 script = ExtResource("33_k2mhc")
-
-[node name="Base Event" parent="." instance=ExtResource("44_apyqh")]
-
-[node name="Vertical Missile" parent="." instance=ExtResource("45_e62ys")]
-position = Vector2(-1424, 187)
-direction = Vector2(1, 0)

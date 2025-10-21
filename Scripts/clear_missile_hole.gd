@@ -8,3 +8,4 @@ func _ready():
 
 	for i in range(gap_size):
 		children[remove_start + i].queue_free()
+		print("CLEARED HOLE: " + children[remove_start + i].name)

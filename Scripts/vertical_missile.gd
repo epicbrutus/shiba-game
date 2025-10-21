@@ -22,11 +22,14 @@ var damage: int = 20
 
 
 #uses the old starting_pos. Outdated but keeping for reference in case using updated global_pos brings updates.
-@onready var warning_pos: Vector2 = edge_point + direction * bottomY + (starting_pos * Vector2(direction.y, direction.x))
+@onready var warning_pos: Vector2 = edge_point + direction * bottomY + (global_position * Vector2(direction.y, direction.x).abs())
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 
+	rotation = direction.angle() + PI/2
+
+	print("rotation: " + str(rotation))
 
 	print("Warning pos: " + str(warning_pos))
 	print(str(starting_pos * Vector2(direction.y, direction.x)))
@@ -52,7 +55,7 @@ func _process(delta: float) -> void:
 		var swapped: Vector2 = global_position * Vector2(direction.y, direction.x).abs()
 
 		warning_pos = edge_point + direction * bottomY + swapped #edge_point.normalized() for direction?
-		print(edge_point)
+		#print(edge_point)
 
 		if global_position.length() < warning_begin_pos(warning_time):
 			warning.visible = true
@@ -62,7 +65,7 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	global_position += direction * speed * delta
-	print(global_position)
+	#print(global_position)
 
 func warning_begin_pos(p_time: float) -> float:
 	return (p_time * speed * -direction + warning_pos).length()

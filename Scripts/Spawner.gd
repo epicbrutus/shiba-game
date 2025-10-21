@@ -28,7 +28,7 @@ var obstacleCooldownIncrement: float = 0.1
 var minObstacleCooldown: float = 0.5
 
 var midEvent: bool = false
-var eventCooldown: float = 15 #15
+var eventCooldown: float = 5 #15
 var eventTimer: float = eventCooldown
 
 var midBoss: bool = false
