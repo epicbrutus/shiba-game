@@ -59,7 +59,7 @@ func gate_loop(delta: float) -> void:
 				currentBoss.gate_action()
 			else:
 				spawnGate()
-			mid_gate = true
+				mid_gate = true
 	else:
 		gateTimer -= delta
 
@@ -102,8 +102,12 @@ func get_random_food_type() -> int:
 	return food_presets.keys()[-1]
 
 func obstacle_loop(delta: float):
-	if midEvent || mid_gate:
+
+	if midEvent || mid_gate || midBoss:
+		print("midEvent: " + str(midEvent) + "; mid_gate: " + str(mid_gate) + "; midBoss: " + str(midBoss))
 		return
+
+	print("RUNNING")
 
 	obstacleTimer -= delta
 
@@ -112,7 +116,7 @@ func obstacle_loop(delta: float):
 		obstacleTimer = calculateObstacleCountdown()
 
 func event_loop(delta: float):
-	if midEvent:
+	if midEvent || mid_gate || midBoss:
 		return
 
 	eventTimer -= delta
@@ -153,7 +157,6 @@ func instantiate_obstacle(config: ObstacleConfig, pos: Vector2) -> void:
 	obs.position = pos
 
 func spawn_event(spawn_boss: bool = false) -> void:
-	midEvent = true
 
 	var total_chance = 0
 
@@ -180,6 +183,8 @@ func spawn_event(spawn_boss: bool = false) -> void:
 			if spawn_boss:
 				midBoss = true
 				currentBoss = event
+			else:
+				midEvent = true
 
 			return
 
@@ -201,10 +206,11 @@ func spawnGate() -> void:
 func reset_gate_timer() -> void:
 	gateTimer = gateCooldown
 	mid_gate = false
-
-	if midBoss:
-		midBoss = false
-		currentBoss = null
+	
+	midBoss = false
+	midEvent = false
+	currentBoss = null
+	print("what the sigma")
 
 func calculateObstacleCountdown() -> float:
 	return maxf(obstacleCooldown - obstacleCooldownIncrement * (game_state.score - 1), minObstacleCooldown)

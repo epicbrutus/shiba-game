@@ -10,4 +10,4 @@
 position = Vector2(0, 314)
 script = ExtResource("2_h2rh2")
 homing_missile_prefab = ExtResource("3_h2rh2")
-num_missiles = 7
+num_missiles = 4
