@@ -5,6 +5,7 @@ const FoodScript = preload("res://Scripts//Food.gd")
 
 @export var obstacle_configs: Array[ObstacleConfig] = []
 @export var event_configs: Array[EventConfig] = []
+@export var boss_configs: Array[EventConfig] = []
 
 @export var food: PackedScene
 @export var gate: PackedScene
@@ -15,7 +16,7 @@ const FoodScript = preload("res://Scripts//Food.gd")
 
 @export var counter_reference: RichTextLabel
 
-var gateCooldown: float = 30
+var gateCooldown: float = 10 #30
 var gateTimer: float = gateCooldown
 var mid_gate: bool = false
 
@@ -32,6 +33,7 @@ var eventCooldown: float = 5 #15
 var eventTimer: float = eventCooldown
 
 var midBoss: bool = false
+var currentBoss: Node2D
 
 var mid_event_bad_food_multiplier: float = 0.5
 
@@ -53,7 +55,10 @@ func _process(delta: float) -> void:
 func gate_loop(delta: float) -> void:
 	if gateTimer <= 0:
 		if !mid_gate:
-			spawnGate()
+			if midBoss:
+				currentBoss.gate_action()
+			else:
+				spawnGate()
 			mid_gate = true
 	else:
 		gateTimer -= delta
@@ -97,7 +102,7 @@ func get_random_food_type() -> int:
 	return food_presets.keys()[-1]
 
 func obstacle_loop(delta: float):
-	if midEvent:
+	if midEvent || mid_gate:
 		return
 
 	obstacleTimer -= delta
@@ -147,24 +152,34 @@ func instantiate_obstacle(config: ObstacleConfig, pos: Vector2) -> void:
 	add_child(obs)
 	obs.position = pos
 
-func spawn_event() -> void:
+func spawn_event(spawn_boss: bool = false) -> void:
 	midEvent = true
 
 	var total_chance = 0
-	for config in event_configs:
+
+
+	var spawn_configs: Array
+
+	if !spawn_boss:
+		spawn_configs = event_configs
+	else:
+		spawn_configs = boss_configs
+
+	for config in spawn_configs:
 		total_chance += config.chance
 
 	var r = randf() * total_chance
 	var acc = 0
 
-	for config in event_configs:
+	for config in spawn_configs:
 		acc += config.chance
 		if r < acc:
 			var event = config.scene.instantiate()
 			get_tree().current_scene.add_child(event)
 
-			if config.isBoss:
+			if spawn_boss:
 				midBoss = true
+				currentBoss = event
 
 			return
 
@@ -186,6 +201,10 @@ func spawnGate() -> void:
 func reset_gate_timer() -> void:
 	gateTimer = gateCooldown
 	mid_gate = false
+
+	if midBoss:
+		midBoss = false
+		currentBoss = null
 
 func calculateObstacleCountdown() -> float:
 	return maxf(obstacleCooldown - obstacleCooldownIncrement * (game_state.score - 1), minObstacleCooldown)

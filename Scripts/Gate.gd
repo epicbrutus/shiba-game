@@ -4,13 +4,16 @@ extends Area2D
 @onready var death_sound: AudioStreamPlayer = $death_sound
 @onready var smash_sound: AudioStreamPlayer = $smash_sound
 
+@export var activated: bool = true
+
 var counter: RichTextLabel
 
 func initialize(p_counter: RichTextLabel) -> void:
 	counter = p_counter
 
 func _ready() -> void:
-	body_entered.connect(_on_body_entered)
+	if activated:
+		body_entered.connect(_on_body_entered)
 
 func _on_body_entered(body: Node2D) -> void:
 	# Check if the body that entered is the player
@@ -37,9 +40,14 @@ func _on_body_entered(body: Node2D) -> void:
 
 #It clipped before so check back if it does it again
 func _physics_process(delta: float) -> void:
-	get_parent().position.y -= 1800 * delta;
+	if activated:
+		get_parent().position.y -= 1800 * delta;
 
 func disable_gate() -> void:
 	$CollisionShape2D.queue_free()
 	visible = false
 	set_process(false)
+
+func activate():
+	activated = true
+	body_entered.connect(_on_body_entered)

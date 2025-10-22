@@ -149,16 +149,16 @@ script = ExtResource("22_76tg3")
 scene = ExtResource("42_2plm1")
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
-[sub_resource type="Resource" id="Resource_e62ys"]
-script = ExtResource("22_76tg3")
-scene = ExtResource("30_apyqh")
-chance = 0.0
-metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
-
 [sub_resource type="Resource" id="Resource_apyqh"]
 script = ExtResource("22_76tg3")
 scene = ExtResource("44_apyqh")
 chance = 10000.0
+metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
+
+[sub_resource type="Resource" id="Resource_e62ys"]
+script = ExtResource("22_76tg3")
+scene = ExtResource("30_apyqh")
+isBoss = true
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [node name="Main Game" type="Node2D"]
@@ -509,7 +509,8 @@ script = ExtResource("12_76tg3")
 position = Vector2(0, 370)
 script = ExtResource("13_g8d6c")
 obstacle_configs = Array[ExtResource("14_56gb8")]([ExtResource("14_78gq4"), ExtResource("15_k2mhc"), ExtResource("16_wlcpx"), ExtResource("17_gxae2"), ExtResource("18_76tg3"), ExtResource("19_g8d6c"), ExtResource("20_56gb8"), SubResource("Resource_2plm1")])
-event_configs = Array[ExtResource("22_76tg3")]([SubResource("Resource_g8d6c"), SubResource("Resource_56gb8"), SubResource("Resource_6k8qj"), SubResource("Resource_8vuys"), SubResource("Resource_2tts5"), SubResource("Resource_piesb"), SubResource("Resource_e62ys"), SubResource("Resource_apyqh")])
+event_configs = Array[ExtResource("22_76tg3")]([SubResource("Resource_g8d6c"), SubResource("Resource_56gb8"), SubResource("Resource_6k8qj"), SubResource("Resource_8vuys"), SubResource("Resource_2tts5"), SubResource("Resource_piesb"), SubResource("Resource_apyqh")])
+boss_configs = Array[ExtResource("22_76tg3")]([SubResource("Resource_e62ys")])
 food = ExtResource("20_apyqh")
 gate = ExtResource("21_e62ys")
 distanceBar = NodePath("../Bars/Distance Bar")

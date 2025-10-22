@@ -14,5 +14,5 @@ func _on_score_changed(v: int) -> void:
 	text = "Level:\n" + str(v)
 	
 func set_count() -> void:
-	game_state.add_score(1)
 	spawner.reset_gate_timer()
+	game_state.add_score(1)
