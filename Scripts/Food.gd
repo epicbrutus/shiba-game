@@ -28,7 +28,7 @@ static var food_presets = {
     FoodType.SMALL: FoodData.new(10, SMALL_FOODS, 0.8, Color.WHITE), 
     FoodType.MEDIUM: FoodData.new(20, MEDIUM_FOODS, 0.2, Color.BLUE),
     FoodType.LARGE: FoodData.new(40, LARGE_FOODS, 0.03, Color.GOLD),
-    FoodType.BAD: FoodData.new(-20, BAD_FOODS, 0.3, Color.RED),
+    FoodType.BAD: FoodData.new(-10, BAD_FOODS, 0.3, Color.RED),
 }
 
 var value: int;

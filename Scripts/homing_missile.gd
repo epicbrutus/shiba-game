@@ -12,7 +12,7 @@ var LIFESPAN: float = 5
 
 var fly_in_time: float = 1.5
 var fly_in_timer: float = 0
-var fly_in_speed: float = 50
+var fly_in_speed: float = 100
 
 # var accel_time: float = 0.5
 # var accel_timer: float = 0.5

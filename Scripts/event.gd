@@ -24,8 +24,10 @@ func _ready() -> void:
 
 func _on_screen_entered() -> void:
 	been_on_screen = true
+	print("yah yah yah")
 
 func _on_screen_exited() -> void:
+	print("ageebada geeb")
 	end_event()
 	cleanup_timer = get_tree().create_timer(CLEANUP_DELAY)
 	cleanup_timer.timeout.connect(_on_cleanup_timeout)

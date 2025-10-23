@@ -7,7 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bko1uhvqhs2gt" path="res://Prefabs/Events/event_ender.tscn" id="5_25ocg"]
 [ext_resource type="PackedScene" uid="uid://cwrrcqejjcprn" path="res://Prefabs/circle_arrangement_tool.tscn" id="6_ainn0"]
 
-[node name="Base Event" instance=ExtResource("1_5orrj")]
+[node name="Base Event" node_paths=PackedStringArray("event_ender") instance=ExtResource("1_5orrj")]
+event_ender = NodePath("Shooter Carousel/Anchor_0/Event Ender")
 
 [node name="Shooter Carousel" type="Node2D" parent="." index="1" node_paths=PackedStringArray("cutoff_point", "to_track")]
 position = Vector2(0, 201)
@@ -16,7 +17,7 @@ script = ExtResource("2_i2sxx")
 hide_until_point = true
 reverse_order = true
 cutoff_point = NodePath("Anchor_2")
-to_track = NodePath("Anchor_5/Shooter/VisibleOnScreenNotifier2D")
+to_track = NodePath("Anchor_6/Shooter/VisibleOnScreenNotifier2D")
 turn_speed = 1.5
 
 [node name="Anchor_0" type="Node2D" parent="Shooter Carousel" index="0"]
@@ -36,20 +37,12 @@ CLEANUP_DELAY = 0.5
 
 [node name="Anchor_1" type="Node2D" parent="Shooter Carousel" index="1"]
 process_mode = 4
-position = Vector2(420.5916, 220.7435)
+position = Vector2(433.93408, 193.1999)
 script = ExtResource("3_ane8f")
-
-[node name="Shooter" parent="Shooter Carousel/Anchor_1" index="0" instance=ExtResource("4_3dxkc")]
-
-[node name="move_up" parent="Shooter Carousel/Anchor_1/Shooter" index="2"]
-Def_Speed = 0.0
-
-[node name="Cleanup" parent="Shooter Carousel/Anchor_1/Shooter" index="4"]
-CLEANUP_DELAY = 0.5
 
 [node name="Anchor_2" type="Node2D" parent="Shooter Carousel" index="2"]
 process_mode = 4
-position = Vector2(269.83075, 390.91733)
+position = Vector2(317.837, 352.9938)
 script = ExtResource("3_ane8f")
 
 [node name="Shooter" parent="Shooter Carousel/Anchor_2" index="0" instance=ExtResource("4_3dxkc")]
@@ -61,19 +54,11 @@ Def_Speed = 0.0
 CLEANUP_DELAY = 0.5
 
 [node name="Anchor_3" type="Node2D" parent="Shooter Carousel" index="3"]
-position = Vector2(57.254925, 471.5367)
+position = Vector2(146.78307, 451.75186)
 script = ExtResource("3_ane8f")
 
-[node name="Shooter" parent="Shooter Carousel/Anchor_3" index="0" instance=ExtResource("4_3dxkc")]
-
-[node name="move_up" parent="Shooter Carousel/Anchor_3/Shooter" index="2"]
-Def_Speed = 0.0
-
-[node name="Cleanup" parent="Shooter Carousel/Anchor_3/Shooter" index="4"]
-CLEANUP_DELAY = 0.5
-
 [node name="Anchor_4" type="Node2D" parent="Shooter Carousel" index="4"]
-position = Vector2(-168.4373, 444.13272)
+position = Vector2(-49.651043, 472.39792)
 script = ExtResource("3_ane8f")
 
 [node name="Shooter" parent="Shooter Carousel/Anchor_4" index="0" instance=ExtResource("4_3dxkc")]
@@ -85,19 +70,11 @@ Def_Speed = 0.0
 CLEANUP_DELAY = 0.5
 
 [node name="Anchor_5" type="Node2D" parent="Shooter Carousel" index="5"]
-position = Vector2(-355.54263, 314.98325)
+position = Vector2(-237.50003, 411.36206)
 script = ExtResource("3_ane8f")
 
-[node name="Shooter" parent="Shooter Carousel/Anchor_5" index="0" instance=ExtResource("4_3dxkc")]
-
-[node name="move_up" parent="Shooter Carousel/Anchor_5/Shooter" index="2"]
-Def_Speed = 0.0
-
-[node name="Cleanup" parent="Shooter Carousel/Anchor_5/Shooter" index="4"]
-CLEANUP_DELAY = 0.5
-
 [node name="Anchor_6" type="Node2D" parent="Shooter Carousel" index="6"]
-position = Vector2(-461.1974, 113.67494)
+position = Vector2(-384.2831, 279.19797)
 script = ExtResource("3_ane8f")
 
 [node name="Shooter" parent="Shooter Carousel/Anchor_6" index="0" instance=ExtResource("4_3dxkc")]
@@ -109,27 +86,28 @@ Def_Speed = 0.0
 CLEANUP_DELAY = 0.5
 
 [node name="Anchor_7" type="Node2D" parent="Shooter Carousel" index="7"]
-position = Vector2(-461.1974, -113.67492)
+position = Vector2(-464.62012, 98.75802)
 script = ExtResource("3_ane8f")
 
-[node name="Shooter" parent="Shooter Carousel/Anchor_7" index="0" instance=ExtResource("4_3dxkc")]
+[node name="Anchor_8" type="Node2D" parent="Shooter Carousel" index="8"]
+position = Vector2(-464.6201, -98.7581)
+script = ExtResource("3_ane8f")
 
-[node name="move_up" parent="Shooter Carousel/Anchor_7/Shooter" index="2"]
+[node name="Shooter" parent="Shooter Carousel/Anchor_8" index="0" instance=ExtResource("4_3dxkc")]
+
+[node name="move_up" parent="Shooter Carousel/Anchor_8/Shooter" index="2"]
 Def_Speed = 0.0
 
-[node name="Cleanup" parent="Shooter Carousel/Anchor_7/Shooter" index="4"]
+[node name="Cleanup" parent="Shooter Carousel/Anchor_8/Shooter" index="4"]
 CLEANUP_DELAY = 0.5
 
-[node name="Circle Arrangement Tool" parent="Shooter Carousel" index="8" instance=ExtResource("6_ainn0")]
+[node name="Circle Arrangement Tool" parent="Shooter Carousel" index="9" instance=ExtResource("6_ainn0")]
 enabled = true
-empty_spots = 5
+empty_spots = 6
 radius = 475.0
 
 [editable path="Shooter Carousel/Anchor_0/Shooter"]
-[editable path="Shooter Carousel/Anchor_1/Shooter"]
 [editable path="Shooter Carousel/Anchor_2/Shooter"]
-[editable path="Shooter Carousel/Anchor_3/Shooter"]
 [editable path="Shooter Carousel/Anchor_4/Shooter"]
-[editable path="Shooter Carousel/Anchor_5/Shooter"]
 [editable path="Shooter Carousel/Anchor_6/Shooter"]
-[editable path="Shooter Carousel/Anchor_7/Shooter"]
+[editable path="Shooter Carousel/Anchor_8/Shooter"]

@@ -16,20 +16,20 @@ const FoodScript = preload("res://Scripts//Food.gd")
 
 @export var counter_reference: RichTextLabel
 
-var gateCooldown: float = 10 #30
-var gateTimer: float = gateCooldown
+var gateCooldown: float = 30 #30
+var gateTimer: float = 10 #gateCooldown
 var mid_gate: bool = false
 
 var foodCooldown: float = 0.5
 var foodTimer: float = foodCooldown
 
-var obstacleCooldown: float = 1.2
+var obstacleCooldown: float = 1.5
 var obstacleTimer: float = obstacleCooldown
 var obstacleCooldownIncrement: float = 0.1
 var minObstacleCooldown: float = 0.5
 
 var midEvent: bool = false
-var eventCooldown: float = 5 #15
+var eventCooldown: float = 15 #15
 var eventTimer: float = eventCooldown
 
 var midBoss: bool = false
@@ -59,7 +59,7 @@ func gate_loop(delta: float) -> void:
 				currentBoss.gate_action()
 			else:
 				spawnGate()
-				mid_gate = true
+			mid_gate = true
 	else:
 		gateTimer -= delta
 
@@ -104,10 +104,8 @@ func get_random_food_type() -> int:
 func obstacle_loop(delta: float):
 
 	if midEvent || mid_gate || midBoss:
-		print("midEvent: " + str(midEvent) + "; mid_gate: " + str(mid_gate) + "; midBoss: " + str(midBoss))
+		#print("midEvent: " + str(midEvent) + "; mid_gate: " + str(mid_gate) + "; midBoss: " + str(midBoss))
 		return
-
-	print("RUNNING")
 
 	obstacleTimer -= delta
 
@@ -210,7 +208,7 @@ func reset_gate_timer() -> void:
 	midBoss = false
 	midEvent = false
 	currentBoss = null
-	print("what the sigma")
+	print("Waht thate aofnie")
 
 func calculateObstacleCountdown() -> float:
 	return maxf(obstacleCooldown - obstacleCooldownIncrement * (game_state.score - 1), minObstacleCooldown)

@@ -6,8 +6,9 @@ extends Area2D
 
 @export var activated: bool = true
 
-var counter: RichTextLabel
+@onready var counter = get_tree().get_first_node_in_group("counter")
 
+#Likely not needed anymore
 func initialize(p_counter: RichTextLabel) -> void:
 	counter = p_counter
 
