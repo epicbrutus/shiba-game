@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cse7iik4eonx7"]
+[gd_scene load_steps=18 format=3 uid="uid://cse7iik4eonx7"]
 
 [ext_resource type="PackedScene" uid="uid://bxki77u8krb6n" path="res://Prefabs/Events/base_event.tscn" id="1_tb8y7"]
 [ext_resource type="Script" uid="uid://bsrgdtmtcipbb" path="res://Prefabs/Events/boss.gd" id="2_177s3"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://noi7epbxmn18" path="res://Scripts/Gate.gd" id="7_3cacc"]
 [ext_resource type="PackedScene" uid="uid://ehtmd7vcq2sp" path="res://Prefabs/Events/Boss_Attacks/Boss1/shooter_ambush.tscn" id="7_b0ywg"]
 [ext_resource type="AudioStream" uid="uid://di35saedkx0ny" path="res://sounds/death fart.mp3" id="8_b0ywg"]
+[ext_resource type="PackedScene" uid="uid://crnfo54i6cgy6" path="res://Prefabs/Events/Boss_Attacks/Boss1/moving_blade.tscn" id="8_y60jc"]
 [ext_resource type="AudioStream" uid="uid://b047feee3kpuk" path="res://sounds/smash.mp3" id="9_y60jc"]
 [ext_resource type="Texture2D" uid="uid://drdj0pg6410w7" path="res://photos/bricks.png" id="10_4o30q"]
 [ext_resource type="PackedScene" uid="uid://dwqgfnsocelag" path="res://Prefabs/drop_shadow.tscn" id="11_junq4"]
@@ -21,6 +22,11 @@ metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 [sub_resource type="Resource" id="Resource_y60jc"]
 script = ExtResource("4_177s3")
 scene = ExtResource("7_b0ywg")
+metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
+
+[sub_resource type="Resource" id="Resource_4o30q"]
+script = ExtResource("4_177s3")
+scene = ExtResource("8_y60jc")
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
@@ -37,7 +43,7 @@ texture = ExtResource("2_pl8pm")
 
 [node name="Node2D" type="Node2D" parent="." index="2"]
 script = ExtResource("3_hbwyo")
-event_configs = Array[ExtResource("4_177s3")]([SubResource("Resource_oigfs"), SubResource("Resource_y60jc")])
+event_configs = Array[ExtResource("4_177s3")]([SubResource("Resource_oigfs"), SubResource("Resource_y60jc"), SubResource("Resource_4o30q")])
 
 [node name="Area2D" type="Area2D" parent="." index="3"]
 position = Vector2(0, 229)

@@ -19,7 +19,7 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	# Check if the body that entered is the player
 	if body is CharacterBody2D:
-		if body.getCurrentWeight() >= 3:
+		if body.getCurrentWeight() >= 2:
 
 			body.change_food(-40)
 

@@ -1,6 +1,6 @@
 extends Area2D
 
-var damage: int = 20
+var damage: int = 10
 
 var normal_speed: float = 300
 var turn_speed: float = 1.75

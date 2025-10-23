@@ -6,20 +6,19 @@
 [ext_resource type="PackedScene" uid="uid://bko1uhvqhs2gt" path="res://Prefabs/Events/event_ender.tscn" id="4_7cudx"]
 
 [node name="Base Event" node_paths=PackedStringArray("event_ender") instance=ExtResource("1_gwcqe")]
-event_ender = NodePath("Node2D/Event Ender")
+event_ender = NodePath("Node2D/Spinner/Event Ender")
 
 [node name="Node2D" type="Node2D" parent="." index="2"]
-position = Vector2(-148, 0)
 script = ExtResource("2_7cudx")
-speed = 350.0
+acceleration = 100.0
+speed = 0.0
 
 [node name="Spinner" parent="Node2D" index="0" instance=ExtResource("3_nwr0g")]
-position = Vector2(-878, 0)
+position = Vector2(-1026, 0)
 
 [node name="move_up" parent="Node2D/Spinner" index="2"]
 Def_Speed = 0.0
 
-[node name="Event Ender" parent="Node2D" index="1" instance=ExtResource("4_7cudx")]
-position = Vector2(-876, 0)
+[node name="Event Ender" parent="Node2D/Spinner" index="4" instance=ExtResource("4_7cudx")]
 
 [editable path="Node2D/Spinner"]

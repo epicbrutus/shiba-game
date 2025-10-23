@@ -58,7 +58,7 @@ local_coords = true
 process_material = SubResource("ParticleProcessMaterial_ipw0b")
 
 [node name="move_up" parent="." instance=ExtResource("3_kab6h")]
-Def_Speed = 240.0
+Def_Speed = 160.0
 
 [node name="Node2D" type="Node2D" parent="."]
 

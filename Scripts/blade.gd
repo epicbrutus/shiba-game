@@ -1,6 +1,6 @@
 extends Area2D
 
-var damage: int = 20
+var damage: int = 15
 @export var spin_direction: int = 1
 @export var spin_direction_locked: bool = false
 

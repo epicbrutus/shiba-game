@@ -3,8 +3,8 @@ extends Area2D
 var direction: Vector2
 var initialized: bool = false
 var initial_velocity: Vector2
-var speed: float = 600
-var damage: float = 15
+var speed: float = 450
+var damage: float = 5
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)

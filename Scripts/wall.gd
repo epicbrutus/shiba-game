@@ -13,4 +13,4 @@ func _on_body_entered(body: Node2D) -> void:
 
 		body.set_new_velocity(direction * speed)
 		print("Direction: ", direction)
-		body.change_food(-20)
+		body.change_food(-10)

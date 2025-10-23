@@ -20,7 +20,7 @@ var gateCooldown: float = 30 #30
 var gateTimer: float = 10 #gateCooldown
 var mid_gate: bool = false
 
-var foodCooldown: float = 0.5
+var foodCooldown: float = 0.75
 var foodTimer: float = foodCooldown
 
 var obstacleCooldown: float = 1.5

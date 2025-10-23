@@ -16,6 +16,7 @@ var cleanup_timer: SceneTreeTimer = null
 var CLEANUP_DELAY := 0.5
 
 var been_on_screen: bool = false
+var event_over: bool = false
 
 func _ready() -> void:
 	if event_ender:
@@ -37,6 +38,7 @@ func _on_cleanup_timeout() -> void:
 	queue_free()
 
 func end_event() -> void:
+	event_over = true
 	spawner.end_event()
 
 func full_end_event():

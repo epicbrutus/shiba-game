@@ -2,7 +2,7 @@
 extends Area2D
 class_name laser_gate
 
-var damage: int = 20
+var damage: int = 15
 
 static var MIN_LENGTH: int = 200
 static var MAX_LENGTH: int = 400
