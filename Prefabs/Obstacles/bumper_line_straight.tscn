@@ -1,17 +1,42 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwuwlhgjhs3q2"]
+[gd_scene load_steps=5 format=3 uid="uid://dwuwlhgjhs3q2"]
 
 [ext_resource type="PackedScene" uid="uid://bqan5vfqgrejr" path="res://Prefabs/bumper.tscn" id="1_uacqm"]
 [ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="2_og30h"]
+[ext_resource type="Script" uid="uid://bdb3fxsghyjma" path="res://Scripts/wall.gd" id="3_grom6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_og30h"]
+size = Vector2(184, 79)
 
 [node name="Bumper line" type="Node2D"]
 
 [node name="Bumper" parent="." instance=ExtResource("1_uacqm")]
+process_mode = 4
+scale = Vector2(2.94, 2.94)
 
 [node name="Bumper2" parent="." instance=ExtResource("1_uacqm")]
-position = Vector2(85, 0)
+process_mode = 4
+position = Vector2(68, 0)
+scale = Vector2(2.94, 2.94)
 
 [node name="Bumper3" parent="." instance=ExtResource("1_uacqm")]
-position = Vector2(-85, 0)
+process_mode = 4
+position = Vector2(-68, 0)
+scale = Vector2(2.94, 2.94)
 
 [node name="move_up" parent="." instance=ExtResource("2_og30h")]
-Def_Speed = 600.0
+Def_Speed = 100.0
+jerk = 75.0
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_grom6")
+direction = Vector2(0, -1)
+speed = 800.0
+damage = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_og30h")
+
+[editable path="Bumper"]
+[editable path="Bumper2"]
+[editable path="Bumper3"]

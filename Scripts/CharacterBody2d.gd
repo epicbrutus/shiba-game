@@ -52,9 +52,11 @@ var max_food: int = 80
 var div_by: int = max_food/4
 var food_eaten: int = 0
 
+var starting_food: int = 80 #20
+
 func _ready() -> void:
 	# Assign the weight_label if not set via the editor
-	change_food(20) #0
+	change_food(80) #0
 	if weight_label == null:
 		# Change the path below to match your scene hierarchy
 		weight_label = get_node_or_null("WeightLabel")

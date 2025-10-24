@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cse7iik4eonx7"]
+[gd_scene load_steps=19 format=3 uid="uid://cse7iik4eonx7"]
 
 [ext_resource type="PackedScene" uid="uid://bxki77u8krb6n" path="res://Prefabs/Events/base_event.tscn" id="1_tb8y7"]
 [ext_resource type="Script" uid="uid://bsrgdtmtcipbb" path="res://Prefabs/Events/boss.gd" id="2_177s3"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://b047feee3kpuk" path="res://sounds/smash.mp3" id="9_y60jc"]
 [ext_resource type="Texture2D" uid="uid://drdj0pg6410w7" path="res://photos/bricks.png" id="10_4o30q"]
 [ext_resource type="PackedScene" uid="uid://dwqgfnsocelag" path="res://Prefabs/drop_shadow.tscn" id="11_junq4"]
+[ext_resource type="Script" uid="uid://bdb3fxsghyjma" path="res://Scripts/wall.gd" id="14_4o30q"]
 
 [sub_resource type="Resource" id="Resource_oigfs"]
 script = ExtResource("4_177s3")
@@ -32,9 +33,10 @@ metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(1152.5, 96)
 
-[node name="Base Event" node_paths=PackedStringArray("gate") instance=ExtResource("1_tb8y7")]
+[node name="Base Event" node_paths=PackedStringArray("gate", "hitbox") instance=ExtResource("1_tb8y7")]
 script = ExtResource("2_177s3")
 gate = NodePath("Area2D")
+hitbox = NodePath("Area2D/Area2D")
 
 [node name="Node2D" type="Node2D" parent="." index="1"]
 script = ExtResource("3_hbwyo")
@@ -84,3 +86,11 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="Area2D" index="7"]
+script = ExtResource("14_4o30q")
+direction = Vector2(0, 1)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D/Area2D" index="0"]
+position = Vector2(0, 53)
+shape = SubResource("RectangleShape2D_0hol4")

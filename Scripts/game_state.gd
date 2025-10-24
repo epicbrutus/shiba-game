@@ -5,7 +5,7 @@ class_name GameState
 
 signal score_changed(value: int)
 
-var _score: int = 1
+var _score: int = 2
 var score: int:
     get: return _score
     set(value):

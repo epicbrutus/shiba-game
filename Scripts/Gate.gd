@@ -47,7 +47,11 @@ func _physics_process(delta: float) -> void:
 func disable_gate() -> void:
 	$CollisionShape2D.queue_free()
 	visible = false
-	set_process(false)
+	get_parent().set_process(false)
+	get_parent().set_physics_process(false)
+
+	if get_parent() is Event: #technically boss but whatev
+		get_parent().remove_hitbox()
 
 func activate():
 	activated = true

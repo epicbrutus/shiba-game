@@ -16,8 +16,8 @@ const FoodScript = preload("res://Scripts//Food.gd")
 
 @export var counter_reference: RichTextLabel
 
-var gateCooldown: float = 30 #30
-var gateTimer: float = gateCooldown
+var gateCooldown: float = 20 #30
+var gateTimer: float = 10 #gateCooldown
 var mid_gate: bool = false
 
 var foodCooldown: float = 0.75
@@ -153,6 +153,7 @@ func instantiate_obstacle(config: ObstacleConfig, pos: Vector2) -> void:
 	var obs = config.scene.instantiate()
 	add_child(obs)
 	obs.position = pos
+	obs.add_to_group("obstacles")
 
 func spawn_event(spawn_boss: bool = false) -> void:
 
@@ -209,6 +210,8 @@ func reset_gate_timer() -> void:
 	midEvent = false
 	currentBoss = null
 	print("Waht thate aofnie")
+
+	get_tree().call_group("obstacles", "queue_free")
 
 func calculateObstacleCountdown() -> float:
 	return maxf(obstacleCooldown - obstacleCooldownIncrement * (game_state.score - 1), minObstacleCooldown)

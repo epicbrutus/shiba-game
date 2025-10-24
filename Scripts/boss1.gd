@@ -9,7 +9,7 @@ func _process(delta: float) -> void:
 	event_loop(delta)
 
 func event_loop(delta: float):
-
+	
 	eventTimer -= delta
 
 	if eventTimer <= 0:
@@ -29,6 +29,7 @@ func spawn_event() -> void:
 		if r < acc:
 			var event = config.scene.instantiate()
 			get_tree().current_scene.add_child(event)
+			event.add_to_group("obstacles")
 
 			return
 
