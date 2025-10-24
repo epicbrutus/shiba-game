@@ -17,7 +17,7 @@ const FoodScript = preload("res://Scripts//Food.gd")
 @export var counter_reference: RichTextLabel
 
 var gateCooldown: float = 30 #30
-var gateTimer: float = 10 #gateCooldown
+var gateTimer: float = gateCooldown
 var mid_gate: bool = false
 
 var foodCooldown: float = 0.75
@@ -29,7 +29,7 @@ var obstacleCooldownIncrement: float = 0.1
 var minObstacleCooldown: float = 0.5
 
 var midEvent: bool = false
-var eventCooldown: float = 15 #15
+var eventCooldown: float = 10 #15
 var eventTimer: float = eventCooldown
 
 var midBoss: bool = false

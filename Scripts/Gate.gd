@@ -52,3 +52,5 @@ func disable_gate() -> void:
 func activate():
 	activated = true
 	body_entered.connect(_on_body_entered)
+	for body in get_overlapping_bodies():
+			_on_body_entered(body)

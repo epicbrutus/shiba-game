@@ -2,7 +2,7 @@ extends Node2D
 
 @export var event_configs: Array[EventConfig] = []
 
-var eventCooldown: float = 4 #15
+var eventCooldown: float = 4
 var eventTimer: float = eventCooldown/3
 
 func _process(delta: float) -> void:

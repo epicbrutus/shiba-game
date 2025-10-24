@@ -445,6 +445,7 @@ grow_vertical = 2
 scale = Vector2(0.03136125, 0.024534937)
 theme_override_font_sizes/normal_font_size = 50
 text = "^"
+scroll_active = false
 autowrap_mode = 0
 
 [node name="Sprite" type="Sprite2D" parent="Bars/Icons/Obese"]
@@ -701,6 +702,7 @@ Def_Speed = 120.0
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("25_hlwbt")
 volume_db = -6.0
+autoplay = true
 parameters/looping = true
 
 [node name="GameState" type="Node" parent="." groups=["GameState"]]

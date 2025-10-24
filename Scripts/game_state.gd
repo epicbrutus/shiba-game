@@ -5,14 +5,14 @@ class_name GameState
 
 signal score_changed(value: int)
 
-var _score: int = 4
+var _score: int = 1
 var score: int:
     get: return _score
     set(value):
         if _score == value: return
         _score = value
         score_changed.emit(_score)
-        if value % 5 == 0:
+        if value % 3 == 0:
             spawner.spawn_event(true)
 
 func add_score(amount: int = 1) -> void:

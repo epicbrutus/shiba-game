@@ -30,27 +30,23 @@ scene = ExtResource("8_y60jc")
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
-size = Vector2(1152.5, 20)
+size = Vector2(1152.5, 96)
 
 [node name="Base Event" node_paths=PackedStringArray("gate") instance=ExtResource("1_tb8y7")]
 script = ExtResource("2_177s3")
 gate = NodePath("Area2D")
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
-position = Vector2(0, 404.00003)
-scale = Vector2(1.605, 0.73)
-texture = ExtResource("2_pl8pm")
-
-[node name="Node2D" type="Node2D" parent="." index="2"]
+[node name="Node2D" type="Node2D" parent="." index="1"]
 script = ExtResource("3_hbwyo")
 event_configs = Array[ExtResource("4_177s3")]([SubResource("Resource_oigfs"), SubResource("Resource_y60jc"), SubResource("Resource_4o30q")])
 
-[node name="Area2D" type="Area2D" parent="." index="3"]
+[node name="Area2D" type="Area2D" parent="." index="2"]
 position = Vector2(0, 229)
 script = ExtResource("7_3cacc")
 activated = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 53)
 shape = SubResource("RectangleShape2D_0hol4")
 
 [node name="Timer" type="Timer" parent="Area2D" index="1"]
@@ -70,3 +66,21 @@ texture = ExtResource("10_4o30q")
 
 [node name="Drop Shadow" parent="Area2D/Sprite2D" index="0" instance=ExtResource("11_junq4")]
 visible = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="Area2D" index="5"]
+position = Vector2(0, 175.00003)
+scale = Vector2(1.605, 0.73)
+texture = ExtResource("2_pl8pm")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Area2D" index="6"]
+offset_left = -264.0
+offset_top = -32.0
+offset_right = 259.0
+offset_bottom = 95.0
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 100
+text = "BOSS"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
