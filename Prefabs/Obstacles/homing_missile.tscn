@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dqrpjumefrno2"]
 
-[ext_resource type="Script" uid="uid://cqh0sesyinkhl" path="res://Scripts/homing_missile.gd" id="1_isurj"]
+[ext_resource type="Script" uid="uid://cqh0sesyinkhl" path="res://Scripts/Obstacles/homing_missile.gd" id="1_isurj"]
 [ext_resource type="Texture2D" uid="uid://b8imicvkxbqw0" path="res://photos/Missile_Jammer_artwork.png" id="2_5wjdt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qbwt3"]

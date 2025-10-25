@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://c14qwn6rgfy23"]
+[gd_scene load_steps=70 format=3 uid="uid://c14qwn6rgfy23"]
 
 [ext_resource type="Shader" uid="uid://ci8wfbw02mu88" path="res://scroll.gdshader" id="1_woxae"]
 [ext_resource type="Texture2D" uid="uid://8apg65mbsnv" path="res://Art Log 10-8/background.JPG" id="2_8melw"]
@@ -7,13 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://dwqgfnsocelag" path="res://Prefabs/drop_shadow.tscn" id="5_o3byv"]
 [ext_resource type="Texture2D" uid="uid://ct4c457b7jv8i" path="res://Art Log 10-4/head.png" id="5_qfhdb"]
 [ext_resource type="AudioStream" uid="uid://coxhwnuy5ucjv" path="res://sounds/jaw trimmed.mp3" id="6_bdknx"]
+[ext_resource type="Script" uid="uid://0v6bbu0vsmlp" path="res://Scripts/falling_section.gd" id="7_apyqh"]
 [ext_resource type="AudioStream" uid="uid://cgepr4tl2vbgd" path="res://sounds/nom.mp3" id="7_jtjp0"]
 [ext_resource type="Texture2D" uid="uid://dri03ys3ug8it" path="res://Fat_Levels/NORMAL.png" id="8_78gq4"]
 [ext_resource type="Texture2D" uid="uid://b7ywjiwjc5mue" path="res://Fat_Levels/OBESE.png" id="9_1cg6w"]
 [ext_resource type="FontFile" uid="uid://1boxnc1s7uki" path="res://BradBunR.ttf" id="11_wlcpx"]
 [ext_resource type="Script" uid="uid://bp4ryh50qjci3" path="res://Scripts/counter.gd" id="12_76tg3"]
 [ext_resource type="Script" uid="uid://r8u5tp17cdm1" path="res://Scripts/Spawner.gd" id="13_g8d6c"]
-[ext_resource type="Script" uid="uid://3skymg3qrpff" path="res://Scripts/ObstacleConfig.gd" id="14_56gb8"]
+[ext_resource type="Script" uid="uid://3skymg3qrpff" path="res://Scripts/Configs/ObstacleConfig.gd" id="14_56gb8"]
 [ext_resource type="Resource" uid="uid://cfxkix8p2j8b0" path="res://Obstacle_Configs/Moving Bumper.tres" id="14_78gq4"]
 [ext_resource type="Resource" uid="uid://d4dwbredxyu1x" path="res://Obstacle_Configs/Bumper Lift.tres" id="15_k2mhc"]
 [ext_resource type="Resource" uid="uid://cmnydtfrmh66t" path="res://Obstacle_Configs/Vertical Missile.tres" id="16_wlcpx"]
@@ -24,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://ct5gv0hehauba" path="res://Prefabs/test_food.tscn" id="20_apyqh"]
 [ext_resource type="PackedScene" uid="uid://dqb04qeyjeghy" path="res://Prefabs/gate.tscn" id="21_e62ys"]
 [ext_resource type="PackedScene" uid="uid://osw2ffrvd68" path="res://Prefabs/Obstacles/moving_jumpscare_laser_gate.tscn" id="22_2tts5"]
-[ext_resource type="Script" uid="uid://bbt8tf65tbbdt" path="res://Scripts/EventConfig.gd" id="22_76tg3"]
+[ext_resource type="Script" uid="uid://bbt8tf65tbbdt" path="res://Scripts/Configs/EventConfig.gd" id="22_76tg3"]
 [ext_resource type="Script" uid="uid://bdb3fxsghyjma" path="res://Scripts/wall.gd" id="23_ek8cs"]
 [ext_resource type="PackedScene" uid="uid://d3lrc6aiqyes1" path="res://Prefabs/Events/laser_sides.tscn" id="24_g8d6c"]
 [ext_resource type="PackedScene" uid="uid://dcj4kjchgcldd" path="res://Prefabs/Events/missle formation.tscn" id="25_56gb8"]
@@ -409,7 +410,11 @@ stream = ExtResource("25_hlwbt")
 volume_db = -6.0
 parameters/looping = true
 
-[node name="Falling_Section" type="Node2D" parent="."]
+[node name="Falling_Section" type="Node2D" parent="." node_paths=PackedStringArray("spawner")]
+process_mode = 4
+visible = false
+script = ExtResource("7_apyqh")
+spawner = NodePath("Spawner")
 
 [node name="Player" type="Node2D" parent="Falling_Section"]
 
@@ -477,7 +482,7 @@ grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 50
 text = "Fat"
 
-[node name="Spawner" type="Node2D" parent="Falling_Section" node_paths=PackedStringArray("distanceBar", "counter_reference") groups=["spawner"]]
+[node name="Spawner" type="Node2D" parent="Falling_Section" node_paths=PackedStringArray("distanceBar", "counter_reference")]
 position = Vector2(0, 370)
 script = ExtResource("13_g8d6c")
 obstacle_configs = Array[ExtResource("14_56gb8")]([ExtResource("14_78gq4"), ExtResource("15_k2mhc"), ExtResource("16_wlcpx"), ExtResource("17_gxae2"), ExtResource("18_76tg3"), ExtResource("19_g8d6c"), ExtResource("20_56gb8"), SubResource("Resource_2plm1")])
@@ -599,8 +604,6 @@ scale = Vector2(28.796778, 16.390018)
 color = Color(0, 0, 0, 0.078431375)
 
 [node name="JetpackJoyrideSection" type="Node2D" parent="."]
-process_mode = 4
-visible = false
 
 [node name="Background" type="Control" parent="JetpackJoyrideSection"]
 layout_mode = 3
@@ -701,7 +704,7 @@ text = "Fat"
 
 [node name="Down_Wall" type="Area2D" parent="JetpackJoyrideSection"]
 z_index = 2
-position = Vector2(-12, 400)
+position = Vector2(-12, 398)
 rotation = -1.5707964
 script = ExtResource("23_ek8cs")
 direction = Vector2(0, 1)
@@ -784,3 +787,13 @@ material = ExtResource("25_jtjp0")
 position = Vector2(39.223, 0)
 scale = Vector2(0.47, 1.075)
 texture = ExtResource("25_bdknx")
+
+[node name="Spawner" type="Node2D" parent="JetpackJoyrideSection" node_paths=PackedStringArray("distanceBar", "counter_reference") groups=["spawner"]]
+position = Vector2(700, 0)
+script = ExtResource("13_g8d6c")
+obstacle_configs = Array[ExtResource("14_56gb8")]([ExtResource("16_wlcpx"), ExtResource("18_76tg3"), ExtResource("19_g8d6c"), ExtResource("20_56gb8")])
+food = ExtResource("20_apyqh")
+gate = ExtResource("21_e62ys")
+distanceBar = NodePath("../../Shared/Bars/Distance Bar")
+counter_reference = NodePath("../../Shared/Bars/Control/Counter")
+direction = Vector2(-1, 0)

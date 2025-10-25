@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://unnyr3aarh3b"]
 
-[ext_resource type="Script" uid="uid://pids5h0y68dd" path="res://Scripts/laser_gate.gd" id="1_8ci8r"]
+[ext_resource type="Script" uid="uid://pids5h0y68dd" path="res://Scripts/Obstacles/laser_gate.gd" id="1_8ci8r"]
 [ext_resource type="Texture2D" uid="uid://crrmlptuvu3sj" path="res://Art Log 10-4/laser orb.png" id="2_8ci8r"]
 [ext_resource type="PackedScene" uid="uid://dwqgfnsocelag" path="res://Prefabs/drop_shadow.tscn" id="3_55jba"]
 [ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="3_f5eta"]

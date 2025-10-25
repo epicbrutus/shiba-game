@@ -12,7 +12,7 @@ var new_pos_sumtin: Vector2
 
 @onready var cam: Camera2D = get_viewport().get_camera_2d();
 
-@export var direction: Vector2 = Vector2.UP
+@export var direction: Vector2 = Utils.get_spawner().direction
 
 @onready var half_size := cam.get_viewport_rect().size * 0.5
 @onready var edge_point := half_size * -direction.normalized()

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://w8ophhq103o4"]
 
-[ext_resource type="Script" uid="uid://bkvlelq8rnatv" path="res://Scripts/shooter.gd" id="1_j65pp"]
+[ext_resource type="Script" uid="uid://bkvlelq8rnatv" path="res://Scripts/Obstacles/shooter.gd" id="1_j65pp"]
 [ext_resource type="PackedScene" uid="uid://b6706y61bdyvh" path="res://Prefabs/bullet.tscn" id="2_dg0q5"]
 [ext_resource type="Texture2D" uid="uid://bs1ap4yppuqfu" path="res://Art Log 10-8/shooter body sprite.png" id="3_6fvo2"]
 [ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="4_6os8d"]

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bsrgdtmtcipbb" path="res://Prefabs/Events/boss.gd" id="2_177s3"]
 [ext_resource type="Texture2D" uid="uid://bkqv5mmp0ataj" path="res://photos/waka.jpg" id="2_pl8pm"]
 [ext_resource type="Script" uid="uid://c8m8hmpsqq3km" path="res://Scripts/boss1.gd" id="3_hbwyo"]
-[ext_resource type="Script" uid="uid://bbt8tf65tbbdt" path="res://Scripts/EventConfig.gd" id="4_177s3"]
+[ext_resource type="Script" uid="uid://bbt8tf65tbbdt" path="res://Scripts/Configs/EventConfig.gd" id="4_177s3"]
 [ext_resource type="PackedScene" uid="uid://brcw5y04jh5yj" path="res://Prefabs/Events/Boss_Attacks/Boss1/homing_missile_spray.tscn" id="5_3wytg"]
 [ext_resource type="Script" uid="uid://noi7epbxmn18" path="res://Scripts/Gate.gd" id="7_3cacc"]
 [ext_resource type="PackedScene" uid="uid://ehtmd7vcq2sp" path="res://Prefabs/Events/Boss_Attacks/Boss1/shooter_ambush.tscn" id="7_b0ywg"]

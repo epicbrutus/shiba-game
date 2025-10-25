@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://od282gq0j8tm"]
 
-[ext_resource type="Script" uid="uid://b6acpkxrxsvht" path="res://Scripts/vertical_missile.gd" id="1_sonei"]
+[ext_resource type="Script" uid="uid://b6acpkxrxsvht" path="res://Scripts/Obstacles/vertical_missile.gd" id="1_sonei"]
 [ext_resource type="Texture2D" uid="uid://ckpidxlmr4t0r" path="res://Art Log 10-4/warning sign.png" id="2_sonei"]
 [ext_resource type="Texture2D" uid="uid://dvsed75kp0y43" path="res://Art Log 10-4/missile.png" id="4_3efgv"]
 [ext_resource type="PackedScene" uid="uid://dwqgfnsocelag" path="res://Prefabs/drop_shadow.tscn" id="5_3efgv"]

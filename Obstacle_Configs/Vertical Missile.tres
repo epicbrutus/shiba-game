@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ObstacleConfig" load_steps=3 format=3 uid="uid://cmnydtfrmh66t"]
 
 [ext_resource type="PackedScene" uid="uid://od282gq0j8tm" path="res://Prefabs/Obstacles/vertical_missile.tscn" id="1_16eyf"]
-[ext_resource type="Script" uid="uid://3skymg3qrpff" path="res://Scripts/ObstacleConfig.gd" id="2_r6dy3"]
+[ext_resource type="Script" uid="uid://3skymg3qrpff" path="res://Scripts/Configs/ObstacleConfig.gd" id="2_r6dy3"]
 
 [resource]
 script = ExtResource("2_r6dy3")

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ObstacleConfig" load_steps=3 format=3 uid="uid://cfxkix8p2j8b0"]
 
 [ext_resource type="PackedScene" uid="uid://bw8o52geqt381" path="res://Prefabs/Obstacles/moving_bumper.tscn" id="1_3vmnf"]
-[ext_resource type="Script" uid="uid://3skymg3qrpff" path="res://Scripts/ObstacleConfig.gd" id="2_nr37f"]
+[ext_resource type="Script" uid="uid://3skymg3qrpff" path="res://Scripts/Configs/ObstacleConfig.gd" id="2_nr37f"]
 
 [resource]
 script = ExtResource("2_nr37f")

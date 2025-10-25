@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bqan5vfqgrejr"]
 
-[ext_resource type="Script" uid="uid://dsiqq17b2aoro" path="res://Scripts/Bumper.gd" id="1_rpxwj"]
+[ext_resource type="Script" uid="uid://dsiqq17b2aoro" path="res://Scripts/Obstacles/Bumper.gd" id="1_rpxwj"]
 [ext_resource type="Texture2D" uid="uid://3apuqavkdyvu" path="res://Art Log 10-4/bumper drawing.png" id="2_kg7jm"]
 [ext_resource type="PackedScene" uid="uid://dwqgfnsocelag" path="res://Prefabs/drop_shadow.tscn" id="3_ioj6o"]
 

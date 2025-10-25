@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ObstacleConfig" load_steps=3 format=3 uid="uid://86ilskw4txs8"]
 
 [ext_resource type="PackedScene" uid="uid://h0lw1ng2k4w5" path="res://Prefabs/Obstacles/spinner.tscn" id="1_324um"]
-[ext_resource type="Script" uid="uid://3skymg3qrpff" path="res://Scripts/ObstacleConfig.gd" id="2_s22sd"]
+[ext_resource type="Script" uid="uid://3skymg3qrpff" path="res://Scripts/Configs/ObstacleConfig.gd" id="2_s22sd"]
 
 [resource]
 script = ExtResource("2_s22sd")

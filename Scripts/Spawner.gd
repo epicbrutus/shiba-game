@@ -16,6 +16,7 @@ const FoodScript = preload("res://Scripts//Food.gd")
 
 @export var counter_reference: RichTextLabel
 
+@export var direction: Vector2 = Vector2.UP
 
 var gateCooldown: float = 30 #30
 var gateTimer: float = gateCooldown
@@ -38,11 +39,18 @@ var currentBoss: Node2D
 
 var mid_event_bad_food_multiplier: float = 0.5
 
-@onready var area_safe = cam.get_viewport_rect().size.x * 0.8 * 0.5
+var area_safe: float
 
 
 func _ready() -> void:
 	randomize()
+
+	if direction.x != 0:
+		area_safe = cam.get_viewport_rect().size.y * 0.8 * 0.5
+	elif direction.y != 0:
+		area_safe = cam.get_viewport_rect().size.x * 0.8 * 0.5
+		
+
 	print(area_safe)
 	print(cam.get_viewport_rect().size)
 
@@ -76,8 +84,7 @@ func food_loop(delta: float) -> void:
 		instance.get_node("Area2D").initialize(get_random_food_type())
 		add_child(instance);
 		var spawnDistance: float = area_safe #(camera_width/2)*0.9;
-		instance.position = Vector2(randf_range(-spawnDistance,spawnDistance), position.y);
-
+		instance.position = get_spawn_pos()
 func get_random_food_type() -> int:
 	randf();
 	var food_presets = FoodScript.food_presets
@@ -137,18 +144,26 @@ func spawn_obstacle() -> void:
 	for config in obstacle_configs:
 		acc += config.chance
 		if r < acc:
-			var w = area_safe #(camera_width/2)*0.9;
 
-			w *= 1 - config.outerCushion
-
-			var side: int = pow(-1, randi() % 2)
-			var xPos: float = randf_range(w * config.innerCushion, w) * side
-
-
-			var spawn_position := Vector2(xPos, position.y + config.negativeOffset)
+			var spawn_position: Vector2 = get_spawn_pos(config.innerCushion, config.outerCushion, config.negativeOffset)
 
 			instantiate_obstacle(config, spawn_position)
 			return
+
+func get_spawn_pos(innerCushion: float = 0, outerCushion: float = 0, negativeOffset: float = 0) -> Vector2:
+	var w = area_safe
+
+	w *= 1 - outerCushion
+
+	var side: int = pow(-1, randi() % 2)
+	var xPos: float = randf_range(w * innerCushion, w) * side
+	
+	if direction.x != 0:
+		return  Vector2(position.x - negativeOffset, -xPos)
+	elif direction.y != 0:
+		return Vector2(xPos, position.y + negativeOffset)
+
+	return Vector2.ZERO
 
 func instantiate_obstacle(config: ObstacleConfig, pos: Vector2) -> void:
 	var obs = config.scene.instantiate()

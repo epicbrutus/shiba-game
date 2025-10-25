@@ -1,6 +1,7 @@
 extends Node
 
 @onready var game_state = get_tree().get_first_node_in_group("GameState")
+@onready var spawner = Utils.get_spawner()
 
 @export var Def_Speed: float = 0
 @export var acceleration: float = 0
@@ -27,6 +28,6 @@ func _on_score_changed(value: int):
 	multiplier = 2 + value * 0.1
 
 func _physics_process(delta: float) -> void:
-	get_parent().position.y -= speed * delta * multiplier
+	get_parent().position += speed * delta * multiplier * spawner.direction
 	speed += acceleration * delta
 	acceleration += jerk * delta
