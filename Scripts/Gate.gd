@@ -50,11 +50,11 @@ func disable_gate() -> void:
 	get_parent().set_process(false)
 	get_parent().set_physics_process(false)
 
-	if get_parent() is Event: #technically boss but whatev
-		get_parent().remove_hitbox()
-
 func activate():
 	activated = true
 	body_entered.connect(_on_body_entered)
 	for body in get_overlapping_bodies():
 			_on_body_entered(body)
+
+	if get_parent() is Event: #technically boss but whatev
+		get_parent().remove_hitbox()

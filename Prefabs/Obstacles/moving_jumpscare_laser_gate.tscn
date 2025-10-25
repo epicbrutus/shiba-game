@@ -4,8 +4,9 @@
 
 [node name="laser gate" instance=ExtResource("1_jf6eu")]
 run_forever = true
-charge_up_time = 0.75
-cooldown_time = 0.5
+charge_up_time = 0.6
+hold_laser_time = 0.5
+cooldown_time = 0.4
 
 [node name="move_up" parent="." index="4"]
 Def_Speed = 100.0

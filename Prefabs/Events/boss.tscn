@@ -33,9 +33,10 @@ metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(1152.5, 96)
 
-[node name="Base Event" node_paths=PackedStringArray("gate", "hitbox") instance=ExtResource("1_tb8y7")]
+[node name="Base Event" node_paths=PackedStringArray("gate", "boss_logic", "hitbox") instance=ExtResource("1_tb8y7")]
 script = ExtResource("2_177s3")
 gate = NodePath("Area2D")
+boss_logic = NodePath("Node2D")
 hitbox = NodePath("Area2D/Area2D")
 
 [node name="Node2D" type="Node2D" parent="." index="1"]

@@ -10,8 +10,7 @@ func gate_action():
 
 func end_event() -> void:
 	super.end_event()
-	boss_logic.queue_free()
 
 func remove_hitbox():
 	hitbox.queue_free()
-
+	boss_logic.queue_free()

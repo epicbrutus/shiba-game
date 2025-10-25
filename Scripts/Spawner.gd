@@ -16,22 +16,22 @@ const FoodScript = preload("res://Scripts//Food.gd")
 
 @export var counter_reference: RichTextLabel
 
-var gateCooldown: float = 20 #30
-var gateTimer: float = 10 #gateCooldown
+var gateCooldown: float = 30 #30
+var gateTimer: float = 1 #gateCooldown
 var mid_gate: bool = false
 
 var foodCooldown: float = 0.75
 var foodTimer: float = foodCooldown
 
-var obstacleCooldown: float = 1.5
+var obstacleCooldown: float = 1.25
 var obstacleTimer: float = obstacleCooldown
 var obstacleCooldownIncrement: float = 0.1
-var minObstacleCooldown: float = 0.5
+var minObstacleCooldown: float = 0.4
 
 var midEvent: bool = false
-var eventCooldown: float = 10 #15
+var eventCooldown: float = 15 #15
 var eventTimer: float = eventCooldown
-
+;
 var midBoss: bool = false
 var currentBoss: Node2D
 
@@ -182,8 +182,10 @@ func spawn_event(spawn_boss: bool = false) -> void:
 			if spawn_boss:
 				midBoss = true
 				currentBoss = event
+				get_tree().call_group("events", "queue_free")
 			else:
 				midEvent = true
+				event.add_to_group("events")
 
 			return
 
@@ -214,4 +216,6 @@ func reset_gate_timer() -> void:
 	get_tree().call_group("obstacles", "queue_free")
 
 func calculateObstacleCountdown() -> float:
+	print("gumble")
+	print(maxf(obstacleCooldown - obstacleCooldownIncrement * (game_state.score - 1), minObstacleCooldown))
 	return maxf(obstacleCooldown - obstacleCooldownIncrement * (game_state.score - 1), minObstacleCooldown)
