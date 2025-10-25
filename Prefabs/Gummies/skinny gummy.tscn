@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://db5qooeryfl72"]
+
+[ext_resource type="PackedScene" uid="uid://rqqd00v4vgfv" path="res://Prefabs/Gummies/gummy base.tscn" id="1_amn1n"]
+[ext_resource type="Texture2D" uid="uid://cvpjgtsg5r12" path="res://photos/gummy body/skinny gummy.png" id="2_tgu3f"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xmikh"]
+radius = 2.2025874
+height = 44.250107
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1bene"]
+radius = 4.119988
+height = 13.760335
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ox4pi"]
+radius = 2.2229252
+height = 19.457642
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dr46u"]
+radius = 1.2853394
+height = 21.533745
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7kn4l"]
+radius = 2.0961914
+height = 24.075708
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ulapf"]
+radius = 2.0623312
+height = 21.047451
+
+[node name="Skinny Gummy" instance=ExtResource("1_amn1n")]
+
+[node name="Sprite" parent="visual" index="0"]
+modulate = Color(1, 1, 0.46666667, 1)
+texture = ExtResource("2_tgu3f")
+
+[node name="CollisionShape2D6" parent="." index="1"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+visible = false
+rotation = 1.2804142
+shape = SubResource("CapsuleShape2D_xmikh")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="3"]
+visible = false
+position = Vector2(6, 2.0000005)
+rotation = 1.2869245
+shape = SubResource("CapsuleShape2D_1bene")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." index="4"]
+visible = false
+position = Vector2(6, -11)
+rotation = -0.35517406
+shape = SubResource("CapsuleShape2D_ox4pi")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="." index="5"]
+visible = false
+position = Vector2(-25.999996, -4)
+rotation = -0.42459494
+shape = SubResource("CapsuleShape2D_dr46u")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="." index="6"]
+visible = false
+position = Vector2(-32, -0.99999905)
+rotation = -0.81922805
+shape = SubResource("CapsuleShape2D_7kn4l")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." index="7"]
+visible = false
+position = Vector2(1.0000014, -10.999998)
+rotation = -0.7103482
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CapsuleShape2D_ulapf")

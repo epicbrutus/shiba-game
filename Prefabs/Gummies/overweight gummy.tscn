@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://mkf11sgpdg05"]
+
+[ext_resource type="PackedScene" uid="uid://rqqd00v4vgfv" path="res://Prefabs/Gummies/gummy base.tscn" id="1_hhm8n"]
+[ext_resource type="Texture2D" uid="uid://beda8je2vw11k" path="res://photos/gummy body/overweight gummy.png" id="2_up0ks"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hhm8n"]
+radius = 7.580104
+height = 46.173588
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_up0ks"]
+radius = 9.485945
+height = 24.689415
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ly5nx"]
+radius = 7.70397
+height = 29.805542
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8shdy"]
+radius = 8.537398
+height = 23.380932
+
+[node name="Overweight Gummy" instance=ExtResource("1_hhm8n")]
+
+[node name="Sprite" parent="visual" index="0"]
+modulate = Color(1, 0.5137255, 0.23137255, 1)
+texture = ExtResource("2_up0ks")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+position = Vector2(-5, 2)
+rotation = 1.2627267
+shape = SubResource("CapsuleShape2D_hhm8n")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." index="3"]
+position = Vector2(-13, 7)
+rotation = 1.2627267
+shape = SubResource("CapsuleShape2D_up0ks")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="4"]
+position = Vector2(-30.000002, -4)
+rotation = 2.4809835
+shape = SubResource("CapsuleShape2D_ly5nx")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." index="5"]
+position = Vector2(0.9999997, -15)
+rotation = -0.39809853
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CapsuleShape2D_8shdy")

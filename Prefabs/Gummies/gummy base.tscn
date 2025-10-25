@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://rqqd00v4vgfv"]
+[gd_scene load_steps=5 format=3 uid="uid://rqqd00v4vgfv"]
 
-[ext_resource type="Texture2D" uid="uid://ct4c457b7jv8i" path="res://Art Log 10-4/head.png" id="1_tfqux"]
+[ext_resource type="Texture2D" uid="uid://iiwlw5mgs76x" path="res://photos/gummy body/gummy head.png" id="1_tfqux"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tfqux"]
+bounce = 0.1
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dnx11"]
 load_path = "res://.godot/imported/NORMAL.png-f54edbcb786264f0dc39aaa5b971619a.ctex"
@@ -11,6 +14,7 @@ height = 36.218365
 
 [node name="Normal Gummy" type="RigidBody2D"]
 mass = 0.1
+physics_material_override = SubResource("PhysicsMaterial_tfqux")
 gravity_scale = 0.6
 
 [node name="visual" type="Node2D" parent="."]
@@ -21,9 +25,8 @@ position = Vector2(-6.7200003, -0.72000027)
 scale = Vector2(0.04, 0.04)
 texture = SubResource("CompressedTexture2D_dnx11")
 
-[node name="Head" type="Sprite2D" parent="visual"]
-position = Vector2(11.37, -2.255)
-scale = Vector2(0.04, 0.04)
+[node name="Head" type="Sprite2D" parent="visual/Sprite"]
+position = Vector2(452.24997, -38.374992)
 texture = ExtResource("1_tfqux")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="."]

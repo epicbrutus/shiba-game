@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://bt1hj10u235p3"]
+
+[ext_resource type="PackedScene" uid="uid://rqqd00v4vgfv" path="res://Prefabs/Gummies/gummy base.tscn" id="1_n2oop"]
+[ext_resource type="Texture2D" uid="uid://c2cpaoelh3g1d" path="res://photos/gummy body/fat gummy.png" id="2_0cgsa"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xp4p6"]
+radius = 7.580104
+height = 48.685867
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jmcu2"]
+radius = 12.647926
+height = 29.713974
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1dghv"]
+radius = 11.401751
+height = 38.06287
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1ryrw"]
+radius = 9.459199
+height = 25.504807
+
+[node name="Fat Gummy" instance=ExtResource("1_n2oop")]
+
+[node name="Sprite" parent="visual" index="0"]
+modulate = Color(0.40784314, 0.7411765, 1, 1)
+texture = ExtResource("2_0cgsa")
+
+[node name="CollisionShape2D6" parent="." index="1"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+visible = false
+position = Vector2(-5, 4)
+rotation = 1.2627267
+shape = SubResource("CapsuleShape2D_xp4p6")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." index="3"]
+visible = false
+position = Vector2(-10.000001, 10)
+rotation = 1.2627267
+shape = SubResource("CapsuleShape2D_jmcu2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="4"]
+visible = false
+position = Vector2(-27.000002, -3)
+rotation = 2.4809835
+shape = SubResource("CapsuleShape2D_1dghv")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." index="5"]
+visible = false
+position = Vector2(0.99999934, -14)
+rotation = -0.5830059
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CapsuleShape2D_1ryrw")

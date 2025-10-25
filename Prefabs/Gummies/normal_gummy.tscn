@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ptxi65q781j2"]
+[gd_scene load_steps=6 format=3 uid="uid://ptxi65q781j2"]
 
 [ext_resource type="PackedScene" uid="uid://rqqd00v4vgfv" path="res://Prefabs/Gummies/gummy base.tscn" id="1_jjvss"]
+[ext_resource type="Texture2D" uid="uid://b3wxjpoaoxuj" path="res://photos/gummy body/normal gummy.png" id="2_6a7fg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jjvss"]
 radius = 6.323964
@@ -15,6 +16,10 @@ radius = 5.7884016
 height = 21.225124
 
 [node name="Normal Gummy" instance=ExtResource("1_jjvss")]
+
+[node name="Sprite" parent="visual" index="0"]
+modulate = Color(1, 0.90588236, 0.8392157, 1)
+texture = ExtResource("2_6a7fg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 position = Vector2(-5, 2)
@@ -31,3 +36,6 @@ position = Vector2(0.9999997, -15)
 rotation = -0.66130173
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("CapsuleShape2D_safvi")
+
+[node name="CollisionShape2D6" parent="." index="4"]
+visible = false

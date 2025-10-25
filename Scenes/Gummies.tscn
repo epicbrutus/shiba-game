@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://j375f146wum7"]
+[gd_scene load_steps=9 format=3 uid="uid://j375f146wum7"]
 
 [ext_resource type="PackedScene" uid="uid://ptxi65q781j2" path="res://Prefabs/Gummies/normal_gummy.tscn" id="1_jt3mb"]
 [ext_resource type="PackedScene" uid="uid://d1ufcpdtlwcq5" path="res://Prefabs/Gummies/obese_gummy.tscn" id="2_h7qod"]
+[ext_resource type="PackedScene" uid="uid://db5qooeryfl72" path="res://Prefabs/Gummies/skinny gummy.tscn" id="3_h7qod"]
+[ext_resource type="PackedScene" uid="uid://mkf11sgpdg05" path="res://Prefabs/Gummies/overweight gummy.tscn" id="4_w46gx"]
+[ext_resource type="PackedScene" uid="uid://bt1hj10u235p3" path="res://Prefabs/Gummies/fat_gummy.tscn" id="5_gem76"]
+[ext_resource type="PackedScene" uid="uid://dlj4gpjcswg3s" path="res://Prefabs/player.tscn" id="6_gem76"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jt3mb"]
 size = Vector2(1152.5, 20)
@@ -35,24 +39,57 @@ shape = SubResource("RectangleShape2D_h7qod")
 
 [node name="Normal Gummy" parent="." instance=ExtResource("1_jt3mb")]
 position = Vector2(-139, 55)
+physics_material_override = null
 
 [node name="Normal Gummy2" parent="." instance=ExtResource("2_h7qod")]
 position = Vector2(-92, -28)
+physics_material_override = null
 
 [node name="Normal Gummy3" parent="." instance=ExtResource("1_jt3mb")]
 position = Vector2(-29, 55)
+physics_material_override = null
 
 [node name="Normal Gummy4" parent="." instance=ExtResource("2_h7qod")]
 position = Vector2(18, -28)
+physics_material_override = null
 
 [node name="Normal Gummy5" parent="." instance=ExtResource("1_jt3mb")]
 position = Vector2(-139, -88)
+physics_material_override = null
 
 [node name="Normal Gummy6" parent="." instance=ExtResource("2_h7qod")]
 position = Vector2(-92, -171)
+physics_material_override = null
 
 [node name="Normal Gummy7" parent="." instance=ExtResource("1_jt3mb")]
 position = Vector2(-29, -88)
+physics_material_override = null
 
 [node name="Normal Gummy8" parent="." instance=ExtResource("2_h7qod")]
 position = Vector2(18, -171)
+physics_material_override = null
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -10
+offset_left = -572.0
+offset_top = -329.0
+offset_right = 573.0
+offset_bottom = 333.0
+color = Color(0.8047426, 0.80474263, 0.8047426, 1)
+
+[node name="Skinny Gummy" parent="." instance=ExtResource("3_h7qod")]
+position = Vector2(124, -73)
+physics_material_override = null
+
+[node name="Normal Gummy9" parent="." instance=ExtResource("4_w46gx")]
+position = Vector2(122, 7)
+physics_material_override = null
+
+[node name="Fat Gummy" parent="." instance=ExtResource("5_gem76")]
+position = Vector2(68, -119)
+physics_material_override = null
+
+[node name="Player" parent="." instance=ExtResource("6_gem76")]
+position = Vector2(-47, 150)
+
+[editable path="Player"]

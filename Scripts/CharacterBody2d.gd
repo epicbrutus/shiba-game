@@ -113,6 +113,8 @@ func set_movement_preset(preset: MovementPreset) -> void:
 		var presetName: String = MovementPreset.keys()[preset]
 		charSprite.texture = load(photosPath + presetName + ".png")
 
+var push_impulse: float = 3000
+
 func _physics_process(delta: float) -> void:
 	var input_vector = get_input_vector()
 	
@@ -125,9 +127,25 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
+	for i in range(get_slide_collision_count()):
+		var col := get_slide_collision(i)
+		var n := col.get_normal()
+		var into_body := -velocity.dot(n)
+
+		if into_body > 0:
+			velocity += n * into_body
+
+		var rb := col.get_collider()
+
+		if rb is RigidBody2D:
+			var impulse := -n * push_impulse * delta
+			rb.apply_central_impulse(impulse)
+			rb.sleeping = false
+
 	if is_on_wall():
 		for i in get_slide_collision_count():
 			var collision = get_slide_collision(i)
+
 			var normal = collision.get_normal()
 			
 			# Reduce velocity component along the normal
