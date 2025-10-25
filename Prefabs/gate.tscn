@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dwqgfnsocelag" path="res://Prefabs/drop_shadow.tscn" id="5_m4qkj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
-size = Vector2(1152.5, 20)
+size = Vector2(1152.5, 179)
 
 [node name="Gate" type="Node2D"]
 
@@ -15,6 +15,7 @@ size = Vector2(1152.5, 20)
 script = ExtResource("1_15vrf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 79.5)
 shape = SubResource("RectangleShape2D_0hol4")
 
 [node name="Timer" type="Timer" parent="Area2D"]

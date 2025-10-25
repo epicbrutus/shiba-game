@@ -12,19 +12,25 @@ var new_pos_sumtin: Vector2
 
 @onready var cam: Camera2D = get_viewport().get_camera_2d();
 
-@export var direction: Vector2 = Utils.get_spawner().direction
+@export var direction: Vector2
 
 @onready var half_size := cam.get_viewport_rect().size * 0.5
-@onready var edge_point := half_size * -direction.normalized()
+var edge_point: Vector2
 
 var damage: int = 20
 @export var bottomY: float = 34
 
 
 #uses the old starting_pos. Outdated but keeping for reference in case using updated global_pos brings updates.
-@onready var warning_pos: Vector2 = edge_point + direction * bottomY + (global_position * Vector2(direction.y, direction.x).abs())
+var warning_pos: Vector2
 
 func _ready() -> void:
+	if direction == Vector2.ZERO:
+		direction = Utils.get_spawner().direction
+	edge_point = half_size * -direction.normalized()
+	print("EDGE: " + str(edge_point))
+	warning_pos = edge_point + direction * bottomY + (global_position * Vector2(direction.y, direction.x).abs())
+
 	body_entered.connect(_on_body_entered)
 
 	rotation = direction.angle() + PI/2

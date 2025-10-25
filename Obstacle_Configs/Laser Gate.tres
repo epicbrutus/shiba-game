@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="ObstacleConfig" load_steps=3 format=3 uid="uid://bw24lbbpodlj1"]
 
 [ext_resource type="PackedScene" uid="uid://unnyr3aarh3b" path="res://Prefabs/Obstacles/laser_gate.tscn" id="1_yhpym"]
-[ext_resource type="Script" uid="uid://3skymg3qrpff" path="res://Scripts/Configs/ObstacleConfig.gd" id="2_aulrc"]
+[ext_resource type="Script" uid="uid://3skymg3qrpff" path="res://Scripts/Configs/ObstacleConfig.gd" id="2_yhpym"]
 
 [resource]
-script = ExtResource("2_aulrc")
+script = ExtResource("2_yhpym")
 scene = ExtResource("1_yhpym")
-chance = 0.05
+chance = 0.1
 outerCushion = 0.2
 metadata/_custom_type_script = "uid://3skymg3qrpff"

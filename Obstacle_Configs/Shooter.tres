@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="ObstacleConfig" load_steps=3 format=3 uid="uid://b852xtw3q76ns"]
 
 [ext_resource type="PackedScene" uid="uid://w8ophhq103o4" path="res://Prefabs/Obstacles/shooter.tscn" id="1_fvab6"]
-[ext_resource type="Script" uid="uid://3skymg3qrpff" path="res://Scripts/Configs/ObstacleConfig.gd" id="2_amut3"]
+[ext_resource type="Script" uid="uid://3skymg3qrpff" path="res://Scripts/Configs/ObstacleConfig.gd" id="2_fvab6"]
 
 [resource]
-script = ExtResource("2_amut3")
+script = ExtResource("2_fvab6")
 scene = ExtResource("1_fvab6")
-chance = 0.1
+chance = 0.0
 innerCushion = 0.9
 metadata/_custom_type_script = "uid://3skymg3qrpff"

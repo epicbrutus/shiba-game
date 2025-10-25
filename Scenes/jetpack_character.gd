@@ -4,7 +4,7 @@ func _ready():
 	super._ready()
 	movement_presets = {
 	MovementPreset.SKINNY: MovementData.new(400, 0, 3600),
-	MovementPreset.NORMAL: MovementData.new(400, 0, 2700),
+	MovementPreset.NORMAL: MovementData.new(800, 0, 2700),
 	MovementPreset.OVERWEIGHT: MovementData.new(1000, 0, 1800),
 	MovementPreset.FAT: MovementData.new(1200, 0.0, 1350),
 	MovementPreset.OBESE: MovementData.new(1400, 0.0, 800)

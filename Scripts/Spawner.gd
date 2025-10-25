@@ -18,6 +18,8 @@ const FoodScript = preload("res://Scripts//Food.gd")
 
 @export var direction: Vector2 = Vector2.UP
 
+
+@export_group("Settings")
 var gateCooldown: float = 30 #30
 var gateTimer: float = gateCooldown
 var mid_gate: bool = false
@@ -25,15 +27,15 @@ var mid_gate: bool = false
 var foodCooldown: float = 0.75
 var foodTimer: float = foodCooldown
 
-var obstacleCooldown: float = 1.25
+@export var obstacleCooldown: float = 1.25
 var obstacleTimer: float = obstacleCooldown
-var obstacleCooldownIncrement: float = 0.1
-var minObstacleCooldown: float = 0.4
+@export var obstacleCooldownIncrement: float = 0.1
+@export var minObstacleCooldown: float = 0.4
 
 var midEvent: bool = false
 var eventCooldown: float = 15 #15
 var eventTimer: float = eventCooldown
-;
+
 var midBoss: bool = false
 var currentBoss: Node2D
 

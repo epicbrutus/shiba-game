@@ -60,7 +60,8 @@ func _process(delta):
 		get_tree().current_scene.add_child(bullet)
 		bullet.global_position = global_position
 
-		bullet.initialize(direction, velocity)
+		var bullet_direction := Vector2.RIGHT.rotated(gunSprite.rotation)
+		bullet.initialize(bullet_direction, velocity)
 
 		bulletTimer = BULLET_COOLDOWN
 

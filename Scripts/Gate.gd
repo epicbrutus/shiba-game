@@ -8,6 +8,8 @@ extends Area2D
 
 @onready var counter = get_tree().get_first_node_in_group("counter")
 
+@onready var spawner = Utils.get_spawner()
+
 #Likely not needed anymore
 func initialize(p_counter: RichTextLabel) -> void:
 	counter = p_counter
@@ -15,6 +17,7 @@ func initialize(p_counter: RichTextLabel) -> void:
 func _ready() -> void:
 	if activated:
 		body_entered.connect(_on_body_entered)
+		rotation = spawner.direction.angle() - PI/2
 
 func _on_body_entered(body: Node2D) -> void:
 	# Check if the body that entered is the player
@@ -42,7 +45,7 @@ func _on_body_entered(body: Node2D) -> void:
 #It clipped before so check back if it does it again
 func _physics_process(delta: float) -> void:
 	if activated:
-		get_parent().position.y -= 1800 * delta;
+		get_parent().position += spawner.direction * 1800 * delta;
 
 func disable_gate() -> void:
 	$CollisionShape2D.queue_free()
