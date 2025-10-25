@@ -7,7 +7,7 @@ extends Node
 @export var acceleration: float = 0
 @export var jerk: float = 0
 
-static var multiplier: float = 4
+static var multiplier: float = 2
 
 var speed: float
 

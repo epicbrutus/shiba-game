@@ -1,0 +1,79 @@
+[gd_scene load_steps=9 format=3 uid="uid://dlj4gpjcswg3s"]
+
+[ext_resource type="Script" uid="uid://dygskx16dxw61" path="res://Scripts/CharacterBody2d.gd" id="1_juxdh"]
+[ext_resource type="Texture2D" uid="uid://dri03ys3ug8it" path="res://Fat_Levels/NORMAL.png" id="2_4qbli"]
+[ext_resource type="PackedScene" uid="uid://dwqgfnsocelag" path="res://Prefabs/drop_shadow.tscn" id="3_08u7w"]
+[ext_resource type="AudioStream" uid="uid://cmk7u1tgxt54b" path="res://sounds/fart.mp3" id="4_kgmex"]
+[ext_resource type="AudioStream" uid="uid://coxhwnuy5ucjv" path="res://sounds/jaw trimmed.mp3" id="5_2xbkd"]
+[ext_resource type="AudioStream" uid="uid://cgepr4tl2vbgd" path="res://sounds/nom.mp3" id="6_3vpsw"]
+[ext_resource type="Texture2D" uid="uid://ct4c457b7jv8i" path="res://Art Log 10-4/head.png" id="7_m62uw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_epypp"]
+radius = 11.0
+height = 63.87
+
+[node name="Player" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." node_paths=PackedStringArray("weight_label", "charSprite", "headPivot", "foodBar") groups=["player"]]
+motion_mode = 1
+script = ExtResource("1_juxdh")
+current_preset = 0
+weight_label = NodePath("../RichTextLabel")
+charSprite = NodePath("Body")
+headPivot = NodePath("Head Pivot")
+foodBar = NodePath("")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(14.225, 2.8)
+rotation = 1.3421582
+shape = SubResource("CapsuleShape2D_epypp")
+
+[node name="Body" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(1, -2)
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("2_4qbli")
+
+[node name="Drop Shadow" parent="CharacterBody2D/Body" instance=ExtResource("3_08u7w")]
+texture = ExtResource("2_4qbli")
+
+[node name="state_increase_sound" type="AudioStreamPlayer" parent="CharacterBody2D"]
+stream = ExtResource("4_kgmex")
+
+[node name="state_decrease_sound" type="AudioStreamPlayer" parent="CharacterBody2D"]
+stream = ExtResource("4_kgmex")
+volume_db = 1.0
+pitch_scale = 0.5
+
+[node name="bounce_sound" type="AudioStreamPlayer" parent="CharacterBody2D"]
+stream = ExtResource("5_2xbkd")
+volume_db = -4.0
+
+[node name="eat_sound" type="AudioStreamPlayer" parent="CharacterBody2D"]
+stream = ExtResource("6_3vpsw")
+volume_db = -3.0
+
+[node name="Head Pivot" type="Node2D" parent="CharacterBody2D"]
+position = Vector2(40.855, -6)
+
+[node name="Head" type="Sprite2D" parent="CharacterBody2D/Head Pivot"]
+position = Vector2(9.61, -2)
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("7_m62uw")
+
+[node name="Drop Shadow" parent="CharacterBody2D/Head Pivot/Head" instance=ExtResource("3_08u7w")]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -40.0
+offset_right = 153.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "Fat"

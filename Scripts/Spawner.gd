@@ -48,7 +48,7 @@ func _ready() -> void:
 	randomize()
 
 	if direction.x != 0:
-		area_safe = cam.get_viewport_rect().size.y * 0.8 * 0.5
+		area_safe = cam.get_viewport_rect().size.y * 0.7 * 0.5
 	elif direction.y != 0:
 		area_safe = cam.get_viewport_rect().size.x * 0.8 * 0.5
 		
@@ -219,7 +219,7 @@ func end_event() -> void:
 func spawnGate() -> void:
 	var instance = gate.instantiate()
 	add_child(instance);
-	instance.position = Vector2(position.x, 400)
+	instance.position = get_spawn_pos()
 	instance.get_node("Area2D").initialize(counter_reference)
 
 func reset_gate_timer() -> void:

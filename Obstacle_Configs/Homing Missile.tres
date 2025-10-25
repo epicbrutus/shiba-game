@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="ObstacleConfig" load_steps=3 format=3 uid="uid://ccvw8vbgkfqo7"]
 
 [ext_resource type="PackedScene" uid="uid://dqrpjumefrno2" path="res://Prefabs/Obstacles/homing_missile.tscn" id="1_cdjal"]
-[ext_resource type="Script" uid="uid://3skymg3qrpff" path="res://Scripts/Configs/ObstacleConfig.gd" id="2_xvsfh"]
+[ext_resource type="Script" uid="uid://3skymg3qrpff" path="res://Scripts/Configs/ObstacleConfig.gd" id="2_2o6o7"]
 
 [resource]
-script = ExtResource("2_xvsfh")
+script = ExtResource("2_2o6o7")
 scene = ExtResource("1_cdjal")
 chance = 0.0
 metadata/_custom_type_script = "uid://3skymg3qrpff"

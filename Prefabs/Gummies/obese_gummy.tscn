@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1ufcpdtlwcq5"]
+
+[ext_resource type="PackedScene" uid="uid://rqqd00v4vgfv" path="res://Prefabs/Gummies/gummy base.tscn" id="1_pp1y6"]
+[ext_resource type="Texture2D" uid="uid://b7ywjiwjc5mue" path="res://Fat_Levels/OBESE.png" id="2_0t4li"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_esyip"]
+radius = 20.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s5s7y"]
+radius = 6.6999817
+height = 20.590881
+
+[node name="Obese Gummy" instance=ExtResource("1_pp1y6")]
+
+[node name="Sprite" parent="visual" index="0"]
+texture = ExtResource("2_0t4li")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+position = Vector2(-10, 1)
+shape = SubResource("CircleShape2D_esyip")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="2"]
+position = Vector2(1, -17)
+rotation = 0.51316285
+shape = SubResource("CapsuleShape2D_s5s7y")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." index="3"]
+position = Vector2(9, 13)
+rotation = 2.296927
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CapsuleShape2D_s5s7y")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." index="4"]
+position = Vector2(-25.999996, 15)
+rotation = -2.2371452
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("CapsuleShape2D_s5s7y")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="." index="5"]
+position = Vector2(-30.000004, -8)
+rotation = -0.8357891
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("CapsuleShape2D_s5s7y")

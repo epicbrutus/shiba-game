@@ -12,6 +12,7 @@ func change_state(p_state: bool):
     if p_state == true:
         process_mode = Node.PROCESS_MODE_INHERIT
         if "spawner" not in spawner.get_groups():
+            print("i did it")
             add_to_group("spawner")
     else:
         process_mode = Node.PROCESS_MODE_DISABLED

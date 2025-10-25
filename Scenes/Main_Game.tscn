@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://0v6bbu0vsmlp" path="res://Scripts/falling_section.gd" id="7_apyqh"]
 [ext_resource type="AudioStream" uid="uid://cgepr4tl2vbgd" path="res://sounds/nom.mp3" id="7_jtjp0"]
 [ext_resource type="Texture2D" uid="uid://dri03ys3ug8it" path="res://Fat_Levels/NORMAL.png" id="8_78gq4"]
+[ext_resource type="PackedScene" uid="uid://dlj4gpjcswg3s" path="res://Prefabs/player.tscn" id="8_apyqh"]
 [ext_resource type="Texture2D" uid="uid://b7ywjiwjc5mue" path="res://Fat_Levels/OBESE.png" id="9_1cg6w"]
 [ext_resource type="FontFile" uid="uid://1boxnc1s7uki" path="res://BradBunR.ttf" id="11_wlcpx"]
 [ext_resource type="Script" uid="uid://bp4ryh50qjci3" path="res://Scripts/counter.gd" id="12_76tg3"]
@@ -42,7 +43,6 @@
 [ext_resource type="PackedScene" uid="uid://dnc8warfyjdou" path="res://Prefabs/Events/shooter_ambush.tscn" id="35_gxae2"]
 [ext_resource type="PackedScene" uid="uid://dgkcbtlnx15xx" path="res://Prefabs/Events/laser_formation.tscn" id="41_2tts5"]
 [ext_resource type="PackedScene" uid="uid://c3rkng5fu0tu8" path="res://Prefabs/Events/laser pathways.tscn" id="42_2plm1"]
-[ext_resource type="Script" uid="uid://c64h7dev5ccs6" path="res://Scenes/jetpack_character.gd" id="43_piesb"]
 [ext_resource type="PackedScene" uid="uid://5br0thflhic0" path="res://Prefabs/Events/horizontal missle formation.tscn" id="44_apyqh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
@@ -95,14 +95,10 @@ load_path = "res://.godot/imported/OVERWEIGHT.png-09b3ccbc466b79aec6343594e7437f
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8melw"]
 load_path = "res://.godot/imported/FAT.png-4fb3e8a293b724c210a22a6445bb5e8a.ctex"
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_epypp"]
-radius = 11.0
-height = 63.87
-
 [sub_resource type="Resource" id="Resource_2plm1"]
 script = ExtResource("14_56gb8")
 scene = ExtResource("22_2tts5")
-chance = 0.05
+chance = 0.0
 outerCushion = 0.99
 metadata/_custom_type_script = "uid://3skymg3qrpff"
 
@@ -150,6 +146,10 @@ metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ed6rl"]
 shader = ExtResource("1_woxae")
 shader_parameter/source = ExtResource("2_8melw")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_epypp"]
+radius = 11.0
+height = 63.87
 
 [node name="Main Game" type="Node2D"]
 
@@ -411,78 +411,12 @@ volume_db = -6.0
 parameters/looping = true
 
 [node name="Falling_Section" type="Node2D" parent="." node_paths=PackedStringArray("spawner")]
-process_mode = 4
-visible = false
 script = ExtResource("7_apyqh")
 spawner = NodePath("Spawner")
 
-[node name="Player" type="Node2D" parent="Falling_Section"]
+[node name="Player" parent="Falling_Section" instance=ExtResource("8_apyqh")]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Falling_Section/Player" node_paths=PackedStringArray("weight_label", "charSprite", "headPivot", "foodBar")]
-motion_mode = 1
-script = ExtResource("3_k078o")
-current_preset = 0
-weight_label = NodePath("../RichTextLabel")
-charSprite = NodePath("Body")
-headPivot = NodePath("Head Pivot")
-foodBar = NodePath("../../../Shared/Bars/Food Bar")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Falling_Section/Player/CharacterBody2D"]
-position = Vector2(14.225, 2.8)
-rotation = 1.3421582
-shape = SubResource("CapsuleShape2D_epypp")
-
-[node name="Body" type="Sprite2D" parent="Falling_Section/Player/CharacterBody2D"]
-position = Vector2(1, -2)
-scale = Vector2(0.11, 0.11)
-texture = ExtResource("8_78gq4")
-
-[node name="Drop Shadow" parent="Falling_Section/Player/CharacterBody2D/Body" instance=ExtResource("5_o3byv")]
-texture = ExtResource("8_78gq4")
-
-[node name="state_increase_sound" type="AudioStreamPlayer" parent="Falling_Section/Player/CharacterBody2D"]
-stream = ExtResource("5_4ejj8")
-
-[node name="state_decrease_sound" type="AudioStreamPlayer" parent="Falling_Section/Player/CharacterBody2D"]
-stream = ExtResource("5_4ejj8")
-volume_db = 1.0
-pitch_scale = 0.5
-
-[node name="bounce_sound" type="AudioStreamPlayer" parent="Falling_Section/Player/CharacterBody2D"]
-stream = ExtResource("6_bdknx")
-volume_db = -4.0
-
-[node name="eat_sound" type="AudioStreamPlayer" parent="Falling_Section/Player/CharacterBody2D"]
-stream = ExtResource("7_jtjp0")
-volume_db = -3.0
-
-[node name="Head Pivot" type="Node2D" parent="Falling_Section/Player/CharacterBody2D"]
-position = Vector2(40.855, -6)
-
-[node name="Head" type="Sprite2D" parent="Falling_Section/Player/CharacterBody2D/Head Pivot"]
-position = Vector2(9.61, -2)
-scale = Vector2(0.11, 0.11)
-texture = ExtResource("5_qfhdb")
-
-[node name="Drop Shadow" parent="Falling_Section/Player/CharacterBody2D/Head Pivot/Head" instance=ExtResource("5_o3byv")]
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Falling_Section/Player"]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -47.0
-offset_top = -40.0
-offset_right = 153.0
-offset_bottom = 60.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 50
-text = "Fat"
-
-[node name="Spawner" type="Node2D" parent="Falling_Section" node_paths=PackedStringArray("distanceBar", "counter_reference")]
+[node name="Spawner" type="Node2D" parent="Falling_Section" node_paths=PackedStringArray("distanceBar", "counter_reference") groups=["spawner"]]
 position = Vector2(0, 370)
 script = ExtResource("13_g8d6c")
 obstacle_configs = Array[ExtResource("14_56gb8")]([ExtResource("14_78gq4"), ExtResource("15_k2mhc"), ExtResource("16_wlcpx"), ExtResource("17_gxae2"), ExtResource("18_76tg3"), ExtResource("19_g8d6c"), ExtResource("20_56gb8"), SubResource("Resource_2plm1")])
@@ -604,6 +538,8 @@ scale = Vector2(28.796778, 16.390018)
 color = Color(0, 0, 0, 0.078431375)
 
 [node name="JetpackJoyrideSection" type="Node2D" parent="."]
+process_mode = 4
+visible = false
 
 [node name="Background" type="Control" parent="JetpackJoyrideSection"]
 layout_mode = 3
@@ -638,9 +574,9 @@ color = Color(0, 0, 0, 0.078431375)
 [node name="Player" type="Node2D" parent="JetpackJoyrideSection"]
 position = Vector2(-420, 0)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="JetpackJoyrideSection/Player" node_paths=PackedStringArray("weight_label", "charSprite", "headPivot", "foodBar") groups=["player"]]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="JetpackJoyrideSection/Player" node_paths=PackedStringArray("weight_label", "charSprite", "headPivot", "foodBar")]
 motion_mode = 1
-script = ExtResource("43_piesb")
+script = ExtResource("3_k078o")
 current_preset = 0
 weight_label = NodePath("../RichTextLabel")
 charSprite = NodePath("Body")
@@ -788,14 +724,12 @@ position = Vector2(39.223, 0)
 scale = Vector2(0.47, 1.075)
 texture = ExtResource("25_bdknx")
 
-[node name="Spawner" type="Node2D" parent="JetpackJoyrideSection" node_paths=PackedStringArray("distanceBar", "counter_reference") groups=["spawner"]]
+[node name="Spawner" type="Node2D" parent="JetpackJoyrideSection" node_paths=PackedStringArray("distanceBar", "counter_reference")]
 position = Vector2(700, 0)
 script = ExtResource("13_g8d6c")
-obstacle_configs = Array[ExtResource("14_56gb8")]([ExtResource("16_wlcpx"), ExtResource("18_76tg3"), ExtResource("19_g8d6c"), ExtResource("20_56gb8")])
+obstacle_configs = Array[ExtResource("14_56gb8")]([ExtResource("14_78gq4"), ExtResource("15_k2mhc"), ExtResource("16_wlcpx"), ExtResource("17_gxae2"), ExtResource("18_76tg3"), ExtResource("19_g8d6c"), ExtResource("20_56gb8"), SubResource("Resource_2plm1")])
 food = ExtResource("20_apyqh")
 gate = ExtResource("21_e62ys")
 distanceBar = NodePath("../../Shared/Bars/Distance Bar")
 counter_reference = NodePath("../../Shared/Bars/Control/Counter")
 direction = Vector2(-1, 0)
-obstacleCooldown = 0.5
-minObstacleCooldown = 0.2
