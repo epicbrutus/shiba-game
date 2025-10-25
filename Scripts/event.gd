@@ -7,7 +7,7 @@ var _spawner: Node2D = null
 var spawner: Node2D:
 	get:
 		if not is_instance_valid(_spawner):
-			_spawner = get_tree().get_first_node_in_group("spawner")
+			_spawner = Utils.get_spawner()
 		return _spawner
 	set(value):
 		_spawner = value

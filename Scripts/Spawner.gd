@@ -16,8 +16,9 @@ const FoodScript = preload("res://Scripts//Food.gd")
 
 @export var counter_reference: RichTextLabel
 
+
 var gateCooldown: float = 30 #30
-var gateTimer: float = 1 #gateCooldown
+var gateTimer: float = gateCooldown
 var mid_gate: bool = false
 
 var foodCooldown: float = 0.75
@@ -39,6 +40,7 @@ var mid_event_bad_food_multiplier: float = 0.5
 
 @onready var area_safe = cam.get_viewport_rect().size.x * 0.8 * 0.5
 
+
 func _ready() -> void:
 	randomize()
 	print(area_safe)
@@ -50,7 +52,6 @@ func _process(delta: float) -> void:
 	obstacle_loop(delta)
 	event_loop(delta)
 
-	
 
 func gate_loop(delta: float) -> void:
 	if gateTimer <= 0:
