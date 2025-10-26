@@ -113,7 +113,7 @@ func set_movement_preset(preset: MovementPreset) -> void:
 		var presetName: String = MovementPreset.keys()[preset]
 		charSprite.texture = load(photosPath + presetName + ".png")
 
-var push_impulse: float = 3000
+var push_impulse: float = 10
 
 func _physics_process(delta: float) -> void:
 	var input_vector = get_input_vector()
@@ -138,7 +138,7 @@ func _physics_process(delta: float) -> void:
 		var rb := col.get_collider()
 
 		if rb is RigidBody2D:
-			var impulse := -n * push_impulse * delta
+			var impulse := -n * push_impulse
 			rb.apply_central_impulse(impulse)
 			rb.sleeping = false
 
