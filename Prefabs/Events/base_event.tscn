@@ -14,8 +14,9 @@ size = Vector2(20.047287, 591.8382)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_00lb2"]
 size = Vector2(38.089935, 1030.9731)
 
-[node name="Base Event" type="Node2D"]
+[node name="Base Event" type="Node2D" node_paths=PackedStringArray("event_ender")]
 script = ExtResource("1_4b6or")
+event_ender = NodePath("")
 
 [node name="Container" type="Container" parent="."]
 offset_left = -570.0

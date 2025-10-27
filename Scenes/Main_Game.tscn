@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://c14qwn6rgfy23"]
+[gd_scene load_steps=75 format=3 uid="uid://c14qwn6rgfy23"]
 
 [ext_resource type="Shader" uid="uid://ci8wfbw02mu88" path="res://scroll.gdshader" id="1_woxae"]
 [ext_resource type="Texture2D" uid="uid://8apg65mbsnv" path="res://Art Log 10-8/background.JPG" id="2_8melw"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://cgepr4tl2vbgd" path="res://sounds/nom.mp3" id="7_jtjp0"]
 [ext_resource type="Texture2D" uid="uid://dri03ys3ug8it" path="res://Fat_Levels/NORMAL.png" id="8_78gq4"]
 [ext_resource type="PackedScene" uid="uid://dlj4gpjcswg3s" path="res://Prefabs/player.tscn" id="8_apyqh"]
+[ext_resource type="Shader" uid="uid://7p882ras25qv" path="res://shaders/vignette.gdshader" id="8_mv27k"]
 [ext_resource type="Texture2D" uid="uid://b7ywjiwjc5mue" path="res://Fat_Levels/OBESE.png" id="9_1cg6w"]
 [ext_resource type="FontFile" uid="uid://1boxnc1s7uki" path="res://BradBunR.ttf" id="11_wlcpx"]
 [ext_resource type="Script" uid="uid://bp4ryh50qjci3" path="res://Scripts/counter.gd" id="12_76tg3"]
@@ -39,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://cw0q44558ofqj" path="res://Art Log 10-8/right wall.png" id="26_jtjp0"]
 [ext_resource type="Texture2D" uid="uid://be5rsp60kafwb" path="res://Art Log 10-8/falling rocks.png" id="26_oh02o"]
 [ext_resource type="Script" uid="uid://c8msip6rkh2gu" path="res://Scripts/dust.gd" id="29_78gq4"]
+[ext_resource type="PackedScene" uid="uid://d314616j7esdk" path="res://Prefabs/Events/Bumper field.tscn" id="29_ek8cs"]
 [ext_resource type="PackedScene" uid="uid://cse7iik4eonx7" path="res://Prefabs/Events/boss.tscn" id="30_apyqh"]
 [ext_resource type="Script" uid="uid://d2hi7whyc1tq1" path="res://Scripts/game_state.gd" id="33_k2mhc"]
 [ext_resource type="PackedScene" uid="uid://dnc8warfyjdou" path="res://Prefabs/Events/shooter_ambush.tscn" id="35_gxae2"]
@@ -96,6 +98,12 @@ load_path = "res://.godot/imported/OVERWEIGHT.png-09b3ccbc466b79aec6343594e7437f
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8melw"]
 load_path = "res://.godot/imported/FAT.png-4fb3e8a293b724c210a22a6445bb5e8a.ctex"
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ek8cs"]
+shader = ExtResource("8_mv27k")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/multiplier = 0.12
+shader_parameter/softness = 1.65
+
 [sub_resource type="Resource" id="Resource_2plm1"]
 script = ExtResource("14_56gb8")
 scene = ExtResource("22_2tts5")
@@ -136,6 +144,12 @@ metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 [sub_resource type="Resource" id="Resource_apyqh"]
 script = ExtResource("22_76tg3")
 scene = ExtResource("44_apyqh")
+metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
+
+[sub_resource type="Resource" id="Resource_8oyct"]
+script = ExtResource("22_76tg3")
+scene = ExtResource("29_ek8cs")
+chance = 100000000.0
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="Resource" id="Resource_e62ys"]
@@ -416,6 +430,16 @@ parameters/looping = true
 
 [node name="Exit Game" parent="Shared" instance=ExtResource("7_e62ys")]
 
+[node name="Vignette" type="CanvasLayer" parent="Shared"]
+
+[node name="ColorRect" type="ColorRect" parent="Shared/Vignette"]
+material = SubResource("ShaderMaterial_ek8cs")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Falling_Section" type="Node2D" parent="." node_paths=PackedStringArray("spawner")]
 script = ExtResource("7_apyqh")
 spawner = NodePath("Spawner")
@@ -429,7 +453,7 @@ foodBar = NodePath("../../../Shared/Bars/Food Bar")
 position = Vector2(0, 370)
 script = ExtResource("13_g8d6c")
 obstacle_configs = Array[ExtResource("14_56gb8")]([ExtResource("14_78gq4"), ExtResource("15_k2mhc"), ExtResource("16_wlcpx"), ExtResource("17_gxae2"), ExtResource("18_76tg3"), ExtResource("19_g8d6c"), ExtResource("20_56gb8"), SubResource("Resource_2plm1")])
-event_configs = Array[ExtResource("22_76tg3")]([SubResource("Resource_g8d6c"), SubResource("Resource_56gb8"), SubResource("Resource_6k8qj"), SubResource("Resource_8vuys"), SubResource("Resource_2tts5"), SubResource("Resource_piesb"), SubResource("Resource_apyqh")])
+event_configs = Array[ExtResource("22_76tg3")]([SubResource("Resource_g8d6c"), SubResource("Resource_56gb8"), SubResource("Resource_6k8qj"), SubResource("Resource_8vuys"), SubResource("Resource_2tts5"), SubResource("Resource_piesb"), SubResource("Resource_apyqh"), SubResource("Resource_8oyct")])
 boss_configs = Array[ExtResource("22_76tg3")]([SubResource("Resource_e62ys")])
 food = ExtResource("20_apyqh")
 gate = ExtResource("21_e62ys")
