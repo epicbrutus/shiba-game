@@ -33,7 +33,7 @@ var obstacleTimer: float = obstacleCooldown
 @export var minObstacleCooldown: float = 0.4
 
 var midEvent: bool = false
-var eventCooldown: float = 15 #15
+var eventCooldown: float = 5 #15
 var eventTimer: float = eventCooldown
 
 var midBoss: bool = false
@@ -174,7 +174,10 @@ func instantiate_obstacle(config: ObstacleConfig, pos: Vector2) -> void:
 
 	obs.add_to_group("obstacles")
 
-func spawn_event(spawn_boss: bool = false) -> void:
+func spawn_event(spawn_boss: bool = false):
+	call_deferred("_spawn_event_impl", spawn_boss)
+
+func _spawn_event_impl(spawn_boss: bool = false) -> void:
 
 	var total_chance = 0
 

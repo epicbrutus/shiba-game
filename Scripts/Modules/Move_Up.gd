@@ -25,7 +25,7 @@ func _ready() -> void:
 		return
 
 	orientation_index = game_state.current_orientation
-	multiplier = multipliers[orientation_index]
+	_on_score_changed(game_state.score)
 
 	if game_state.score_changed.is_connected(Callable(self, "_on_score_changed")):
 		game_state.score_changed.disconnect(Callable(self, "_on_score_changed"))
@@ -36,7 +36,7 @@ func set_speed(p_speed: float):
 	speed = p_speed
 
 func _on_score_changed(value: int):
-	pass #multiplier = multipliers[orientation_index] + multipliers[orientation_index] * (value * 0.5)
+	multiplier = multipliers[orientation_index] + (value * 0.05) #* multipliers[orientation_index]
 
 func _physics_process(delta: float) -> void:
 	get_parent().position += speed * delta * multiplier * spawner.direction

@@ -12,7 +12,7 @@ signal switch_orientation(value: int)
 func _ready():
 	call_deferred("to_defer")
 
-var _score: int = 1
+var _score: int = 20
 var score: int:
 	get: return _score
 	set(value):

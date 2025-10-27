@@ -56,7 +56,8 @@ func _on_cleanup_timeout() -> void:
 
 func end_event() -> void:
 	event_over = true
-	spawner.end_event()
+	if spawner:
+		spawner.end_event()
 
 func full_end_event():
 	spawner.end_event()
