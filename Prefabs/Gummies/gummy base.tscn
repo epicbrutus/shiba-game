@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://iiwlw5mgs76x" path="res://photos/gummy body/gummy head.png" id="1_tfqux"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tfqux"]
-bounce = 0.1
+friction = 0.5
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dnx11"]
 load_path = "res://.godot/imported/NORMAL.png-f54edbcb786264f0dc39aaa5b971619a.ctex"
