@@ -28,6 +28,7 @@ radius = 2.0623312
 height = 21.047451
 
 [node name="Skinny Gummy" instance=ExtResource("1_amn1n")]
+prefab_path = "res://Prefabs/Gummies/skinny gummy.tscn"
 
 [node name="Sprite" parent="visual" index="0"]
 modulate = Color(1, 1, 0.46666667, 1)

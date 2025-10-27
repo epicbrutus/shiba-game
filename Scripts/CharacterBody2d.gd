@@ -64,13 +64,15 @@ func _ready() -> void:
 func getCurrentWeight() -> int:
 	return current_preset
 
-func change_food(amount: int, pos: Vector2 = Vector2(-9999, -9999)) -> void:
+func change_food(amount: int, pos: Vector2 = Vector2(-9999, -9999), play_sound: bool = true) -> void:
 	food_eaten = clamp(food_eaten + amount, 0, max_food)
 	var to_change_to: MovementPreset = food_eaten / div_by
 	set_movement_preset(to_change_to)
 
 	if pos.x != -9999:
-		eat_sound.play()
+		if play_sound:
+			eat_sound.play()
+			
 		eatAnimTime = EAT_ANIM_DURATION
 
 		var direction = (pos - headPivot.global_position).normalized()

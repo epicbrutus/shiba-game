@@ -16,6 +16,7 @@ radius = 5.7884016
 height = 21.225124
 
 [node name="Normal Gummy" instance=ExtResource("1_jjvss")]
+prefab_path = "res://Prefabs/Gummies/normal_gummy.tscn"
 
 [node name="Sprite" parent="visual" index="0"]
 modulate = Color(1, 0.90588236, 0.8392157, 1)

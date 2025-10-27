@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://rqqd00v4vgfv"]
+[gd_scene load_steps=6 format=3 uid="uid://rqqd00v4vgfv"]
 
+[ext_resource type="Script" uid="uid://crs5yc14no34y" path="res://Prefabs/Gummies/gummy_base.gd" id="1_aive8"]
 [ext_resource type="Texture2D" uid="uid://iiwlw5mgs76x" path="res://photos/gummy body/gummy head.png" id="1_tfqux"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tfqux"]
@@ -16,6 +17,8 @@ height = 36.218365
 mass = 0.1
 physics_material_override = SubResource("PhysicsMaterial_tfqux")
 gravity_scale = 0.6
+script = ExtResource("1_aive8")
+prefab_path = "res://Prefabs/Gummies/gummy base.tscn"
 
 [node name="visual" type="Node2D" parent="."]
 scale = Vector2(2.105, 2.105)
