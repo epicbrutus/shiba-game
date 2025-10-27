@@ -483,7 +483,6 @@ grow_vertical = 2
 foodBar = NodePath("../../Bars/Food Bar")
 
 [node name="Falling_Section" type="Node2D" parent="." node_paths=PackedStringArray("spawner")]
-visible = false
 script = ExtResource("7_apyqh")
 spawner = NodePath("Spawner")
 
@@ -610,6 +609,7 @@ color = Color(0, 0, 0, 0.078431375)
 
 [node name="horizontal_section" type="Node2D" parent="." node_paths=PackedStringArray("spawner")]
 process_mode = 4
+visible = false
 script = ExtResource("7_apyqh")
 spawner = NodePath("Spawner")
 orientation_index = 1

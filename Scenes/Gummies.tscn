@@ -103,45 +103,53 @@ gummy_prefabs = Array[PackedScene]([ExtResource("3_h7qod"), ExtResource("1_jt3mb
 gummies = NodePath("../Gummies")
 player = NodePath("../Player/CharacterBody2D")
 
-[node name="GridContainer" type="GridContainer" parent="Control"]
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -33.5
-offset_top = -33.0
-offset_right = 33.5
-offset_bottom = 33.0
+offset_left = -149.625
+offset_top = -205.25
+offset_right = 149.625
+offset_bottom = 205.25
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Skinny" type="Button" parent="Control/GridContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="GridContainer" type="GridContainer" parent="Control/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Skinny" type="Button" parent="Control/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 46
 text = "Skinny"
 
-[node name="Normal" type="Button" parent="Control/GridContainer"]
+[node name="Normal" type="Button" parent="Control/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 46
 text = "Normal"
 
-[node name="Overweight" type="Button" parent="Control/GridContainer"]
+[node name="Overweight" type="Button" parent="Control/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 46
 text = "Overweight"
 
-[node name="Fat" type="Button" parent="Control/GridContainer"]
+[node name="Fat" type="Button" parent="Control/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 46
 text = "Fat"
 
-[node name="Obese" type="Button" parent="Control/GridContainer"]
+[node name="Obese" type="Button" parent="Control/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 46
@@ -163,10 +171,10 @@ O: Force push"
 fit_content = true
 autowrap_mode = 2
 
-[connection signal="pressed" from="Control/GridContainer/Skinny" to="Control" method="_on_skinny_pressed"]
-[connection signal="pressed" from="Control/GridContainer/Normal" to="Control" method="_on_normal_pressed"]
-[connection signal="pressed" from="Control/GridContainer/Overweight" to="Control" method="_on_overweight_pressed"]
-[connection signal="pressed" from="Control/GridContainer/Fat" to="Control" method="_on_fat_pressed"]
-[connection signal="pressed" from="Control/GridContainer/Obese" to="Control" method="_on_obese_pressed"]
+[connection signal="pressed" from="Control/PanelContainer/MarginContainer/GridContainer/Skinny" to="Control" method="_on_skinny_pressed"]
+[connection signal="pressed" from="Control/PanelContainer/MarginContainer/GridContainer/Normal" to="Control" method="_on_normal_pressed"]
+[connection signal="pressed" from="Control/PanelContainer/MarginContainer/GridContainer/Overweight" to="Control" method="_on_overweight_pressed"]
+[connection signal="pressed" from="Control/PanelContainer/MarginContainer/GridContainer/Fat" to="Control" method="_on_fat_pressed"]
+[connection signal="pressed" from="Control/PanelContainer/MarginContainer/GridContainer/Obese" to="Control" method="_on_obese_pressed"]
 
 [editable path="Player"]
