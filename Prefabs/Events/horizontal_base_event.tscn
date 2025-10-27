@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://b45om3jod5tvf"]
+
+[ext_resource type="Script" uid="uid://bs0hawpr445j2" path="res://Scripts/event.gd" id="1_5ytx1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4b6or"]
+size = Vector2(1140, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_127c2"]
+size = Vector2(12.484001, 591.8382)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ytx1"]
+size = Vector2(14.944382, 1030.9731)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00lb2"]
+size = Vector2(8.383408, 1030.9731)
+
+[node name="Base Event" type="Node2D"]
+script = ExtResource("1_5ytx1")
+
+[node name="Container" type="Container" parent="."]
+offset_left = -570.0
+offset_top = -324.0
+offset_right = 570.0
+offset_bottom = 324.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Container"]
+z_index = -10
+position = Vector2(570, 324)
+shape = SubResource("RectangleShape2D_4b6or")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Container"]
+position = Vector2(14.222168, 324.5)
+scale = Vector2(2.438667, -1.1067214)
+shape = SubResource("RectangleShape2D_127c2")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2(-3.5000296, -303.77786)
+rotation = -1.5707964
+scale = Vector2(2.438667, -1.1067214)
+shape = SubResource("RectangleShape2D_5ytx1")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
+position = Vector2(-3.5000324, 315.77783)
+rotation = -1.5707964
+scale = Vector2(2.438667, -1.1067214)
+shape = SubResource("RectangleShape2D_00lb2")

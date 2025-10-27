@@ -21,7 +21,7 @@ const FoodScript = preload("res://Scripts//Food.gd")
 
 @export_group("Settings")
 var gateCooldown: float = 30 #30
-var gateTimer: float = gateCooldown/3
+var gateTimer: float = gateCooldown #/3
 var mid_gate: bool = false
 
 var foodCooldown: float = 0.75

@@ -12,7 +12,7 @@ signal switch_orientation(value: int)
 func _ready():
 	call_deferred("to_defer")
 
-var _score: int = 2
+var _score: int = 1
 var score: int:
 	get: return _score
 	set(value):
@@ -24,7 +24,7 @@ var score: int:
 		elif (value - 1) % boss_every == 0:
 			current_orientation = wrapi(current_orientation + 1, 0, num_orientations)
 			switch_orientation.emit(current_orientation)
-
+			
 func add_score(amount: int = 1) -> void:
 	score += amount
 

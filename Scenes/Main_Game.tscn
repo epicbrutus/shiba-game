@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://c14qwn6rgfy23"]
+[gd_scene load_steps=72 format=3 uid="uid://c14qwn6rgfy23"]
 
 [ext_resource type="Shader" uid="uid://ci8wfbw02mu88" path="res://scroll.gdshader" id="1_woxae"]
 [ext_resource type="Texture2D" uid="uid://8apg65mbsnv" path="res://Art Log 10-8/background.JPG" id="2_8melw"]
@@ -34,13 +34,14 @@
 [ext_resource type="Texture2D" uid="uid://cw0q44558ofqj" path="res://Art Log 10-8/right wall.png" id="26_jtjp0"]
 [ext_resource type="Texture2D" uid="uid://be5rsp60kafwb" path="res://Art Log 10-8/falling rocks.png" id="26_oh02o"]
 [ext_resource type="Script" uid="uid://c8msip6rkh2gu" path="res://Scripts/dust.gd" id="29_78gq4"]
-[ext_resource type="PackedScene" uid="uid://d314616j7esdk" path="res://Prefabs/Events/Bumper field.tscn" id="29_ek8cs"]
+[ext_resource type="PackedScene" uid="uid://d314616j7esdk" path="res://Prefabs/Events/Vertical/Bumper field.tscn" id="29_ek8cs"]
 [ext_resource type="PackedScene" uid="uid://cse7iik4eonx7" path="res://Prefabs/Events/boss.tscn" id="30_apyqh"]
 [ext_resource type="Script" uid="uid://d2hi7whyc1tq1" path="res://Scripts/game_state.gd" id="33_k2mhc"]
 [ext_resource type="PackedScene" uid="uid://dnc8warfyjdou" path="res://Prefabs/Events/shooter_ambush.tscn" id="35_gxae2"]
 [ext_resource type="PackedScene" uid="uid://dgkcbtlnx15xx" path="res://Prefabs/Events/laser_formation.tscn" id="41_2tts5"]
 [ext_resource type="PackedScene" uid="uid://c3rkng5fu0tu8" path="res://Prefabs/Events/laser pathways.tscn" id="42_2plm1"]
-[ext_resource type="Script" uid="uid://bs0hawpr445j2" path="res://Scripts/event.gd" id="42_piesb"]
+[ext_resource type="PackedScene" uid="uid://dei3nv01brq5y" path="res://Prefabs/Events/horizontal_bumper_field.tscn" id="42_piesb"]
+[ext_resource type="PackedScene" uid="uid://ccfayhuxu3h7d" path="res://Prefabs/Events/horizontal_laser_formation.tscn" id="43_piesb"]
 [ext_resource type="PackedScene" uid="uid://5br0thflhic0" path="res://Prefabs/Events/horizontal missle formation.tscn" id="44_apyqh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
@@ -157,17 +158,16 @@ metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 shader = ExtResource("1_woxae")
 shader_parameter/source = ExtResource("2_8melw")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4b6or"]
-size = Vector2(1140, 648)
+[sub_resource type="Resource" id="Resource_mv27k"]
+script = ExtResource("22_76tg3")
+scene = ExtResource("42_piesb")
+metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lnm4x"]
-size = Vector2(19.637245, 590.03107)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_127c2"]
-size = Vector2(20.047287, 591.8382)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_00lb2"]
-size = Vector2(38.089935, 1030.9731)
+[sub_resource type="Resource" id="Resource_ek8cs"]
+script = ExtResource("22_76tg3")
+scene = ExtResource("43_piesb")
+chance = 10000.0
+metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [node name="Main Game" type="Node2D"]
 
@@ -700,40 +700,11 @@ texture = ExtResource("25_bdknx")
 position = Vector2(700, 0)
 script = ExtResource("13_g8d6c")
 obstacle_configs = Array[ExtResource("14_56gb8")]([ExtResource("14_78gq4"), ExtResource("15_k2mhc"), ExtResource("16_wlcpx"), ExtResource("17_gxae2"), ExtResource("18_76tg3"), ExtResource("19_g8d6c"), ExtResource("20_56gb8"), SubResource("Resource_2plm1")])
+event_configs = Array[ExtResource("22_76tg3")]([SubResource("Resource_mv27k"), SubResource("Resource_ek8cs")])
 food = ExtResource("20_apyqh")
 gate = ExtResource("21_e62ys")
 distanceBar = NodePath("../../Shared/Bars/Distance Bar")
 counter_reference = NodePath("../../Shared/Bars/Control/Counter")
 direction = Vector2(-1, 0)
-
-[node name="Base Event" type="Node2D" parent="."]
-script = ExtResource("42_piesb")
-
-[node name="Container" type="Container" parent="Base Event"]
-offset_left = -570.0
-offset_top = -324.0
-offset_right = 570.0
-offset_bottom = 324.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Base Event/Container"]
-z_index = -10
-position = Vector2(570, 324)
-shape = SubResource("RectangleShape2D_4b6or")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Base Event/Container"]
-position = Vector2(1164, 323.5)
-scale = Vector2(2.438667, -1.1067214)
-shape = SubResource("RectangleShape2D_lnm4x")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Base Event/Container"]
-position = Vector2(5, 324.5)
-scale = Vector2(2.438667, -1.1067214)
-shape = SubResource("RectangleShape2D_127c2")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Base Event"]
-position = Vector2(-3.5000308, -332)
-rotation = -1.5707964
-scale = Vector2(2.438667, -1.1067214)
-shape = SubResource("RectangleShape2D_00lb2")
 
 [editable path="Shared/Player"]

@@ -1,0 +1,141 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccfayhuxu3h7d"]
+
+[ext_resource type="PackedScene" uid="uid://b45om3jod5tvf" path="res://Prefabs/Events/horizontal_base_event.tscn" id="1_hhth6"]
+[ext_resource type="Script" uid="uid://bbsfx8ki4pavq" path="res://Scripts/laser_formation_controller.gd" id="2_ma1wg"]
+[ext_resource type="PackedScene" uid="uid://ceumdfolll713" path="res://Prefabs/Obstacles/jumpscare_laser_gate.tscn" id="3_t8yko"]
+
+[node name="Base Event" instance=ExtResource("1_hhth6")]
+
+[node name="Node2D" type="Node2D" parent="." index="3"]
+position = Vector2(0, 9)
+rotation = 1.5707964
+script = ExtResource("2_ma1wg")
+cycles = 3
+
+[node name="laser gate2" parent="Node2D" index="0" instance=ExtResource("3_t8yko")]
+position = Vector2(-1.45558915e-05, -543)
+run_forever = false
+cycles = 3
+charge_up_time = 1.5
+cooldown_time = 0.5
+length = 525.0
+
+[node name="laser gate3" parent="Node2D" index="1" instance=ExtResource("3_t8yko")]
+position = Vector2(-1.45558915e-05, -473)
+run_forever = false
+cycles = 3
+charge_up_time = 1.5
+cooldown_time = 0.5
+length = 525.0
+
+[node name="laser gate4" parent="Node2D" index="2" instance=ExtResource("3_t8yko")]
+position = Vector2(-1.45558915e-05, -403)
+run_forever = false
+cycles = 3
+charge_up_time = 1.5
+cooldown_time = 0.5
+length = 525.0
+
+[node name="laser gate5" parent="Node2D" index="3" instance=ExtResource("3_t8yko")]
+position = Vector2(-1.45558915e-05, -333)
+run_forever = false
+cycles = 3
+charge_up_time = 1.5
+cooldown_time = 0.5
+length = 525.0
+
+[node name="laser gate6" parent="Node2D" index="4" instance=ExtResource("3_t8yko")]
+position = Vector2(-1.45558915e-05, -263)
+run_forever = false
+cycles = 3
+charge_up_time = 1.5
+cooldown_time = 0.5
+length = 525.0
+
+[node name="laser gate7" parent="Node2D" index="5" instance=ExtResource("3_t8yko")]
+position = Vector2(-1.45558915e-05, -193)
+run_forever = false
+cycles = 3
+charge_up_time = 1.5
+cooldown_time = 0.5
+length = 525.0
+
+[node name="laser gate8" parent="Node2D" index="6" instance=ExtResource("3_t8yko")]
+position = Vector2(-1.45558915e-05, -123)
+run_forever = false
+cycles = 3
+charge_up_time = 1.5
+cooldown_time = 0.5
+length = 525.0
+
+[node name="laser gate9" parent="Node2D" index="7" instance=ExtResource("3_t8yko")]
+position = Vector2(-1.45558915e-05, -53)
+run_forever = false
+cycles = 3
+charge_up_time = 1.5
+cooldown_time = 0.5
+length = 525.0
+
+[node name="laser gate10" parent="Node2D" index="8" instance=ExtResource("3_t8yko")]
+position = Vector2(1.0009908e-05, 19)
+run_forever = false
+cycles = 3
+charge_up_time = 1.5
+cooldown_time = 0.5
+length = 525.0
+
+[node name="laser gate11" parent="Node2D" index="9" instance=ExtResource("3_t8yko")]
+position = Vector2(1.0009908e-05, 89)
+run_forever = false
+cycles = 3
+charge_up_time = 1.5
+cooldown_time = 0.5
+length = 525.0
+
+[node name="laser gate12" parent="Node2D" index="10" instance=ExtResource("3_t8yko")]
+position = Vector2(1.0009908e-05, 159)
+run_forever = false
+cycles = 3
+charge_up_time = 1.5
+cooldown_time = 0.5
+length = 525.0
+
+[node name="laser gate13" parent="Node2D" index="11" instance=ExtResource("3_t8yko")]
+position = Vector2(1.0009908e-05, 229)
+run_forever = false
+cycles = 3
+charge_up_time = 1.5
+cooldown_time = 0.5
+length = 525.0
+
+[node name="laser gate14" parent="Node2D" index="12" instance=ExtResource("3_t8yko")]
+position = Vector2(1.0009908e-05, 299)
+run_forever = false
+cycles = 3
+charge_up_time = 1.5
+cooldown_time = 0.5
+length = 525.0
+
+[node name="laser gate15" parent="Node2D" index="13" instance=ExtResource("3_t8yko")]
+position = Vector2(1.0009908e-05, 369)
+run_forever = false
+cycles = 3
+charge_up_time = 1.5
+cooldown_time = 0.5
+length = 525.0
+
+[node name="laser gate16" parent="Node2D" index="14" instance=ExtResource("3_t8yko")]
+position = Vector2(1.0009908e-05, 439)
+run_forever = false
+cycles = 3
+charge_up_time = 1.5
+cooldown_time = 0.5
+length = 525.0
+
+[node name="laser gate17" parent="Node2D" index="15" instance=ExtResource("3_t8yko")]
+position = Vector2(1.0009908e-05, 509)
+run_forever = false
+cycles = 3
+charge_up_time = 1.5
+cooldown_time = 0.5
+length = 525.0

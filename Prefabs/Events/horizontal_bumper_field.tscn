@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://dei3nv01brq5y"]
+
+[ext_resource type="PackedScene" uid="uid://b45om3jod5tvf" path="res://Prefabs/Events/horizontal_base_event.tscn" id="1_bnj8m"]
+[ext_resource type="PackedScene" uid="uid://bqan5vfqgrejr" path="res://Prefabs/bumper.tscn" id="2_6nqsq"]
+[ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="3_m3xbs"]
+[ext_resource type="PackedScene" uid="uid://bko1uhvqhs2gt" path="res://Prefabs/Events/event_ender.tscn" id="4_hxoig"]
+
+[node name="Base Event" node_paths=PackedStringArray("event_ender") instance=ExtResource("1_bnj8m")]
+event_ender = NodePath("Bumpers/Event Ender")
+
+[node name="Bumpers" type="Node2D" parent="." index="3"]
+position = Vector2(1980, 0)
+
+[node name="move_up" parent="Bumpers" index="0" instance=ExtResource("3_m3xbs")]
+Def_Speed = 250.0
+
+[node name="Event Ender" parent="Bumpers" index="1" instance=ExtResource("4_hxoig")]
+position = Vector2(253, 0)
+
+[node name="bumper column" type="Node2D" parent="Bumpers" index="2"]
+position = Vector2(-531, 0)
+
+[node name="Bumper" parent="Bumpers/bumper column" index="0" instance=ExtResource("2_6nqsq")]
+
+[node name="Bumper2" parent="Bumpers/bumper column" index="1" instance=ExtResource("2_6nqsq")]
+position = Vector2(0, 250)
+
+[node name="Bumper3" parent="Bumpers/bumper column" index="2" instance=ExtResource("2_6nqsq")]
+position = Vector2(0, -250)
+
+[node name="bumper column2" type="Node2D" parent="Bumpers" index="3"]
+position = Vector2(-281, 125)
+
+[node name="Bumper" parent="Bumpers/bumper column2" index="0" instance=ExtResource("2_6nqsq")]
+
+[node name="Bumper3" parent="Bumpers/bumper column2" index="1" instance=ExtResource("2_6nqsq")]
+position = Vector2(0, -250)
+
+[node name="bumper column3" type="Node2D" parent="Bumpers" index="4"]
+position = Vector2(-31, 0)
+
+[node name="Bumper" parent="Bumpers/bumper column3" index="0" instance=ExtResource("2_6nqsq")]
+
+[node name="Bumper2" parent="Bumpers/bumper column3" index="1" instance=ExtResource("2_6nqsq")]
+position = Vector2(0, 250)
+
+[node name="Bumper3" parent="Bumpers/bumper column3" index="2" instance=ExtResource("2_6nqsq")]
+position = Vector2(0, -250)
+
+[node name="bumper column4" type="Node2D" parent="Bumpers" index="5"]
+position = Vector2(219, 125)
+
+[node name="Bumper" parent="Bumpers/bumper column4" index="0" instance=ExtResource("2_6nqsq")]
+
+[node name="Bumper3" parent="Bumpers/bumper column4" index="1" instance=ExtResource("2_6nqsq")]
+position = Vector2(0, -250)
