@@ -90,7 +90,6 @@ position = Vector2(103, -48)
 position = Vector2(198, -48)
 
 [node name="Control" type="Control" parent="." node_paths=PackedStringArray("gummies", "player")]
-visible = false
 z_index = 10
 layout_mode = 3
 anchors_preset = 15
@@ -119,31 +118,27 @@ grow_vertical = 2
 
 [node name="Skinny" type="Button" parent="Control/GridContainer"]
 layout_mode = 2
-focus_mode = 0
 theme_override_font_sizes/font_size = 46
+action_mode = 0
 text = "Skinny"
 
 [node name="Normal" type="Button" parent="Control/GridContainer"]
 layout_mode = 2
-focus_mode = 0
 theme_override_font_sizes/font_size = 46
 text = "Normal"
 
 [node name="Overweight" type="Button" parent="Control/GridContainer"]
 layout_mode = 2
-focus_mode = 0
 theme_override_font_sizes/font_size = 46
 text = "Overweight"
 
 [node name="Fat" type="Button" parent="Control/GridContainer"]
 layout_mode = 2
-focus_mode = 0
 theme_override_font_sizes/font_size = 46
 text = "Fat"
 
 [node name="Obese" type="Button" parent="Control/GridContainer"]
 layout_mode = 2
-focus_mode = 0
 theme_override_font_sizes/font_size = 46
 text = "Obese"
 

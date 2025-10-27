@@ -5,6 +5,7 @@ extends "res://Scripts/CharacterBody2d.gd"
 var eaten_gummies: Array[String] = []
 
 var eat_range: float = 100
+var aoe_range: float = 500
 
 func _ready():
 	change_food(0)
@@ -48,3 +49,17 @@ func _unhandled_input(event: InputEvent) -> void:
 
 		eaten_gummies.pop_back()
 		change_food(-20, new_gummy.global_position + Vector2.DOWN * 100, false)
+
+	elif event.is_action_pressed("spin_out"):
+		var gummy_list := gummies.get_children()
+
+		for gummy in gummy_list:
+			if gummy.global_position.distance_to(global_position) < aoe_range:
+				gummy.apply_central_impulse((gummy.global_position - global_position).normalized() * 100)
+
+	elif event.is_action_pressed("spin_in"):
+		var gummy_list := gummies.get_children()
+
+		for gummy in gummy_list:
+			if gummy.global_position.distance_to(global_position) < aoe_range:
+				gummy.apply_central_impulse((gummy.global_position - global_position).normalized() * -100)

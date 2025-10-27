@@ -169,8 +169,9 @@ func get_spawn_pos(innerCushion: float = 0, outerCushion: float = 0, negativeOff
 
 func instantiate_obstacle(config: ObstacleConfig, pos: Vector2) -> void:
 	var obs = config.scene.instantiate()
-	add_child(obs)
 	obs.position = pos
+	add_child(obs)
+
 	obs.add_to_group("obstacles")
 
 func spawn_event(spawn_boss: bool = false) -> void:
@@ -219,7 +220,7 @@ func end_event() -> void:
 func spawnGate() -> void:
 	var instance = gate.instantiate()
 	add_child(instance);
-	instance.position = get_spawn_pos()
+	instance.position = direction * -400
 	instance.get_node("Area2D").initialize(counter_reference)
 
 func reset_gate_timer() -> void:
