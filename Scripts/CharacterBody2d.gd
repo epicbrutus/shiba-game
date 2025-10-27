@@ -61,6 +61,10 @@ func _ready() -> void:
 		# Change the path below to match your scene hierarchy
 		weight_label = get_node_or_null("WeightLabel")
 
+	var game_state = get_tree().get_first_node_in_group("GameState")
+	if game_state:
+		game_state.switch_orientation.connect(_on_switch_orientation)
+
 func getCurrentWeight() -> int:
 	return current_preset
 
@@ -72,7 +76,7 @@ func change_food(amount: int, pos: Vector2 = Vector2(-9999, -9999), play_sound: 
 	if pos.x != -9999:
 		if play_sound:
 			eat_sound.play()
-			
+
 		eatAnimTime = EAT_ANIM_DURATION
 
 		var direction = (pos - headPivot.global_position).normalized()
@@ -192,3 +196,6 @@ func get_input_vector() -> Vector2:
 
 func jumbo() -> void:
 	pass
+
+func _on_switch_orientation(orientation: int):
+	global_position = Vector2.ZERO

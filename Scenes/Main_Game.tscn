@@ -1,16 +1,10 @@
-[gd_scene load_steps=75 format=3 uid="uid://c14qwn6rgfy23"]
+[gd_scene load_steps=73 format=3 uid="uid://c14qwn6rgfy23"]
 
 [ext_resource type="Shader" uid="uid://ci8wfbw02mu88" path="res://scroll.gdshader" id="1_woxae"]
 [ext_resource type="Texture2D" uid="uid://8apg65mbsnv" path="res://Art Log 10-8/background.JPG" id="2_8melw"]
-[ext_resource type="Script" uid="uid://dygskx16dxw61" path="res://Scripts/CharacterBody2d.gd" id="3_k078o"]
-[ext_resource type="AudioStream" uid="uid://cmk7u1tgxt54b" path="res://sounds/fart.mp3" id="5_4ejj8"]
-[ext_resource type="PackedScene" uid="uid://dwqgfnsocelag" path="res://Prefabs/drop_shadow.tscn" id="5_o3byv"]
 [ext_resource type="Texture2D" uid="uid://ct4c457b7jv8i" path="res://Art Log 10-4/head.png" id="5_qfhdb"]
-[ext_resource type="AudioStream" uid="uid://coxhwnuy5ucjv" path="res://sounds/jaw trimmed.mp3" id="6_bdknx"]
-[ext_resource type="Script" uid="uid://0v6bbu0vsmlp" path="res://Scripts/falling_section.gd" id="7_apyqh"]
+[ext_resource type="Script" uid="uid://0v6bbu0vsmlp" path="res://Scripts/section_logic.gd" id="7_apyqh"]
 [ext_resource type="PackedScene" uid="uid://cebb58s410nks" path="res://Prefabs/exit_game.tscn" id="7_e62ys"]
-[ext_resource type="AudioStream" uid="uid://cgepr4tl2vbgd" path="res://sounds/nom.mp3" id="7_jtjp0"]
-[ext_resource type="Texture2D" uid="uid://dri03ys3ug8it" path="res://Fat_Levels/NORMAL.png" id="8_78gq4"]
 [ext_resource type="PackedScene" uid="uid://dlj4gpjcswg3s" path="res://Prefabs/player.tscn" id="8_apyqh"]
 [ext_resource type="Shader" uid="uid://7p882ras25qv" path="res://shaders/vignette.gdshader" id="8_mv27k"]
 [ext_resource type="Texture2D" uid="uid://b7ywjiwjc5mue" path="res://Fat_Levels/OBESE.png" id="9_1cg6w"]
@@ -46,6 +40,7 @@
 [ext_resource type="PackedScene" uid="uid://dnc8warfyjdou" path="res://Prefabs/Events/shooter_ambush.tscn" id="35_gxae2"]
 [ext_resource type="PackedScene" uid="uid://dgkcbtlnx15xx" path="res://Prefabs/Events/laser_formation.tscn" id="41_2tts5"]
 [ext_resource type="PackedScene" uid="uid://c3rkng5fu0tu8" path="res://Prefabs/Events/laser pathways.tscn" id="42_2plm1"]
+[ext_resource type="Script" uid="uid://bs0hawpr445j2" path="res://Scripts/event.gd" id="42_piesb"]
 [ext_resource type="PackedScene" uid="uid://5br0thflhic0" path="res://Prefabs/Events/horizontal missle formation.tscn" id="44_apyqh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
@@ -162,9 +157,17 @@ metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 shader = ExtResource("1_woxae")
 shader_parameter/source = ExtResource("2_8melw")
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_epypp"]
-radius = 11.0
-height = 63.87
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4b6or"]
+size = Vector2(1140, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lnm4x"]
+size = Vector2(19.637245, 590.03107)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_127c2"]
+size = Vector2(20.047287, 591.8382)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00lb2"]
+size = Vector2(38.089935, 1030.9731)
 
 [node name="Main Game" type="Node2D"]
 
@@ -440,14 +443,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Player" parent="Shared" instance=ExtResource("8_apyqh")]
+
+[node name="CharacterBody2D" parent="Shared/Player" index="0" node_paths=PackedStringArray("foodBar")]
+foodBar = NodePath("../../Bars/Food Bar")
+
 [node name="Falling_Section" type="Node2D" parent="." node_paths=PackedStringArray("spawner")]
+visible = false
 script = ExtResource("7_apyqh")
 spawner = NodePath("Spawner")
-
-[node name="Player" parent="Falling_Section" instance=ExtResource("8_apyqh")]
-
-[node name="CharacterBody2D" parent="Falling_Section/Player" index="0" node_paths=PackedStringArray("foodBar")]
-foodBar = NodePath("../../../Shared/Bars/Food Bar")
 
 [node name="Spawner" type="Node2D" parent="Falling_Section" node_paths=PackedStringArray("distanceBar", "counter_reference") groups=["spawner"]]
 position = Vector2(0, 370)
@@ -570,18 +574,20 @@ offset_bottom = -256.0
 scale = Vector2(28.796778, 16.390018)
 color = Color(0, 0, 0, 0.078431375)
 
-[node name="JetpackJoyrideSection" type="Node2D" parent="."]
+[node name="horizontal_section" type="Node2D" parent="." node_paths=PackedStringArray("spawner")]
 process_mode = 4
-visible = false
+script = ExtResource("7_apyqh")
+spawner = NodePath("Spawner")
+orientation_index = 1
 
-[node name="Background" type="Control" parent="JetpackJoyrideSection"]
+[node name="Background" type="Control" parent="horizontal_section"]
 layout_mode = 3
 anchors_preset = 0
 offset_top = -6.0
 offset_right = 40.0
 offset_bottom = 34.0
 
-[node name="TextureRect" type="TextureRect" parent="JetpackJoyrideSection/Background"]
+[node name="TextureRect" type="TextureRect" parent="horizontal_section/Background"]
 z_index = -6
 texture_repeat = 2
 material = SubResource("ShaderMaterial_ed6rl")
@@ -594,7 +600,7 @@ rotation = -1.5707941
 scale = Vector2(0.617831, 0.4136479)
 texture = ExtResource("2_8melw")
 
-[node name="ColorRect" type="ColorRect" parent="JetpackJoyrideSection/Background"]
+[node name="ColorRect" type="ColorRect" parent="horizontal_section/Background"]
 z_index = -5
 layout_mode = 0
 offset_left = -588.28864
@@ -604,99 +610,32 @@ offset_bottom = -288.86453
 scale = Vector2(28.796778, 16.390018)
 color = Color(0, 0, 0, 0.078431375)
 
-[node name="Player" type="Node2D" parent="JetpackJoyrideSection"]
-position = Vector2(-420, 0)
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="JetpackJoyrideSection/Player" node_paths=PackedStringArray("weight_label", "charSprite", "headPivot", "foodBar")]
-motion_mode = 1
-script = ExtResource("3_k078o")
-current_preset = 0
-weight_label = NodePath("../RichTextLabel")
-charSprite = NodePath("Body")
-headPivot = NodePath("Head Pivot")
-foodBar = NodePath("../../../Shared/Bars/Food Bar")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="JetpackJoyrideSection/Player/CharacterBody2D"]
-position = Vector2(14.225, 2.8)
-rotation = 1.3421582
-shape = SubResource("CapsuleShape2D_epypp")
-
-[node name="Body" type="Sprite2D" parent="JetpackJoyrideSection/Player/CharacterBody2D"]
-position = Vector2(1, -2)
-scale = Vector2(0.11, 0.11)
-texture = ExtResource("8_78gq4")
-
-[node name="Drop Shadow" parent="JetpackJoyrideSection/Player/CharacterBody2D/Body" instance=ExtResource("5_o3byv")]
-texture = ExtResource("8_78gq4")
-
-[node name="state_increase_sound" type="AudioStreamPlayer" parent="JetpackJoyrideSection/Player/CharacterBody2D"]
-stream = ExtResource("5_4ejj8")
-
-[node name="state_decrease_sound" type="AudioStreamPlayer" parent="JetpackJoyrideSection/Player/CharacterBody2D"]
-stream = ExtResource("5_4ejj8")
-volume_db = 1.0
-pitch_scale = 0.5
-
-[node name="bounce_sound" type="AudioStreamPlayer" parent="JetpackJoyrideSection/Player/CharacterBody2D"]
-stream = ExtResource("6_bdknx")
-volume_db = -4.0
-
-[node name="eat_sound" type="AudioStreamPlayer" parent="JetpackJoyrideSection/Player/CharacterBody2D"]
-stream = ExtResource("7_jtjp0")
-volume_db = -3.0
-
-[node name="Head Pivot" type="Node2D" parent="JetpackJoyrideSection/Player/CharacterBody2D"]
-position = Vector2(40.855, -6)
-
-[node name="Head" type="Sprite2D" parent="JetpackJoyrideSection/Player/CharacterBody2D/Head Pivot"]
-position = Vector2(9.61, -2)
-scale = Vector2(0.11, 0.11)
-texture = ExtResource("5_qfhdb")
-
-[node name="Drop Shadow" parent="JetpackJoyrideSection/Player/CharacterBody2D/Head Pivot/Head" instance=ExtResource("5_o3byv")]
-
-[node name="RichTextLabel" type="RichTextLabel" parent="JetpackJoyrideSection/Player"]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -47.0
-offset_top = -40.0
-offset_right = 153.0
-offset_bottom = 60.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 50
-text = "Fat"
-
-[node name="Down_Wall" type="Area2D" parent="JetpackJoyrideSection"]
+[node name="Down_Wall" type="Area2D" parent="horizontal_section"]
 z_index = 2
 position = Vector2(-12, 398)
 rotation = -1.5707964
 script = ExtResource("23_ek8cs")
 direction = Vector2(0, -1)
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="JetpackJoyrideSection/Down_Wall"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="horizontal_section/Down_Wall"]
 position = Vector2(0, 16.500004)
 scale = Vector2(2.438667, -1.1067214)
 shape = SubResource("RectangleShape2D_q6r6c")
 
-[node name="Sprite2D" type="Sprite2D" parent="JetpackJoyrideSection/Down_Wall"]
+[node name="Sprite2D" type="Sprite2D" parent="horizontal_section/Down_Wall"]
 material = ExtResource("25_jtjp0")
 position = Vector2(39.223, 0)
 scale = Vector2(0.47, 1.115)
 texture = ExtResource("25_bdknx")
 
-[node name="Ceiling" type="Area2D" parent="JetpackJoyrideSection"]
+[node name="Ceiling" type="Area2D" parent="horizontal_section"]
 z_index = 1
 position = Vector2(-20, 56)
 rotation = 3.1415927
 script = ExtResource("23_ek8cs")
 direction = Vector2(0, 1)
 
-[node name="Sprite2D2" type="Sprite2D" parent="JetpackJoyrideSection/Ceiling"]
+[node name="Sprite2D2" type="Sprite2D" parent="horizontal_section/Ceiling"]
 modulate = Color(1, 1, 1, 0.59607846)
 position = Vector2(586.6661, -46.999977)
 rotation = 1.5707964
@@ -704,33 +643,33 @@ scale = Vector2(1, 1.0680599)
 texture = ExtResource("25_k078o")
 script = ExtResource("29_78gq4")
 
-[node name="Sprite2D3" type="Sprite2D" parent="JetpackJoyrideSection/Ceiling"]
+[node name="Sprite2D3" type="Sprite2D" parent="horizontal_section/Ceiling"]
 visible = false
 position = Vector2(609, -295)
 rotation = 1.5707964
 scale = Vector2(0.56071913, 0.3744711)
 texture = ExtResource("26_oh02o")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="JetpackJoyrideSection/Ceiling"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="horizontal_section/Ceiling"]
 position = Vector2(615, 12.999981)
 scale = Vector2(2.438667, -1.1067214)
 shape = SubResource("RectangleShape2D_q6r6c")
 
-[node name="Sprite2D4" type="Sprite2D" parent="JetpackJoyrideSection/Ceiling"]
+[node name="Sprite2D4" type="Sprite2D" parent="horizontal_section/Ceiling"]
 visible = false
 position = Vector2(619, 69.00003)
 rotation = 1.5707964
 scale = Vector2(-0.35775328, 0.39021406)
 texture = ExtResource("26_oh02o")
 
-[node name="Sprite2D5" type="Sprite2D" parent="JetpackJoyrideSection/Ceiling"]
+[node name="Sprite2D5" type="Sprite2D" parent="horizontal_section/Ceiling"]
 visible = false
 position = Vector2(613, 334.00003)
 rotation = 1.5707964
 scale = Vector2(-0.561, -0.374)
 texture = ExtResource("26_oh02o")
 
-[node name="Sprite2D6" type="Sprite2D" parent="JetpackJoyrideSection/Ceiling"]
+[node name="Sprite2D6" type="Sprite2D" parent="horizontal_section/Ceiling"]
 modulate = Color(1, 1, 1, 0.59607846)
 position = Vector2(591.666, 65.00002)
 rotation = 1.5707964
@@ -738,7 +677,7 @@ scale = Vector2(-1, -1.068)
 texture = ExtResource("25_k078o")
 script = ExtResource("29_78gq4")
 
-[node name="Up_Wall" type="Area2D" parent="JetpackJoyrideSection"]
+[node name="Up_Wall" type="Area2D" parent="horizontal_section"]
 z_index = 2
 position = Vector2(1, -380)
 rotation = 1.5707964
@@ -746,18 +685,18 @@ scale = Vector2(1, -1)
 script = ExtResource("23_ek8cs")
 direction = Vector2(0, 1)
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="JetpackJoyrideSection/Up_Wall"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="horizontal_section/Up_Wall"]
 position = Vector2(0, -8.250019)
 scale = Vector2(2.438667, -1.1067214)
 shape = SubResource("RectangleShape2D_q6r6c")
 
-[node name="Sprite2D" type="Sprite2D" parent="JetpackJoyrideSection/Up_Wall"]
+[node name="Sprite2D" type="Sprite2D" parent="horizontal_section/Up_Wall"]
 material = ExtResource("25_jtjp0")
 position = Vector2(39.223, 0)
 scale = Vector2(0.47, 1.075)
 texture = ExtResource("25_bdknx")
 
-[node name="Spawner" type="Node2D" parent="JetpackJoyrideSection" node_paths=PackedStringArray("distanceBar", "counter_reference")]
+[node name="Spawner" type="Node2D" parent="horizontal_section" node_paths=PackedStringArray("distanceBar", "counter_reference")]
 position = Vector2(700, 0)
 script = ExtResource("13_g8d6c")
 obstacle_configs = Array[ExtResource("14_56gb8")]([ExtResource("14_78gq4"), ExtResource("15_k2mhc"), ExtResource("16_wlcpx"), ExtResource("17_gxae2"), ExtResource("18_76tg3"), ExtResource("19_g8d6c"), ExtResource("20_56gb8"), SubResource("Resource_2plm1")])
@@ -767,4 +706,34 @@ distanceBar = NodePath("../../Shared/Bars/Distance Bar")
 counter_reference = NodePath("../../Shared/Bars/Control/Counter")
 direction = Vector2(-1, 0)
 
-[editable path="Falling_Section/Player"]
+[node name="Base Event" type="Node2D" parent="."]
+script = ExtResource("42_piesb")
+
+[node name="Container" type="Container" parent="Base Event"]
+offset_left = -570.0
+offset_top = -324.0
+offset_right = 570.0
+offset_bottom = 324.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base Event/Container"]
+z_index = -10
+position = Vector2(570, 324)
+shape = SubResource("RectangleShape2D_4b6or")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Base Event/Container"]
+position = Vector2(1164, 323.5)
+scale = Vector2(2.438667, -1.1067214)
+shape = SubResource("RectangleShape2D_lnm4x")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Base Event/Container"]
+position = Vector2(5, 324.5)
+scale = Vector2(2.438667, -1.1067214)
+shape = SubResource("RectangleShape2D_127c2")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Base Event"]
+position = Vector2(-3.5000308, -332)
+rotation = -1.5707964
+scale = Vector2(2.438667, -1.1067214)
+shape = SubResource("RectangleShape2D_00lb2")
+
+[editable path="Shared/Player"]
