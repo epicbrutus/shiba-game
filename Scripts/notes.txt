@@ -1,7 +1,4 @@
--- the homing missile is just kinda broke when tunring so fix that
 
--- I deselected hte og falling player so you'll to reenable his group when you wanna use him.
 
 THINGS TO FIX:
-- gate is offset or something in normal mode
-- missiles are not using the proper cooldown (I think. They seem fine in formation but not normally)
+- the missile formations are currently tracking a missile to see if the event ends. if that missile is deleted it'll all probably break. Account for that.

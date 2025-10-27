@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dcj4kjchgcldd"]
 
-[ext_resource type="PackedScene" uid="uid://bxki77u8krb6n" path="res://Prefabs/Events/base_event.tscn" id="1_pfki8"]
+[ext_resource type="PackedScene" uid="uid://bxki77u8krb6n" path="res://Prefabs/Events/Vertical/base_event.tscn" id="1_pfki8"]
 [ext_resource type="Script" uid="uid://bncys4rnqwwhl" path="res://Scripts/clear_missile_hole.gd" id="2_8nyye"]
 [ext_resource type="PackedScene" uid="uid://od282gq0j8tm" path="res://Prefabs/Obstacles/vertical_missile.tscn" id="2_qub8q"]
 [ext_resource type="PackedScene" uid="uid://bko1uhvqhs2gt" path="res://Prefabs/Events/event_ender.tscn" id="4_8nyye"]
@@ -98,6 +98,6 @@ start_to_screen_time = 3.5
 position = Vector2(465, 396)
 start_to_screen_time = 3.5
 
-[node name="Event Ender" parent="Node2/Vertical Missile12" index="5" instance=ExtResource("4_8nyye")]
+[node name="Event Ender" parent="Node2/Vertical Missile12" index="4" instance=ExtResource("4_8nyye")]
 
 [editable path="Node2/Vertical Missile12"]

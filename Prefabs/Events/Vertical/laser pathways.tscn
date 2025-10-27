@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://c3rkng5fu0tu8"]
 
-[ext_resource type="PackedScene" uid="uid://bxki77u8krb6n" path="res://Prefabs/Events/base_event.tscn" id="1_3psfv"]
+[ext_resource type="PackedScene" uid="uid://bxki77u8krb6n" path="res://Prefabs/Events/Vertical/base_event.tscn" id="1_3psfv"]
 [ext_resource type="Script" uid="uid://0sseqhuvwdd" path="res://Scripts/cycle_lasers.gd" id="2_103nw"]
 [ext_resource type="PackedScene" uid="uid://osw2ffrvd68" path="res://Prefabs/Obstacles/moving_jumpscare_laser_gate.tscn" id="2_rq0ik"]
 [ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="3_okup2"]

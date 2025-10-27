@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://ehtmd7vcq2sp"]
 
-[ext_resource type="PackedScene" uid="uid://bxki77u8krb6n" path="res://Prefabs/Events/base_event.tscn" id="1_5orrj"]
+[ext_resource type="PackedScene" uid="uid://bxki77u8krb6n" path="res://Prefabs/Events/Vertical/base_event.tscn" id="1_5orrj"]
 [ext_resource type="Script" uid="uid://bk5rsc22sybyy" path="res://Scripts/test_carousel.gd" id="2_i2sxx"]
 [ext_resource type="Script" uid="uid://c5dy062f8cxod" path="res://Scripts/anchor.gd" id="3_ane8f"]
 [ext_resource type="PackedScene" uid="uid://w8ophhq103o4" path="res://Prefabs/Obstacles/shooter.tscn" id="4_3dxkc"]

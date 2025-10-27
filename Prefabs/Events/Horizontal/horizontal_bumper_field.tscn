@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dei3nv01brq5y"]
 
-[ext_resource type="PackedScene" uid="uid://b45om3jod5tvf" path="res://Prefabs/Events/horizontal_base_event.tscn" id="1_bnj8m"]
+[ext_resource type="PackedScene" uid="uid://b45om3jod5tvf" path="res://Prefabs/Events/Horizontal/horizontal_base_event.tscn" id="1_bnj8m"]
 [ext_resource type="PackedScene" uid="uid://bqan5vfqgrejr" path="res://Prefabs/bumper.tscn" id="2_6nqsq"]
 [ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="3_m3xbs"]
 [ext_resource type="PackedScene" uid="uid://bko1uhvqhs2gt" path="res://Prefabs/Events/event_ender.tscn" id="4_hxoig"]

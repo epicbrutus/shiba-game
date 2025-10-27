@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://5br0thflhic0"]
 
-[ext_resource type="PackedScene" uid="uid://bxki77u8krb6n" path="res://Prefabs/Events/base_event.tscn" id="1_83ahs"]
+[ext_resource type="PackedScene" uid="uid://bxki77u8krb6n" path="res://Prefabs/Events/Vertical/base_event.tscn" id="1_83ahs"]
 [ext_resource type="Script" uid="uid://bncys4rnqwwhl" path="res://Scripts/clear_missile_hole.gd" id="2_7wabj"]
 [ext_resource type="PackedScene" uid="uid://od282gq0j8tm" path="res://Prefabs/Obstacles/vertical_missile.tscn" id="3_cq3mf"]
 

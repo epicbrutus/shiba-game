@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://c14qwn6rgfy23"]
+[gd_scene load_steps=78 format=3 uid="uid://c14qwn6rgfy23"]
 
 [ext_resource type="Shader" uid="uid://ci8wfbw02mu88" path="res://scroll.gdshader" id="1_woxae"]
 [ext_resource type="Texture2D" uid="uid://8apg65mbsnv" path="res://Art Log 10-8/background.JPG" id="2_8melw"]
@@ -24,25 +24,28 @@
 [ext_resource type="PackedScene" uid="uid://osw2ffrvd68" path="res://Prefabs/Obstacles/moving_jumpscare_laser_gate.tscn" id="22_2tts5"]
 [ext_resource type="Script" uid="uid://bbt8tf65tbbdt" path="res://Scripts/Configs/EventConfig.gd" id="22_76tg3"]
 [ext_resource type="Script" uid="uid://bdb3fxsghyjma" path="res://Scripts/wall.gd" id="23_ek8cs"]
-[ext_resource type="PackedScene" uid="uid://d3lrc6aiqyes1" path="res://Prefabs/Events/laser_sides.tscn" id="24_g8d6c"]
-[ext_resource type="PackedScene" uid="uid://dcj4kjchgcldd" path="res://Prefabs/Events/missle formation.tscn" id="25_56gb8"]
+[ext_resource type="PackedScene" uid="uid://d3lrc6aiqyes1" path="res://Prefabs/Events/Vertical/laser_sides.tscn" id="24_g8d6c"]
+[ext_resource type="PackedScene" uid="uid://dcj4kjchgcldd" path="res://Prefabs/Events/Vertical/missle formation.tscn" id="25_56gb8"]
 [ext_resource type="Texture2D" uid="uid://du3xupanuvavk" path="res://Art Log 10-8/left wall.png" id="25_bdknx"]
 [ext_resource type="AudioStream" uid="uid://bblklcj710be5" path="res://sounds/flight-of-the-bumblebee.mp3" id="25_hlwbt"]
 [ext_resource type="Material" uid="uid://cl3oo4marxdq4" path="res://Scenes/wall.tres" id="25_jtjp0"]
 [ext_resource type="Texture2D" uid="uid://d7vinmvgqd8d" path="res://Art Log 10-8/dust cloud.png" id="25_k078o"]
-[ext_resource type="PackedScene" uid="uid://bvv50m1fg0uro" path="res://Prefabs/Events/the_blade_gate.tscn" id="26_6k8qj"]
+[ext_resource type="PackedScene" uid="uid://bvv50m1fg0uro" path="res://Prefabs/Events/Vertical/the_blade_gate.tscn" id="26_6k8qj"]
 [ext_resource type="Texture2D" uid="uid://cw0q44558ofqj" path="res://Art Log 10-8/right wall.png" id="26_jtjp0"]
 [ext_resource type="Texture2D" uid="uid://be5rsp60kafwb" path="res://Art Log 10-8/falling rocks.png" id="26_oh02o"]
 [ext_resource type="Script" uid="uid://c8msip6rkh2gu" path="res://Scripts/dust.gd" id="29_78gq4"]
 [ext_resource type="PackedScene" uid="uid://d314616j7esdk" path="res://Prefabs/Events/Vertical/Bumper field.tscn" id="29_ek8cs"]
 [ext_resource type="PackedScene" uid="uid://cse7iik4eonx7" path="res://Prefabs/Events/boss.tscn" id="30_apyqh"]
 [ext_resource type="Script" uid="uid://d2hi7whyc1tq1" path="res://Scripts/game_state.gd" id="33_k2mhc"]
-[ext_resource type="PackedScene" uid="uid://dnc8warfyjdou" path="res://Prefabs/Events/shooter_ambush.tscn" id="35_gxae2"]
-[ext_resource type="PackedScene" uid="uid://dgkcbtlnx15xx" path="res://Prefabs/Events/laser_formation.tscn" id="41_2tts5"]
-[ext_resource type="PackedScene" uid="uid://c3rkng5fu0tu8" path="res://Prefabs/Events/laser pathways.tscn" id="42_2plm1"]
-[ext_resource type="PackedScene" uid="uid://dei3nv01brq5y" path="res://Prefabs/Events/horizontal_bumper_field.tscn" id="42_piesb"]
-[ext_resource type="PackedScene" uid="uid://ccfayhuxu3h7d" path="res://Prefabs/Events/horizontal_laser_formation.tscn" id="43_piesb"]
-[ext_resource type="PackedScene" uid="uid://5br0thflhic0" path="res://Prefabs/Events/horizontal missle formation.tscn" id="44_apyqh"]
+[ext_resource type="PackedScene" uid="uid://dnc8warfyjdou" path="res://Prefabs/Events/Vertical/shooter_ambush.tscn" id="35_gxae2"]
+[ext_resource type="PackedScene" uid="uid://dgkcbtlnx15xx" path="res://Prefabs/Events/Vertical/laser_formation.tscn" id="41_2tts5"]
+[ext_resource type="PackedScene" uid="uid://c3rkng5fu0tu8" path="res://Prefabs/Events/Vertical/laser pathways.tscn" id="42_2plm1"]
+[ext_resource type="PackedScene" uid="uid://dei3nv01brq5y" path="res://Prefabs/Events/Horizontal/horizontal_bumper_field.tscn" id="42_piesb"]
+[ext_resource type="PackedScene" uid="uid://ccfayhuxu3h7d" path="res://Prefabs/Events/Horizontal/horizontal_laser_formation.tscn" id="43_piesb"]
+[ext_resource type="PackedScene" uid="uid://5br0thflhic0" path="res://Prefabs/Events/Vertical/sides missle formation.tscn" id="44_apyqh"]
+[ext_resource type="PackedScene" uid="uid://dt2fmksnfxde7" path="res://Prefabs/Events/Horizontal/horizontal_shooter_ambush.tscn" id="44_e62ys"]
+[ext_resource type="PackedScene" uid="uid://cq38we4l80o3b" path="res://Prefabs/Events/Horizontal/horizontal_blade_gate.tscn" id="45_e62ys"]
+[ext_resource type="PackedScene" uid="uid://e0aojlu4xhmm" path="res://Prefabs/Events/Horizontal/horizontal up-down missile formation.tscn" id="46_mv27k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(1152.5, 20)
@@ -166,7 +169,22 @@ metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 [sub_resource type="Resource" id="Resource_ek8cs"]
 script = ExtResource("22_76tg3")
 scene = ExtResource("43_piesb")
-chance = 10000.0
+metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
+
+[sub_resource type="Resource" id="Resource_hlwbt"]
+script = ExtResource("22_76tg3")
+scene = ExtResource("44_e62ys")
+metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
+
+[sub_resource type="Resource" id="Resource_ns6we"]
+script = ExtResource("22_76tg3")
+scene = ExtResource("45_e62ys")
+metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
+
+[sub_resource type="Resource" id="Resource_bnj7a"]
+script = ExtResource("22_76tg3")
+scene = ExtResource("46_mv27k")
+chance = 100000.0
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [node name="Main Game" type="Node2D"]
@@ -700,7 +718,7 @@ texture = ExtResource("25_bdknx")
 position = Vector2(700, 0)
 script = ExtResource("13_g8d6c")
 obstacle_configs = Array[ExtResource("14_56gb8")]([ExtResource("14_78gq4"), ExtResource("15_k2mhc"), ExtResource("16_wlcpx"), ExtResource("17_gxae2"), ExtResource("18_76tg3"), ExtResource("19_g8d6c"), ExtResource("20_56gb8"), SubResource("Resource_2plm1")])
-event_configs = Array[ExtResource("22_76tg3")]([SubResource("Resource_mv27k"), SubResource("Resource_ek8cs")])
+event_configs = Array[ExtResource("22_76tg3")]([SubResource("Resource_mv27k"), SubResource("Resource_ek8cs"), SubResource("Resource_hlwbt"), SubResource("Resource_ns6we"), SubResource("Resource_bnj7a")])
 food = ExtResource("20_apyqh")
 gate = ExtResource("21_e62ys")
 distanceBar = NodePath("../../Shared/Bars/Distance Bar")

@@ -1,0 +1,82 @@
+[gd_scene load_steps=7 format=3 uid="uid://dt2fmksnfxde7"]
+
+[ext_resource type="PackedScene" uid="uid://b45om3jod5tvf" path="res://Prefabs/Events/Horizontal/horizontal_base_event.tscn" id="1_tk5r3"]
+[ext_resource type="Script" uid="uid://bk5rsc22sybyy" path="res://Scripts/test_carousel.gd" id="2_tx06g"]
+[ext_resource type="Script" uid="uid://c5dy062f8cxod" path="res://Scripts/anchor.gd" id="3_ankw0"]
+[ext_resource type="PackedScene" uid="uid://w8ophhq103o4" path="res://Prefabs/Obstacles/shooter.tscn" id="4_wgpc3"]
+[ext_resource type="PackedScene" uid="uid://bko1uhvqhs2gt" path="res://Prefabs/Events/event_ender.tscn" id="5_tck6b"]
+[ext_resource type="PackedScene" uid="uid://cwrrcqejjcprn" path="res://Prefabs/circle_arrangement_tool.tscn" id="6_xjbo4"]
+
+[node name="Base Event" node_paths=PackedStringArray("event_ender") instance=ExtResource("1_tk5r3")]
+event_ender = NodePath("Shooter Carousel/Anchor_0/Event Ender")
+
+[node name="Shooter Carousel" type="Node2D" parent="." index="3"]
+position = Vector2(500.00003, 0)
+rotation = -4.776966
+script = ExtResource("2_tx06g")
+
+[node name="Anchor_0" type="Node2D" parent="Shooter Carousel" index="0"]
+position = Vector2(1000, 0)
+script = ExtResource("3_ankw0")
+
+[node name="Shooter" parent="Shooter Carousel/Anchor_0" index="0" instance=ExtResource("4_wgpc3")]
+
+[node name="move_up" parent="Shooter Carousel/Anchor_0/Shooter" index="2"]
+Def_Speed = 0.0
+
+[node name="Event Ender" parent="Shooter Carousel/Anchor_0" index="1" instance=ExtResource("5_tck6b")]
+
+[node name="Anchor_1" type="Node2D" parent="Shooter Carousel" index="1"]
+position = Vector2(970.94183, 239.31566)
+script = ExtResource("3_ankw0")
+
+[node name="Shooter" parent="Shooter Carousel/Anchor_1" index="0" instance=ExtResource("4_wgpc3")]
+
+[node name="move_up" parent="Shooter Carousel/Anchor_1/Shooter" index="2"]
+Def_Speed = 0.0
+
+[node name="Anchor_2" type="Node2D" parent="Shooter Carousel" index="2"]
+position = Vector2(885.45605, 464.72318)
+script = ExtResource("3_ankw0")
+
+[node name="Shooter" parent="Shooter Carousel/Anchor_2" index="0" instance=ExtResource("4_wgpc3")]
+
+[node name="move_up" parent="Shooter Carousel/Anchor_2/Shooter" index="2"]
+Def_Speed = 0.0
+
+[node name="Anchor_3" type="Node2D" parent="Shooter Carousel" index="3"]
+position = Vector2(748.5108, 663.1227)
+script = ExtResource("3_ankw0")
+
+[node name="Shooter" parent="Shooter Carousel/Anchor_3" index="0" instance=ExtResource("4_wgpc3")]
+
+[node name="move_up" parent="Shooter Carousel/Anchor_3/Shooter" index="2"]
+Def_Speed = 0.0
+
+[node name="Anchor_4" type="Node2D" parent="Shooter Carousel" index="4"]
+position = Vector2(568.06476, 822.9839)
+script = ExtResource("3_ankw0")
+
+[node name="Shooter" parent="Shooter Carousel/Anchor_4" index="0" instance=ExtResource("4_wgpc3")]
+
+[node name="move_up" parent="Shooter Carousel/Anchor_4/Shooter" index="2"]
+Def_Speed = 0.0
+
+[node name="Anchor_5" type="Node2D" parent="Shooter Carousel" index="5"]
+position = Vector2(354.60486, 935.0163)
+script = ExtResource("3_ankw0")
+
+[node name="Shooter2" parent="Shooter Carousel/Anchor_5" index="0" instance=ExtResource("4_wgpc3")]
+
+[node name="move_up" parent="Shooter Carousel/Anchor_5/Shooter2" index="2"]
+Def_Speed = 0.0
+
+[node name="Circle Arrangement Tool" parent="Shooter Carousel" index="6" instance=ExtResource("6_xjbo4")]
+enabled = true
+
+[editable path="Shooter Carousel/Anchor_0/Shooter"]
+[editable path="Shooter Carousel/Anchor_1/Shooter"]
+[editable path="Shooter Carousel/Anchor_2/Shooter"]
+[editable path="Shooter Carousel/Anchor_3/Shooter"]
+[editable path="Shooter Carousel/Anchor_4/Shooter"]
+[editable path="Shooter Carousel/Anchor_5/Shooter2"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://cse7iik4eonx7"]
 
-[ext_resource type="PackedScene" uid="uid://bxki77u8krb6n" path="res://Prefabs/Events/base_event.tscn" id="1_tb8y7"]
+[ext_resource type="PackedScene" uid="uid://bxki77u8krb6n" path="res://Prefabs/Events/Vertical/base_event.tscn" id="1_tb8y7"]
 [ext_resource type="Script" uid="uid://bsrgdtmtcipbb" path="res://Prefabs/Events/boss.gd" id="2_177s3"]
 [ext_resource type="Texture2D" uid="uid://bkqv5mmp0ataj" path="res://photos/waka.jpg" id="2_pl8pm"]
 [ext_resource type="Script" uid="uid://c8m8hmpsqq3km" path="res://Scripts/boss1.gd" id="3_hbwyo"]

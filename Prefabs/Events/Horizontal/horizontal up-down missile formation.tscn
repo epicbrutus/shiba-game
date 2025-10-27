@@ -1,0 +1,249 @@
+[gd_scene load_steps=4 format=3 uid="uid://e0aojlu4xhmm"]
+
+[ext_resource type="PackedScene" uid="uid://b45om3jod5tvf" path="res://Prefabs/Events/Horizontal/horizontal_base_event.tscn" id="1_sjb05"]
+[ext_resource type="Script" uid="uid://bncys4rnqwwhl" path="res://Scripts/clear_missile_hole.gd" id="2_b0r0u"]
+[ext_resource type="PackedScene" uid="uid://od282gq0j8tm" path="res://Prefabs/Obstacles/vertical_missile.tscn" id="3_et4h1"]
+
+[node name="Base Event" node_paths=PackedStringArray("event_ender") instance=ExtResource("1_sjb05")]
+event_ender = NodePath("Node2/Vertical Missile14/Cleanup")
+
+[node name="Node" type="Node" parent="." index="3"]
+script = ExtResource("2_b0r0u")
+gap_size = 2
+
+[node name="Vertical Missile15" parent="Node" index="0" instance=ExtResource("3_et4h1")]
+position = Vector2(-490, 393.00006)
+rotation = -1.5707964
+warning_time = 2.0
+start_to_screen_time = 2.0
+direction = Vector2(0, -1)
+bottomY = 90.0
+
+[node name="Vertical Missile16" parent="Node" index="1" instance=ExtResource("3_et4h1")]
+position = Vector2(-412, 393)
+rotation = -1.5707964
+warning_time = 2.0
+start_to_screen_time = 2.0
+direction = Vector2(0, -1)
+bottomY = 90.0
+
+[node name="Vertical Missile17" parent="Node" index="2" instance=ExtResource("3_et4h1")]
+position = Vector2(-334, 393)
+rotation = -1.5707964
+warning_time = 2.0
+start_to_screen_time = 2.0
+direction = Vector2(0, -1)
+bottomY = 90.0
+
+[node name="Vertical Missile18" parent="Node" index="3" instance=ExtResource("3_et4h1")]
+position = Vector2(-256.00003, 393)
+rotation = -1.5707964
+warning_time = 2.0
+start_to_screen_time = 2.0
+direction = Vector2(0, -1)
+bottomY = 90.0
+
+[node name="Vertical Missile19" parent="Node" index="4" instance=ExtResource("3_et4h1")]
+position = Vector2(-178.00003, 393)
+rotation = -1.5707964
+warning_time = 2.0
+start_to_screen_time = 2.0
+direction = Vector2(0, -1)
+bottomY = 90.0
+
+[node name="Vertical Missile20" parent="Node" index="5" instance=ExtResource("3_et4h1")]
+position = Vector2(-100.00003, 393)
+rotation = -1.5707964
+warning_time = 2.0
+start_to_screen_time = 2.0
+direction = Vector2(0, -1)
+bottomY = 90.0
+
+[node name="Vertical Missile21" parent="Node" index="6" instance=ExtResource("3_et4h1")]
+position = Vector2(-22.00003, 393)
+rotation = -1.5707964
+warning_time = 2.0
+start_to_screen_time = 2.0
+direction = Vector2(0, -1)
+bottomY = 90.0
+
+[node name="Vertical Missile22" parent="Node" index="7" instance=ExtResource("3_et4h1")]
+position = Vector2(56.99997, 393)
+rotation = -1.5707964
+warning_time = 2.0
+start_to_screen_time = 2.0
+direction = Vector2(0, -1)
+bottomY = 90.0
+
+[node name="Vertical Missile23" parent="Node" index="8" instance=ExtResource("3_et4h1")]
+position = Vector2(134.99997, 393)
+rotation = -1.5707964
+warning_time = 2.0
+start_to_screen_time = 2.0
+direction = Vector2(0, -1)
+bottomY = 90.0
+
+[node name="Vertical Missile24" parent="Node" index="9" instance=ExtResource("3_et4h1")]
+position = Vector2(212.99997, 393)
+rotation = -1.5707964
+warning_time = 2.0
+start_to_screen_time = 2.0
+direction = Vector2(0, -1)
+bottomY = 90.0
+
+[node name="Vertical Missile25" parent="Node" index="10" instance=ExtResource("3_et4h1")]
+position = Vector2(290.99997, 393)
+rotation = -1.5707964
+warning_time = 2.0
+start_to_screen_time = 2.0
+direction = Vector2(0, -1)
+bottomY = 90.0
+
+[node name="Vertical Missile26" parent="Node" index="11" instance=ExtResource("3_et4h1")]
+position = Vector2(368.99997, 393)
+rotation = -1.5707964
+warning_time = 2.0
+start_to_screen_time = 2.0
+direction = Vector2(0, -1)
+bottomY = 90.0
+
+[node name="Vertical Missile27" parent="Node" index="12" instance=ExtResource("3_et4h1")]
+position = Vector2(446.99997, 393)
+rotation = -1.5707964
+warning_time = 2.0
+start_to_screen_time = 2.0
+direction = Vector2(0, -1)
+bottomY = 90.0
+
+[node name="Vertical Missile28" parent="Node" index="13" instance=ExtResource("3_et4h1")]
+position = Vector2(525, 393)
+rotation = -1.5707964
+warning_time = 2.0
+start_to_screen_time = 2.0
+direction = Vector2(0, -1)
+bottomY = 90.0
+
+[node name="Node2" type="Node" parent="." index="4"]
+script = ExtResource("2_b0r0u")
+gap_size = 2
+
+[node name="Vertical Missile" parent="Node2" index="0" instance=ExtResource("3_et4h1")]
+position = Vector2(-490, -370.99994)
+rotation = -1.5707964
+warning_time = 2.0
+start_to_screen_time = 4.0
+direction = Vector2(0, 1)
+bottomY = 90.0
+
+[node name="Vertical Missile2" parent="Node2" index="1" instance=ExtResource("3_et4h1")]
+position = Vector2(-412, -371)
+rotation = -1.5707964
+warning_time = 2.0
+start_to_screen_time = 4.0
+direction = Vector2(0, 1)
+bottomY = 90.0
+
+[node name="Vertical Missile3" parent="Node2" index="2" instance=ExtResource("3_et4h1")]
+position = Vector2(-334, -371)
+rotation = -1.5707964
+warning_time = 2.0
+start_to_screen_time = 4.0
+direction = Vector2(0, 1)
+bottomY = 90.0
+
+[node name="Vertical Missile4" parent="Node2" index="3" instance=ExtResource("3_et4h1")]
+position = Vector2(-256.00003, -371)
+rotation = -1.5707964
+warning_time = 2.0
+start_to_screen_time = 4.0
+direction = Vector2(0, 1)
+bottomY = 90.0
+
+[node name="Vertical Missile5" parent="Node2" index="4" instance=ExtResource("3_et4h1")]
+position = Vector2(-178.00003, -371)
+rotation = -1.5707964
+warning_time = 2.0
+start_to_screen_time = 4.0
+direction = Vector2(0, 1)
+bottomY = 90.0
+
+[node name="Vertical Missile6" parent="Node2" index="5" instance=ExtResource("3_et4h1")]
+position = Vector2(-100.00003, -371)
+rotation = -1.5707964
+warning_time = 2.0
+start_to_screen_time = 4.0
+direction = Vector2(0, 1)
+bottomY = 90.0
+
+[node name="Vertical Missile7" parent="Node2" index="6" instance=ExtResource("3_et4h1")]
+position = Vector2(-22.00003, -371)
+rotation = -1.5707964
+warning_time = 2.0
+start_to_screen_time = 4.0
+direction = Vector2(0, 1)
+bottomY = 90.0
+
+[node name="Vertical Missile8" parent="Node2" index="7" instance=ExtResource("3_et4h1")]
+position = Vector2(56.99997, -371)
+rotation = -1.5707964
+warning_time = 2.0
+start_to_screen_time = 4.0
+direction = Vector2(0, 1)
+bottomY = 90.0
+
+[node name="Vertical Missile9" parent="Node2" index="8" instance=ExtResource("3_et4h1")]
+position = Vector2(134.99997, -371)
+rotation = -1.5707964
+warning_time = 2.0
+start_to_screen_time = 4.0
+direction = Vector2(0, 1)
+bottomY = 90.0
+
+[node name="Vertical Missile10" parent="Node2" index="9" instance=ExtResource("3_et4h1")]
+position = Vector2(212.99997, -371)
+rotation = -1.5707964
+warning_time = 2.0
+start_to_screen_time = 4.0
+direction = Vector2(0, 1)
+bottomY = 90.0
+
+[node name="Vertical Missile11" parent="Node2" index="10" instance=ExtResource("3_et4h1")]
+position = Vector2(290.99997, -371)
+rotation = -1.5707964
+warning_time = 2.0
+start_to_screen_time = 4.0
+direction = Vector2(0, 1)
+bottomY = 90.0
+
+[node name="Vertical Missile12" parent="Node2" index="11" instance=ExtResource("3_et4h1")]
+position = Vector2(368.99997, -371)
+rotation = -1.5707964
+warning_time = 2.0
+start_to_screen_time = 4.0
+direction = Vector2(0, 1)
+bottomY = 90.0
+
+[node name="Vertical Missile13" parent="Node2" index="12" instance=ExtResource("3_et4h1")]
+position = Vector2(446.99997, -371)
+rotation = -1.5707964
+warning_time = 2.0
+start_to_screen_time = 4.0
+direction = Vector2(0, 1)
+bottomY = 90.0
+
+[node name="Vertical Missile14" parent="Node2" index="13" instance=ExtResource("3_et4h1")]
+position = Vector2(525, -371)
+rotation = -1.5707964
+warning_time = 2.0
+start_to_screen_time = 4.0
+direction = Vector2(0, 1)
+bottomY = 90.0
+
+[node name="Node2D" type="Node2D" parent="." index="5"]
+position = Vector2(241, 274)
+rotation = -1.5707964
+
+[editable path="Node/Vertical Missile21"]
+[editable path="Node/Vertical Missile28"]
+[editable path="Node2/Vertical Missile7"]
+[editable path="Node2/Vertical Missile14"]

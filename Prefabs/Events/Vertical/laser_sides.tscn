@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://d3lrc6aiqyes1"]
 
-[ext_resource type="PackedScene" uid="uid://bxki77u8krb6n" path="res://Prefabs/Events/base_event.tscn" id="1_sc1xd"]
+[ext_resource type="PackedScene" uid="uid://bxki77u8krb6n" path="res://Prefabs/Events/Vertical/base_event.tscn" id="1_sc1xd"]
 [ext_resource type="PackedScene" uid="uid://unnyr3aarh3b" path="res://Prefabs/Obstacles/laser_gate.tscn" id="2_urpqt"]
 [ext_resource type="PackedScene" uid="uid://bko1uhvqhs2gt" path="res://Prefabs/Events/event_ender.tscn" id="3_644eo"]
 [ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="4_a14ym"]

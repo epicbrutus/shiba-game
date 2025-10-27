@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://crnfo54i6cgy6"]
 
-[ext_resource type="PackedScene" uid="uid://bxki77u8krb6n" path="res://Prefabs/Events/base_event.tscn" id="1_gwcqe"]
+[ext_resource type="PackedScene" uid="uid://bxki77u8krb6n" path="res://Prefabs/Events/Vertical/base_event.tscn" id="1_gwcqe"]
 [ext_resource type="Script" uid="uid://qfb3goqljp2v" path="res://move_right.gd" id="2_7cudx"]
 [ext_resource type="PackedScene" uid="uid://h0lw1ng2k4w5" path="res://Prefabs/Obstacles/spinner.tscn" id="3_nwr0g"]
 [ext_resource type="PackedScene" uid="uid://bko1uhvqhs2gt" path="res://Prefabs/Events/event_ender.tscn" id="4_7cudx"]
