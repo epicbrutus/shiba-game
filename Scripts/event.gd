@@ -39,11 +39,16 @@ func _on_screen_entered() -> void:
 	print("yah yah yah")
 
 func _on_screen_exited() -> void:
-	if !event_over:
-		print("ageebada geeb")
-		end_event()
+	if event_over:
+		return
+	print("ageebada geeb")
+	end_event()
+
+	if is_inside_tree():
 		cleanup_timer = get_tree().create_timer(CLEANUP_DELAY)
 		cleanup_timer.timeout.connect(_on_cleanup_timeout)
+	else:
+		call_deferred("queue_free")
 
 func _on_cleanup_timeout() -> void:
 	cleanup_timer = null

@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://c14qwn6rgfy23"]
+[gd_scene load_steps=84 format=3 uid="uid://c14qwn6rgfy23"]
 
 [ext_resource type="Shader" uid="uid://ci8wfbw02mu88" path="res://scroll.gdshader" id="1_woxae"]
 [ext_resource type="Texture2D" uid="uid://8apg65mbsnv" path="res://Art Log 10-8/background.JPG" id="2_8melw"]
@@ -47,6 +47,7 @@
 [ext_resource type="PackedScene" uid="uid://cq38we4l80o3b" path="res://Prefabs/Events/Horizontal/horizontal_blade_gate.tscn" id="45_e62ys"]
 [ext_resource type="PackedScene" uid="uid://e0aojlu4xhmm" path="res://Prefabs/Events/Horizontal/horizontal up-down missile formation.tscn" id="46_mv27k"]
 [ext_resource type="PackedScene" uid="uid://cptg3310ld1rs" path="res://Prefabs/Events/Horizontal/horizontal_laser_sides.tscn" id="47_ek8cs"]
+[ext_resource type="PackedScene" uid="uid://c65f2t6vhjrba" path="res://Prefabs/Events/Horizontal/horizontal side missile formation.tscn" id="47_hlwbt"]
 [ext_resource type="PackedScene" uid="uid://db07b1pxe15r7" path="res://Prefabs/Events/Horizontal/horizontal_laser_pathways.tscn" id="48_8oyct"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
@@ -189,6 +190,7 @@ metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="Resource" id="Resource_lyk6h"]
 script = ExtResource("22_76tg3")
+scene = ExtResource("47_hlwbt")
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="Resource" id="Resource_bj2y4"]
@@ -199,7 +201,6 @@ metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 [sub_resource type="Resource" id="Resource_3epuw"]
 script = ExtResource("22_76tg3")
 scene = ExtResource("48_8oyct")
-chance = 10000.0
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [node name="Main Game" type="Node2D"]

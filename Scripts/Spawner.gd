@@ -214,7 +214,7 @@ func spawn_event(spawn_boss: bool = false) -> void:
 func end_event() -> void:
 	midEvent = false
 	eventTimer = eventCooldown
-	obstacleCooldown = 0
+	obstacleTimer = 0
 	print_debug("ENDED EVENT!!")
 
 func spawnGate() -> void:

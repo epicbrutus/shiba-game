@@ -147,6 +147,22 @@ focus_mode = 0
 theme_override_font_sizes/font_size = 46
 text = "Obese"
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -561.0
+offset_top = -322.0
+offset_right = -219.0
+offset_bottom = -52.0
+theme_override_font_sizes/normal_font_size = 27
+text = "WASD/Arrows: move
+Space: eat nearby gummy
+LShift: Spit out gummy
+Enter: open spawn menu
+Mouse: for menu
+I: Force pull
+O: Force push"
+fit_content = true
+autowrap_mode = 2
+
 [connection signal="pressed" from="Control/GridContainer/Skinny" to="Control" method="_on_skinny_pressed"]
 [connection signal="pressed" from="Control/GridContainer/Normal" to="Control" method="_on_normal_pressed"]
 [connection signal="pressed" from="Control/GridContainer/Overweight" to="Control" method="_on_overweight_pressed"]

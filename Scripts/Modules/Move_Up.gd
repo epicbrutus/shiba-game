@@ -7,7 +7,14 @@ extends Node
 @export var acceleration: float = 0
 @export var jerk: float = 0
 
-static var multiplier: float = 2
+var orientation_index: int = 0
+
+var multipliers: Array[float] = [
+	2,
+	3
+]
+
+var multiplier: float = 2
 
 var speed: float
 
@@ -17,15 +24,19 @@ func _ready() -> void:
 	if !game_state:
 		return
 
+	orientation_index = game_state.current_orientation
+	multiplier = multipliers[orientation_index]
+
 	if game_state.score_changed.is_connected(Callable(self, "_on_score_changed")):
 		game_state.score_changed.disconnect(Callable(self, "_on_score_changed"))
 	game_state.score_changed.connect(Callable(self, "_on_score_changed"))
+
 
 func set_speed(p_speed: float):
 	speed = p_speed
 
 func _on_score_changed(value: int):
-	multiplier = 2 + value * 0.1
+	pass #multiplier = multipliers[orientation_index] + multipliers[orientation_index] * (value * 0.5)
 
 func _physics_process(delta: float) -> void:
 	get_parent().position += speed * delta * multiplier * spawner.direction

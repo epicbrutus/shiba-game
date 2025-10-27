@@ -4,7 +4,7 @@ class_name GameState
 var boss_every: int = 3
 var num_orientations: int = 2
 
-var current_orientation: int = 1
+var current_orientation: int = 0
 
 signal score_changed(value: int)
 signal switch_orientation(value: int)
