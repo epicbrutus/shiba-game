@@ -143,12 +143,12 @@ metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 [sub_resource type="Resource" id="Resource_apyqh"]
 script = ExtResource("22_76tg3")
 scene = ExtResource("44_apyqh")
+chance = 1000.0
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="Resource" id="Resource_8oyct"]
 script = ExtResource("22_76tg3")
 scene = ExtResource("29_ek8cs")
-chance = 100000000.0
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="Resource" id="Resource_e62ys"]

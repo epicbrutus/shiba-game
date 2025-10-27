@@ -4,8 +4,7 @@
 [ext_resource type="Script" uid="uid://bncys4rnqwwhl" path="res://Scripts/clear_missile_hole.gd" id="2_7wabj"]
 [ext_resource type="PackedScene" uid="uid://od282gq0j8tm" path="res://Prefabs/Obstacles/vertical_missile.tscn" id="3_cq3mf"]
 
-[node name="Base Event" node_paths=PackedStringArray("event_ender") instance=ExtResource("1_83ahs")]
-event_ender = NodePath("Node2/Vertical Missile7/Cleanup")
+[node name="Base Event" instance=ExtResource("1_83ahs")]
 
 [node name="Node" type="Node" parent="." index="1"]
 script = ExtResource("2_7wabj")
@@ -53,9 +52,10 @@ start_to_screen_time = 1.5
 direction = Vector2(1, 0)
 bottomY = 110.0
 
-[node name="Node2" type="Node" parent="." index="2"]
+[node name="Node2" type="Node" parent="." index="2" node_paths=PackedStringArray("base_event")]
 script = ExtResource("2_7wabj")
 gap_size = 2
+base_event = NodePath("..")
 
 [node name="Vertical Missile" parent="Node2" index="0" instance=ExtResource("3_cq3mf")]
 position = Vector2(645, -177)

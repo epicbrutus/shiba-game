@@ -6,9 +6,10 @@
 
 [node name="Base Event" instance=ExtResource("1_152hj")]
 
-[node name="Node2" type="Node" parent="." index="3"]
+[node name="Node2" type="Node" parent="." index="3" node_paths=PackedStringArray("base_event")]
 script = ExtResource("2_hjvcu")
 gap_size = 2
+base_event = NodePath("..")
 
 [node name="Vertical Missile" parent="Node2" index="0" instance=ExtResource("3_asg5f")]
 position = Vector2(645, -262)

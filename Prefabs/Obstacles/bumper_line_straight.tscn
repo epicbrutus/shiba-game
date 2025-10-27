@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwuwlhgjhs3q2"]
+[gd_scene load_steps=6 format=3 uid="uid://dwuwlhgjhs3q2"]
 
+[ext_resource type="Script" uid="uid://6x1dtcd5loj1" path="res://Prefabs/Obstacles/rotate_bumper_line.gd" id="1_3hux8"]
 [ext_resource type="PackedScene" uid="uid://bqan5vfqgrejr" path="res://Prefabs/bumper.tscn" id="1_uacqm"]
 [ext_resource type="PackedScene" uid="uid://drri3tywjovn4" path="res://Prefabs/move_up.tscn" id="2_og30h"]
 [ext_resource type="Script" uid="uid://bdb3fxsghyjma" path="res://Scripts/wall.gd" id="3_grom6"]
@@ -7,7 +8,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_og30h"]
 size = Vector2(184, 79)
 
-[node name="Bumper line" type="Node2D"]
+[node name="Bumper line" type="Node2D" node_paths=PackedStringArray("hitbox")]
+script = ExtResource("1_3hux8")
+hitbox = NodePath("Area2D")
 
 [node name="Bumper" parent="." instance=ExtResource("1_uacqm")]
 process_mode = 4

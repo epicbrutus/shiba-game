@@ -5,8 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://od282gq0j8tm" path="res://Prefabs/Obstacles/vertical_missile.tscn" id="2_qub8q"]
 [ext_resource type="PackedScene" uid="uid://bko1uhvqhs2gt" path="res://Prefabs/Events/event_ender.tscn" id="4_8nyye"]
 
-[node name="Base Event" node_paths=PackedStringArray("event_ender") instance=ExtResource("1_pfki8")]
-event_ender = NodePath("Node2/Vertical Missile12/Event Ender")
+[node name="Base Event" instance=ExtResource("1_pfki8")]
 
 [node name="Node" type="Node" parent="." index="1"]
 script = ExtResource("2_8nyye")
@@ -47,8 +46,9 @@ position = Vector2(381, 396)
 [node name="Vertical Missile12" parent="Node" index="11" instance=ExtResource("2_qub8q")]
 position = Vector2(465, 396)
 
-[node name="Node2" type="Node" parent="." index="2"]
+[node name="Node2" type="Node" parent="." index="2" node_paths=PackedStringArray("base_event")]
 script = ExtResource("2_8nyye")
+base_event = NodePath("..")
 
 [node name="Vertical Missile" parent="Node2" index="0" instance=ExtResource("2_qub8q")]
 position = Vector2(-466, 396)
