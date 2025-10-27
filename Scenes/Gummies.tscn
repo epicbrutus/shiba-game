@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://j375f146wum7"]
+[gd_scene load_steps=12 format=3 uid="uid://j375f146wum7"]
 
 [ext_resource type="PackedScene" uid="uid://ptxi65q781j2" path="res://Prefabs/Gummies/normal_gummy.tscn" id="1_jt3mb"]
 [ext_resource type="PackedScene" uid="uid://d1ufcpdtlwcq5" path="res://Prefabs/Gummies/obese_gummy.tscn" id="2_h7qod"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bt1hj10u235p3" path="res://Prefabs/Gummies/fat_gummy.tscn" id="5_gem76"]
 [ext_resource type="PackedScene" uid="uid://dlj4gpjcswg3s" path="res://Prefabs/player.tscn" id="6_gem76"]
 [ext_resource type="PackedScene" uid="uid://cebb58s410nks" path="res://Prefabs/exit_game.tscn" id="7_jdndp"]
+[ext_resource type="Script" uid="uid://w7hrqss381r5" path="res://Scenes/spawn_gummies_menu.gd" id="9_q4kro"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jt3mb"]
 size = Vector2(1152.5, 20)
@@ -87,5 +88,61 @@ position = Vector2(103, -48)
 
 [node name="Obese Gummy2" parent="Gummies" instance=ExtResource("2_h7qod")]
 position = Vector2(198, -48)
+
+[node name="Control" type="Control" parent="."]
+visible = false
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_q4kro")
+
+[node name="GridContainer" type="GridContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.5
+offset_top = -33.0
+offset_right = 33.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Skinny" type="Button" parent="Control/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "Skinny"
+
+[node name="Normal" type="Button" parent="Control/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "Normal"
+
+[node name="Overweight" type="Button" parent="Control/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "Overweight"
+
+[node name="Fat" type="Button" parent="Control/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "Fat"
+
+[node name="Obese" type="Button" parent="Control/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "Obese"
+
+[connection signal="pressed" from="Control/GridContainer/Skinny" to="Exit Game" method="_on_skinny_pressed"]
+[connection signal="pressed" from="Control/GridContainer/Normal" to="Exit Game" method="_on_normal_pressed"]
+[connection signal="pressed" from="Control/GridContainer/Overweight" to="Exit Game" method="_on_overweight_pressed"]
+[connection signal="pressed" from="Control/GridContainer/Fat" to="Exit Game" method="_on_fat_pressed"]
+[connection signal="pressed" from="Control/GridContainer/Obese" to="Exit Game" method="_on_obese_pressed"]
 
 [editable path="Player"]

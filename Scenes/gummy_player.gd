@@ -43,7 +43,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		var gummy_scene: PackedScene = load(eaten_gummies.back())
 		var new_gummy = gummy_scene.instantiate()
 		gummies.add_child(new_gummy)
-		new_gummy.global_position = global_position + Vector2.DOWN * 30
+		new_gummy.global_position = global_position
+		new_gummy.rotation = randf_range(-PI, PI)
 
 		eaten_gummies.pop_back()
-		change_food(-20, new_gummy.global_position, false)
+		change_food(-20, new_gummy.global_position + Vector2.DOWN * 100, false)
