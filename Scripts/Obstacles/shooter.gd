@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var bulletPrefab: PackedScene
+@export var preview: bool = false
 
 @onready var on_screen_notifier = $VisibleOnScreenNotifier2D
 var canFire: bool = false
@@ -57,7 +58,12 @@ func _process(delta):
 	if bulletTimer <= 0:
 
 		var bullet = bulletPrefab.instantiate()
-		get_tree().current_scene.add_child(bullet)
+
+		if !preview:
+			get_tree().current_scene.add_child(bullet)
+		else:
+			get_parent().add_child(bullet)
+
 		bullet.global_position = global_position
 
 		var bullet_direction := Vector2.RIGHT.rotated(gunSprite.rotation)

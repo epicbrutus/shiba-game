@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxr0ttp3no7lv"]
+
+[ext_resource type="PackedScene" uid="uid://dlj4gpjcswg3s" path="res://Prefabs/player.tscn" id="1_11fi3"]
+[ext_resource type="Script" uid="uid://cklfml4rt8ixk" path="res://dummy_player.gd" id="2_sp83m"]
+
+[node name="Player" instance=ExtResource("1_11fi3")]
+
+[node name="CharacterBody2D" parent="." index="0"]
+script = ExtResource("2_sp83m")

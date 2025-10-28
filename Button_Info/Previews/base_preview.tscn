@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://h0oqlxqavdew"]
+
+[ext_resource type="Material" uid="uid://cl3oo4marxdq4" path="res://Scenes/wall.tres" id="1_igsw7"]
+[ext_resource type="Texture2D" uid="uid://8apg65mbsnv" path="res://Art Log 10-8/background.JPG" id="2_pl0ss"]
+
+[node name="BaseScene" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -10
+material = ExtResource("1_igsw7")
+offset_right = 757.0
+offset_bottom = 316.0
+texture = ExtResource("2_pl0ss")
+expand_mode = 1
+stretch_mode = 1

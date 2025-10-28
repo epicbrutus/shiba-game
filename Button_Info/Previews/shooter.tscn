@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://do3y6xyeemu6c"]
+
+[ext_resource type="PackedScene" uid="uid://h0oqlxqavdew" path="res://Button_Info/Previews/base_preview.tscn" id="1_m4sbi"]
+[ext_resource type="PackedScene" uid="uid://w8ophhq103o4" path="res://Prefabs/Obstacles/shooter.tscn" id="2_vwwpy"]
+[ext_resource type="PackedScene" uid="uid://cxr0ttp3no7lv" path="res://Prefabs/Dummy Player.tscn" id="3_vwwpy"]
+
+[node name="BaseScene" instance=ExtResource("1_m4sbi")]
+
+[node name="Shooter" parent="." index="1" instance=ExtResource("2_vwwpy")]
+position = Vector2(390, 155)
+preview = true
+
+[node name="move_up" parent="Shooter" index="2"]
+process_mode = 4
+
+[node name="Shooter2" parent="." index="2" instance=ExtResource("2_vwwpy")]
+position = Vector2(605, 155)
+preview = true
+
+[node name="move_up" parent="Shooter2" index="2"]
+process_mode = 4
+
+[node name="Player2" parent="Shooter2" index="5" instance=ExtResource("3_vwwpy")]
+position = Vector2(-318, -67)
+
+[node name="Shooter3" parent="." index="3" instance=ExtResource("2_vwwpy")]
+position = Vector2(173, 155)
+preview = true
+
+[node name="move_up" parent="Shooter3" index="2"]
+process_mode = 4
+
+[editable path="Shooter"]
+[editable path="Shooter2"]
+[editable path="Shooter3"]

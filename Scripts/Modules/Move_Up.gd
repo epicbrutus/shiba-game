@@ -39,6 +39,9 @@ func _on_score_changed(value: int):
 	multiplier = multipliers[orientation_index] + (value * 0.05) #* multipliers[orientation_index]
 
 func _physics_process(delta: float) -> void:
+	if !spawner:
+		return
+	
 	get_parent().position += speed * delta * multiplier * spawner.direction
 	speed += acceleration * delta
 	acceleration += jerk * delta
