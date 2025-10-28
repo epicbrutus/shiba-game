@@ -15,6 +15,11 @@ run/main_scene="uid://dnyg04rfc4ewp"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+RecordInputs="*res://Scripts/record_inputs.gd"
+RecorderControls="*res://Scripts/recorder_controls.gd"
+
 [display]
 
 window/size/resizable=false

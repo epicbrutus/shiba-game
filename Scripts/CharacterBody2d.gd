@@ -187,6 +187,9 @@ func _process(delta: float) -> void:
 		eatAnimTime -= delta
 
 func get_input_vector() -> Vector2:
+	if RecordInputs.mode == RecordInputs.Mode.PLAYBACK:
+			return RecordInputs.get_vector()
+
 	var input_vector = Vector2.ZERO
 	
 	input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
