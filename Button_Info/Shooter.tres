@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ButtonInfo" load_steps=2 format=3 uid="uid://b6ggec2ay85lx"]
+
+[ext_resource type="Script" uid="uid://c35oapxe3rd8b" path="res://Scripts/Configs/ButtonInfo.gd" id="1_ol4pw"]
+
+[resource]
+script = ExtResource("1_ol4pw")
+title = "Shooter"
+body = "A jetpacked CIA sharpshooter that flies along the walls.
+
+Most people who take this job don't do so by choice. Shooter is not most people.
+\"When I first saw the job offer I was worried they wouldn't be evil enough,\" Shooter recalled, \"yeah, but luckily they're just as evil as they are on TV.\"
+
+Unlike his colleagues, shooter never comes in late and never takes paid leave.\"
+
+\"It's like I always say: 'if you love your job, you never work a day in your life'\""
+metadata/_custom_type_script = "uid://c35oapxe3rd8b"

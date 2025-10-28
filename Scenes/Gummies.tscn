@@ -90,6 +90,7 @@ position = Vector2(103, -48)
 position = Vector2(198, -48)
 
 [node name="Control" type="Control" parent="." node_paths=PackedStringArray("gummies", "player")]
+visible = false
 z_index = 10
 layout_mode = 3
 anchors_preset = 15
