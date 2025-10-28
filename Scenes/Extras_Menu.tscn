@@ -1,0 +1,153 @@
+[gd_scene load_steps=2 format=3 uid="uid://byinfx75vor5m"]
+
+[ext_resource type="Script" uid="uid://cy4qa4se2su27" path="res://Scripts/main_menu.gd" id="1_gtvkx"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gtvkx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.20152658, 0.20152658, 0.20152658, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -216.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="Button" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "lorem ipsum"
+
+[node name="Button2" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "lorem ipsum"
+
+[node name="Button3" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "lorem ipsum"
+
+[node name="Button4" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "lorem ipsum"
+
+[node name="Button5" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "lorem ipsum"
+
+[node name="Button6" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "lorem ipsum"
+
+[node name="Button7" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "lorem ipsum"
+
+[node name="Button8" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "lorem ipsum"
+
+[node name="Button9" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "lorem ipsum"
+
+[node name="Button10" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "lorem ipsum"
+
+[node name="Button11" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "lorem ipsum"
+
+[node name="Button12" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "lorem ipsum"
+
+[node name="Button13" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "lorem ipsum"
+
+[node name="Button14" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "lorem ipsum"
+
+[node name="Button15" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "lorem ipsum"
+
+[node name="Button16" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "lorem ipsum"
