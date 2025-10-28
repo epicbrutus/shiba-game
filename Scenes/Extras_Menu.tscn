@@ -1,9 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://byinfx75vor5m"]
+[gd_scene load_steps=9 format=3 uid="uid://byinfx75vor5m"]
 
-[ext_resource type="Script" uid="uid://rdq2odxjdbrc" path="res://Scenes/extras_menu.gd" id="1_rbbxf"]
+[ext_resource type="Script" uid="uid://rdq2odxjdbrc" path="res://Scripts/extras_menu.gd" id="1_rbbxf"]
 [ext_resource type="Script" uid="uid://cx21xpxmp52a5" path="res://Scripts/button_info_holder.gd" id="2_3y0fu"]
 [ext_resource type="Resource" uid="uid://b6ggec2ay85lx" path="res://Button_Info/Shooter.tres" id="3_3y0fu"]
+[ext_resource type="Script" uid="uid://c35oapxe3rd8b" path="res://Scripts/Configs/ButtonInfo.gd" id="3_tjioq"]
 [ext_resource type="PackedScene" uid="uid://do3y6xyeemu6c" path="res://Button_Info/Previews/shooter.tscn" id="4_yjkmf"]
+[ext_resource type="PackedScene" uid="uid://cebb58s410nks" path="res://Prefabs/exit_game.tscn" id="6_tjioq"]
+
+[sub_resource type="Resource" id="Resource_3y0fu"]
+script = ExtResource("3_tjioq")
+title = "Bumper"
+body = "test text for bumper"
+preview = ExtResource("4_yjkmf")
+metadata/_custom_type_script = "uid://c35oapxe3rd8b"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3y0fu"]
 content_margin_left = 0.0
@@ -17,7 +26,7 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
-[node name="Main Menu" type="Control" node_paths=PackedStringArray("info_box", "title_box")]
+[node name="Main Menu" type="Control" node_paths=PackedStringArray("info_box", "title_box", "preview_viewport")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,6 +36,7 @@ grow_vertical = 2
 script = ExtResource("1_rbbxf")
 info_box = NodePath("PanelContainer2/RichTextLabel")
 title_box = NodePath("TitleContainer/RichTextLabel")
+preview_viewport = NodePath("SubViewportContainer/SubViewport")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -59,7 +69,7 @@ size_flags_vertical = 4
 layout_mode = 2
 columns = 2
 
-[node name="Button" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer" groups=["info_buttons"]]
+[node name="Shooter" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer" groups=["info_buttons"]]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -68,12 +78,14 @@ text = "Shooter"
 script = ExtResource("2_3y0fu")
 info_data = ExtResource("3_3y0fu")
 
-[node name="Button2" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
+[node name="Bumper" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer" groups=["info_buttons"]]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Bumper"
+script = ExtResource("2_3y0fu")
+info_data = SubResource("Resource_3y0fu")
 
 [node name="Button3" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(100, 100)
@@ -182,7 +194,7 @@ offset_bottom = 615.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer2"]
 layout_mode = 2
-text = "A simple enemy that flies along the walls and fires bullets "
+text = "Click a button to view their info!"
 
 [node name="TitleContainer" type="PanelContainer" parent="."]
 z_index = 10
@@ -196,7 +208,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_3y0fu")
 [node name="RichTextLabel" type="RichTextLabel" parent="TitleContainer"]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 50
-text = "Shooter"
+text = "Select one!"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
@@ -221,4 +233,4 @@ handle_input_locally = false
 size = Vector2i(757, 316)
 render_target_update_mode = 4
 
-[node name="BaseScene" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_yjkmf")]
+[node name="Exit Game" parent="." instance=ExtResource("6_tjioq")]

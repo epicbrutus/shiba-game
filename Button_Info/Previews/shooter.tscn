@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://do3y6xyeemu6c"]
+[gd_scene load_steps=6 format=3 uid="uid://do3y6xyeemu6c"]
 
 [ext_resource type="PackedScene" uid="uid://h0oqlxqavdew" path="res://Button_Info/Previews/base_preview.tscn" id="1_m4sbi"]
 [ext_resource type="PackedScene" uid="uid://w8ophhq103o4" path="res://Prefabs/Obstacles/shooter.tscn" id="2_vwwpy"]
+[ext_resource type="Script" uid="uid://bk5rsc22sybyy" path="res://Scripts/test_carousel.gd" id="3_kiqrq"]
 [ext_resource type="PackedScene" uid="uid://cxr0ttp3no7lv" path="res://Prefabs/Dummy Player.tscn" id="3_vwwpy"]
+[ext_resource type="Script" uid="uid://c5dy062f8cxod" path="res://Scripts/anchor.gd" id="4_p3d6w"]
 
 [node name="BaseScene" instance=ExtResource("1_m4sbi")]
 
@@ -20,9 +22,6 @@ preview = true
 [node name="move_up" parent="Shooter2" index="2"]
 process_mode = 4
 
-[node name="Player2" parent="Shooter2" index="5" instance=ExtResource("3_vwwpy")]
-position = Vector2(-318, -67)
-
 [node name="Shooter3" parent="." index="3" instance=ExtResource("2_vwwpy")]
 position = Vector2(173, 155)
 preview = true
@@ -30,6 +29,23 @@ preview = true
 [node name="move_up" parent="Shooter3" index="2"]
 process_mode = 4
 
+[node name="Pivot point" type="Node2D" parent="." index="4"]
+position = Vector2(389, 156)
+script = ExtResource("3_kiqrq")
+turn_speed = 1.5
+
+[node name="anchor" type="Node2D" parent="Pivot point" index="0"]
+position = Vector2(-126, 0)
+script = ExtResource("4_p3d6w")
+
+[node name="Player2" parent="Pivot point/anchor" index="0" instance=ExtResource("3_vwwpy")]
+
+[node name="CharacterBody2D" parent="Pivot point/anchor/Player2" index="0"]
+auto_regen = true
+regen_cooldown_time = 3.0
+regen_amount = 20
+
 [editable path="Shooter"]
 [editable path="Shooter2"]
 [editable path="Shooter3"]
+[editable path="Pivot point/anchor/Player2"]

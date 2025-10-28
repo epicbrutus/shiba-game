@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="ButtonInfo" load_steps=2 format=3 uid="uid://b6ggec2ay85lx"]
+[gd_resource type="Resource" script_class="ButtonInfo" load_steps=3 format=3 uid="uid://b6ggec2ay85lx"]
 
+[ext_resource type="PackedScene" uid="uid://do3y6xyeemu6c" path="res://Button_Info/Previews/shooter.tscn" id="1_4kc8y"]
 [ext_resource type="Script" uid="uid://c35oapxe3rd8b" path="res://Scripts/Configs/ButtonInfo.gd" id="1_ol4pw"]
 
 [resource]
@@ -13,4 +14,5 @@ Most people who take this job don't do so by choice. Shooter is not most people.
 Unlike his colleagues, shooter never comes in late and never takes paid leave.\"
 
 \"It's like I always say: 'if you love your job, you never work a day in your life'\""
+preview = ExtResource("1_4kc8y")
 metadata/_custom_type_script = "uid://c35oapxe3rd8b"

@@ -128,3 +128,4 @@ text = "Extras"
 [connection signal="pressed" from="HBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="HBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="HBoxContainer/Gummies" to="." method="_on_gummies_pressed"]
+[connection signal="pressed" from="HBoxContainer/Extras" to="." method="_on_extras_pressed"]

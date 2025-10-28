@@ -11,3 +11,7 @@ func _on_tutorial_pressed() -> void:
 
 func _on_gummies_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Gummies.tscn")
+
+
+func _on_extras_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Extras_Menu.tscn")

@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://ptxi65q781j2" path="res://Prefabs/Gummies/normal_gummy.tscn" id="1_jt3mb"]
 [ext_resource type="PackedScene" uid="uid://d1ufcpdtlwcq5" path="res://Prefabs/Gummies/obese_gummy.tscn" id="2_h7qod"]
-[ext_resource type="Script" uid="uid://dl1ja337g5ygc" path="res://Scenes/gummy_player.gd" id="2_k2qhd"]
+[ext_resource type="Script" uid="uid://dl1ja337g5ygc" path="res://Scripts/gummy_player.gd" id="2_k2qhd"]
 [ext_resource type="PackedScene" uid="uid://db5qooeryfl72" path="res://Prefabs/Gummies/skinny gummy.tscn" id="3_h7qod"]
 [ext_resource type="PackedScene" uid="uid://mkf11sgpdg05" path="res://Prefabs/Gummies/overweight gummy.tscn" id="4_w46gx"]
 [ext_resource type="PackedScene" uid="uid://bt1hj10u235p3" path="res://Prefabs/Gummies/fat_gummy.tscn" id="5_gem76"]
 [ext_resource type="PackedScene" uid="uid://dlj4gpjcswg3s" path="res://Prefabs/player.tscn" id="6_gem76"]
 [ext_resource type="PackedScene" uid="uid://cebb58s410nks" path="res://Prefabs/exit_game.tscn" id="7_jdndp"]
-[ext_resource type="Script" uid="uid://w7hrqss381r5" path="res://Scenes/spawn_gummies_menu.gd" id="9_q4kro"]
+[ext_resource type="Script" uid="uid://w7hrqss381r5" path="res://Scripts/spawn_gummies_menu.gd" id="9_q4kro"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jt3mb"]
 size = Vector2(1152.5, 20)
