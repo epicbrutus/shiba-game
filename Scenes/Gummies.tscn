@@ -135,7 +135,7 @@ text = "Skinny"
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 46
-text = "Normal"
+text = "Standard"
 
 [node name="Overweight" type="Button" parent="Control/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2

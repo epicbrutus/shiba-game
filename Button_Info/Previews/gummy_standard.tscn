@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://t4pc0hk3ao2b"]
+
+[ext_resource type="PackedScene" uid="uid://h0oqlxqavdew" path="res://Button_Info/Previews/base_preview.tscn" id="1_58a8o"]
+[ext_resource type="PackedScene" uid="uid://ptxi65q781j2" path="res://Prefabs/Gummies/normal_gummy.tscn" id="2_fq3cv"]
+
+[node name="BaseScene" instance=ExtResource("1_58a8o")]
+
+[node name="TextureRect" parent="." index="0"]
+visible = false
+
+[node name="Area2D" parent="." index="2"]
+position = Vector2(603, -434)
+
+[node name="Area2D2" parent="." index="3"]
+position = Vector2(603, -801)
+
+[node name="Area2D3" parent="." index="4"]
+position = Vector2(485, -748)
+
+[node name="Area2D4" parent="." index="5"]
+position = Vector2(1298, -748)
+
+[node name="ColorRect" parent="." index="6"]
+visible = true
+
+[node name="Normal Gummy" parent="." index="7" instance=ExtResource("2_fq3cv")]
+position = Vector2(285, 252)
+
+[node name="Normal Gummy2" parent="." index="8" instance=ExtResource("2_fq3cv")]
+position = Vector2(338, 290)
+
+[node name="Normal Gummy3" parent="." index="9" instance=ExtResource("2_fq3cv")]
+position = Vector2(238, 288)
+
+[node name="Normal Gummy4" parent="." index="10" instance=ExtResource("2_fq3cv")]
+position = Vector2(476, 252)
+
+[node name="Normal Gummy5" parent="." index="11" instance=ExtResource("2_fq3cv")]
+position = Vector2(529, 290)
+
+[node name="Normal Gummy6" parent="." index="12" instance=ExtResource("2_fq3cv")]
+position = Vector2(429, 288)
+
+[node name="Normal Gummy7" parent="." index="13" instance=ExtResource("2_fq3cv")]
+position = Vector2(380, 178)
+
+[node name="Normal Gummy8" parent="." index="14" instance=ExtResource("2_fq3cv")]
+position = Vector2(433, 216)
+
+[node name="Normal Gummy9" parent="." index="15" instance=ExtResource("2_fq3cv")]
+position = Vector2(333, 214)
+
+[node name="Normal Gummy10" parent="." index="16" instance=ExtResource("2_fq3cv")]
+position = Vector2(382, 252)

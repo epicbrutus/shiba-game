@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ButtonInfo" load_steps=3 format=3 uid="uid://dd3v3nsb0popr"]
+
+[ext_resource type="PackedScene" uid="uid://t4pc0hk3ao2b" path="res://Button_Info/Previews/gummy_standard.tscn" id="1_2le5o"]
+[ext_resource type="Script" uid="uid://c35oapxe3rd8b" path="res://Scripts/Configs/ButtonInfo.gd" id="1_gpfqd"]
+
+[resource]
+script = ExtResource("1_gpfqd")
+title = "Gummy (Standard)"
+body = "A gummy version of Samuel in his \"standard\" state.
+
+Some say the Standard Gummies are actually just the damned souls of all the versions of Samuel you killed by sucking at the game. They say if you listen closely as you bite into one, you can still hear their screams. He tastes like pineapple."
+preview = ExtResource("1_2le5o")
+metadata/_custom_type_script = "uid://c35oapxe3rd8b"

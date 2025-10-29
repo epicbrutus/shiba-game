@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ButtonInfo" load_steps=3 format=3 uid="uid://ca2aees155y41"]
+
+[ext_resource type="PackedScene" uid="uid://de26xqm300fp4" path="res://Button_Info/Previews/spinner.tscn" id="1_2vuis"]
+[ext_resource type="Script" uid="uid://c35oapxe3rd8b" path="res://Scripts/Configs/ButtonInfo.gd" id="1_ntgfq"]
+
+[resource]
+script = ExtResource("1_ntgfq")
+title = "Spinner"
+body = "A spinning blade.
+
+The Spinner is a simple yet effective weapon. Though not as flashy as the Laser Gate or as speedy as the Cruise Missile, few can deny the efficiency of a giant blade. Though its mechanism is simple, the presence of the Bumper in its center raises many questions: is the Spinner merely a Bumper brandishing a weapon, or is the blade itself the Spinner merely wearing a Bumper, or are the two working together in a sort of symbiotic relationship? Best leave that one to the professionals."
+preview = ExtResource("1_2vuis")
+metadata/_custom_type_script = "uid://c35oapxe3rd8b"

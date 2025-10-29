@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dk4he7xvdggll"]
+
+[ext_resource type="PackedScene" uid="uid://h0oqlxqavdew" path="res://Button_Info/Previews/base_preview.tscn" id="1_wdh3m"]
+[ext_resource type="PackedScene" uid="uid://bvhrcx0reu1gd" path="res://Prefabs/viewport_spawner.tscn" id="2_gr10i"]
+[ext_resource type="PackedScene" uid="uid://dqrpjumefrno2" path="res://Prefabs/Obstacles/homing_missile.tscn" id="3_l43d0"]
+[ext_resource type="PackedScene" uid="uid://cxr0ttp3no7lv" path="res://Prefabs/Dummy Player.tscn" id="4_l43d0"]
+
+[node name="BaseScene" instance=ExtResource("1_wdh3m")]
+
+[node name="Area2D3" parent="." index="4"]
+speed = 300.0
+
+[node name="Area2D4" parent="." index="5"]
+speed = 300.0
+
+[node name="Viewport Spawner" parent="." index="6" instance=ExtResource("2_gr10i")]
+position = Vector2(378, 352)
+spawn_cooldown = 1.5
+to_instantiate = ExtResource("3_l43d0")
+direction = Vector2(0, -1)
+
+[node name="Player" parent="." index="7" instance=ExtResource("4_l43d0")]
+position = Vector2(372, 164)
+
+[node name="CharacterBody2D" parent="Player" index="0"]
+auto_regen = true
+regen_cooldown_time = 2.0
+regen_amount = 20
+intial_velocity = Vector2(300, 0)
+
+[editable path="Player"]

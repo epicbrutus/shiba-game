@@ -1,21 +1,18 @@
-[gd_scene load_steps=13 format=3 uid="uid://byinfx75vor5m"]
+[gd_scene load_steps=15 format=3 uid="uid://byinfx75vor5m"]
 
 [ext_resource type="Script" uid="uid://rdq2odxjdbrc" path="res://Scripts/extras_menu.gd" id="1_rbbxf"]
 [ext_resource type="Script" uid="uid://cx21xpxmp52a5" path="res://Scripts/button_info_holder.gd" id="2_3y0fu"]
 [ext_resource type="Resource" uid="uid://b6ggec2ay85lx" path="res://Button_Info/Shooter.tres" id="3_3y0fu"]
-[ext_resource type="Script" uid="uid://c35oapxe3rd8b" path="res://Scripts/Configs/ButtonInfo.gd" id="3_tjioq"]
 [ext_resource type="Resource" uid="uid://dvvbjy6cumhj" path="res://Button_Info/Bumper.tres" id="4_3y0fu"]
 [ext_resource type="Resource" uid="uid://sd4uwblsfrpc" path="res://Button_Info/Laser_Gate.tres" id="5_tjioq"]
 [ext_resource type="Resource" uid="uid://72l2qbxlbd87" path="res://Button_Info/Flashing_Laser_Gate.tres" id="6_iepxc"]
 [ext_resource type="PackedScene" uid="uid://cebb58s410nks" path="res://Prefabs/exit_game.tscn" id="6_tjioq"]
 [ext_resource type="Resource" uid="uid://cnitsqhjva3n5" path="res://Button_Info/Bumper_Line.tres" id="7_7vxnw"]
 [ext_resource type="Resource" uid="uid://chnfnul3xa587" path="res://Button_Info/Cruise_Missile.tres" id="8_ovpce"]
-
-[sub_resource type="Resource" id="Resource_gwq88"]
-script = ExtResource("3_tjioq")
-title = "Homing Missile"
-body = "sddsdj"
-metadata/_custom_type_script = "uid://c35oapxe3rd8b"
+[ext_resource type="Resource" uid="uid://dyh7hvpc0ub0f" path="res://Button_Info/Homing_Missile.tres" id="9_gwq88"]
+[ext_resource type="Resource" uid="uid://ca2aees155y41" path="res://Button_Info/Spinner.tres" id="10_7drl8"]
+[ext_resource type="Resource" uid="uid://dmtvh77dr7pe7" path="res://Button_Info/gummy_skinny.tres" id="11_k2g18"]
+[ext_resource type="Resource" uid="uid://dd3v3nsb0popr" path="res://Button_Info/gummy_standard.tres" id="12_xs7i8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3y0fu"]
 content_margin_left = 0.0
@@ -135,28 +132,34 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Homing Missile"
 script = ExtResource("2_3y0fu")
-info_data = SubResource("Resource_gwq88")
+info_data = ExtResource("9_gwq88")
 
-[node name="Button8" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
+[node name="Button8" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer" groups=["info_buttons"]]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "lorem ipsum"
+text = "Spinner"
+script = ExtResource("2_3y0fu")
+info_data = ExtResource("10_7drl8")
 
-[node name="Button9" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
+[node name="Button9" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer" groups=["info_buttons"]]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "lorem ipsum"
+text = "Gummy (Skinny)"
+script = ExtResource("2_3y0fu")
+info_data = ExtResource("11_k2g18")
 
-[node name="Button10" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
+[node name="Button10" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer" groups=["info_buttons"]]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "lorem ipsum"
+text = "Gummy (Standard)"
+script = ExtResource("2_3y0fu")
+info_data = ExtResource("12_xs7i8")
 
 [node name="Button11" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(100, 100)

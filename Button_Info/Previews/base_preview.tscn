@@ -98,3 +98,10 @@ play_sound = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
 position = Vector2(297.5, -7.5)
 shape = SubResource("RectangleShape2D_uyjtg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = -10
+offset_right = 757.0
+offset_bottom = 316.0
+color = Color(0.8039216, 0.8039216, 0.8039216, 1)

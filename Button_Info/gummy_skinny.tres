@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ButtonInfo" load_steps=3 format=3 uid="uid://dmtvh77dr7pe7"]
+
+[ext_resource type="PackedScene" uid="uid://col6q20mq7mmm" path="res://Button_Info/Previews/gummy_skinny.tscn" id="1_d1pw3"]
+[ext_resource type="Script" uid="uid://c35oapxe3rd8b" path="res://Scripts/Configs/ButtonInfo.gd" id="1_ulspu"]
+
+[resource]
+script = ExtResource("1_ulspu")
+title = "Gummy (Skinny)"
+body = "A gummy version of Samuel in his \"skinny\" state.
+
+Skinny Gummy wasn't originally skinny. He used to more closely resemble a Normal Gummy, but he was then stretched into his current state.
+\"...\" says Skinny Gummy, because all of his internal organs ruptured during the stretching process. He tastes like lemon."
+preview = ExtResource("1_d1pw3")
+metadata/_custom_type_script = "uid://c35oapxe3rd8b"

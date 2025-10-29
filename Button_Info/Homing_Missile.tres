@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ButtonInfo" load_steps=3 format=3 uid="uid://dyh7hvpc0ub0f"]
+
+[ext_resource type="PackedScene" uid="uid://dk4he7xvdggll" path="res://Button_Info/Previews/homing_missile.tscn" id="1_0mf1w"]
+[ext_resource type="Script" uid="uid://c35oapxe3rd8b" path="res://Scripts/Configs/ButtonInfo.gd" id="1_8hdxx"]
+
+[resource]
+script = ExtResource("1_8hdxx")
+title = "Homing Missile"
+body = "A missile that follows the player on a countdown before self-destructing.
+
+Cruise Missile was always jealous of its bigger brother, Homing Missile. He'd always boast of his superiority.
+\"Cruise missile? Haven't heard that name in a long time,\" says Homing Missile, \"probably best kept that way. Dude couldn't turn if his life depended on it.\"
+
+The worse part was Homing Missile was right: he was better. Turns out the ability to turn actually brings quite a significant increase in accuracy."
+preview = ExtResource("1_0mf1w")
+metadata/_custom_type_script = "uid://c35oapxe3rd8b"
