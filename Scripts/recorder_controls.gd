@@ -1,6 +1,6 @@
 extends Node
 
-var debug: bool = true
+var debug: bool = false
 
 func _unhandled_input(e: InputEvent) -> void:
 	if !debug:

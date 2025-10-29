@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://pn05aew87d6i"]
+[gd_scene load_steps=97 format=3 uid="uid://pn05aew87d6i"]
 
 [ext_resource type="Texture2D" uid="uid://ct4c457b7jv8i" path="res://Art Log 10-4/head.png" id="1_bihrv"]
 [ext_resource type="Texture2D" uid="uid://b7ywjiwjc5mue" path="res://Fat_Levels/OBESE.png" id="2_oq7l7"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cebb58s410nks" path="res://Prefabs/exit_game.tscn" id="7_ndl8n"]
 [ext_resource type="Shader" uid="uid://7p882ras25qv" path="res://shaders/vignette.gdshader" id="8_3vnur"]
 [ext_resource type="PackedScene" uid="uid://dlj4gpjcswg3s" path="res://Prefabs/player.tscn" id="9_ktq20"]
+[ext_resource type="Script" uid="uid://crr1t8i1km4q2" path="res://Scripts/tutorial_text.gd" id="10_b0w1x"]
 [ext_resource type="Script" uid="uid://0v6bbu0vsmlp" path="res://Scripts/section_logic.gd" id="10_fdjc6"]
 [ext_resource type="Script" uid="uid://r8u5tp17cdm1" path="res://Scripts/Spawner.gd" id="11_15csd"]
 [ext_resource type="Script" uid="uid://3skymg3qrpff" path="res://Scripts/Configs/ObstacleConfig.gd" id="12_enh33"]
@@ -52,6 +53,7 @@
 [ext_resource type="PackedScene" uid="uid://c65f2t6vhjrba" path="res://Prefabs/Events/Horizontal/horizontal side missile formation.tscn" id="47_df3tq"]
 [ext_resource type="PackedScene" uid="uid://cptg3310ld1rs" path="res://Prefabs/Events/Horizontal/horizontal_laser_sides.tscn" id="48_ugbyk"]
 [ext_resource type="PackedScene" uid="uid://db07b1pxe15r7" path="res://Prefabs/Events/Horizontal/horizontal_laser_pathways.tscn" id="49_h0fln"]
+[ext_resource type="Script" uid="uid://kapy8hyrib11" path="res://Scripts/tutorial_recording.gd" id="53_84vcq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(1152.5, 20)
@@ -522,6 +524,7 @@ grow_vertical = 2
 foodBar = NodePath("../../Bars/Food Bar")
 
 [node name="Tutorial text" type="Node" parent="Shared"]
+script = ExtResource("10_b0w1x")
 
 [node name="1" type="RichTextLabel" parent="Shared/Tutorial text"]
 visible = false
@@ -552,23 +555,25 @@ autowrap_mode = 0
 [node name="3" type="RichTextLabel" parent="Shared/Tutorial text"]
 visible = false
 z_index = 100
-offset_left = -342.0
-offset_top = -181.0
-offset_right = 913.0
-offset_bottom = -13.0
+offset_left = -632.0
+offset_top = -206.0
+offset_right = 623.0
+offset_bottom = -38.0
 theme_override_font_sizes/normal_font_size = 61
-text = "and avoid bad food
-and obstacles to lose it"
+text = "and avoid bad food and
+obstacles to keep it"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
+horizontal_alignment = 1
 
 [node name="4" type="RichTextLabel" parent="Shared/Tutorial text"]
+visible = false
 z_index = 100
-offset_left = -243.0
-offset_top = -56.0
-offset_right = 1012.0
-offset_bottom = 112.0
+offset_left = -241.0
+offset_top = -150.0
+offset_right = 1014.0
+offset_bottom = 18.0
 theme_override_font_sizes/normal_font_size = 61
 text = "but be warned..."
 fit_content = true
@@ -576,13 +581,14 @@ scroll_active = false
 autowrap_mode = 0
 
 [node name="5" type="RichTextLabel" parent="Shared/Tutorial text"]
+visible = false
 z_index = 100
-offset_left = -626.0
-offset_top = -197.0
-offset_right = 629.0
-offset_bottom = 55.0
+offset_left = -875.0
+offset_top = -207.0
+offset_right = 380.0
+offset_bottom = 45.0
 theme_override_font_sizes/normal_font_size = 61
-text = "more food
+text = "more weight
 =
 more inertia too!"
 fit_content = true
@@ -594,25 +600,26 @@ horizontal_alignment = 1
 
 [node name="1" type="RichTextLabel" parent="Shared/Tutorial text/6"]
 z_index = 100
-offset_left = -282.0
+offset_left = -461.0
 offset_top = -222.0
-offset_right = 973.0
+offset_right = 794.0
 offset_bottom = -54.0
 theme_override_font_sizes/normal_font_size = 61
-text = "and too little food"
+text = "and too little weight"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
 [node name="2" type="RichTextLabel" parent="Shared/Tutorial text/6"]
 z_index = 100
-offset_left = 42.0
+offset_left = 163.0
 offset_top = 16.0
-offset_right = 1297.0
-offset_bottom = 184.0
+offset_right = 1418.0
+offset_bottom = 268.0
 theme_override_font_sizes/normal_font_size = 61
-text = "by the time the 
-bar runs out..."
+text = "by the time
+the bar
+runs out..."
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
@@ -631,6 +638,7 @@ food = ExtResource("31_ky4sh")
 gate = ExtResource("32_fv17y")
 distanceBar = NodePath("../../Shared/Bars/Distance Bar")
 counter_reference = NodePath("../../Shared/Bars/Control/Counter")
+in_tutorial = true
 gateCooldown = 18.5
 foodCooldown = 10000.0
 obstacleCooldown = 1000000.0
@@ -1031,6 +1039,9 @@ gate = ExtResource("32_fv17y")
 distanceBar = NodePath("../../Shared/Bars/Distance Bar")
 counter_reference = NodePath("../../Shared/Bars/Control/Counter")
 direction = Vector2(-1, 0)
+
+[node name="Tutorial Recording" type="Node" parent="."]
+script = ExtResource("53_84vcq")
 
 [editable path="Shared/Player"]
 [editable path="Falling_Section/Test Food"]

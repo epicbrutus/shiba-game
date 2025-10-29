@@ -18,6 +18,7 @@ const FoodScript = preload("res://Scripts//Food.gd")
 
 @export var direction: Vector2 = Vector2.UP
 
+@export var in_tutorial: bool = false
 
 @export_group("Settings")
 @export var gateCooldown: float = 30 #30

@@ -40,7 +40,18 @@ func _on_body_entered(body: Node2D) -> void:
 			body.queue_free()
 			timer.start(2)
 			await timer.timeout
-			get_tree().reload_current_scene()
+
+			if spawner.in_tutorial:
+				if RecordInputs.mode == RecordInputs.Mode.RECORD:
+					RecordInputs.stop_recording()
+					RecordInputs.save()
+				elif RecordInputs.mode == RecordInputs.Mode.PLAYBACK:
+					RecordInputs.stop_playback()
+
+					var main_scene = ProjectSettings.get_setting("application/run/main_scene")
+					get_tree().change_scene_to_file(main_scene)
+			else:
+				get_tree().reload_current_scene()
 
 #It clipped before so check back if it does it again
 func _physics_process(delta: float) -> void:
