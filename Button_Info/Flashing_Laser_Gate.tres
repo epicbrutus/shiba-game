@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ButtonInfo" load_steps=3 format=3 uid="uid://72l2qbxlbd87"]
+
+[ext_resource type="PackedScene" uid="uid://c4v0j875iy0bl" path="res://Button_Info/Previews/flashing_laser_gate.tscn" id="1_5ijc4"]
+[ext_resource type="Script" uid="uid://c35oapxe3rd8b" path="res://Scripts/Configs/ButtonInfo.gd" id="1_j61wg"]
+
+[resource]
+script = ExtResource("1_j61wg")
+title = "Flashing Laser Gate"
+body = "A horizontal laser that turns on and off to a timer.
+
+Despite their coordinated behavior, the Flashing Laser Gate was never meant to exist. It was found that with the lasers, as strong as they are, they formed some sort of imperceptible bond between the crystal bulbs. Sadly, this discovery was made through a series of researchers entering the storage closet to find out why the last was taking so long. Next time you see a faint beam beginning to appear, don't stick around."
+preview = ExtResource("1_5ijc4")
+metadata/_custom_type_script = "uid://c35oapxe3rd8b"

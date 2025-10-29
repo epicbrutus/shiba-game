@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ButtonInfo" load_steps=3 format=3 uid="uid://sd4uwblsfrpc"]
+
+[ext_resource type="PackedScene" uid="uid://b7c4kn0f1bq3e" path="res://Button_Info/Previews/laser_gate.tscn" id="1_yj7mm"]
+[ext_resource type="Script" uid="uid://c35oapxe3rd8b" path="res://Scripts/Configs/ButtonInfo.gd" id="2_afuea"]
+
+[resource]
+script = ExtResource("2_afuea")
+title = "Laser Gate"
+body = "Obstacle that damages anything that enters its beam.
+
+The technology to produce those bright red hot lasers you see on TV that can cut through steel does indeed exist, and it's concentrated entirely inside this hole.
+\"Some might find it disrespectful to be shut off from the world,\" posits Laser Gate,\"but I understand it's only because of the power I hold. It's flattering in its own way.\"
+
+Countless researchers have been lost in the beam that the government has given up on making up excuses for their deaths, simply writing them off as caused by \"workplace incidents.\" A people have tried to look into it, but all have gone missing with nothing but a pile of ash in their place. How odd."
+preview = ExtResource("1_yj7mm")
+metadata/_custom_type_script = "uid://c35oapxe3rd8b"

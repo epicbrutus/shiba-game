@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://b7c4kn0f1bq3e"]
+
+[ext_resource type="PackedScene" uid="uid://h0oqlxqavdew" path="res://Button_Info/Previews/base_preview.tscn" id="1_wdpo7"]
+[ext_resource type="PackedScene" uid="uid://cxr0ttp3no7lv" path="res://Prefabs/Dummy Player.tscn" id="3_c68oi"]
+[ext_resource type="PackedScene" uid="uid://unnyr3aarh3b" path="res://Prefabs/Obstacles/laser_gate.tscn" id="4_788cu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c68oi"]
+size = Vector2(600, 30)
+
+[sub_resource type="Gradient" id="Gradient_qbwt3"]
+offsets = PackedFloat32Array(0.12195122, 0.5052265, 0.8641115)
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_788cu"]
+gradient = SubResource("Gradient_qbwt3")
+width = 30
+height = 600
+
+[node name="BaseScene" instance=ExtResource("1_wdpo7")]
+
+[node name="Area2D" parent="." index="2"]
+speed = 200.0
+
+[node name="Area2D2" parent="." index="3"]
+speed = 200.0
+
+[node name="laser gate" parent="." index="6" instance=ExtResource("4_788cu")]
+position = Vector2(378, 162)
+edited = true
+length = 600.0
+
+[node name="left_bulb" parent="laser gate" index="0"]
+position = Vector2(-300, 0)
+
+[node name="right_bulb" parent="laser gate" index="1"]
+position = Vector2(300, 0)
+
+[node name="CollisionShape2D" parent="laser gate" index="2"]
+shape = SubResource("RectangleShape2D_c68oi")
+
+[node name="beam" parent="laser gate" index="3"]
+texture = SubResource("GradientTexture2D_788cu")
+
+[node name="move_up" parent="laser gate" index="4"]
+Def_Speed = 0.0
+
+[node name="Player" parent="." index="7" instance=ExtResource("3_c68oi")]
+position = Vector2(363, 104)
+
+[node name="CharacterBody2D" parent="Player" index="0"]
+auto_regen = true
+regen_cooldown_time = 2.0
+regen_amount = 20
+intial_velocity = Vector2(0, 200)
+
+[editable path="laser gate"]
+[editable path="Player"]

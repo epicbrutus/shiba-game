@@ -44,6 +44,22 @@ script = ExtResource("4_p3d6w")
 auto_regen = true
 regen_cooldown_time = 3.0
 regen_amount = 20
+intial_velocity = Vector2(0, 0)
+
+[node name="StaticBody2D" parent="." index="5"]
+position = Vector2(-81, -799)
+
+[node name="Area2D" parent="." index="6"]
+position = Vector2(109, -421)
+
+[node name="Area2D2" parent="." index="7"]
+position = Vector2(109, -788)
+
+[node name="Area2D3" parent="." index="8"]
+position = Vector2(-9, -735)
+
+[node name="Area2D4" parent="." index="9"]
+position = Vector2(804, -735)
 
 [editable path="Shooter"]
 [editable path="Shooter2"]
