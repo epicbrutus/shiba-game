@@ -20,7 +20,7 @@ static func get_random_photo_from_folder(folder_path: String) -> String:
 	if files.size() == 0:
 		return ""
 	
-	var random_file = files[randi() % files.size()]
+	var random_file = files[Determinism.randi() % files.size()]
 	print(folder_path + "/" + random_file)
 	return folder_path + "/" + random_file
 

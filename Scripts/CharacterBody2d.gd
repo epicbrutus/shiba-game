@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var stats_handler = get_tree().get_first_node_in_group("stats_handler")
+
 enum MovementPreset {
 	SKINNY,
 	NORMAL,
@@ -69,7 +71,11 @@ func getCurrentWeight() -> int:
 	return current_preset
 
 func change_food(amount: int, pos: Vector2 = Vector2(-9999, -9999), play_sound: bool = true) -> void:
+	var prev_food_eaten: int = food_eaten
 	food_eaten = clamp(food_eaten + amount, 0, max_food)
+	if stats_handler:
+		stats_handler.report_weight_change(food_eaten-prev_food_eaten)
+	
 	var to_change_to: MovementPreset = food_eaten / div_by
 	set_movement_preset(to_change_to)
 

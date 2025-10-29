@@ -480,6 +480,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Control" type="Control" parent="Shared/Vignette" groups=["stats_handler"]]
+visible = false
 z_index = 10
 layout_mode = 3
 anchors_preset = 15
@@ -523,9 +524,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -414.0
+offset_left = -465.0
 offset_top = -93.0
-offset_right = 414.0
+offset_right = 465.0
 offset_bottom = 93.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -547,6 +548,7 @@ autowrap_mode = 0
 vertical_alignment = 1
 
 [node name="small_food_counter" type="RichTextLabel" parent="Shared/Vignette/Control/HBoxContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 21
 text = "Small:"
@@ -556,6 +558,7 @@ autowrap_mode = 0
 vertical_alignment = 1
 
 [node name="medium_food_counter" type="RichTextLabel" parent="Shared/Vignette/Control/HBoxContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 21
 text = "Medium:"
@@ -565,6 +568,7 @@ autowrap_mode = 0
 vertical_alignment = 1
 
 [node name="large_food_counter" type="RichTextLabel" parent="Shared/Vignette/Control/HBoxContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 21
 text = "Large:"
@@ -574,6 +578,7 @@ autowrap_mode = 0
 vertical_alignment = 1
 
 [node name="bad_food_counter" type="RichTextLabel" parent="Shared/Vignette/Control/HBoxContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 21
 text = "Bad:"
@@ -587,8 +592,10 @@ layout_mode = 2
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Shared/Vignette/Control/HBoxContainer/PanelContainer2"]
 layout_mode = 2
+theme_override_constants/separation = 14
 
-[node name="RichTextLabel5" type="RichTextLabel" parent="Shared/Vignette/Control/HBoxContainer/PanelContainer2/VBoxContainer2"]
+[node name="survived_for_counter" type="RichTextLabel" parent="Shared/Vignette/Control/HBoxContainer/PanelContainer2/VBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 36
 text = "Survived for: 0:00:00"
@@ -597,7 +604,8 @@ scroll_active = false
 autowrap_mode = 0
 vertical_alignment = 1
 
-[node name="RichTextLabel4" type="RichTextLabel" parent="Shared/Vignette/Control/HBoxContainer/PanelContainer2/VBoxContainer2"]
+[node name="lost_on_counter" type="RichTextLabel" parent="Shared/Vignette/Control/HBoxContainer/PanelContainer2/VBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 36
 text = "Lost on level X"
@@ -606,7 +614,8 @@ scroll_active = false
 autowrap_mode = 0
 vertical_alignment = 1
 
-[node name="RichTextLabel6" type="RichTextLabel" parent="Shared/Vignette/Control/HBoxContainer/PanelContainer2/VBoxContainer2"]
+[node name="bosses_beaten_counter" type="RichTextLabel" parent="Shared/Vignette/Control/HBoxContainer/PanelContainer2/VBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 36
 text = "Bosses beaten:"
@@ -621,7 +630,8 @@ layout_mode = 2
 [node name="VBoxContainer3" type="VBoxContainer" parent="Shared/Vignette/Control/HBoxContainer/PanelContainer3"]
 layout_mode = 2
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Shared/Vignette/Control/HBoxContainer/PanelContainer3/VBoxContainer3"]
+[node name="weight_gained_counter" type="RichTextLabel" parent="Shared/Vignette/Control/HBoxContainer/PanelContainer3/VBoxContainer3"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 36
 text = "Weight Gained:"
@@ -630,7 +640,8 @@ scroll_active = false
 autowrap_mode = 0
 vertical_alignment = 1
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="Shared/Vignette/Control/HBoxContainer/PanelContainer3/VBoxContainer3"]
+[node name="weight_lost_counter" type="RichTextLabel" parent="Shared/Vignette/Control/HBoxContainer/PanelContainer3/VBoxContainer3"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 36
 text = "Weight Lost:"
@@ -654,12 +665,12 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 34
 
-[node name="Button" type="Button" parent="Shared/Vignette/Control/HBoxContainer2"]
+[node name="Main_Menu" type="Button" parent="Shared/Vignette/Control/HBoxContainer2"]
 custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
 text = "Go to Main Menu"
 
-[node name="Button2" type="Button" parent="Shared/Vignette/Control/HBoxContainer2"]
+[node name="Retry" type="Button" parent="Shared/Vignette/Control/HBoxContainer2"]
 custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
 text = "Retry"
@@ -928,5 +939,8 @@ gate = ExtResource("21_e62ys")
 distanceBar = NodePath("../../Shared/Bars/Distance Bar")
 counter_reference = NodePath("../../Shared/Bars/Control/Counter")
 direction = Vector2(-1, 0)
+
+[connection signal="pressed" from="Shared/Vignette/Control/HBoxContainer2/Main_Menu" to="Shared/Vignette/Control" method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Shared/Vignette/Control/HBoxContainer2/Retry" to="Shared/Vignette/Control" method="_on_retry_pressed"]
 
 [editable path="Shared/Player"]

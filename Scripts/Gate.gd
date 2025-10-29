@@ -7,7 +7,7 @@ extends Area2D
 @export var activated: bool = true
 
 @onready var counter = get_tree().get_first_node_in_group("counter")
-
+@onready var stats_handler = get_tree().get_first_node_in_group("stats_handler")
 @onready var spawner = Utils.get_spawner()
 
 #Likely not needed anymore
@@ -38,6 +38,8 @@ func _on_body_entered(body: Node2D) -> void:
 			death_sound.play()
 			death_sound.seek(0.3)
 			body.queue_free()
+			if stats_handler:
+				stats_handler.record_end_time()
 			timer.start(2)
 			await timer.timeout
 
@@ -51,7 +53,8 @@ func _on_body_entered(body: Node2D) -> void:
 					var main_scene = ProjectSettings.get_setting("application/run/main_scene")
 					get_tree().change_scene_to_file(main_scene)
 			else:
-				get_tree().reload_current_scene()
+				if stats_handler:
+					stats_handler.end_game()
 
 #It clipped before so check back if it does it again
 func _physics_process(delta: float) -> void:
