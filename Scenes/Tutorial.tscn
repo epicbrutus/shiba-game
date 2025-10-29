@@ -496,6 +496,7 @@ scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 1
 script = ExtResource("4_t7ysk")
+metadata/i18n_key = "ui.tutorial.counter"
 
 [node name="GameState" type="Node" parent="Shared" groups=["GameState"]]
 script = ExtResource("5_84vcq")
@@ -538,6 +539,7 @@ text = "WASD/Arrows to move"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
+metadata/i18n_key = "ui.tutorial.1"
 
 [node name="2" type="RichTextLabel" parent="Shared/Tutorial text"]
 visible = false
@@ -551,6 +553,7 @@ text = "Eat food to gain weight"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
+metadata/i18n_key = "ui.tutorial.2"
 
 [node name="3" type="RichTextLabel" parent="Shared/Tutorial text"]
 visible = false
@@ -566,6 +569,7 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 1
+metadata/i18n_key = "ui.tutorial.3"
 
 [node name="4" type="RichTextLabel" parent="Shared/Tutorial text"]
 visible = false
@@ -579,6 +583,7 @@ text = "but be warned..."
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
+metadata/i18n_key = "ui.tutorial.4"
 
 [node name="5" type="RichTextLabel" parent="Shared/Tutorial text"]
 visible = false
@@ -595,10 +600,11 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 1
+metadata/i18n_key = "ui.tutorial.5"
 
 [node name="6" type="Node2D" parent="Shared/Tutorial text"]
 
-[node name="1" type="RichTextLabel" parent="Shared/Tutorial text/6"]
+[node name="a" type="RichTextLabel" parent="Shared/Tutorial text/6"]
 z_index = 100
 offset_left = -461.0
 offset_top = -222.0
@@ -609,8 +615,9 @@ text = "and too little weight"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
+metadata/i18n_key = "ui.tutorial.6a"
 
-[node name="2" type="RichTextLabel" parent="Shared/Tutorial text/6"]
+[node name="b" type="RichTextLabel" parent="Shared/Tutorial text/6"]
 z_index = 100
 offset_left = 163.0
 offset_top = 16.0
@@ -623,6 +630,7 @@ runs out..."
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
+metadata/i18n_key = "ui.tutorial.6b"
 
 [node name="Falling_Section" type="Node2D" parent="." node_paths=PackedStringArray("spawner")]
 script = ExtResource("10_fdjc6")

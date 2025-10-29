@@ -455,6 +455,7 @@ scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 1
 script = ExtResource("12_76tg3")
+metadata/i18n_key = "ui.game.counter"
 
 [node name="GameState" type="Node" parent="Shared" groups=["GameState"]]
 script = ExtResource("33_k2mhc")
@@ -476,6 +477,173 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Control" type="Control" parent="Shared/Vignette"]
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Shared/Vignette/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3403393, 0.34033933, 0.3403393, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Shared/Vignette/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -149.0
+offset_top = 62.0
+offset_right = 149.0
+offset_bottom = 139.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 56
+text = "RUN STATS"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Shared/Vignette/Control"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 0
+offset_left = 181.0
+offset_top = 386.0
+offset_right = 381.0
+offset_bottom = 486.0
+text = "Go to Main Menu"
+
+[node name="Button2" type="Button" parent="Shared/Vignette/Control"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 0
+offset_left = 485.0
+offset_top = 386.0
+offset_right = 685.0
+offset_bottom = 486.0
+text = "Retry"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Shared/Vignette/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -414.0
+offset_top = -93.0
+offset_right = 414.0
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Shared/Vignette/Control/HBoxContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Shared/Vignette/Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 36
+text = "Food Eaten:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Shared/Vignette/Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 21
+text = "Small:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Shared/Vignette/Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 21
+text = "Medium:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Shared/Vignette/Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 21
+text = "Large:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Shared/Vignette/Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 21
+text = "Bad:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Shared/Vignette/Control/HBoxContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Shared/Vignette/Control/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 36
+text = "Survived for: 0:00:00"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="Shared/Vignette/Control/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 36
+text = "Bosses beaten:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Shared/Vignette/Control/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 36
+text = "Lost on level X"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Shared/Vignette/Control/HBoxContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Shared/Vignette/Control/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 36
+text = "Weight Gained:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Shared/Vignette/Control/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 36
+text = "Weight Lost:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
 
 [node name="Player" parent="Shared" instance=ExtResource("8_apyqh")]
 
@@ -610,6 +778,7 @@ color = Color(0, 0, 0, 0.078431375)
 
 [node name="horizontal_section" type="Node2D" parent="." node_paths=PackedStringArray("spawner")]
 process_mode = 4
+visible = false
 script = ExtResource("7_apyqh")
 spawner = NodePath("Spawner")
 orientation_index = 1

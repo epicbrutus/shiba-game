@@ -55,6 +55,7 @@ text = "Press ESC to return to main menu!!"
 fit_content = true
 autowrap_mode = 2
 horizontal_alignment = 1
+metadata/i18n_key = "ui.main.tempmessage"
 
 [node name="Title" type="RichTextLabel" parent="."]
 layout_mode = 0
@@ -68,6 +69,7 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/i18n_key = "ui.main.title"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 z_index = 1
@@ -88,22 +90,26 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 31
 text = "Start Game"
+metadata/i18n_key = "ui.main.start"
 
 [node name="Tutorial" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 31
 text = "Tutorial"
+metadata/i18n_key = "ui.main.tutorial"
 
 [node name="Gummies" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 31
 text = "Gummies
 "
+metadata/i18n_key = "ui.main.gummies"
 
 [node name="Extras" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 31
 text = "Extras"
+metadata/i18n_key = "ui.main.extras"
 
 [node name="Obese" type="Node2D" parent="."]
 position = Vector2(609, 311)

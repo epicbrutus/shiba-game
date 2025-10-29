@@ -90,7 +90,6 @@ position = Vector2(103, -48)
 position = Vector2(198, -48)
 
 [node name="Control" type="Control" parent="." node_paths=PackedStringArray("gummies", "player")]
-visible = false
 z_index = 10
 layout_mode = 3
 anchors_preset = 15
@@ -130,30 +129,35 @@ layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 46
 text = "Skinny"
+metadata/i18n_key = "ui.gummies.skinny"
 
 [node name="Normal" type="Button" parent="Control/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 46
 text = "Standard"
+metadata/i18n_key = "ui.gummies.standard"
 
 [node name="Overweight" type="Button" parent="Control/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 46
 text = "Overweight"
+metadata/i18n_key = "ui.gummies.overweight"
 
 [node name="Fat" type="Button" parent="Control/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 46
 text = "Fat"
+metadata/i18n_key = "ui.gummies.fat"
 
 [node name="Obese" type="Button" parent="Control/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 46
 text = "Obese"
+metadata/i18n_key = "ui.gummies.obese"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = -561.0
@@ -170,6 +174,7 @@ I: Force pull
 O: Force push"
 fit_content = true
 autowrap_mode = 2
+metadata/i18n_key = "ui.gummies.instructions"
 
 [connection signal="pressed" from="Control/PanelContainer/MarginContainer/GridContainer/Skinny" to="Control" method="_on_skinny_pressed"]
 [connection signal="pressed" from="Control/PanelContainer/MarginContainer/GridContainer/Normal" to="Control" method="_on_normal_pressed"]

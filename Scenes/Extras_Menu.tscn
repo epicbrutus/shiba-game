@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://byinfx75vor5m"]
+[gd_scene load_steps=20 format=3 uid="uid://byinfx75vor5m"]
 
 [ext_resource type="Script" uid="uid://rdq2odxjdbrc" path="res://Scripts/extras_menu.gd" id="1_rbbxf"]
 [ext_resource type="Script" uid="uid://cx21xpxmp52a5" path="res://Scripts/button_info_holder.gd" id="2_3y0fu"]
@@ -17,6 +17,18 @@
 [ext_resource type="Resource" uid="uid://dn4ryekjinyyo" path="res://Button_Info/gummy_overweight.tres" id="13_6y4k7"]
 [ext_resource type="Resource" uid="uid://kg1fmyxsxt1w" path="res://Button_Info/gummy_fat.tres" id="14_q0stp"]
 [ext_resource type="Resource" uid="uid://dsnb734hctsv3" path="res://Button_Info/gummy_obese.tres" id="15_q0stp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v1vox"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3y0fu"]
 content_margin_left = 0.0
@@ -80,6 +92,7 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_v1vox")
 text = "(Fat) Samuel"
 script = ExtResource("2_3y0fu")
 info_data = ExtResource("3_v1vox")

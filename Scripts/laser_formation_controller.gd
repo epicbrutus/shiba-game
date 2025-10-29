@@ -9,7 +9,7 @@ func _ready():
 		child.set_cycles(cycles)
 
 	for i in range(cycles):
-		var pause_start: int = randi_range(0, children.size() - 1 - gap_size)
+		var pause_start: int = Determinism.randi_range(0, children.size() - 1 - gap_size)
 
 		for i2 in range(gap_size):
 			children[pause_start + i2].add_paused_cycle(i + 1)
