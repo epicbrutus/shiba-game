@@ -20,11 +20,11 @@ const FoodScript = preload("res://Scripts//Food.gd")
 
 
 @export_group("Settings")
-var gateCooldown: float = 30 #30
+@export var gateCooldown: float = 30 #30
 var gateTimer: float = gateCooldown #/3
 var mid_gate: bool = false
 
-var foodCooldown: float = 0.75
+@export var foodCooldown: float = 0.75
 var foodTimer: float = foodCooldown
 
 @export var obstacleCooldown: float = 1.25
@@ -33,7 +33,7 @@ var obstacleTimer: float = obstacleCooldown
 @export var minObstacleCooldown: float = 0.4
 
 var midEvent: bool = false
-var eventCooldown: float = 5 #15
+@export var eventCooldown: float = 15 #15
 var eventTimer: float = eventCooldown
 
 var midBoss: bool = false
@@ -45,6 +45,10 @@ var area_safe: float
 
 
 func _ready() -> void:
+	gateTimer = gateCooldown
+	foodTimer = foodCooldown
+	obstacleTimer = obstacleCooldown
+	eventTimer = eventCooldown
 	#randomize()
 
 	if direction.x != 0:

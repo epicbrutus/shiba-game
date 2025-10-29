@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://pn05aew87d6i"]
+[gd_scene load_steps=95 format=3 uid="uid://pn05aew87d6i"]
 
 [ext_resource type="Texture2D" uid="uid://ct4c457b7jv8i" path="res://Art Log 10-4/head.png" id="1_bihrv"]
 [ext_resource type="Texture2D" uid="uid://b7ywjiwjc5mue" path="res://Fat_Levels/OBESE.png" id="2_oq7l7"]
@@ -41,9 +41,12 @@
 [ext_resource type="Texture2D" uid="uid://be5rsp60kafwb" path="res://Art Log 10-8/falling rocks.png" id="39_7guyi"]
 [ext_resource type="Shader" uid="uid://ci8wfbw02mu88" path="res://scroll.gdshader" id="40_h67mq"]
 [ext_resource type="Texture2D" uid="uid://8apg65mbsnv" path="res://Art Log 10-8/background.JPG" id="41_501mv"]
+[ext_resource type="PackedScene" uid="uid://unnyr3aarh3b" path="res://Prefabs/Obstacles/laser_gate.tscn" id="42_oq7l7"]
 [ext_resource type="PackedScene" uid="uid://dei3nv01brq5y" path="res://Prefabs/Events/Horizontal/horizontal_bumper_field.tscn" id="42_qspm2"]
+[ext_resource type="PackedScene" uid="uid://h0lw1ng2k4w5" path="res://Prefabs/Obstacles/spinner.tscn" id="43_emhi4"]
 [ext_resource type="PackedScene" uid="uid://ccfayhuxu3h7d" path="res://Prefabs/Events/Horizontal/horizontal_laser_formation.tscn" id="43_uwr4s"]
 [ext_resource type="PackedScene" uid="uid://dt2fmksnfxde7" path="res://Prefabs/Events/Horizontal/horizontal_shooter_ambush.tscn" id="44_fskxk"]
+[ext_resource type="PackedScene" uid="uid://bw8o52geqt381" path="res://Prefabs/Obstacles/moving_bumper.tscn" id="44_t7ysk"]
 [ext_resource type="PackedScene" uid="uid://cq38we4l80o3b" path="res://Prefabs/Events/Horizontal/horizontal_blade_gate.tscn" id="45_i1yoa"]
 [ext_resource type="PackedScene" uid="uid://e0aojlu4xhmm" path="res://Prefabs/Events/Horizontal/horizontal up-down missile formation.tscn" id="46_cyxee"]
 [ext_resource type="PackedScene" uid="uid://c65f2t6vhjrba" path="res://Prefabs/Events/Horizontal/horizontal side missile formation.tscn" id="47_df3tq"]
@@ -162,6 +165,42 @@ metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ed6rl"]
 shader = ExtResource("40_h67mq")
 shader_parameter/source = ExtResource("41_501mv")
+
+[sub_resource type="Curve" id="Curve_ipw0b"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5055762, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_1rq81"]
+curve = SubResource("Curve_ipw0b")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bihrv"]
+resource_local_to_scene = true
+particle_flag_disable_z = true
+angle_min = -179.99998
+angle_max = 180.00002
+gravity = Vector3(0, 0, 0)
+alpha_curve = SubResource("CurveTexture_1rq81")
+anim_offset_max = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oq7l7"]
+size = Vector2(500, 30)
+
+[sub_resource type="Gradient" id="Gradient_qbwt3"]
+offsets = PackedFloat32Array(0.12195122, 0.5052265, 0.8641115)
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_emhi4"]
+gradient = SubResource("Gradient_qbwt3")
+width = 30
+height = 500
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7ysk"]
+size = Vector2(300, 30)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_84vcq"]
+gradient = SubResource("Gradient_qbwt3")
+width = 30
+height = 300
 
 [sub_resource type="Resource" id="Resource_mv27k"]
 script = ExtResource("21_16ktx")
@@ -482,12 +521,107 @@ grow_vertical = 2
 [node name="CharacterBody2D" parent="Shared/Player" index="0" node_paths=PackedStringArray("foodBar")]
 foodBar = NodePath("../../Bars/Food Bar")
 
+[node name="Tutorial text" type="Node" parent="Shared"]
+
+[node name="1" type="RichTextLabel" parent="Shared/Tutorial text"]
+visible = false
+z_index = 100
+offset_left = -326.0
+offset_top = -156.0
+offset_right = 340.0
+offset_bottom = -72.0
+theme_override_font_sizes/normal_font_size = 61
+text = "WASD/Arrows to move"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="2" type="RichTextLabel" parent="Shared/Tutorial text"]
+visible = false
+z_index = 100
+offset_left = -342.0
+offset_top = -153.0
+offset_right = 334.0
+offset_bottom = -69.0
+theme_override_font_sizes/normal_font_size = 61
+text = "Eat food to gain weight"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="3" type="RichTextLabel" parent="Shared/Tutorial text"]
+visible = false
+z_index = 100
+offset_left = -342.0
+offset_top = -181.0
+offset_right = 913.0
+offset_bottom = -13.0
+theme_override_font_sizes/normal_font_size = 61
+text = "and avoid bad food
+and obstacles to lose it"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="4" type="RichTextLabel" parent="Shared/Tutorial text"]
+z_index = 100
+offset_left = -243.0
+offset_top = -56.0
+offset_right = 1012.0
+offset_bottom = 112.0
+theme_override_font_sizes/normal_font_size = 61
+text = "but be warned..."
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="5" type="RichTextLabel" parent="Shared/Tutorial text"]
+z_index = 100
+offset_left = -626.0
+offset_top = -197.0
+offset_right = 629.0
+offset_bottom = 55.0
+theme_override_font_sizes/normal_font_size = 61
+text = "more food
+=
+more inertia too!"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="6" type="Node2D" parent="Shared/Tutorial text"]
+
+[node name="1" type="RichTextLabel" parent="Shared/Tutorial text/6"]
+z_index = 100
+offset_left = -282.0
+offset_top = -222.0
+offset_right = 973.0
+offset_bottom = -54.0
+theme_override_font_sizes/normal_font_size = 61
+text = "and too little food"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="2" type="RichTextLabel" parent="Shared/Tutorial text/6"]
+z_index = 100
+offset_left = 42.0
+offset_top = 16.0
+offset_right = 1297.0
+offset_bottom = 184.0
+theme_override_font_sizes/normal_font_size = 61
+text = "by the time the 
+bar runs out..."
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
 [node name="Falling_Section" type="Node2D" parent="." node_paths=PackedStringArray("spawner")]
 script = ExtResource("10_fdjc6")
 spawner = NodePath("Spawner")
 
 [node name="Spawner" type="Node2D" parent="Falling_Section" node_paths=PackedStringArray("distanceBar", "counter_reference") groups=["spawner"]]
-process_mode = 4
 position = Vector2(0, 370)
 script = ExtResource("11_15csd")
 obstacle_configs = Array[ExtResource("12_enh33")]([ExtResource("13_sma0a"), ExtResource("14_33c7u"), ExtResource("15_hqado"), ExtResource("16_g2a4s"), ExtResource("17_4quph"), ExtResource("18_6523r"), ExtResource("19_fy2se"), SubResource("Resource_2plm1")])
@@ -497,6 +631,10 @@ food = ExtResource("31_ky4sh")
 gate = ExtResource("32_fv17y")
 distanceBar = NodePath("../../Shared/Bars/Distance Bar")
 counter_reference = NodePath("../../Shared/Bars/Control/Counter")
+gateCooldown = 18.5
+foodCooldown = 10000.0
+obstacleCooldown = 1000000.0
+eventCooldown = 10000.0
 
 [node name="Left_Wall" type="Area2D" parent="Falling_Section"]
 z_index = 2
@@ -607,6 +745,158 @@ offset_right = -548.28864
 offset_bottom = -256.0
 scale = Vector2(28.796778, 16.390018)
 color = Color(0, 0, 0, 0.078431375)
+
+[node name="Test Food" parent="Falling_Section" instance=ExtResource("31_ky4sh")]
+position = Vector2(-196, 1459)
+
+[node name="Area2D" parent="Falling_Section/Test Food" index="0"]
+is_preset = true
+
+[node name="GPUParticles2D" parent="Falling_Section/Test Food/Area2D" index="2"]
+process_material = SubResource("ParticleProcessMaterial_bihrv")
+
+[node name="Test Food2" parent="Falling_Section" instance=ExtResource("31_ky4sh")]
+position = Vector2(377, 1736)
+
+[node name="Area2D" parent="Falling_Section/Test Food2" index="0"]
+is_preset = true
+preset_type = 1
+
+[node name="GPUParticles2D" parent="Falling_Section/Test Food2/Area2D" index="2"]
+process_material = SubResource("ParticleProcessMaterial_bihrv")
+
+[node name="Test Food3" parent="Falling_Section" instance=ExtResource("31_ky4sh")]
+position = Vector2(-251, 1988)
+
+[node name="Area2D" parent="Falling_Section/Test Food3" index="0"]
+is_preset = true
+
+[node name="GPUParticles2D" parent="Falling_Section/Test Food3/Area2D" index="2"]
+process_material = SubResource("ParticleProcessMaterial_bihrv")
+
+[node name="Test Food4" parent="Falling_Section" instance=ExtResource("31_ky4sh")]
+position = Vector2(187, 2216)
+
+[node name="Area2D" parent="Falling_Section/Test Food4" index="0"]
+is_preset = true
+
+[node name="GPUParticles2D" parent="Falling_Section/Test Food4/Area2D" index="2"]
+process_material = SubResource("ParticleProcessMaterial_bihrv")
+
+[node name="Test Food5" parent="Falling_Section" instance=ExtResource("31_ky4sh")]
+position = Vector2(-6, 2858)
+
+[node name="Area2D" parent="Falling_Section/Test Food5" index="0"]
+is_preset = true
+preset_type = 3
+
+[node name="GPUParticles2D" parent="Falling_Section/Test Food5/Area2D" index="2"]
+process_material = SubResource("ParticleProcessMaterial_bihrv")
+
+[node name="Test Food6" parent="Falling_Section" instance=ExtResource("31_ky4sh")]
+position = Vector2(-6, 3663)
+
+[node name="Area2D" parent="Falling_Section/Test Food6" index="0"]
+is_preset = true
+preset_type = 2
+
+[node name="GPUParticles2D" parent="Falling_Section/Test Food6/Area2D" index="2"]
+process_material = SubResource("ParticleProcessMaterial_bihrv")
+
+[node name="Test Food7" parent="Falling_Section" instance=ExtResource("31_ky4sh")]
+position = Vector2(-6, 3713)
+
+[node name="Area2D" parent="Falling_Section/Test Food7" index="0"]
+is_preset = true
+preset_type = 2
+
+[node name="GPUParticles2D" parent="Falling_Section/Test Food7/Area2D" index="2"]
+process_material = SubResource("ParticleProcessMaterial_bihrv")
+
+[node name="Test Food8" parent="Falling_Section" instance=ExtResource("31_ky4sh")]
+position = Vector2(27, 3687)
+
+[node name="Area2D" parent="Falling_Section/Test Food8" index="0"]
+is_preset = true
+preset_type = 2
+
+[node name="GPUParticles2D" parent="Falling_Section/Test Food8/Area2D" index="2"]
+process_material = SubResource("ParticleProcessMaterial_bihrv")
+
+[node name="Test Food9" parent="Falling_Section" instance=ExtResource("31_ky4sh")]
+position = Vector2(-34, 3687)
+
+[node name="Area2D" parent="Falling_Section/Test Food9" index="0"]
+is_preset = true
+preset_type = 2
+
+[node name="GPUParticles2D" parent="Falling_Section/Test Food9/Area2D" index="2"]
+process_material = SubResource("ParticleProcessMaterial_bihrv")
+
+[node name="laser gate" parent="Falling_Section" instance=ExtResource("42_oq7l7")]
+position = Vector2(-238, 4385)
+edited = true
+length = 500.0
+
+[node name="left_bulb" parent="Falling_Section/laser gate" index="0"]
+position = Vector2(-250, 0)
+
+[node name="right_bulb" parent="Falling_Section/laser gate" index="1"]
+position = Vector2(250, 0)
+
+[node name="CollisionShape2D" parent="Falling_Section/laser gate" index="2"]
+shape = SubResource("RectangleShape2D_oq7l7")
+
+[node name="beam" parent="Falling_Section/laser gate" index="3"]
+texture = SubResource("GradientTexture2D_emhi4")
+
+[node name="move_up" parent="Falling_Section/laser gate" index="4"]
+Def_Speed = 160.0
+
+[node name="laser gate2" parent="Falling_Section" instance=ExtResource("42_oq7l7")]
+position = Vector2(10, 4954.9995)
+rotation = 0.68416905
+edited = true
+length = 300.0
+
+[node name="left_bulb" parent="Falling_Section/laser gate2" index="0"]
+position = Vector2(-150, 0)
+
+[node name="right_bulb" parent="Falling_Section/laser gate2" index="1"]
+position = Vector2(150, 0)
+
+[node name="CollisionShape2D" parent="Falling_Section/laser gate2" index="2"]
+shape = SubResource("RectangleShape2D_t7ysk")
+
+[node name="beam" parent="Falling_Section/laser gate2" index="3"]
+texture = SubResource("GradientTexture2D_84vcq")
+
+[node name="move_up" parent="Falling_Section/laser gate2" index="4"]
+Def_Speed = 160.0
+
+[node name="Spinner" parent="Falling_Section" instance=ExtResource("43_emhi4")]
+position = Vector2(-194, 4570)
+
+[node name="Blade" parent="Falling_Section/Spinner" index="0"]
+spin_direction_locked = true
+
+[node name="move_up" parent="Falling_Section/Spinner" index="2"]
+Def_Speed = 160.0
+
+[node name="Spinner2" parent="Falling_Section" instance=ExtResource("43_emhi4")]
+position = Vector2(258, 4213)
+
+[node name="Blade" parent="Falling_Section/Spinner2" index="0"]
+spin_direction_locked = true
+
+[node name="move_up" parent="Falling_Section/Spinner2" index="2"]
+Def_Speed = 160.0
+
+[node name="Bumper" parent="Falling_Section" instance=ExtResource("44_t7ysk")]
+position = Vector2(193.00002, 4708.0005)
+
+[node name="move_up" parent="Falling_Section/Bumper" index="1"]
+Def_Speed = 160.0
 
 [node name="horizontal_section" type="Node2D" parent="." node_paths=PackedStringArray("spawner")]
 process_mode = 4
@@ -743,3 +1033,17 @@ counter_reference = NodePath("../../Shared/Bars/Control/Counter")
 direction = Vector2(-1, 0)
 
 [editable path="Shared/Player"]
+[editable path="Falling_Section/Test Food"]
+[editable path="Falling_Section/Test Food2"]
+[editable path="Falling_Section/Test Food3"]
+[editable path="Falling_Section/Test Food4"]
+[editable path="Falling_Section/Test Food5"]
+[editable path="Falling_Section/Test Food6"]
+[editable path="Falling_Section/Test Food7"]
+[editable path="Falling_Section/Test Food8"]
+[editable path="Falling_Section/Test Food9"]
+[editable path="Falling_Section/laser gate"]
+[editable path="Falling_Section/laser gate2"]
+[editable path="Falling_Section/Spinner"]
+[editable path="Falling_Section/Spinner2"]
+[editable path="Falling_Section/Bumper"]

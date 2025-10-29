@@ -42,6 +42,9 @@ var value: int;
 func _ready() -> void:
     body_entered.connect(_on_body_entered)
 
+    if is_preset:
+        initialize(preset_type)
+
 func initialize(food_type: FoodType) -> void:
     var data = food_presets[food_type]
     value = data.value
