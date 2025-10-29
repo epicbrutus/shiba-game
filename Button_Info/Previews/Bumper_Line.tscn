@@ -9,5 +9,13 @@
 [node name="Player" parent="." index="6" instance=ExtResource("2_eh5jo")]
 position = Vector2(370, 184)
 
+[node name="CharacterBody2D" parent="Player" index="0"]
+auto_regen = true
+regen_cooldown_time = 2.0
+regen_amount = 0
+intial_velocity = Vector2(0, 0)
+
 [node name="Viewport Spawner" parent="." index="7" instance=ExtResource("3_hlscw")]
 position = Vector2(-203, 155)
+
+[editable path="Player"]

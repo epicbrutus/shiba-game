@@ -7,6 +7,15 @@
 
 [node name="BaseScene" instance=ExtResource("1_lu30k")]
 
+[node name="Area2D" parent="." index="2"]
+speed = 200.0
+
+[node name="Area2D3" parent="." index="4"]
+speed = 100.0
+
+[node name="Area2D4" parent="." index="5"]
+speed = 100.0
+
 [node name="Player" parent="." index="6" instance=ExtResource("2_3kgho")]
 position = Vector2(372, 164)
 
@@ -14,11 +23,11 @@ position = Vector2(372, 164)
 auto_regen = true
 regen_cooldown_time = 2.0
 regen_amount = 20
-intial_velocity = Vector2(200, 0)
+intial_velocity = Vector2(100, 0)
 
 [node name="Viewport Spawner" parent="Player" index="2" instance=ExtResource("3_3kgho")]
-position = Vector2(0, 373)
-spawn_cooldown = 1.0
+position = Vector2(-361, 150)
+spawn_cooldown = 0.5
 to_instantiate = ExtResource("4_2hece")
 direction = Vector2(0, -1)
 spawn_range = 757.0

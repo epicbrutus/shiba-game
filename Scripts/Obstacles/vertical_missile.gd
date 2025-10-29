@@ -14,7 +14,7 @@ var new_pos_sumtin: Vector2
 
 @export var direction: Vector2
 
-@onready var half_size := cam.get_viewport_rect().size * 0.5
+var half_size
 var edge_point: Vector2
 
 var damage: int = 20
@@ -27,7 +27,13 @@ var warning_pos: Vector2
 func _ready() -> void:
 	if direction == Vector2.ZERO:
 		direction = Utils.get_spawner().direction
-	edge_point = half_size * -direction.normalized()
+
+	if cam:
+		half_size = cam.get_viewport_rect().size * 0.5
+		edge_point = half_size * -direction.normalized()
+	else:
+		edge_point = Utils.get_spawner().global_position * -direction.normalized()
+	
 	print("EDGE: " + str(edge_point))
 	warning_pos = edge_point + direction * bottomY + (global_position * Vector2(direction.y, direction.x).abs())
 
