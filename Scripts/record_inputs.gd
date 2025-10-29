@@ -59,7 +59,7 @@ func save(path: String = "user://move_rec.json") -> void:
 		fa.store_string(JSON.stringify({"frames":data}))
 		fa.close()
 
-func load(path: String = "user://move_rec.json") -> bool:
+func load(path: String = "res://move_rec.json") -> bool:
 	var fa := FileAccess.open(path, FileAccess.READ)
 	if not fa:
 		return false

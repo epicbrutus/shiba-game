@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 RecordInputs="*res://Scripts/record_inputs.gd"
 RecorderControls="*res://Scripts/recorder_controls.gd"
+Determinism="res://Scripts/determinism.gd"
 
 [display]
 

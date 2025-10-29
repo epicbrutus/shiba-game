@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ButtonInfo" load_steps=3 format=3 uid="uid://dvvbjy6cumhj"]
 
-[ext_resource type="PackedScene" uid="uid://do3y6xyeemu6c" path="res://Button_Info/Previews/shooter.tscn" id="1_615bs"]
+[ext_resource type="PackedScene" uid="uid://borxnrxo3xjfd" path="res://Button_Info/Previews/bumper.tscn" id="1_615bs"]
 [ext_resource type="Script" uid="uid://c35oapxe3rd8b" path="res://Scripts/Configs/ButtonInfo.gd" id="2_hda6p"]
 
 [resource]
@@ -11,6 +11,6 @@ body = "An obstacle that repels the player when touched.
 Working in a giant CIA pit in the middle of the desert wasn't Bumper's first choice, but when you're someone of his physique, you're not not left many options.
 \"My entire lineage has been characterized by unemployment,\" says Bumper, \"I never thought I'd be the one to break the chain.\"
 
-By the time Bumper did gain employment (post applying to a bowling alley, a Top Golf, and the NBA), he was indifferent and wanted nothing else than to push others away."
+By the time Bumper did gain employment (post applying to a bowling alley, a Top Golf, and the NBA), he was indifferent and wanted nothing other than to push others away."
 preview = ExtResource("1_615bs")
 metadata/_custom_type_script = "uid://c35oapxe3rd8b"

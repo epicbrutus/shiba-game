@@ -96,9 +96,16 @@ func change_food(amount: int, pos: Vector2 = Vector2(-9999, -9999), play_sound: 
 	
 	set_movement_preset(to_change_to)
 
-func set_new_velocity(newVelocity: Vector2) -> void:
-	velocity = newVelocity
-	bounce_sound.play()
+func set_new_velocity(newVelocity: Vector2, play_sound: bool = true) -> void:
+
+	if abs(newVelocity.x) > 0:
+		velocity.x = newVelocity.x
+
+	if abs(newVelocity.y) > 0:
+		velocity.y = newVelocity.y
+	#velocity = newVelocity
+	if play_sound:
+		bounce_sound.play()
 
 func set_movement_preset(preset: MovementPreset) -> void:
 

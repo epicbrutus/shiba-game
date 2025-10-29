@@ -1,4 +1,10 @@
 
+THINGS TO ADD:
+- death/stats screen (with retry or go to menu)
+- makes menus navigable with keyboard
+- put all text in a single file for easy translation
+- translate the text to japanese
+- finish entries for all enemies, gummies, events
 
 THINGS TO FIX:
 - the missile formations are currently tracking a missile to see if the event ends. if that missile is deleted it'll all probably break. Account for that.
@@ -8,3 +14,7 @@ THINGS TO FIX:
 to the *existing* nodes. Not future ones.
 
 - Need to clear homing missiles (and likely the other attacks too) after boss dies
+
+current changes:
+- bumper preview
+- changed player velocity update method

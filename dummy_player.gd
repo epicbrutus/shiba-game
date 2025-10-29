@@ -5,10 +5,12 @@ extends "res://Scripts/CharacterBody2d.gd"
 @export var regen_cooldown_time: float = 2
 var regen_cooldown_timer: float
 @export var regen_amount: int = 20
+@export var intial_velocity: Vector2
 
 func _ready() -> void:
 	super._ready()
 	regen_cooldown_timer = regen_cooldown_time
+	set_new_velocity(intial_velocity, false)
 
 func get_input_vector() -> Vector2:
 	return Vector2.ZERO
