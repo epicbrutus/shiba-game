@@ -35,6 +35,10 @@ var value: int;
 @export var sprite: Sprite2D;
 @onready var particles: GPUParticles2D
 
+@export var is_preset: bool = false
+@export var preset_type: FoodType = FoodType.SMALL
+
+
 func _ready() -> void:
     body_entered.connect(_on_body_entered)
 

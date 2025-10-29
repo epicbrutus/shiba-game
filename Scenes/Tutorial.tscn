@@ -1,54 +1,54 @@
-[gd_scene load_steps=84 format=3 uid="uid://c14qwn6rgfy23"]
+[gd_scene load_steps=84 format=3 uid="uid://pn05aew87d6i"]
 
-[ext_resource type="Shader" uid="uid://ci8wfbw02mu88" path="res://scroll.gdshader" id="1_woxae"]
-[ext_resource type="Texture2D" uid="uid://8apg65mbsnv" path="res://Art Log 10-8/background.JPG" id="2_8melw"]
-[ext_resource type="Texture2D" uid="uid://ct4c457b7jv8i" path="res://Art Log 10-4/head.png" id="5_qfhdb"]
-[ext_resource type="Script" uid="uid://0v6bbu0vsmlp" path="res://Scripts/section_logic.gd" id="7_apyqh"]
-[ext_resource type="PackedScene" uid="uid://cebb58s410nks" path="res://Prefabs/exit_game.tscn" id="7_e62ys"]
-[ext_resource type="PackedScene" uid="uid://dlj4gpjcswg3s" path="res://Prefabs/player.tscn" id="8_apyqh"]
-[ext_resource type="Shader" uid="uid://7p882ras25qv" path="res://shaders/vignette.gdshader" id="8_mv27k"]
-[ext_resource type="Texture2D" uid="uid://b7ywjiwjc5mue" path="res://Fat_Levels/OBESE.png" id="9_1cg6w"]
-[ext_resource type="FontFile" uid="uid://1boxnc1s7uki" path="res://BradBunR.ttf" id="11_wlcpx"]
-[ext_resource type="Script" uid="uid://bp4ryh50qjci3" path="res://Scripts/counter.gd" id="12_76tg3"]
-[ext_resource type="Script" uid="uid://r8u5tp17cdm1" path="res://Scripts/Spawner.gd" id="13_g8d6c"]
-[ext_resource type="Script" uid="uid://3skymg3qrpff" path="res://Scripts/Configs/ObstacleConfig.gd" id="14_56gb8"]
-[ext_resource type="Resource" uid="uid://cfxkix8p2j8b0" path="res://Obstacle_Configs/Moving Bumper.tres" id="14_78gq4"]
-[ext_resource type="Resource" uid="uid://d4dwbredxyu1x" path="res://Obstacle_Configs/Bumper Lift.tres" id="15_k2mhc"]
-[ext_resource type="Resource" uid="uid://cmnydtfrmh66t" path="res://Obstacle_Configs/Vertical Missile.tres" id="16_wlcpx"]
-[ext_resource type="Resource" uid="uid://86ilskw4txs8" path="res://Obstacle_Configs/Blade.tres" id="17_gxae2"]
-[ext_resource type="Resource" uid="uid://bw24lbbpodlj1" path="res://Obstacle_Configs/Laser Gate.tres" id="18_76tg3"]
-[ext_resource type="Resource" uid="uid://b852xtw3q76ns" path="res://Obstacle_Configs/Shooter.tres" id="19_g8d6c"]
-[ext_resource type="Resource" uid="uid://ccvw8vbgkfqo7" path="res://Obstacle_Configs/Homing Missile.tres" id="20_56gb8"]
-[ext_resource type="PackedScene" uid="uid://ct5gv0hehauba" path="res://Prefabs/test_food.tscn" id="20_apyqh"]
-[ext_resource type="PackedScene" uid="uid://dqb04qeyjeghy" path="res://Prefabs/gate.tscn" id="21_e62ys"]
-[ext_resource type="PackedScene" uid="uid://osw2ffrvd68" path="res://Prefabs/Obstacles/moving_jumpscare_laser_gate.tscn" id="22_2tts5"]
-[ext_resource type="Script" uid="uid://bbt8tf65tbbdt" path="res://Scripts/Configs/EventConfig.gd" id="22_76tg3"]
-[ext_resource type="Script" uid="uid://bdb3fxsghyjma" path="res://Scripts/wall.gd" id="23_ek8cs"]
-[ext_resource type="PackedScene" uid="uid://d3lrc6aiqyes1" path="res://Prefabs/Events/Vertical/laser_sides.tscn" id="24_g8d6c"]
-[ext_resource type="PackedScene" uid="uid://dcj4kjchgcldd" path="res://Prefabs/Events/Vertical/missle formation.tscn" id="25_56gb8"]
-[ext_resource type="Texture2D" uid="uid://du3xupanuvavk" path="res://Art Log 10-8/left wall.png" id="25_bdknx"]
-[ext_resource type="AudioStream" uid="uid://bblklcj710be5" path="res://sounds/flight-of-the-bumblebee.mp3" id="25_hlwbt"]
-[ext_resource type="Material" uid="uid://cl3oo4marxdq4" path="res://Scenes/wall.tres" id="25_jtjp0"]
-[ext_resource type="Texture2D" uid="uid://d7vinmvgqd8d" path="res://Art Log 10-8/dust cloud.png" id="25_k078o"]
-[ext_resource type="PackedScene" uid="uid://bvv50m1fg0uro" path="res://Prefabs/Events/Vertical/the_blade_gate.tscn" id="26_6k8qj"]
-[ext_resource type="Texture2D" uid="uid://cw0q44558ofqj" path="res://Art Log 10-8/right wall.png" id="26_jtjp0"]
-[ext_resource type="Texture2D" uid="uid://be5rsp60kafwb" path="res://Art Log 10-8/falling rocks.png" id="26_oh02o"]
-[ext_resource type="Script" uid="uid://c8msip6rkh2gu" path="res://Scripts/dust.gd" id="29_78gq4"]
-[ext_resource type="PackedScene" uid="uid://d314616j7esdk" path="res://Prefabs/Events/Vertical/Bumper field.tscn" id="29_ek8cs"]
-[ext_resource type="PackedScene" uid="uid://cse7iik4eonx7" path="res://Prefabs/Events/boss.tscn" id="30_apyqh"]
-[ext_resource type="Script" uid="uid://d2hi7whyc1tq1" path="res://Scripts/game_state.gd" id="33_k2mhc"]
-[ext_resource type="PackedScene" uid="uid://dnc8warfyjdou" path="res://Prefabs/Events/Vertical/shooter_ambush.tscn" id="35_gxae2"]
-[ext_resource type="PackedScene" uid="uid://dgkcbtlnx15xx" path="res://Prefabs/Events/Vertical/laser_formation.tscn" id="41_2tts5"]
-[ext_resource type="PackedScene" uid="uid://c3rkng5fu0tu8" path="res://Prefabs/Events/Vertical/laser pathways.tscn" id="42_2plm1"]
-[ext_resource type="PackedScene" uid="uid://dei3nv01brq5y" path="res://Prefabs/Events/Horizontal/horizontal_bumper_field.tscn" id="42_piesb"]
-[ext_resource type="PackedScene" uid="uid://ccfayhuxu3h7d" path="res://Prefabs/Events/Horizontal/horizontal_laser_formation.tscn" id="43_piesb"]
-[ext_resource type="PackedScene" uid="uid://5br0thflhic0" path="res://Prefabs/Events/Vertical/sides missle formation.tscn" id="44_apyqh"]
-[ext_resource type="PackedScene" uid="uid://dt2fmksnfxde7" path="res://Prefabs/Events/Horizontal/horizontal_shooter_ambush.tscn" id="44_e62ys"]
-[ext_resource type="PackedScene" uid="uid://cq38we4l80o3b" path="res://Prefabs/Events/Horizontal/horizontal_blade_gate.tscn" id="45_e62ys"]
-[ext_resource type="PackedScene" uid="uid://e0aojlu4xhmm" path="res://Prefabs/Events/Horizontal/horizontal up-down missile formation.tscn" id="46_mv27k"]
-[ext_resource type="PackedScene" uid="uid://cptg3310ld1rs" path="res://Prefabs/Events/Horizontal/horizontal_laser_sides.tscn" id="47_ek8cs"]
-[ext_resource type="PackedScene" uid="uid://c65f2t6vhjrba" path="res://Prefabs/Events/Horizontal/horizontal side missile formation.tscn" id="47_hlwbt"]
-[ext_resource type="PackedScene" uid="uid://db07b1pxe15r7" path="res://Prefabs/Events/Horizontal/horizontal_laser_pathways.tscn" id="48_8oyct"]
+[ext_resource type="Texture2D" uid="uid://ct4c457b7jv8i" path="res://Art Log 10-4/head.png" id="1_bihrv"]
+[ext_resource type="Texture2D" uid="uid://b7ywjiwjc5mue" path="res://Fat_Levels/OBESE.png" id="2_oq7l7"]
+[ext_resource type="FontFile" uid="uid://1boxnc1s7uki" path="res://BradBunR.ttf" id="3_emhi4"]
+[ext_resource type="Script" uid="uid://bp4ryh50qjci3" path="res://Scripts/counter.gd" id="4_t7ysk"]
+[ext_resource type="Script" uid="uid://d2hi7whyc1tq1" path="res://Scripts/game_state.gd" id="5_84vcq"]
+[ext_resource type="AudioStream" uid="uid://bblklcj710be5" path="res://sounds/flight-of-the-bumblebee.mp3" id="6_b0w1x"]
+[ext_resource type="PackedScene" uid="uid://cebb58s410nks" path="res://Prefabs/exit_game.tscn" id="7_ndl8n"]
+[ext_resource type="Shader" uid="uid://7p882ras25qv" path="res://shaders/vignette.gdshader" id="8_3vnur"]
+[ext_resource type="PackedScene" uid="uid://dlj4gpjcswg3s" path="res://Prefabs/player.tscn" id="9_ktq20"]
+[ext_resource type="Script" uid="uid://0v6bbu0vsmlp" path="res://Scripts/section_logic.gd" id="10_fdjc6"]
+[ext_resource type="Script" uid="uid://r8u5tp17cdm1" path="res://Scripts/Spawner.gd" id="11_15csd"]
+[ext_resource type="Script" uid="uid://3skymg3qrpff" path="res://Scripts/Configs/ObstacleConfig.gd" id="12_enh33"]
+[ext_resource type="Resource" uid="uid://cfxkix8p2j8b0" path="res://Obstacle_Configs/Moving Bumper.tres" id="13_sma0a"]
+[ext_resource type="Resource" uid="uid://d4dwbredxyu1x" path="res://Obstacle_Configs/Bumper Lift.tres" id="14_33c7u"]
+[ext_resource type="Resource" uid="uid://cmnydtfrmh66t" path="res://Obstacle_Configs/Vertical Missile.tres" id="15_hqado"]
+[ext_resource type="Resource" uid="uid://86ilskw4txs8" path="res://Obstacle_Configs/Blade.tres" id="16_g2a4s"]
+[ext_resource type="Resource" uid="uid://bw24lbbpodlj1" path="res://Obstacle_Configs/Laser Gate.tres" id="17_4quph"]
+[ext_resource type="Resource" uid="uid://b852xtw3q76ns" path="res://Obstacle_Configs/Shooter.tres" id="18_6523r"]
+[ext_resource type="Resource" uid="uid://ccvw8vbgkfqo7" path="res://Obstacle_Configs/Homing Missile.tres" id="19_fy2se"]
+[ext_resource type="PackedScene" uid="uid://osw2ffrvd68" path="res://Prefabs/Obstacles/moving_jumpscare_laser_gate.tscn" id="20_twurk"]
+[ext_resource type="Script" uid="uid://bbt8tf65tbbdt" path="res://Scripts/Configs/EventConfig.gd" id="21_16ktx"]
+[ext_resource type="PackedScene" uid="uid://dnc8warfyjdou" path="res://Prefabs/Events/Vertical/shooter_ambush.tscn" id="22_7rvph"]
+[ext_resource type="PackedScene" uid="uid://d3lrc6aiqyes1" path="res://Prefabs/Events/Vertical/laser_sides.tscn" id="23_ef6ap"]
+[ext_resource type="PackedScene" uid="uid://dcj4kjchgcldd" path="res://Prefabs/Events/Vertical/missle formation.tscn" id="24_twx2b"]
+[ext_resource type="PackedScene" uid="uid://bvv50m1fg0uro" path="res://Prefabs/Events/Vertical/the_blade_gate.tscn" id="25_5n6yi"]
+[ext_resource type="PackedScene" uid="uid://dgkcbtlnx15xx" path="res://Prefabs/Events/Vertical/laser_formation.tscn" id="26_1pr6b"]
+[ext_resource type="PackedScene" uid="uid://c3rkng5fu0tu8" path="res://Prefabs/Events/Vertical/laser pathways.tscn" id="27_fbfqd"]
+[ext_resource type="PackedScene" uid="uid://5br0thflhic0" path="res://Prefabs/Events/Vertical/sides missle formation.tscn" id="28_5i0j3"]
+[ext_resource type="PackedScene" uid="uid://d314616j7esdk" path="res://Prefabs/Events/Vertical/Bumper field.tscn" id="29_6istf"]
+[ext_resource type="PackedScene" uid="uid://cse7iik4eonx7" path="res://Prefabs/Events/boss.tscn" id="30_71k5x"]
+[ext_resource type="PackedScene" uid="uid://ct5gv0hehauba" path="res://Prefabs/test_food.tscn" id="31_ky4sh"]
+[ext_resource type="PackedScene" uid="uid://dqb04qeyjeghy" path="res://Prefabs/gate.tscn" id="32_fv17y"]
+[ext_resource type="Script" uid="uid://bdb3fxsghyjma" path="res://Scripts/wall.gd" id="33_i4ibp"]
+[ext_resource type="Material" uid="uid://cl3oo4marxdq4" path="res://Scenes/wall.tres" id="34_722n3"]
+[ext_resource type="Texture2D" uid="uid://du3xupanuvavk" path="res://Art Log 10-8/left wall.png" id="35_8t24a"]
+[ext_resource type="Texture2D" uid="uid://cw0q44558ofqj" path="res://Art Log 10-8/right wall.png" id="36_hxyb1"]
+[ext_resource type="Texture2D" uid="uid://d7vinmvgqd8d" path="res://Art Log 10-8/dust cloud.png" id="37_e4yci"]
+[ext_resource type="Script" uid="uid://c8msip6rkh2gu" path="res://Scripts/dust.gd" id="38_slvkt"]
+[ext_resource type="Texture2D" uid="uid://be5rsp60kafwb" path="res://Art Log 10-8/falling rocks.png" id="39_7guyi"]
+[ext_resource type="Shader" uid="uid://ci8wfbw02mu88" path="res://scroll.gdshader" id="40_h67mq"]
+[ext_resource type="Texture2D" uid="uid://8apg65mbsnv" path="res://Art Log 10-8/background.JPG" id="41_501mv"]
+[ext_resource type="PackedScene" uid="uid://dei3nv01brq5y" path="res://Prefabs/Events/Horizontal/horizontal_bumper_field.tscn" id="42_qspm2"]
+[ext_resource type="PackedScene" uid="uid://ccfayhuxu3h7d" path="res://Prefabs/Events/Horizontal/horizontal_laser_formation.tscn" id="43_uwr4s"]
+[ext_resource type="PackedScene" uid="uid://dt2fmksnfxde7" path="res://Prefabs/Events/Horizontal/horizontal_shooter_ambush.tscn" id="44_fskxk"]
+[ext_resource type="PackedScene" uid="uid://cq38we4l80o3b" path="res://Prefabs/Events/Horizontal/horizontal_blade_gate.tscn" id="45_i1yoa"]
+[ext_resource type="PackedScene" uid="uid://e0aojlu4xhmm" path="res://Prefabs/Events/Horizontal/horizontal up-down missile formation.tscn" id="46_cyxee"]
+[ext_resource type="PackedScene" uid="uid://c65f2t6vhjrba" path="res://Prefabs/Events/Horizontal/horizontal side missile formation.tscn" id="47_df3tq"]
+[ext_resource type="PackedScene" uid="uid://cptg3310ld1rs" path="res://Prefabs/Events/Horizontal/horizontal_laser_sides.tscn" id="48_ugbyk"]
+[ext_resource type="PackedScene" uid="uid://db07b1pxe15r7" path="res://Prefabs/Events/Horizontal/horizontal_laser_pathways.tscn" id="49_h0fln"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(1152.5, 20)
@@ -101,106 +101,106 @@ load_path = "res://.godot/imported/OVERWEIGHT.png-09b3ccbc466b79aec6343594e7437f
 load_path = "res://.godot/imported/FAT.png-4fb3e8a293b724c210a22a6445bb5e8a.ctex"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ek8cs"]
-shader = ExtResource("8_mv27k")
+shader = ExtResource("8_3vnur")
 shader_parameter/color = Color(0, 0, 0, 1)
 shader_parameter/multiplier = 0.12
 shader_parameter/softness = 1.65
 
 [sub_resource type="Resource" id="Resource_2plm1"]
-script = ExtResource("14_56gb8")
-scene = ExtResource("22_2tts5")
+script = ExtResource("12_enh33")
+scene = ExtResource("20_twurk")
 chance = 0.0
 outerCushion = 0.99
 metadata/_custom_type_script = "uid://3skymg3qrpff"
 
 [sub_resource type="Resource" id="Resource_g8d6c"]
-script = ExtResource("22_76tg3")
-scene = ExtResource("35_gxae2")
+script = ExtResource("21_16ktx")
+scene = ExtResource("22_7rvph")
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="Resource" id="Resource_56gb8"]
-script = ExtResource("22_76tg3")
-scene = ExtResource("24_g8d6c")
+script = ExtResource("21_16ktx")
+scene = ExtResource("23_ef6ap")
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="Resource" id="Resource_6k8qj"]
-script = ExtResource("22_76tg3")
-scene = ExtResource("25_56gb8")
+script = ExtResource("21_16ktx")
+scene = ExtResource("24_twx2b")
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="Resource" id="Resource_8vuys"]
-script = ExtResource("22_76tg3")
-scene = ExtResource("26_6k8qj")
+script = ExtResource("21_16ktx")
+scene = ExtResource("25_5n6yi")
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="Resource" id="Resource_2tts5"]
-script = ExtResource("22_76tg3")
-scene = ExtResource("41_2tts5")
+script = ExtResource("21_16ktx")
+scene = ExtResource("26_1pr6b")
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="Resource" id="Resource_piesb"]
-script = ExtResource("22_76tg3")
-scene = ExtResource("42_2plm1")
+script = ExtResource("21_16ktx")
+scene = ExtResource("27_fbfqd")
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="Resource" id="Resource_apyqh"]
-script = ExtResource("22_76tg3")
-scene = ExtResource("44_apyqh")
+script = ExtResource("21_16ktx")
+scene = ExtResource("28_5i0j3")
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="Resource" id="Resource_8oyct"]
-script = ExtResource("22_76tg3")
-scene = ExtResource("29_ek8cs")
+script = ExtResource("21_16ktx")
+scene = ExtResource("29_6istf")
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="Resource" id="Resource_e62ys"]
-script = ExtResource("22_76tg3")
-scene = ExtResource("30_apyqh")
+script = ExtResource("21_16ktx")
+scene = ExtResource("30_71k5x")
 isBoss = true
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ed6rl"]
-shader = ExtResource("1_woxae")
-shader_parameter/source = ExtResource("2_8melw")
+shader = ExtResource("40_h67mq")
+shader_parameter/source = ExtResource("41_501mv")
 
 [sub_resource type="Resource" id="Resource_mv27k"]
-script = ExtResource("22_76tg3")
-scene = ExtResource("42_piesb")
+script = ExtResource("21_16ktx")
+scene = ExtResource("42_qspm2")
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="Resource" id="Resource_ek8cs"]
-script = ExtResource("22_76tg3")
-scene = ExtResource("43_piesb")
+script = ExtResource("21_16ktx")
+scene = ExtResource("43_uwr4s")
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="Resource" id="Resource_hlwbt"]
-script = ExtResource("22_76tg3")
-scene = ExtResource("44_e62ys")
+script = ExtResource("21_16ktx")
+scene = ExtResource("44_fskxk")
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="Resource" id="Resource_ns6we"]
-script = ExtResource("22_76tg3")
-scene = ExtResource("45_e62ys")
+script = ExtResource("21_16ktx")
+scene = ExtResource("45_i1yoa")
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="Resource" id="Resource_bnj7a"]
-script = ExtResource("22_76tg3")
-scene = ExtResource("46_mv27k")
+script = ExtResource("21_16ktx")
+scene = ExtResource("46_cyxee")
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="Resource" id="Resource_lyk6h"]
-script = ExtResource("22_76tg3")
-scene = ExtResource("47_hlwbt")
+script = ExtResource("21_16ktx")
+scene = ExtResource("47_df3tq")
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="Resource" id="Resource_bj2y4"]
-script = ExtResource("22_76tg3")
-scene = ExtResource("47_ek8cs")
+script = ExtResource("21_16ktx")
+scene = ExtResource("48_ugbyk")
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="Resource" id="Resource_3epuw"]
-script = ExtResource("22_76tg3")
-scene = ExtResource("48_8oyct")
+script = ExtResource("21_16ktx")
+scene = ExtResource("49_h0fln")
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [node name="Main Game" type="Node2D"]
@@ -287,7 +287,7 @@ metadata/_edit_group_ = true
 [node name="Head" type="Sprite2D" parent="Shared/Bars/Icons/Normal"]
 position = Vector2(-7.9159374, -4.458427)
 scale = Vector2(0.005, 0.005)
-texture = ExtResource("5_qfhdb")
+texture = ExtResource("1_bihrv")
 metadata/_edit_group_ = true
 
 [node name="Skinny" type="Node2D" parent="Shared/Bars/Icons"]
@@ -318,7 +318,7 @@ texture = SubResource("CompressedTexture2D_o3byv")
 [node name="Head" type="Sprite2D" parent="Shared/Bars/Icons/Skinny"]
 position = Vector2(-7.9159374, -4.458427)
 scale = Vector2(0.005, 0.005)
-texture = ExtResource("5_qfhdb")
+texture = ExtResource("1_bihrv")
 
 [node name="Overweight" type="Node2D" parent="Shared/Bars/Icons"]
 position = Vector2(17.162872, 0.2101574)
@@ -348,7 +348,7 @@ texture = SubResource("CompressedTexture2D_woxae")
 [node name="Head" type="Sprite2D" parent="Shared/Bars/Icons/Overweight"]
 position = Vector2(-7.9159374, -4.458427)
 scale = Vector2(0.005, 0.005)
-texture = ExtResource("5_qfhdb")
+texture = ExtResource("1_bihrv")
 
 [node name="Fat" type="Node2D" parent="Shared/Bars/Icons"]
 position = Vector2(33.90543, 0.2101574)
@@ -378,7 +378,7 @@ texture = SubResource("CompressedTexture2D_8melw")
 [node name="Head" type="Sprite2D" parent="Shared/Bars/Icons/Fat"]
 position = Vector2(-7.9159374, -4.458427)
 scale = Vector2(0.005, 0.005)
-texture = ExtResource("5_qfhdb")
+texture = ExtResource("1_bihrv")
 
 [node name="Obese" type="Node2D" parent="Shared/Bars/Icons"]
 position = Vector2(50.718037, 0.2101574)
@@ -404,12 +404,12 @@ autowrap_mode = 0
 [node name="Sprite" type="Sprite2D" parent="Shared/Bars/Icons/Obese"]
 position = Vector2(-11.329926, -4.2544255)
 scale = Vector2(0.005, 0.005)
-texture = ExtResource("9_1cg6w")
+texture = ExtResource("2_oq7l7")
 
 [node name="Head" type="Sprite2D" parent="Shared/Bars/Icons/Obese"]
 position = Vector2(-9.0181875, -4.509701)
 scale = Vector2(0.005, 0.005)
-texture = ExtResource("5_qfhdb")
+texture = ExtResource("1_bihrv")
 
 [node name="Node2D" type="Node2D" parent="Shared/Bars"]
 position = Vector2(-16.882662, 0.28021017)
@@ -447,25 +447,25 @@ offset_bottom = 145.01053
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.04645124, 0.05168212)
-theme_override_fonts/normal_font = ExtResource("11_wlcpx")
+theme_override_fonts/normal_font = ExtResource("3_emhi4")
 theme_override_font_sizes/normal_font_size = 56
 text = "Level:
 1"
 scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 1
-script = ExtResource("12_76tg3")
+script = ExtResource("4_t7ysk")
 
 [node name="GameState" type="Node" parent="Shared" groups=["GameState"]]
-script = ExtResource("33_k2mhc")
+script = ExtResource("5_84vcq")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Shared"]
-stream = ExtResource("25_hlwbt")
+stream = ExtResource("6_b0w1x")
 volume_db = -6.0
 autoplay = true
 parameters/looping = true
 
-[node name="Exit Game" parent="Shared" instance=ExtResource("7_e62ys")]
+[node name="Exit Game" parent="Shared" instance=ExtResource("7_ndl8n")]
 
 [node name="Vignette" type="CanvasLayer" parent="Shared"]
 
@@ -477,31 +477,31 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Player" parent="Shared" instance=ExtResource("8_apyqh")]
+[node name="Player" parent="Shared" instance=ExtResource("9_ktq20")]
 
 [node name="CharacterBody2D" parent="Shared/Player" index="0" node_paths=PackedStringArray("foodBar")]
 foodBar = NodePath("../../Bars/Food Bar")
 
 [node name="Falling_Section" type="Node2D" parent="." node_paths=PackedStringArray("spawner")]
-visible = false
-script = ExtResource("7_apyqh")
+script = ExtResource("10_fdjc6")
 spawner = NodePath("Spawner")
 
 [node name="Spawner" type="Node2D" parent="Falling_Section" node_paths=PackedStringArray("distanceBar", "counter_reference") groups=["spawner"]]
+process_mode = 4
 position = Vector2(0, 370)
-script = ExtResource("13_g8d6c")
-obstacle_configs = Array[ExtResource("14_56gb8")]([ExtResource("14_78gq4"), ExtResource("15_k2mhc"), ExtResource("16_wlcpx"), ExtResource("17_gxae2"), ExtResource("18_76tg3"), ExtResource("19_g8d6c"), ExtResource("20_56gb8"), SubResource("Resource_2plm1")])
-event_configs = Array[ExtResource("22_76tg3")]([SubResource("Resource_g8d6c"), SubResource("Resource_56gb8"), SubResource("Resource_6k8qj"), SubResource("Resource_8vuys"), SubResource("Resource_2tts5"), SubResource("Resource_piesb"), SubResource("Resource_apyqh"), SubResource("Resource_8oyct")])
-boss_configs = Array[ExtResource("22_76tg3")]([SubResource("Resource_e62ys")])
-food = ExtResource("20_apyqh")
-gate = ExtResource("21_e62ys")
+script = ExtResource("11_15csd")
+obstacle_configs = Array[ExtResource("12_enh33")]([ExtResource("13_sma0a"), ExtResource("14_33c7u"), ExtResource("15_hqado"), ExtResource("16_g2a4s"), ExtResource("17_4quph"), ExtResource("18_6523r"), ExtResource("19_fy2se"), SubResource("Resource_2plm1")])
+event_configs = Array[ExtResource("21_16ktx")]([SubResource("Resource_g8d6c"), SubResource("Resource_56gb8"), SubResource("Resource_6k8qj"), SubResource("Resource_8vuys"), SubResource("Resource_2tts5"), SubResource("Resource_piesb"), SubResource("Resource_apyqh"), SubResource("Resource_8oyct")])
+boss_configs = Array[ExtResource("21_16ktx")]([SubResource("Resource_e62ys")])
+food = ExtResource("31_ky4sh")
+gate = ExtResource("32_fv17y")
 distanceBar = NodePath("../../Shared/Bars/Distance Bar")
 counter_reference = NodePath("../../Shared/Bars/Control/Counter")
 
 [node name="Left_Wall" type="Area2D" parent="Falling_Section"]
 z_index = 2
 position = Vector2(-95, -372)
-script = ExtResource("23_ek8cs")
+script = ExtResource("33_i4ibp")
 direction = Vector2(1, 0)
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Falling_Section/Left_Wall"]
@@ -510,21 +510,21 @@ scale = Vector2(2.438667, -1.1067214)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Sprite2D" type="Sprite2D" parent="Falling_Section/Left_Wall"]
-material = ExtResource("25_jtjp0")
+material = ExtResource("34_722n3")
 position = Vector2(-479, 387.00003)
 scale = Vector2(0.47, 0.65)
-texture = ExtResource("25_bdknx")
+texture = ExtResource("35_8t24a")
 
 [node name="Right_Wall" type="Area2D" parent="Falling_Section"]
 z_index = 2
-script = ExtResource("23_ek8cs")
+script = ExtResource("33_i4ibp")
 direction = Vector2(-1, 0)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Falling_Section/Right_Wall"]
-material = ExtResource("25_jtjp0")
+material = ExtResource("34_722n3")
 position = Vector2(575, 6.999998)
 scale = Vector2(0.47, 0.65)
-texture = ExtResource("26_jtjp0")
+texture = ExtResource("36_hxyb1")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Falling_Section/Right_Wall"]
 position = Vector2(615, 0)
@@ -535,7 +535,7 @@ shape = SubResource("RectangleShape2D_q6r6c")
 z_index = 1
 position = Vector2(-20, 290)
 rotation = -1.5707964
-script = ExtResource("23_ek8cs")
+script = ExtResource("33_i4ibp")
 direction = Vector2(0, 1)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Falling_Section/Ceiling"]
@@ -543,15 +543,15 @@ modulate = Color(1, 1, 1, 0.59607846)
 position = Vector2(586.6661, -46.999977)
 rotation = 1.5707964
 scale = Vector2(1, 1.0680599)
-texture = ExtResource("25_k078o")
-script = ExtResource("29_78gq4")
+texture = ExtResource("37_e4yci")
+script = ExtResource("38_slvkt")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Falling_Section/Ceiling"]
 visible = false
 position = Vector2(609, -295)
 rotation = 1.5707964
 scale = Vector2(0.56071913, 0.3744711)
-texture = ExtResource("26_oh02o")
+texture = ExtResource("39_7guyi")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Falling_Section/Ceiling"]
 position = Vector2(615, 12.999981)
@@ -563,22 +563,22 @@ visible = false
 position = Vector2(619, 69.00003)
 rotation = 1.5707964
 scale = Vector2(-0.35775328, 0.39021406)
-texture = ExtResource("26_oh02o")
+texture = ExtResource("39_7guyi")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Falling_Section/Ceiling"]
 visible = false
 position = Vector2(613, 334.00003)
 rotation = 1.5707964
 scale = Vector2(-0.561, -0.374)
-texture = ExtResource("26_oh02o")
+texture = ExtResource("39_7guyi")
 
 [node name="Sprite2D6" type="Sprite2D" parent="Falling_Section/Ceiling"]
 modulate = Color(1, 1, 1, 0.59607846)
 position = Vector2(591.666, 65.00002)
 rotation = 1.5707964
 scale = Vector2(-1, -1.068)
-texture = ExtResource("25_k078o")
-script = ExtResource("29_78gq4")
+texture = ExtResource("37_e4yci")
+script = ExtResource("38_slvkt")
 
 [node name="Background" type="Control" parent="Falling_Section"]
 layout_mode = 3
@@ -596,7 +596,7 @@ offset_top = -351.99997
 offset_right = 1338.4963
 offset_bottom = 1360.0
 scale = Vector2(0.617831, 0.4136479)
-texture = ExtResource("2_8melw")
+texture = ExtResource("41_501mv")
 
 [node name="ColorRect" type="ColorRect" parent="Falling_Section/Background"]
 z_index = -5
@@ -610,7 +610,8 @@ color = Color(0, 0, 0, 0.078431375)
 
 [node name="horizontal_section" type="Node2D" parent="." node_paths=PackedStringArray("spawner")]
 process_mode = 4
-script = ExtResource("7_apyqh")
+visible = false
+script = ExtResource("10_fdjc6")
 spawner = NodePath("Spawner")
 orientation_index = 1
 
@@ -632,7 +633,7 @@ offset_right = 1451.0183
 offset_bottom = 3484.8071
 rotation = -1.5707941
 scale = Vector2(0.617831, 0.4136479)
-texture = ExtResource("2_8melw")
+texture = ExtResource("41_501mv")
 
 [node name="ColorRect" type="ColorRect" parent="horizontal_section/Background"]
 z_index = -5
@@ -648,7 +649,7 @@ color = Color(0, 0, 0, 0.078431375)
 z_index = 2
 position = Vector2(-12, 398)
 rotation = -1.5707964
-script = ExtResource("23_ek8cs")
+script = ExtResource("33_i4ibp")
 direction = Vector2(0, -1)
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="horizontal_section/Down_Wall"]
@@ -657,16 +658,16 @@ scale = Vector2(2.438667, -1.1067214)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Sprite2D" type="Sprite2D" parent="horizontal_section/Down_Wall"]
-material = ExtResource("25_jtjp0")
+material = ExtResource("34_722n3")
 position = Vector2(39.223, 0)
 scale = Vector2(0.47, 1.115)
-texture = ExtResource("25_bdknx")
+texture = ExtResource("35_8t24a")
 
 [node name="Ceiling" type="Area2D" parent="horizontal_section"]
 z_index = 1
 position = Vector2(-20, 56)
 rotation = 3.1415927
-script = ExtResource("23_ek8cs")
+script = ExtResource("33_i4ibp")
 direction = Vector2(0, 1)
 
 [node name="Sprite2D2" type="Sprite2D" parent="horizontal_section/Ceiling"]
@@ -674,15 +675,15 @@ modulate = Color(1, 1, 1, 0.59607846)
 position = Vector2(586.6661, -46.999977)
 rotation = 1.5707964
 scale = Vector2(1, 1.0680599)
-texture = ExtResource("25_k078o")
-script = ExtResource("29_78gq4")
+texture = ExtResource("37_e4yci")
+script = ExtResource("38_slvkt")
 
 [node name="Sprite2D3" type="Sprite2D" parent="horizontal_section/Ceiling"]
 visible = false
 position = Vector2(609, -295)
 rotation = 1.5707964
 scale = Vector2(0.56071913, 0.3744711)
-texture = ExtResource("26_oh02o")
+texture = ExtResource("39_7guyi")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="horizontal_section/Ceiling"]
 position = Vector2(615, 12.999981)
@@ -694,29 +695,29 @@ visible = false
 position = Vector2(619, 69.00003)
 rotation = 1.5707964
 scale = Vector2(-0.35775328, 0.39021406)
-texture = ExtResource("26_oh02o")
+texture = ExtResource("39_7guyi")
 
 [node name="Sprite2D5" type="Sprite2D" parent="horizontal_section/Ceiling"]
 visible = false
 position = Vector2(613, 334.00003)
 rotation = 1.5707964
 scale = Vector2(-0.561, -0.374)
-texture = ExtResource("26_oh02o")
+texture = ExtResource("39_7guyi")
 
 [node name="Sprite2D6" type="Sprite2D" parent="horizontal_section/Ceiling"]
 modulate = Color(1, 1, 1, 0.59607846)
 position = Vector2(591.666, 65.00002)
 rotation = 1.5707964
 scale = Vector2(-1, -1.068)
-texture = ExtResource("25_k078o")
-script = ExtResource("29_78gq4")
+texture = ExtResource("37_e4yci")
+script = ExtResource("38_slvkt")
 
 [node name="Up_Wall" type="Area2D" parent="horizontal_section"]
 z_index = 2
 position = Vector2(1, -380)
 rotation = 1.5707964
 scale = Vector2(1, -1)
-script = ExtResource("23_ek8cs")
+script = ExtResource("33_i4ibp")
 direction = Vector2(0, 1)
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="horizontal_section/Up_Wall"]
@@ -725,18 +726,18 @@ scale = Vector2(2.438667, -1.1067214)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Sprite2D" type="Sprite2D" parent="horizontal_section/Up_Wall"]
-material = ExtResource("25_jtjp0")
+material = ExtResource("34_722n3")
 position = Vector2(39.223, 0)
 scale = Vector2(0.47, 1.075)
-texture = ExtResource("25_bdknx")
+texture = ExtResource("35_8t24a")
 
 [node name="Spawner" type="Node2D" parent="horizontal_section" node_paths=PackedStringArray("distanceBar", "counter_reference")]
 position = Vector2(700, 0)
-script = ExtResource("13_g8d6c")
-obstacle_configs = Array[ExtResource("14_56gb8")]([ExtResource("14_78gq4"), ExtResource("15_k2mhc"), ExtResource("16_wlcpx"), ExtResource("17_gxae2"), ExtResource("18_76tg3"), ExtResource("19_g8d6c"), ExtResource("20_56gb8"), SubResource("Resource_2plm1")])
-event_configs = Array[ExtResource("22_76tg3")]([SubResource("Resource_mv27k"), SubResource("Resource_ek8cs"), SubResource("Resource_hlwbt"), SubResource("Resource_ns6we"), SubResource("Resource_bnj7a"), SubResource("Resource_lyk6h"), SubResource("Resource_bj2y4"), SubResource("Resource_3epuw")])
-food = ExtResource("20_apyqh")
-gate = ExtResource("21_e62ys")
+script = ExtResource("11_15csd")
+obstacle_configs = Array[ExtResource("12_enh33")]([ExtResource("13_sma0a"), ExtResource("14_33c7u"), ExtResource("15_hqado"), ExtResource("16_g2a4s"), ExtResource("17_4quph"), ExtResource("18_6523r"), ExtResource("19_fy2se"), SubResource("Resource_2plm1")])
+event_configs = Array[ExtResource("21_16ktx")]([SubResource("Resource_mv27k"), SubResource("Resource_ek8cs"), SubResource("Resource_hlwbt"), SubResource("Resource_ns6we"), SubResource("Resource_bnj7a"), SubResource("Resource_lyk6h"), SubResource("Resource_bj2y4"), SubResource("Resource_3epuw")])
+food = ExtResource("31_ky4sh")
+gate = ExtResource("32_fv17y")
 distanceBar = NodePath("../../Shared/Bars/Distance Bar")
 counter_reference = NodePath("../../Shared/Bars/Control/Counter")
 direction = Vector2(-1, 0)

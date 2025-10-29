@@ -45,7 +45,7 @@ var area_safe: float
 
 
 func _ready() -> void:
-	randomize()
+	#randomize()
 
 	if direction.x != 0:
 		area_safe = cam.get_viewport_rect().size.y * 0.7 * 0.5

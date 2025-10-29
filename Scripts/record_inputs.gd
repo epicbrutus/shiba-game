@@ -31,20 +31,24 @@ func get_vector() -> Vector2:
 	return frames[min(_frame_idx, frames.size() - 1)]
 
 func start_recording() -> void:
+	print("Started recording")
 	frames.clear()
 	_frame_idx = 0
 	mode = Mode.RECORD
 
 func stop_recording() -> void:
+	print("Stopped recording")
 	mode = Mode.IDLE
 
 func start_playback() -> void:
+	print("Began playback")
 	mode = Mode.PLAYBACK
 
 func stop_playback() -> void:
+	print("Ended playback")
 	mode = Mode.IDLE
 
-func save(path: String = "res://recordings/move_rec.json") -> void:
+func save(path: String = "user://move_rec.json") -> void:
 	var data: Array = []
 	data.resize(frames.size())
 	for i in frames.size():
@@ -55,7 +59,7 @@ func save(path: String = "res://recordings/move_rec.json") -> void:
 		fa.store_string(JSON.stringify({"frames":data}))
 		fa.close()
 
-func load(path: String = "res://recordings/move_rec.json") -> bool:
+func load(path: String = "user://move_rec.json") -> bool:
 	var fa := FileAccess.open(path, FileAccess.READ)
 	if not fa:
 		return false
