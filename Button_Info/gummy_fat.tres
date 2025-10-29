@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ButtonInfo" load_steps=3 format=3 uid="uid://kg1fmyxsxt1w"]
+
+[ext_resource type="Script" uid="uid://c35oapxe3rd8b" path="res://Scripts/Configs/ButtonInfo.gd" id="1_p4vqm"]
+[ext_resource type="PackedScene" uid="uid://b8shuxyg6n03v" path="res://Button_Info/Previews/gummy_fat.tscn" id="1_xfsif"]
+
+[resource]
+script = ExtResource("1_p4vqm")
+title = "Gummy (Fat)"
+body = "A gummy version of Samuel in his \"fat\" state.
+
+One of these gummies has enough sugar to kill a (relatively) healthy peasant boy from the 1600s. It tastes like blue raspberry."
+preview = ExtResource("1_xfsif")
+metadata/_custom_type_script = "uid://c35oapxe3rd8b"

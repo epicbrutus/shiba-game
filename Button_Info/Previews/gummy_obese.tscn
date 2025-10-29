@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://7hhe6wd1nchn"]
+
+[ext_resource type="PackedScene" uid="uid://h0oqlxqavdew" path="res://Button_Info/Previews/base_preview.tscn" id="1_74po2"]
+[ext_resource type="PackedScene" uid="uid://d1ufcpdtlwcq5" path="res://Prefabs/Gummies/obese_gummy.tscn" id="2_1g0us"]
+
+[node name="BaseScene" instance=ExtResource("1_74po2")]
+
+[node name="TextureRect" parent="." index="0"]
+visible = false
+
+[node name="ColorRect" parent="." index="6"]
+visible = true
+
+[node name="Obese Gummy" parent="." index="7" instance=ExtResource("2_1g0us")]
+position = Vector2(407, 268)
+
+[node name="Obese Gummy2" parent="." index="8" instance=ExtResource("2_1g0us")]
+position = Vector2(491, 268)
+
+[node name="Obese Gummy3" parent="." index="9" instance=ExtResource("2_1g0us")]
+position = Vector2(457, 226)
+
+[node name="Obese Gummy4" parent="." index="10" instance=ExtResource("2_1g0us")]
+position = Vector2(241, 268)
+
+[node name="Obese Gummy5" parent="." index="11" instance=ExtResource("2_1g0us")]
+position = Vector2(325, 268)
+
+[node name="Obese Gummy6" parent="." index="12" instance=ExtResource("2_1g0us")]
+position = Vector2(291, 226)
+
+[node name="Obese Gummy7" parent="." index="13" instance=ExtResource("2_1g0us")]
+position = Vector2(337, 184)
+
+[node name="Obese Gummy8" parent="." index="14" instance=ExtResource("2_1g0us")]
+position = Vector2(421, 184)
+
+[node name="Obese Gummy9" parent="." index="15" instance=ExtResource("2_1g0us")]
+position = Vector2(387, 142)
+
+[node name="Obese Gummy10" parent="." index="16" instance=ExtResource("2_1g0us")]
+position = Vector2(375, 228)

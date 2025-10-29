@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxh5783ml0by"]
+
+[ext_resource type="PackedScene" uid="uid://h0oqlxqavdew" path="res://Button_Info/Previews/base_preview.tscn" id="1_2fwk1"]
+[ext_resource type="PackedScene" uid="uid://mkf11sgpdg05" path="res://Prefabs/Gummies/overweight gummy.tscn" id="2_wkj35"]
+
+[node name="BaseScene" instance=ExtResource("1_2fwk1")]
+
+[node name="TextureRect" parent="." index="0"]
+visible = false
+
+[node name="ColorRect" parent="." index="6"]
+visible = true
+
+[node name="Overweight Gummy" parent="." index="7" instance=ExtResource("2_wkj35")]
+position = Vector2(280, 232)
+
+[node name="Overweight Gummy2" parent="." index="8" instance=ExtResource("2_wkj35")]
+position = Vector2(230, 273)
+
+[node name="Overweight Gummy3" parent="." index="9" instance=ExtResource("2_wkj35")]
+position = Vector2(325, 273)
+
+[node name="Overweight Gummy4" parent="." index="10" instance=ExtResource("2_wkj35")]
+position = Vector2(468, 232)
+
+[node name="Overweight Gummy5" parent="." index="11" instance=ExtResource("2_wkj35")]
+position = Vector2(418, 273)
+
+[node name="Overweight Gummy6" parent="." index="12" instance=ExtResource("2_wkj35")]
+position = Vector2(513, 273)
+
+[node name="Overweight Gummy7" parent="." index="13" instance=ExtResource("2_wkj35")]
+position = Vector2(376, 156)
+
+[node name="Overweight Gummy8" parent="." index="14" instance=ExtResource("2_wkj35")]
+position = Vector2(326, 197)
+
+[node name="Overweight Gummy9" parent="." index="15" instance=ExtResource("2_wkj35")]
+position = Vector2(421, 197)
+
+[node name="Overweight Gummy10" parent="." index="16" instance=ExtResource("2_wkj35")]
+position = Vector2(373, 235)

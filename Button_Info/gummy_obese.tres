@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ButtonInfo" load_steps=3 format=3 uid="uid://dsnb734hctsv3"]
+
+[ext_resource type="PackedScene" uid="uid://7hhe6wd1nchn" path="res://Button_Info/Previews/gummy_obese.tscn" id="1_tjbuq"]
+[ext_resource type="Script" uid="uid://c35oapxe3rd8b" path="res://Scripts/Configs/ButtonInfo.gd" id="1_vjywa"]
+
+[resource]
+script = ExtResource("1_vjywa")
+title = "Gummy (Obese)"
+body = "A gummy version of Samuel in his \"obese\" state.
+
+It's like looking into a mirror. Haha, fatty. Fatty McFat-Fat. It tastes like strawberry."
+preview = ExtResource("1_tjbuq")
+metadata/_custom_type_script = "uid://c35oapxe3rd8b"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://byinfx75vor5m"]
+[gd_scene load_steps=18 format=3 uid="uid://byinfx75vor5m"]
 
 [ext_resource type="Script" uid="uid://rdq2odxjdbrc" path="res://Scripts/extras_menu.gd" id="1_rbbxf"]
 [ext_resource type="Script" uid="uid://cx21xpxmp52a5" path="res://Scripts/button_info_holder.gd" id="2_3y0fu"]
@@ -13,6 +13,9 @@
 [ext_resource type="Resource" uid="uid://ca2aees155y41" path="res://Button_Info/Spinner.tres" id="10_7drl8"]
 [ext_resource type="Resource" uid="uid://dmtvh77dr7pe7" path="res://Button_Info/gummy_skinny.tres" id="11_k2g18"]
 [ext_resource type="Resource" uid="uid://dd3v3nsb0popr" path="res://Button_Info/gummy_standard.tres" id="12_xs7i8"]
+[ext_resource type="Resource" uid="uid://dn4ryekjinyyo" path="res://Button_Info/gummy_overweight.tres" id="13_6y4k7"]
+[ext_resource type="Resource" uid="uid://kg1fmyxsxt1w" path="res://Button_Info/gummy_fat.tres" id="14_q0stp"]
+[ext_resource type="Resource" uid="uid://dsnb734hctsv3" path="res://Button_Info/gummy_obese.tres" id="15_q0stp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3y0fu"]
 content_margin_left = 0.0
@@ -60,6 +63,7 @@ grow_vertical = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer"]
 layout_mode = 2
+horizontal_scroll_mode = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/ScrollContainer"]
 layout_mode = 2
@@ -149,6 +153,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Gummy (Skinny)"
+autowrap_mode = 2
 script = ExtResource("2_3y0fu")
 info_data = ExtResource("11_k2g18")
 
@@ -158,29 +163,39 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Gummy (Standard)"
+autowrap_mode = 2
 script = ExtResource("2_3y0fu")
 info_data = ExtResource("12_xs7i8")
 
-[node name="Button11" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
+[node name="Button11" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer" groups=["info_buttons"]]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "lorem ipsum"
+text = "Gummy (Overweight)"
+autowrap_mode = 2
+script = ExtResource("2_3y0fu")
+info_data = ExtResource("13_6y4k7")
 
-[node name="Button12" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
+[node name="Button12" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer" groups=["info_buttons"]]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "lorem ipsum"
+text = "Gummy
+(Fat)"
+script = ExtResource("2_3y0fu")
+info_data = ExtResource("14_q0stp")
 
-[node name="Button13" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
+[node name="Button13" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer" groups=["info_buttons"]]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "lorem ipsum"
+text = "Gummy (Obese)"
+autowrap_mode = 2
+script = ExtResource("2_3y0fu")
+info_data = ExtResource("15_q0stp")
 
 [node name="Button14" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(100, 100)

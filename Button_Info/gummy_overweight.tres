@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ButtonInfo" load_steps=3 format=3 uid="uid://dn4ryekjinyyo"]
+
+[ext_resource type="PackedScene" uid="uid://cxh5783ml0by" path="res://Button_Info/Previews/gummy_overweight.tscn" id="1_6i2an"]
+[ext_resource type="Script" uid="uid://c35oapxe3rd8b" path="res://Scripts/Configs/ButtonInfo.gd" id="1_im3pk"]
+
+[resource]
+script = ExtResource("1_im3pk")
+title = "Gummy (Overweight)"
+body = "A gummy version of Samuel in his \"overweight\" state.
+
+This is just a normal gummy. There is no horrific backstory to it. It tastes like orange."
+preview = ExtResource("1_6i2an")
+metadata/_custom_type_script = "uid://c35oapxe3rd8b"
