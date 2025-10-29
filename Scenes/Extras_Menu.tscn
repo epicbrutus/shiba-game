@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://byinfx75vor5m"]
+[gd_scene load_steps=11 format=3 uid="uid://byinfx75vor5m"]
 
 [ext_resource type="Script" uid="uid://rdq2odxjdbrc" path="res://Scripts/extras_menu.gd" id="1_rbbxf"]
 [ext_resource type="Script" uid="uid://cx21xpxmp52a5" path="res://Scripts/button_info_holder.gd" id="2_3y0fu"]
@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://72l2qbxlbd87" path="res://Button_Info/Flashing_Laser_Gate.tres" id="6_iepxc"]
 [ext_resource type="PackedScene" uid="uid://cebb58s410nks" path="res://Prefabs/exit_game.tscn" id="6_tjioq"]
 [ext_resource type="Resource" uid="uid://cnitsqhjva3n5" path="res://Button_Info/Bumper_Line.tres" id="7_7vxnw"]
+[ext_resource type="Resource" uid="uid://chnfnul3xa587" path="res://Button_Info/Cruise_Missile.tres" id="8_ovpce"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3y0fu"]
 content_margin_left = 0.0
@@ -111,12 +112,14 @@ text = "Bumper Line"
 script = ExtResource("2_3y0fu")
 info_data = ExtResource("7_7vxnw")
 
-[node name="Button6" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
+[node name="Button6" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer" groups=["info_buttons"]]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "lorem ipsum"
+text = "Cruise Missile"
+script = ExtResource("2_3y0fu")
+info_data = ExtResource("8_ovpce")
 
 [node name="Button7" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(100, 100)

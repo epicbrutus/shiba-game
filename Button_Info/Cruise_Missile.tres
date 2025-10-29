@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ButtonInfo" load_steps=3 format=3 uid="uid://chnfnul3xa587"]
+
+[ext_resource type="PackedScene" uid="uid://dmmuspvwm0inn" path="res://Button_Info/Previews/cruise_missile.tscn" id="1_80pd4"]
+[ext_resource type="Script" uid="uid://c35oapxe3rd8b" path="res://Scripts/Configs/ButtonInfo.gd" id="1_lut04"]
+
+[resource]
+script = ExtResource("1_lut04")
+title = "Cruise Missile"
+body = "A missile that flies in straight from a side of the screen and explodes on impact.
+
+Cruise Missile always has tricks up its sleeve. You never know where it'll come from: the floor, the ceiling, the walls; it's always a gamble.
+\"The craziest thing of all is that my warnings are diegetic,\" says Cruise Missile, \"no one knows what they're made of, but they're really there.\"
+Cruise Missile was right; not even I knew that, nor do I know what they're made of. What other secrets does it hold?"
+preview = ExtResource("1_80pd4")
+metadata/_custom_type_script = "uid://c35oapxe3rd8b"

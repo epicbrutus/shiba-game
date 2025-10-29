@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvhrcx0reu1gd"]
+
+[ext_resource type="Script" uid="uid://csscg1downl0u" path="res://Scripts/viewport_spawner.gd" id="1_q3rws"]
+[ext_resource type="PackedScene" uid="uid://dwuwlhgjhs3q2" path="res://Prefabs/Obstacles/bumper_line_straight.tscn" id="2_dbnbn"]
+
+[node name="Viewport Spawner" type="Node2D" groups=["spawner"]]
+script = ExtResource("1_q3rws")
+spawn_cooldown = 3.0
+to_instantiate = ExtResource("2_dbnbn")
+direction = Vector2(1, 0)
