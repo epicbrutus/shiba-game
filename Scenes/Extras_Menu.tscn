@@ -1,18 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://byinfx75vor5m"]
+[gd_scene load_steps=7 format=3 uid="uid://byinfx75vor5m"]
 
 [ext_resource type="Script" uid="uid://rdq2odxjdbrc" path="res://Scripts/extras_menu.gd" id="1_rbbxf"]
 [ext_resource type="Script" uid="uid://cx21xpxmp52a5" path="res://Scripts/button_info_holder.gd" id="2_3y0fu"]
 [ext_resource type="Resource" uid="uid://b6ggec2ay85lx" path="res://Button_Info/Shooter.tres" id="3_3y0fu"]
-[ext_resource type="Script" uid="uid://c35oapxe3rd8b" path="res://Scripts/Configs/ButtonInfo.gd" id="3_tjioq"]
-[ext_resource type="PackedScene" uid="uid://do3y6xyeemu6c" path="res://Button_Info/Previews/shooter.tscn" id="4_yjkmf"]
+[ext_resource type="Resource" uid="uid://dvvbjy6cumhj" path="res://Button_Info/Bumper.tres" id="4_3y0fu"]
 [ext_resource type="PackedScene" uid="uid://cebb58s410nks" path="res://Prefabs/exit_game.tscn" id="6_tjioq"]
-
-[sub_resource type="Resource" id="Resource_3y0fu"]
-script = ExtResource("3_tjioq")
-title = "Bumper"
-body = "test text for bumper"
-preview = ExtResource("4_yjkmf")
-metadata/_custom_type_script = "uid://c35oapxe3rd8b"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3y0fu"]
 content_margin_left = 0.0
@@ -86,7 +78,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Bumper"
 script = ExtResource("2_3y0fu")
-info_data = SubResource("Resource_3y0fu")
+info_data = ExtResource("4_3y0fu")
 
 [node name="Button3" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(100, 100)

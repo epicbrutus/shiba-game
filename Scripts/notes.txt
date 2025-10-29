@@ -6,3 +6,5 @@ THINGS TO FIX:
 
 - move up is broken. THe multiplier from passing levels is only being applied
 to the *existing* nodes. Not future ones.
+
+- Need to clear homing missiles (and likely the other attacks too) after boss dies
