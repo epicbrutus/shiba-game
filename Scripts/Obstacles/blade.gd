@@ -11,7 +11,7 @@ func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 
 	if !spin_direction_locked:
-		spin_direction = pow(-1, randi() % 2)
+		spin_direction = pow(-1, Determinism.randi_range(0,1))
 
 	if spin_direction < 0:
 		left_blade.scale.y *= -1

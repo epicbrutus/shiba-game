@@ -6,7 +6,7 @@ extends Node2D
 var sign: int = 1
 
 func _ready() -> void:
-    sign = pow(-1, randi() % 2)
+    sign = pow(-1, Determinism.randi_range(0,1))
 
     speed *= sign
 

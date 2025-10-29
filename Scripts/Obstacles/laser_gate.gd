@@ -29,7 +29,7 @@ var thickness: int = 30
 
 func _ready() -> void:
 	if !edited:
-		length = randi_range(MIN_LENGTH, MAX_LENGTH)
+		length = Determinism.randi_range(MIN_LENGTH, MAX_LENGTH)
 		rotation = deg_to_rad(randi_range(-45, 45)) + Utils.get_spawner().direction.angle() - Vector2.UP.angle()
 
 	arrange_children()

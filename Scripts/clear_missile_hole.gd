@@ -5,7 +5,7 @@ extends Node
 @onready var children: Array = get_children()
 
 func _ready():
-	var remove_start: int = randi_range(0, children.size() - gap_size)
+	var remove_start: int = Determinism.randi_range(0, children.size() - gap_size)
 
 	for i in range(gap_size - 1, -1, -1):
 		var idx := remove_start + i

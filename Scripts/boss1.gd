@@ -21,7 +21,7 @@ func spawn_event() -> void:
 	for config in event_configs:
 		total_chance += config.chance
 
-	var r = randf() * total_chance
+	var r = Determinism.randf() * total_chance
 	var acc = 0
 
 	for config in event_configs:

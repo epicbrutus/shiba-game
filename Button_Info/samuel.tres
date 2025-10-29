@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ButtonInfo" load_steps=3 format=3 uid="uid://cpehnlrpqix8p"]
+
+[ext_resource type="PackedScene" uid="uid://tcjjtg8ik4o1" path="res://Button_Info/Previews/samuel.tscn" id="1_iawts"]
+[ext_resource type="Script" uid="uid://c35oapxe3rd8b" path="res://Scripts/Configs/ButtonInfo.gd" id="1_vti16"]
+
+[resource]
+script = ExtResource("1_vti16")
+title = "(Fat) Samuel"
+body = "The man of the hour himself.
+
+Samuel is the rebellious type. Seeing a restricted hole owned by the CIA, he had no choice but to stick it to the man and jump in. With his elastic stomach, he can easily take on over 300lbs of the conveniently placed food, allowing him to smash through any barricade."
+preview = ExtResource("1_iawts")
+metadata/_custom_type_script = "uid://c35oapxe3rd8b"

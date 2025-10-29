@@ -3,7 +3,7 @@ extends Node2D
 @export var state_time: float = 1
 @onready var state_timer: float = state_time
 
-@onready var direction: int = pow(-1, randi() % 2)
+@onready var direction: int = pow(-1, Determinism.randi_range(0,1))
 @onready var children: Array = get_children()
 
 @onready var index: int = randi_range(0, children.size() - 1)

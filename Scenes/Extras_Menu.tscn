@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://byinfx75vor5m"]
+[gd_scene load_steps=19 format=3 uid="uid://byinfx75vor5m"]
 
 [ext_resource type="Script" uid="uid://rdq2odxjdbrc" path="res://Scripts/extras_menu.gd" id="1_rbbxf"]
 [ext_resource type="Script" uid="uid://cx21xpxmp52a5" path="res://Scripts/button_info_holder.gd" id="2_3y0fu"]
 [ext_resource type="Resource" uid="uid://b6ggec2ay85lx" path="res://Button_Info/Shooter.tres" id="3_3y0fu"]
+[ext_resource type="Resource" uid="uid://cpehnlrpqix8p" path="res://Button_Info/samuel.tres" id="3_v1vox"]
 [ext_resource type="Resource" uid="uid://dvvbjy6cumhj" path="res://Button_Info/Bumper.tres" id="4_3y0fu"]
 [ext_resource type="Resource" uid="uid://sd4uwblsfrpc" path="res://Button_Info/Laser_Gate.tres" id="5_tjioq"]
 [ext_resource type="Resource" uid="uid://72l2qbxlbd87" path="res://Button_Info/Flashing_Laser_Gate.tres" id="6_iepxc"]
@@ -73,6 +74,15 @@ size_flags_vertical = 4
 [node name="GridContainer" type="GridContainer" parent="PanelContainer/ScrollContainer/MarginContainer"]
 layout_mode = 2
 columns = 2
+
+[node name="Button14" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer" groups=["info_buttons"]]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "(Fat) Samuel"
+script = ExtResource("2_3y0fu")
+info_data = ExtResource("3_v1vox")
 
 [node name="Shooter" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer" groups=["info_buttons"]]
 custom_minimum_size = Vector2(100, 100)
@@ -196,27 +206,6 @@ text = "Gummy (Obese)"
 autowrap_mode = 2
 script = ExtResource("2_3y0fu")
 info_data = ExtResource("15_q0stp")
-
-[node name="Button14" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "lorem ipsum"
-
-[node name="Button15" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "lorem ipsum"
-
-[node name="Button16" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "lorem ipsum"
 
 [node name="PanelContainer2" type="PanelContainer" parent="."]
 layout_mode = 0

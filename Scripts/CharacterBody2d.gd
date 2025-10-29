@@ -52,7 +52,7 @@ var max_food: int = 80
 var div_by: int = max_food/4
 var food_eaten: int = 0
 
-var starting_food: int = 20 #20
+@export var starting_food: int = 20 #20
 
 func _ready() -> void:
 	# Assign the weight_label if not set via the editor
@@ -182,7 +182,7 @@ func _process(delta: float) -> void:
 		head_lerp_timer += delta
 
 		if head_pivot_timer >= head_pivot_interval:
-			target_head_rotation = deg_to_rad(randf_range(-90, -75))
+			target_head_rotation = deg_to_rad(Determinism.randf_range(-90, -75))
 			head_pivot_timer = 0.0
 			head_lerp_timer = 0.0
 

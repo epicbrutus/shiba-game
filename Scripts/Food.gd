@@ -50,7 +50,7 @@ func initialize(food_type: FoodType) -> void:
     value = data.value
 
     if not data.image_list.is_empty():
-        var photo_path = data.image_list.pick_random()
+        var photo_path = Determinism.choose(data.image_list)
         sprite.texture = load(photo_path)
 
         # Set consistent size (e.g., 64x64 pixels)

@@ -93,7 +93,6 @@ func food_loop(delta: float) -> void:
 		var spawnDistance: float = area_safe #(camera_width/2)*0.9;
 		instance.position = get_spawn_pos()
 func get_random_food_type() -> int:
-	randf();
 	var food_presets = FoodScript.food_presets
 
 	var temp_weights: Dictionary = {}
@@ -108,7 +107,7 @@ func get_random_food_type() -> int:
 		temp_weights[key] = weight
 		total_chance += weight
 
-	var r = randf() * total_chance
+	var r = Determinism.randf() * total_chance
 	var acc = 0.0
 	for key in food_presets.keys():
 		acc += temp_weights[key]
@@ -145,7 +144,7 @@ func spawn_obstacle() -> void:
 	for config in obstacle_configs:
 		total_chance += config.chance
 
-	var r = randf() * total_chance
+	var r = Determinism.randf() * total_chance
 	var acc = 0
 
 	for config in obstacle_configs:
@@ -162,8 +161,8 @@ func get_spawn_pos(innerCushion: float = 0, outerCushion: float = 0, negativeOff
 
 	w *= 1 - outerCushion
 
-	var side: int = pow(-1, randi() % 2)
-	var xPos: float = randf_range(w * innerCushion, w) * side
+	var side: int = pow(-1, Determinism.randi_range(0,1))
+	var xPos: float = Determinism.randf_range(w * innerCushion, w) * side
 	
 	if direction.x != 0:
 		return  Vector2(position.x - negativeOffset, -xPos)
@@ -197,7 +196,7 @@ func _spawn_event_impl(spawn_boss: bool = false) -> void:
 	for config in spawn_configs:
 		total_chance += config.chance
 
-	var r = randf() * total_chance
+	var r = Determinism.randf() * total_chance
 	var acc = 0
 
 	for config in spawn_configs:
