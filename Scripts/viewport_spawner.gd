@@ -15,7 +15,7 @@ func _process(delta):
 		
 		if spawn_range > 0:
 
-			var xPos = randf_range(spawn_range * .1, spawn_range * 0.9)
+			var xPos = Determinism.randf_range(spawn_range * .1, spawn_range * 0.9)
 
 			if direction.x != 0:
 				instantiated.global_position = Vector2(global_position.x, xPos)

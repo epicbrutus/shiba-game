@@ -1,5 +1,7 @@
 extends Area2D
 
+@onready var stats_handler = get_tree().get_first_node_in_group("stats_handler")
+
 static var SMALL_FOODS = ["res://Food_Photos/Small_Foods/chip.png"]
 static var MEDIUM_FOODS = ["res://Food_Photos/Medium_Foods/donut.png"]
 static var LARGE_FOODS = ["res://Food_Photos/Large_Foods/cake.png"]
@@ -38,6 +40,7 @@ var value: int;
 @export var is_preset: bool = false
 @export var preset_type: FoodType = FoodType.SMALL
 
+var saved_type: FoodType
 
 func _ready() -> void:
     body_entered.connect(_on_body_entered)
@@ -46,6 +49,8 @@ func _ready() -> void:
         initialize(preset_type)
 
 func initialize(food_type: FoodType) -> void:
+    saved_type = food_type
+
     var data = food_presets[food_type]
     value = data.value
 
@@ -72,5 +77,8 @@ func _on_body_entered(body: Node2D) -> void:
         # Call the player's eat food method
         body.change_food(value, global_position)
         
+        if stats_handler:
+            stats_handler.add_food(saved_type)
+
         # Make the food disappear
         get_parent().queue_free()
