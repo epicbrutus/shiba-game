@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://o1uato8k4r28"]
+
+[ext_resource type="PackedScene" uid="uid://h0oqlxqavdew" path="res://Button_Info/Previews/base_preview.tscn" id="1_wrlgl"]
+[ext_resource type="PackedScene" uid="uid://cse7iik4eonx7" path="res://Prefabs/Events/boss.tscn" id="2_jdc0u"]
+[ext_resource type="PackedScene" uid="uid://cxr0ttp3no7lv" path="res://Prefabs/Dummy Player.tscn" id="3_qfc3a"]
+
+[node name="BaseScene" instance=ExtResource("1_wrlgl")]
+
+[node name="Base Event" parent="." index="7" instance=ExtResource("2_jdc0u")]
+position = Vector2(381, 23)
+
+[node name="Player" parent="." index="8" instance=ExtResource("3_qfc3a")]
+position = Vector2(374, 170)
+
+[editable path="Base Event"]

@@ -1,7 +1,8 @@
 extends Node2D
 
 @export var event_configs: Array[EventConfig] = []
-
+@export var preview: bool = false
+ 
 var eventCooldown: float = 4
 var eventTimer: float = eventCooldown/3
 
@@ -28,7 +29,12 @@ func spawn_event() -> void:
 		acc += config.chance
 		if r < acc:
 			var event = config.scene.instantiate()
-			get_tree().current_scene.add_child(event)
+			event.global_position = get_parent().global_position
+
+			if preview:
+				get_parent().get_parent().add_child(event)
+			else:
+				get_tree().current_scene.add_child(event)
 			event.add_to_group("obstacles")
 
 			return
