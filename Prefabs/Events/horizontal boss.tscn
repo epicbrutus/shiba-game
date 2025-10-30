@@ -1,0 +1,98 @@
+[gd_scene load_steps=19 format=3 uid="uid://bh8erro6jfify"]
+
+[ext_resource type="PackedScene" uid="uid://b45om3jod5tvf" path="res://Prefabs/Events/Horizontal/horizontal_base_event.tscn" id="1_8kh4p"]
+[ext_resource type="Script" uid="uid://bsrgdtmtcipbb" path="res://Prefabs/Events/boss.gd" id="2_2xr21"]
+[ext_resource type="Script" uid="uid://noi7epbxmn18" path="res://Scripts/Gate.gd" id="2_c885t"]
+[ext_resource type="AudioStream" uid="uid://di35saedkx0ny" path="res://sounds/death fart.mp3" id="3_o4e4d"]
+[ext_resource type="AudioStream" uid="uid://b047feee3kpuk" path="res://sounds/smash.mp3" id="4_u433x"]
+[ext_resource type="Texture2D" uid="uid://drdj0pg6410w7" path="res://photos/bricks.png" id="5_0j0nv"]
+[ext_resource type="PackedScene" uid="uid://dwqgfnsocelag" path="res://Prefabs/drop_shadow.tscn" id="6_ouci4"]
+[ext_resource type="Texture2D" uid="uid://bkqv5mmp0ataj" path="res://photos/waka.jpg" id="7_2xr21"]
+[ext_resource type="Script" uid="uid://bdb3fxsghyjma" path="res://Scripts/wall.gd" id="8_va25w"]
+[ext_resource type="Script" uid="uid://c8m8hmpsqq3km" path="res://Scripts/boss1.gd" id="10_va25w"]
+[ext_resource type="Script" uid="uid://bbt8tf65tbbdt" path="res://Scripts/Configs/EventConfig.gd" id="11_k11ed"]
+[ext_resource type="PackedScene" uid="uid://brcw5y04jh5yj" path="res://Prefabs/Events/Boss_Attacks/Boss1/homing_missile_spray.tscn" id="12_tsha3"]
+[ext_resource type="PackedScene" uid="uid://ehtmd7vcq2sp" path="res://Prefabs/Events/Boss_Attacks/Boss1/shooter_ambush.tscn" id="13_6vfmo"]
+[ext_resource type="PackedScene" uid="uid://crnfo54i6cgy6" path="res://Prefabs/Events/Boss_Attacks/Boss1/moving_blade.tscn" id="14_5vpyp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k11ed"]
+size = Vector2(1152.5, 96)
+
+[sub_resource type="Resource" id="Resource_oigfs"]
+script = ExtResource("11_k11ed")
+scene = ExtResource("12_tsha3")
+metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
+
+[sub_resource type="Resource" id="Resource_y60jc"]
+script = ExtResource("11_k11ed")
+scene = ExtResource("13_6vfmo")
+metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
+
+[sub_resource type="Resource" id="Resource_4o30q"]
+script = ExtResource("11_k11ed")
+scene = ExtResource("14_5vpyp")
+metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
+
+[node name="Base Event" node_paths=PackedStringArray("gate", "boss_logic", "hitbox") instance=ExtResource("1_8kh4p")]
+script = ExtResource("2_2xr21")
+gate = NodePath("Area2D")
+boss_logic = NodePath("Node2D")
+hitbox = NodePath("Area2D/Area2D")
+
+[node name="Area2D" type="Area2D" parent="." index="3"]
+position = Vector2(448, 0)
+rotation = -1.5707964
+script = ExtResource("2_c885t")
+activated = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 53)
+shape = SubResource("RectangleShape2D_k11ed")
+
+[node name="Timer" type="Timer" parent="Area2D" index="1"]
+wait_time = 2.0
+
+[node name="death_sound" type="AudioStreamPlayer" parent="Area2D" index="2"]
+stream = ExtResource("3_o4e4d")
+
+[node name="smash_sound" type="AudioStreamPlayer" parent="Area2D" index="3"]
+stream = ExtResource("4_u433x")
+pitch_scale = 0.7
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" index="4"]
+visible = false
+position = Vector2(0, 81.145)
+texture = ExtResource("5_0j0nv")
+
+[node name="Drop Shadow" parent="Area2D/Sprite2D" index="0" instance=ExtResource("6_ouci4")]
+visible = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="Area2D" index="5"]
+position = Vector2(0, 175.00003)
+scale = Vector2(1.605, 0.73)
+texture = ExtResource("7_2xr21")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Area2D" index="6"]
+offset_left = -264.0
+offset_top = -32.0
+offset_right = 259.0
+offset_bottom = 95.0
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 100
+text = "BOSS"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="Area2D" index="7"]
+script = ExtResource("8_va25w")
+direction = Vector2(0, 1)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D/Area2D" index="0"]
+position = Vector2(0, 53)
+shape = SubResource("RectangleShape2D_k11ed")
+
+[node name="Node2D" type="Node2D" parent="." index="4"]
+script = ExtResource("10_va25w")
+event_configs = Array[ExtResource("11_k11ed")]([SubResource("Resource_oigfs"), SubResource("Resource_y60jc"), SubResource("Resource_4o30q")])
