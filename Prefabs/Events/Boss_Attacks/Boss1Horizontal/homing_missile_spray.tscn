@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlncebhasshqq"]
+
+[ext_resource type="PackedScene" uid="uid://b45om3jod5tvf" path="res://Prefabs/Events/Horizontal/horizontal_base_event.tscn" id="1_pwmch"]
+[ext_resource type="Script" uid="uid://57x314hot4ua" path="res://Scripts/homing_missile_spray.gd" id="2_ny767"]
+[ext_resource type="PackedScene" uid="uid://dqrpjumefrno2" path="res://Prefabs/Obstacles/homing_missile.tscn" id="3_adc32"]
+
+[node name="Base Event" instance=ExtResource("1_pwmch")]
+
+[node name="Node2D" type="Node2D" parent="." index="3"]
+position = Vector2(571, 0)
+rotation = -1.5707964
+script = ExtResource("2_ny767")
+homing_missile_prefab = ExtResource("3_adc32")
+num_missiles = 4

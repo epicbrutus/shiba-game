@@ -682,6 +682,14 @@ custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
 text = "Retry"
 
+[node name="ColorRect2" type="ColorRect" parent="Shared/Vignette"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Player" parent="Shared" instance=ExtResource("8_apyqh")]
 
 [node name="CharacterBody2D" parent="Shared/Player" index="0" node_paths=PackedStringArray("foodBar")]
@@ -815,7 +823,6 @@ color = Color(0, 0, 0, 0.078431375)
 
 [node name="horizontal_section" type="Node2D" parent="." node_paths=PackedStringArray("spawner")]
 process_mode = 4
-visible = false
 script = ExtResource("7_apyqh")
 spawner = NodePath("Spawner")
 orientation_index = 1
@@ -873,7 +880,7 @@ z_index = 1
 position = Vector2(-20, 56)
 rotation = 3.1415927
 script = ExtResource("23_ek8cs")
-direction = Vector2(0, 1)
+direction = Vector2(1, 0)
 
 [node name="Sprite2D2" type="Sprite2D" parent="horizontal_section/Ceiling"]
 modulate = Color(1, 1, 1, 0.59607846)

@@ -7,6 +7,9 @@ extends Node
 @export var acceleration: float = 0
 @export var jerk: float = 0
 
+@export var unique_direction: bool = false
+@export var spec_direction: Vector2
+
 var orientation_index: int = 0
 
 var multipliers: Array[float] = [
@@ -42,6 +45,8 @@ func _physics_process(delta: float) -> void:
 	if !spawner:
 		return
 	
-	get_parent().position += speed * delta * multiplier * spawner.direction
+	var the_direction: Vector2 = spec_direction if unique_direction else spawner.direction
+
+	get_parent().position += speed * delta * multiplier * the_direction
 	speed += acceleration * delta
 	acceleration += jerk * delta

@@ -3,6 +3,7 @@ extends Area2D
 var damage: int = 15
 @export var spin_direction: int = 1
 @export var spin_direction_locked: bool = false
+@export var speed: float = 3
 
 @onready var left_blade: Sprite2D = $Left_Blade
 @onready var right_blade: Sprite2D = $Right_Blade
@@ -23,4 +24,4 @@ func _on_body_entered(body: Node2D) -> void:
 		body.change_food(-damage)
 
 func _physics_process(delta: float) -> void:
-	rotation += -3 * delta * spin_direction
+	rotation += -speed * delta * spin_direction

@@ -11,16 +11,16 @@
 [ext_resource type="Script" uid="uid://bdb3fxsghyjma" path="res://Scripts/wall.gd" id="8_va25w"]
 [ext_resource type="Script" uid="uid://c8m8hmpsqq3km" path="res://Scripts/boss1.gd" id="10_va25w"]
 [ext_resource type="Script" uid="uid://bbt8tf65tbbdt" path="res://Scripts/Configs/EventConfig.gd" id="11_k11ed"]
-[ext_resource type="PackedScene" uid="uid://brcw5y04jh5yj" path="res://Prefabs/Events/Boss_Attacks/Boss1/homing_missile_spray.tscn" id="12_tsha3"]
+[ext_resource type="PackedScene" uid="uid://dlncebhasshqq" path="res://Prefabs/Events/Boss_Attacks/Boss1Horizontal/homing_missile_spray.tscn" id="12_2xr21"]
 [ext_resource type="PackedScene" uid="uid://ehtmd7vcq2sp" path="res://Prefabs/Events/Boss_Attacks/Boss1/shooter_ambush.tscn" id="13_6vfmo"]
-[ext_resource type="PackedScene" uid="uid://crnfo54i6cgy6" path="res://Prefabs/Events/Boss_Attacks/Boss1/moving_blade.tscn" id="14_5vpyp"]
+[ext_resource type="PackedScene" uid="uid://dcppo03rh0jqq" path="res://Prefabs/Events/Boss_Attacks/Boss1Horizontal/moving_blade.tscn" id="14_va25w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k11ed"]
 size = Vector2(1152.5, 96)
 
 [sub_resource type="Resource" id="Resource_oigfs"]
 script = ExtResource("11_k11ed")
-scene = ExtResource("12_tsha3")
+scene = ExtResource("12_2xr21")
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="Resource" id="Resource_y60jc"]
@@ -30,7 +30,7 @@ metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="Resource" id="Resource_4o30q"]
 script = ExtResource("11_k11ed")
-scene = ExtResource("14_5vpyp")
+scene = ExtResource("14_va25w")
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [node name="Base Event" node_paths=PackedStringArray("gate", "boss_logic", "hitbox") instance=ExtResource("1_8kh4p")]

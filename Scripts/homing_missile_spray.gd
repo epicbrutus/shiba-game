@@ -17,8 +17,9 @@ func _physics_process(delta: float) -> void:
 				var missile = homing_missile_prefab.instantiate()
 				get_tree().current_scene.add_child(missile)
 				missile.global_position = global_position
+				missile.add_to_group("obstacles")
 				
-				var rand_angle: float = Determinism.randf_range(-PI/3, PI/3)
+				var rand_angle: float = rotation + Determinism.randf_range(-PI/3, PI/3)
 
 				missile.initialize(rand_angle, true)
 
