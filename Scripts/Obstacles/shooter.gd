@@ -68,7 +68,7 @@ func _process(delta):
 
 		var bullet_direction := Vector2.RIGHT.rotated(gunSprite.rotation)
 		bullet.initialize(bullet_direction, velocity)
-
+		bullet.add_to_group("obstacles")
 		bulletTimer = BULLET_COOLDOWN
 
 func _on_screen_entered() -> void:

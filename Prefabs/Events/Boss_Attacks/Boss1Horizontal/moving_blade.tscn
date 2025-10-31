@@ -8,7 +8,7 @@
 event_ender = NodePath("Spinner/Event Ender")
 
 [node name="Spinner" parent="." index="3" instance=ExtResource("2_bx687")]
-position = Vector2(-276, 388)
+position = Vector2(-276, 567)
 
 [node name="Blade" parent="Spinner" index="0"]
 speed = 2.0
@@ -22,7 +22,7 @@ spec_direction = Vector2(0, -1)
 position = Vector2(0, 257)
 
 [node name="Spinner2" parent="." index="4" instance=ExtResource("2_bx687")]
-position = Vector2(162, -388)
+position = Vector2(162, -567)
 
 [node name="Blade" parent="Spinner2" index="0"]
 speed = 2.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://c14qwn6rgfy23"]
+[gd_scene load_steps=92 format=3 uid="uid://c14qwn6rgfy23"]
 
 [ext_resource type="Shader" uid="uid://ci8wfbw02mu88" path="res://scroll.gdshader" id="1_woxae"]
 [ext_resource type="Texture2D" uid="uid://8apg65mbsnv" path="res://Art Log 10-8/background.JPG" id="2_8melw"]
@@ -9,6 +9,7 @@
 [ext_resource type="Shader" uid="uid://7p882ras25qv" path="res://shaders/vignette.gdshader" id="8_mv27k"]
 [ext_resource type="Texture2D" uid="uid://b7ywjiwjc5mue" path="res://Fat_Levels/OBESE.png" id="9_1cg6w"]
 [ext_resource type="Script" uid="uid://dwy1hgbmuyhvq" path="res://Scripts/stats_handling.gd" id="9_ns6we"]
+[ext_resource type="Script" uid="uid://byimmi4wehife" path="res://Scripts/screen_flash.gd" id="10_lyk6h"]
 [ext_resource type="FontFile" uid="uid://1boxnc1s7uki" path="res://BradBunR.ttf" id="11_wlcpx"]
 [ext_resource type="Script" uid="uid://bp4ryh50qjci3" path="res://Scripts/counter.gd" id="12_76tg3"]
 [ext_resource type="Script" uid="uid://r8u5tp17cdm1" path="res://Scripts/Spawner.gd" id="13_g8d6c"]
@@ -107,6 +108,60 @@ shader = ExtResource("8_mv27k")
 shader_parameter/color = Color(0, 0, 0, 1)
 shader_parameter/multiplier = 0.12
 shader_parameter/softness = 1.65
+
+[sub_resource type="Animation" id="Animation_bnj7a"]
+resource_name = "screen_flash"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.13869636, 1),
+"update": 0,
+"values": [2.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_lyk6h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_bj2y4"]
+resource_name = "new_animation"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.49999988, 1),
+"update": 0,
+"values": [2.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3epuw"]
+_data = {
+&"RESET": SubResource("Animation_lyk6h"),
+&"new_animation": SubResource("Animation_bj2y4"),
+&"screen_flash": SubResource("Animation_bnj7a")
+}
 
 [sub_resource type="Resource" id="Resource_2plm1"]
 script = ExtResource("14_56gb8")
@@ -486,6 +541,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="screen_flash" type="ColorRect" parent="Shared/Vignette"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_lyk6h")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Shared/Vignette/screen_flash"]
+libraries = {
+&"": SubResource("AnimationLibrary_3epuw")
+}
+
 [node name="Control" type="Control" parent="Shared/Vignette" groups=["stats_handler"]]
 visible = false
 z_index = 10
@@ -681,14 +750,6 @@ text = "Go to Main Menu"
 custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
 text = "Retry"
-
-[node name="ColorRect2" type="ColorRect" parent="Shared/Vignette"]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="Player" parent="Shared" instance=ExtResource("8_apyqh")]
 
