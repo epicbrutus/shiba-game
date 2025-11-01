@@ -46,7 +46,7 @@ var area_safe: float
 
 
 func _ready() -> void:
-	gateTimer = gateCooldown/3
+	gateTimer = gateCooldown
 	foodTimer = foodCooldown
 	obstacleTimer = obstacleCooldown
 	eventTimer = eventCooldown

@@ -6,6 +6,8 @@
 [resource]
 script = ExtResource("2_0hm83")
 title = "BOSS"
-body = "fe"
+body = "A big bad that appears every third level.
+
+BOSS is a war machine created by the CIA to keep cretins like you out of their pits. His surface boasts an image of a happy clock with the white background still intact, brandished by his name in bright red. Due to his jarring appearance, many have speculated as to why he wasn't made to look cooler: were the workers lazy? Were they on a strict deadline? Were their hours logged designing not eligible for pay? Probably a mix."
 preview = ExtResource("1_hry4o")
 metadata/_custom_type_script = "uid://c35oapxe3rd8b"
