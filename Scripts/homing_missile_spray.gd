@@ -15,7 +15,7 @@ func _physics_process(delta: float) -> void:
 
 			if homing_missile_prefab:
 				var missile = homing_missile_prefab.instantiate()
-				get_tree().current_scene.add_child(missile)
+				get_viewport().add_child(missile)
 				missile.global_position = global_position
 				missile.add_to_group("obstacles")
 				

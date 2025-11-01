@@ -28,7 +28,7 @@ func _ready() -> void:
 	if direction == Vector2.ZERO:
 		direction = Utils.get_spawner().direction
 
-	if cam:
+	if cam && !(get_viewport() is SubViewport):
 		half_size = cam.get_viewport_rect().size * 0.5
 		edge_point = half_size * -direction.normalized()
 	else:

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ButtonInfo" load_steps=3 format=3 uid="uid://4ggq0ohv0lat"]
+
+[ext_resource type="PackedScene" uid="uid://o1uato8k4r28" path="res://Button_Info/Previews/boss1.tscn" id="1_hry4o"]
+[ext_resource type="Script" uid="uid://c35oapxe3rd8b" path="res://Scripts/Configs/ButtonInfo.gd" id="2_0hm83"]
+
+[resource]
+script = ExtResource("2_0hm83")
+title = "BOSS"
+body = "fe"
+preview = ExtResource("1_hry4o")
+metadata/_custom_type_script = "uid://c35oapxe3rd8b"
