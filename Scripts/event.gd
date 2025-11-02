@@ -1,6 +1,7 @@
 extends Node2D
 class_name Event
 
+
 var _event_ender: VisibleOnScreenNotifier2D
 @export var event_ender: VisibleOnScreenNotifier2D:
 	set(value):
@@ -12,6 +13,7 @@ var _event_ender: VisibleOnScreenNotifier2D
 	get:
 		return _event_ender
 
+@export var direction_dependent: bool = false
 
 var _spawner: Node2D = null
 var spawner: Node2D:
@@ -33,6 +35,10 @@ func _ready() -> void:
 		event_ender.screen_entered.connect(_on_screen_entered)
 		event_ender.screen_exited.connect(_on_screen_exited)
 		event_ender.tree_exited.connect(_on_screen_exited)
+
+	if direction_dependent:
+		if Utils.get_spawner().direction.y == 1:
+			rotation = PI
 
 func _on_screen_entered() -> void:
 	been_on_screen = true

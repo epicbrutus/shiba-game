@@ -17,6 +17,7 @@ THINGS TO FIX:
 - food levels extras entries
 - polish some of the extras entries
 - more sound effects
+- navigate menus with buttons
 
 current changes:
 -

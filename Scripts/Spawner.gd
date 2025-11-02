@@ -34,7 +34,7 @@ var obstacleTimer: float = obstacleCooldown
 @export var minObstacleCooldown: float = 0.4
 
 var midEvent: bool = false
-@export var eventCooldown: float = 15 #15
+@export var eventCooldown: float = 5 #15
 var eventTimer: float = eventCooldown
 
 var midBoss: bool = false

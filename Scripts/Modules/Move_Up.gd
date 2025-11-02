@@ -48,6 +48,8 @@ func _physics_process(delta: float) -> void:
 	
 	var the_direction: Vector2 = spec_direction if unique_direction else spawner.direction
 
-	get_parent().position += speed * delta * multiplier * the_direction
+
+	# originally used position. Monitor for problems
+	get_parent().global_position += speed * delta * multiplier * the_direction
 	speed += acceleration * delta
 	acceleration += jerk * delta

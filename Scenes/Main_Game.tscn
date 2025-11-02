@@ -883,6 +883,7 @@ scale = Vector2(28.796778, 16.390018)
 color = Color(0, 0, 0, 0.078431375)
 
 [node name="Falling_Section_UP" type="Node2D" parent="." node_paths=PackedStringArray("spawner")]
+visible = false
 script = ExtResource("7_apyqh")
 spawner = NodePath("Spawner")
 orientation_index = 2
@@ -1136,6 +1137,140 @@ scale = Vector2(0.47, 1.075)
 texture = ExtResource("25_bdknx")
 
 [node name="Spawner" type="Node2D" parent="horizontal_section" node_paths=PackedStringArray("distanceBar", "counter_reference")]
+position = Vector2(700, 0)
+script = ExtResource("13_g8d6c")
+obstacle_configs = Array[ExtResource("14_56gb8")]([ExtResource("14_78gq4"), ExtResource("15_k2mhc"), ExtResource("16_wlcpx"), ExtResource("17_gxae2"), ExtResource("18_76tg3"), ExtResource("19_g8d6c"), ExtResource("20_56gb8")])
+event_configs = Array[ExtResource("22_76tg3")]([SubResource("Resource_mv27k"), SubResource("Resource_ek8cs"), SubResource("Resource_hlwbt"), SubResource("Resource_ns6we"), SubResource("Resource_bnj7a"), SubResource("Resource_lyk6h"), SubResource("Resource_bj2y4"), SubResource("Resource_3epuw")])
+boss_configs = Array[ExtResource("22_76tg3")]([SubResource("Resource_8xphf")])
+food = ExtResource("20_apyqh")
+gate = ExtResource("21_e62ys")
+distanceBar = NodePath("../../Shared/Bars/Distance Bar")
+counter_reference = NodePath("../../Shared/Bars/Control/Counter")
+direction = Vector2(-1, 0)
+
+[node name="horizontal_section_LEFT" type="Node2D" parent="." node_paths=PackedStringArray("spawner")]
+process_mode = 4
+script = ExtResource("7_apyqh")
+spawner = NodePath("Spawner")
+orientation_index = 3
+
+[node name="Background" type="Control" parent="horizontal_section_LEFT"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -6.0
+offset_right = 40.0
+offset_bottom = 34.0
+
+[node name="TextureRect" type="TextureRect" parent="horizontal_section_LEFT/Background"]
+z_index = -6
+texture_repeat = 2
+material = SubResource("ShaderMaterial_ed6rl")
+layout_mode = 0
+offset_left = -596.00006
+offset_top = 620.0
+offset_right = 1451.0183
+offset_bottom = 3484.8071
+rotation = -1.5707941
+scale = Vector2(0.617831, 0.4136479)
+texture = ExtResource("2_8melw")
+
+[node name="ColorRect" type="ColorRect" parent="horizontal_section_LEFT/Background"]
+z_index = -5
+layout_mode = 0
+offset_left = -588.28864
+offset_top = -330.99997
+offset_right = -546.8851
+offset_bottom = -288.86453
+scale = Vector2(28.796778, 16.390018)
+color = Color(0, 0, 0, 0.078431375)
+
+[node name="Down_Wall" type="Area2D" parent="horizontal_section_LEFT"]
+z_index = 2
+position = Vector2(-12, 398)
+rotation = -1.5707964
+script = ExtResource("23_ek8cs")
+direction = Vector2(0, -1)
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="horizontal_section_LEFT/Down_Wall"]
+position = Vector2(0, 16.500004)
+scale = Vector2(2.438667, -1.1067214)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="Sprite2D" type="Sprite2D" parent="horizontal_section_LEFT/Down_Wall"]
+material = ExtResource("25_jtjp0")
+position = Vector2(39.223, 0)
+scale = Vector2(0.47, 1.115)
+texture = ExtResource("25_bdknx")
+
+[node name="Ceiling" type="Area2D" parent="horizontal_section_LEFT"]
+z_index = 1
+position = Vector2(-20, 56)
+rotation = 3.1415927
+script = ExtResource("23_ek8cs")
+direction = Vector2(1, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="horizontal_section_LEFT/Ceiling"]
+modulate = Color(1, 1, 1, 0.59607846)
+position = Vector2(586.6661, -46.999977)
+rotation = 1.5707964
+scale = Vector2(1, 1.0680599)
+texture = ExtResource("25_k078o")
+script = ExtResource("29_78gq4")
+
+[node name="Sprite2D3" type="Sprite2D" parent="horizontal_section_LEFT/Ceiling"]
+visible = false
+position = Vector2(609, -295)
+rotation = 1.5707964
+scale = Vector2(0.56071913, 0.3744711)
+texture = ExtResource("26_oh02o")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="horizontal_section_LEFT/Ceiling"]
+position = Vector2(615, 12.999981)
+scale = Vector2(2.438667, -1.1067214)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="Sprite2D4" type="Sprite2D" parent="horizontal_section_LEFT/Ceiling"]
+visible = false
+position = Vector2(619, 69.00003)
+rotation = 1.5707964
+scale = Vector2(-0.35775328, 0.39021406)
+texture = ExtResource("26_oh02o")
+
+[node name="Sprite2D5" type="Sprite2D" parent="horizontal_section_LEFT/Ceiling"]
+visible = false
+position = Vector2(613, 334.00003)
+rotation = 1.5707964
+scale = Vector2(-0.561, -0.374)
+texture = ExtResource("26_oh02o")
+
+[node name="Sprite2D6" type="Sprite2D" parent="horizontal_section_LEFT/Ceiling"]
+modulate = Color(1, 1, 1, 0.59607846)
+position = Vector2(591.666, 65.00002)
+rotation = 1.5707964
+scale = Vector2(-1, -1.068)
+texture = ExtResource("25_k078o")
+script = ExtResource("29_78gq4")
+
+[node name="Up_Wall" type="Area2D" parent="horizontal_section_LEFT"]
+z_index = 2
+position = Vector2(1, -380)
+rotation = 1.5707964
+scale = Vector2(1, -1)
+script = ExtResource("23_ek8cs")
+direction = Vector2(0, 1)
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="horizontal_section_LEFT/Up_Wall"]
+position = Vector2(0, -8.250019)
+scale = Vector2(2.438667, -1.1067214)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="Sprite2D" type="Sprite2D" parent="horizontal_section_LEFT/Up_Wall"]
+material = ExtResource("25_jtjp0")
+position = Vector2(39.223, 0)
+scale = Vector2(0.47, 1.075)
+texture = ExtResource("25_bdknx")
+
+[node name="Spawner" type="Node2D" parent="horizontal_section_LEFT" node_paths=PackedStringArray("distanceBar", "counter_reference")]
 position = Vector2(700, 0)
 script = ExtResource("13_g8d6c")
 obstacle_configs = Array[ExtResource("14_56gb8")]([ExtResource("14_78gq4"), ExtResource("15_k2mhc"), ExtResource("16_wlcpx"), ExtResource("17_gxae2"), ExtResource("18_76tg3"), ExtResource("19_g8d6c"), ExtResource("20_56gb8")])

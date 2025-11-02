@@ -10,6 +10,7 @@
 
 [node name="Base Event" node_paths=PackedStringArray("event_ender") instance=ExtResource("1_qfkf6")]
 event_ender = NodePath("Node2D2/Event Ender")
+direction_dependent = true
 
 [node name="Node2D2" type="Node2D" parent="." index="1"]
 position = Vector2(0, 820)
@@ -18,35 +19,35 @@ position = Vector2(0, 820)
 position = Vector2(0, 69)
 rotation = 3.1415925
 
-[node name="Anchor_1" type="Node2D" parent="Node2D2/Node2D" index="0"]
-position = Vector2(173.20508, 100)
+[node name="Anchor_0" type="Node2D" parent="Node2D2/Node2D" index="0"]
+position = Vector2(200, 0)
 script = ExtResource("2_mihwb")
 
-[node name="Bumper2" parent="Node2D2/Node2D/Anchor_1" index="0" instance=ExtResource("3_rw2lx")]
+[node name="Bumper2" parent="Node2D2/Node2D/Anchor_0" index="0" instance=ExtResource("3_rw2lx")]
 
-[node name="Anchor_2" type="Node2D" parent="Node2D2/Node2D" index="1"]
-position = Vector2(99.99999, 173.2051)
+[node name="Anchor_1" type="Node2D" parent="Node2D2/Node2D" index="1"]
+position = Vector2(161.8034, 117.55705)
 script = ExtResource("2_mihwb")
 
-[node name="Bumper3" parent="Node2D2/Node2D/Anchor_2" index="0" instance=ExtResource("3_rw2lx")]
+[node name="Bumper3" parent="Node2D2/Node2D/Anchor_1" index="0" instance=ExtResource("3_rw2lx")]
 
-[node name="Anchor_3" type="Node2D" parent="Node2D2/Node2D" index="2"]
-position = Vector2(-8.742278e-06, 200)
+[node name="Anchor_2" type="Node2D" parent="Node2D2/Node2D" index="2"]
+position = Vector2(61.803394, 190.2113)
 script = ExtResource("2_mihwb")
 
-[node name="Bumper4" parent="Node2D2/Node2D/Anchor_3" index="0" instance=ExtResource("3_rw2lx")]
+[node name="Bumper4" parent="Node2D2/Node2D/Anchor_2" index="0" instance=ExtResource("3_rw2lx")]
 
-[node name="Anchor_4" type="Node2D" parent="Node2D2/Node2D" index="3"]
-position = Vector2(-100.000015, 173.20508)
+[node name="Anchor_3" type="Node2D" parent="Node2D2/Node2D" index="3"]
+position = Vector2(-61.803406, 190.2113)
 script = ExtResource("2_mihwb")
 
-[node name="Bumper5" parent="Node2D2/Node2D/Anchor_4" index="0" instance=ExtResource("3_rw2lx")]
+[node name="Bumper5" parent="Node2D2/Node2D/Anchor_3" index="0" instance=ExtResource("3_rw2lx")]
 
-[node name="Anchor_5" type="Node2D" parent="Node2D2/Node2D" index="4"]
-position = Vector2(-173.20508, 100.000015)
+[node name="Anchor_4" type="Node2D" parent="Node2D2/Node2D" index="4"]
+position = Vector2(-161.8034, 117.55704)
 script = ExtResource("2_mihwb")
 
-[node name="Bumper" parent="Node2D2/Node2D/Anchor_5" index="0" instance=ExtResource("3_rw2lx")]
+[node name="Bumper" parent="Node2D2/Node2D/Anchor_4" index="0" instance=ExtResource("3_rw2lx")]
 
 [node name="Circle Arrangement Tool" parent="Node2D2/Node2D" index="5" instance=ExtResource("4_84iaq")]
 enabled = true
