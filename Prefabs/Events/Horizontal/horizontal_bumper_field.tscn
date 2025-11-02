@@ -7,6 +7,7 @@
 
 [node name="Base Event" node_paths=PackedStringArray("event_ender") instance=ExtResource("1_bnj8m")]
 event_ender = NodePath("Bumpers/Event Ender")
+direction_dependent = true
 
 [node name="Bumpers" type="Node2D" parent="." index="3"]
 position = Vector2(1980, 0)

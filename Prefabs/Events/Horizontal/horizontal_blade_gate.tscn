@@ -13,6 +13,7 @@ size = Vector2(8.793472, 1030.9731)
 
 [node name="Base Event" node_paths=PackedStringArray("event_ender") instance=ExtResource("1_emgxc")]
 event_ender = NodePath("Node2D2/Event Ender")
+direction_dependent = true
 
 [node name="CollisionShape2D6" parent="." index="1"]
 position = Vector2(-3.5000296, -304.77783)
@@ -30,13 +31,13 @@ position = Vector2(0, 69)
 rotation = 3.1415925
 
 [node name="Anchor_0" type="Node2D" parent="Node2D2/Node2D" index="0"]
-position = Vector2(-50.000034, 199.99995)
+position = Vector2(200, 0)
 script = ExtResource("2_n53oq")
 
 [node name="Bumper4" parent="Node2D2/Node2D/Anchor_0" index="0" instance=ExtResource("3_1dke7")]
 
 [node name="Anchor_1" type="Node2D" parent="Node2D2/Node2D" index="1"]
-position = Vector2(56.99996, 199.00008)
+position = Vector2(124.69796, 156.3663)
 script = ExtResource("2_n53oq")
 
 [node name="Bumper5" parent="Node2D2/Node2D/Anchor_1" index="0" instance=ExtResource("3_1dke7")]

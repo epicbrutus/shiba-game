@@ -2,7 +2,7 @@ extends Node
 class_name GameState
 
 var boss_every: int = 3
-var num_orientations: int = 3
+var num_orientations: int = 4
 
 var current_orientation: int = 2 #0 - vertical | 1 - horizontal
 
@@ -12,7 +12,7 @@ signal switch_orientation(value: int)
 func _ready():
 	call_deferred("to_defer")
 
-var _score: int = 1
+var _score: int = 2
 var score: int:
 	get: return _score
 	set(value):

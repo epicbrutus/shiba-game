@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://c14qwn6rgfy23"]
+[gd_scene load_steps=94 format=3 uid="uid://c14qwn6rgfy23"]
 
 [ext_resource type="Shader" uid="uid://ci8wfbw02mu88" path="res://scroll.gdshader" id="1_woxae"]
 [ext_resource type="Texture2D" uid="uid://8apg65mbsnv" path="res://Art Log 10-8/background.JPG" id="2_8melw"]
@@ -45,6 +45,7 @@
 [ext_resource type="PackedScene" uid="uid://dei3nv01brq5y" path="res://Prefabs/Events/Horizontal/horizontal_bumper_field.tscn" id="42_piesb"]
 [ext_resource type="PackedScene" uid="uid://ccfayhuxu3h7d" path="res://Prefabs/Events/Horizontal/horizontal_laser_formation.tscn" id="43_piesb"]
 [ext_resource type="PackedScene" uid="uid://5br0thflhic0" path="res://Prefabs/Events/Vertical/sides missle formation.tscn" id="44_apyqh"]
+[ext_resource type="PackedScene" uid="uid://bpwsbnfycyp12" path="res://Prefabs/Events/boss_upside_down.tscn" id="44_bj2y4"]
 [ext_resource type="PackedScene" uid="uid://dt2fmksnfxde7" path="res://Prefabs/Events/Horizontal/horizontal_shooter_ambush.tscn" id="44_e62ys"]
 [ext_resource type="PackedScene" uid="uid://cq38we4l80o3b" path="res://Prefabs/Events/Horizontal/horizontal_blade_gate.tscn" id="45_e62ys"]
 [ext_resource type="PackedScene" uid="uid://e0aojlu4xhmm" path="res://Prefabs/Events/Horizontal/horizontal up-down missile formation.tscn" id="46_mv27k"]
@@ -219,6 +220,12 @@ metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ed6rl"]
 shader = ExtResource("1_woxae")
 shader_parameter/source = ExtResource("2_8melw")
+
+[sub_resource type="Resource" id="Resource_4ed20"]
+script = ExtResource("22_76tg3")
+scene = ExtResource("44_bj2y4")
+isBoss = true
+metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [sub_resource type="Resource" id="Resource_mv27k"]
 script = ExtResource("22_76tg3")
@@ -893,7 +900,7 @@ position = Vector2(0, -370)
 script = ExtResource("13_g8d6c")
 obstacle_configs = Array[ExtResource("14_56gb8")]([ExtResource("14_78gq4"), ExtResource("15_k2mhc"), ExtResource("16_wlcpx"), ExtResource("17_gxae2"), ExtResource("18_76tg3"), ExtResource("19_g8d6c"), ExtResource("20_56gb8"), SubResource("Resource_2plm1")])
 event_configs = Array[ExtResource("22_76tg3")]([SubResource("Resource_g8d6c"), SubResource("Resource_56gb8"), SubResource("Resource_6k8qj"), SubResource("Resource_8vuys"), SubResource("Resource_2tts5"), SubResource("Resource_piesb"), SubResource("Resource_apyqh"), SubResource("Resource_8oyct")])
-boss_configs = Array[ExtResource("22_76tg3")]([SubResource("Resource_e62ys")])
+boss_configs = Array[ExtResource("22_76tg3")]([SubResource("Resource_4ed20")])
 food = ExtResource("20_apyqh")
 gate = ExtResource("21_e62ys")
 distanceBar = NodePath("../../Shared/Bars/Distance Bar")
@@ -1173,6 +1180,7 @@ offset_bottom = 3484.8071
 rotation = -1.5707941
 scale = Vector2(0.617831, 0.4136479)
 texture = ExtResource("2_8melw")
+flip_v = true
 
 [node name="ColorRect" type="ColorRect" parent="horizontal_section_LEFT/Background"]
 z_index = -5
@@ -1201,13 +1209,13 @@ material = ExtResource("25_jtjp0")
 position = Vector2(39.223, 0)
 scale = Vector2(0.47, 1.115)
 texture = ExtResource("25_bdknx")
+flip_v = true
 
 [node name="Ceiling" type="Area2D" parent="horizontal_section_LEFT"]
 z_index = 1
 position = Vector2(-20, 56)
-rotation = 3.1415927
 script = ExtResource("23_ek8cs")
-direction = Vector2(1, 0)
+direction = Vector2(-1, 0)
 
 [node name="Sprite2D2" type="Sprite2D" parent="horizontal_section_LEFT/Ceiling"]
 modulate = Color(1, 1, 1, 0.59607846)
@@ -1269,9 +1277,10 @@ material = ExtResource("25_jtjp0")
 position = Vector2(39.223, 0)
 scale = Vector2(0.47, 1.075)
 texture = ExtResource("25_bdknx")
+flip_v = true
 
 [node name="Spawner" type="Node2D" parent="horizontal_section_LEFT" node_paths=PackedStringArray("distanceBar", "counter_reference")]
-position = Vector2(700, 0)
+position = Vector2(-700, 0)
 script = ExtResource("13_g8d6c")
 obstacle_configs = Array[ExtResource("14_56gb8")]([ExtResource("14_78gq4"), ExtResource("15_k2mhc"), ExtResource("16_wlcpx"), ExtResource("17_gxae2"), ExtResource("18_76tg3"), ExtResource("19_g8d6c"), ExtResource("20_56gb8")])
 event_configs = Array[ExtResource("22_76tg3")]([SubResource("Resource_mv27k"), SubResource("Resource_ek8cs"), SubResource("Resource_hlwbt"), SubResource("Resource_ns6we"), SubResource("Resource_bnj7a"), SubResource("Resource_lyk6h"), SubResource("Resource_bj2y4"), SubResource("Resource_3epuw")])
@@ -1280,7 +1289,7 @@ food = ExtResource("20_apyqh")
 gate = ExtResource("21_e62ys")
 distanceBar = NodePath("../../Shared/Bars/Distance Bar")
 counter_reference = NodePath("../../Shared/Bars/Control/Counter")
-direction = Vector2(-1, 0)
+direction = Vector2(1, 0)
 
 [connection signal="pressed" from="Shared/Vignette/Control/HBoxContainer2/Main_Menu" to="Shared/Vignette/Control" method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Shared/Vignette/Control/HBoxContainer2/Retry" to="Shared/Vignette/Control" method="_on_retry_pressed"]

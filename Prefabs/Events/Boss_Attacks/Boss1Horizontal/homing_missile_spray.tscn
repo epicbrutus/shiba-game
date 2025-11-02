@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dqrpjumefrno2" path="res://Prefabs/Obstacles/homing_missile.tscn" id="3_adc32"]
 
 [node name="Base Event" instance=ExtResource("1_pwmch")]
+direction_dependent = true
 
 [node name="Node2D" type="Node2D" parent="." index="3"]
 position = Vector2(571, 0)

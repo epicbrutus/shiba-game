@@ -36,6 +36,7 @@ height = 190
 
 [node name="Base Event" node_paths=PackedStringArray("event_ender") instance=ExtResource("1_27hjr")]
 event_ender = NodePath("Node2D/Event Ender")
+direction_dependent = true
 
 [node name="Node2D" type="Node2D" parent="." index="3"]
 position = Vector2(352, 0)

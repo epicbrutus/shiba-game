@@ -1,8 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpwsbnfycyp12"]
+[gd_scene load_steps=9 format=3 uid="uid://bpwsbnfycyp12"]
 
 [ext_resource type="PackedScene" uid="uid://cse7iik4eonx7" path="res://Prefabs/Events/boss.tscn" id="1_0eaa1"]
+[ext_resource type="Script" uid="uid://bbt8tf65tbbdt" path="res://Scripts/Configs/EventConfig.gd" id="2_gn3qr"]
+[ext_resource type="PackedScene" uid="uid://crnfo54i6cgy6" path="res://Prefabs/Events/Boss_Attacks/Boss1/moving_blade.tscn" id="3_0aamp"]
+[ext_resource type="PackedScene" uid="uid://bpy5tcsl16tx2" path="res://Prefabs/Events/Boss_Attacks/Boss1UpsideDown/homing_missile_spray.tscn" id="4_i7ouo"]
+[ext_resource type="PackedScene" uid="uid://bc6nujnpsmmkh" path="res://Prefabs/Events/Boss_Attacks/Boss1UpsideDown/shooter_ambush.tscn" id="5_51bn3"]
+
+[sub_resource type="Resource" id="Resource_4o30q"]
+script = ExtResource("2_gn3qr")
+scene = ExtResource("3_0aamp")
+metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
+
+[sub_resource type="Resource" id="Resource_5ag8o"]
+script = ExtResource("2_gn3qr")
+scene = ExtResource("4_i7ouo")
+metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
+
+[sub_resource type="Resource" id="Resource_hmbi8"]
+script = ExtResource("2_gn3qr")
+scene = ExtResource("5_51bn3")
+metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
 [node name="Base Event" instance=ExtResource("1_0eaa1")]
+
+[node name="Node2D" parent="." index="1"]
+event_configs = Array[ExtResource("2_gn3qr")]([SubResource("Resource_4o30q"), SubResource("Resource_5ag8o"), SubResource("Resource_hmbi8")])
 
 [node name="Area2D" parent="." index="2"]
 position = Vector2(0, -225)
