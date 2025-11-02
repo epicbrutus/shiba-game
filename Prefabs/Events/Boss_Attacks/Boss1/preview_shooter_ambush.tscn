@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://cj7flxi40cw8k"]
+
+[ext_resource type="PackedScene" uid="uid://ehtmd7vcq2sp" path="res://Prefabs/Events/Boss_Attacks/Boss1/shooter_ambush.tscn" id="1_om6ie"]
+
+[node name="Base Event" instance=ExtResource("1_om6ie")]
+
+[node name="Shooter" parent="Shooter Carousel/Anchor_0" index="0"]
+preview = true
+
+[node name="Cleanup" parent="Shooter Carousel/Anchor_0/Shooter" index="4"]
+position = Vector2(0, 279)
+
+[node name="Event Ender" parent="Shooter Carousel/Anchor_0" index="1"]
+position = Vector2(0, 279)
+
+[node name="Shooter" parent="Shooter Carousel/Anchor_2" index="0"]
+preview = true
+
+[node name="VisibleOnScreenNotifier2D" parent="Shooter Carousel/Anchor_2/Shooter" index="1"]
+position = Vector2(0, 279)
+
+[node name="Shooter" parent="Shooter Carousel/Anchor_4" index="0"]
+preview = true
+
+[node name="VisibleOnScreenNotifier2D" parent="Shooter Carousel/Anchor_4/Shooter" index="1"]
+position = Vector2(0, 279)
+
+[node name="Shooter" parent="Shooter Carousel/Anchor_6" index="0"]
+preview = true
+
+[node name="VisibleOnScreenNotifier2D" parent="Shooter Carousel/Anchor_6/Shooter" index="1"]
+position = Vector2(0, 279)
+
+[node name="Shooter" parent="Shooter Carousel/Anchor_8" index="0"]
+preview = true
+
+[node name="VisibleOnScreenNotifier2D" parent="Shooter Carousel/Anchor_8/Shooter" index="1"]
+position = Vector2(0, 279)
+
+[editable path="Shooter Carousel/Anchor_0/Shooter"]
+[editable path="Shooter Carousel/Anchor_2/Shooter"]
+[editable path="Shooter Carousel/Anchor_4/Shooter"]
+[editable path="Shooter Carousel/Anchor_6/Shooter"]
+[editable path="Shooter Carousel/Anchor_8/Shooter"]

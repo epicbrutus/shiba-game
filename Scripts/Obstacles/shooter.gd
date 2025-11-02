@@ -62,7 +62,7 @@ func _process(delta):
 		if !preview:
 			get_tree().current_scene.add_child(bullet)
 		else:
-			get_parent().add_child(bullet)
+			get_viewport().add_child(bullet)
 
 		bullet.global_position = global_position
 

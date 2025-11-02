@@ -10,9 +10,12 @@ THINGS TO FIX:
 - the missile formations are currently tracking a missile to see if the event ends. if that missile is deleted it'll all probably break. Account for that.
 (above should be fixed, though keep an eye out)
 
-- shooter ambush still needs to be added to boss extras preview
+[X] shooter ambush still needs to be added to boss extras preview
+- tutorial should show you can break through gates
+- upwards and leftwards orientations
+- translate to japanese
+- food levels extras entries
+- polish some of the extras entries
 
 current changes:
-- horizontal boss spinner rebalancing
-- fixed bug with homing missile not despawining between scenes
-- added smaller screen flash for each gate destroyed
+-

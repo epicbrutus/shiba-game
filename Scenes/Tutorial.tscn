@@ -184,22 +184,22 @@ gravity = Vector3(0, 0, 0)
 alpha_curve = SubResource("CurveTexture_1rq81")
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oq7l7"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0w1x"]
 size = Vector2(500, 30)
 
 [sub_resource type="Gradient" id="Gradient_qbwt3"]
 offsets = PackedFloat32Array(0.12195122, 0.5052265, 0.8641115)
 colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_emhi4"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ndl8n"]
 gradient = SubResource("Gradient_qbwt3")
 width = 30
 height = 500
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7ysk"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vnur"]
 size = Vector2(300, 30)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_84vcq"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ktq20"]
 gradient = SubResource("Gradient_qbwt3")
 width = 30
 height = 300
@@ -572,6 +572,22 @@ horizontal_alignment = 1
 metadata/i18n_key = "ui.tutorial.3"
 
 [node name="4" type="RichTextLabel" parent="Shared/Tutorial text"]
+z_index = 100
+offset_left = -632.0
+offset_top = -206.0
+offset_right = 623.0
+offset_bottom = -38.0
+theme_override_font_sizes/normal_font_size = 61
+text = "to break through the gates
+and progress through the levels"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/i18n_key = "ui.tutorial.3"
+
+[node name="5" type="RichTextLabel" parent="Shared/Tutorial text"]
 visible = false
 z_index = 100
 offset_left = -241.0
@@ -585,7 +601,7 @@ scroll_active = false
 autowrap_mode = 0
 metadata/i18n_key = "ui.tutorial.4"
 
-[node name="5" type="RichTextLabel" parent="Shared/Tutorial text"]
+[node name="6" type="RichTextLabel" parent="Shared/Tutorial text"]
 visible = false
 z_index = 100
 offset_left = -875.0
@@ -602,9 +618,9 @@ autowrap_mode = 0
 horizontal_alignment = 1
 metadata/i18n_key = "ui.tutorial.5"
 
-[node name="6" type="Node2D" parent="Shared/Tutorial text"]
+[node name="7" type="Node2D" parent="Shared/Tutorial text"]
 
-[node name="a" type="RichTextLabel" parent="Shared/Tutorial text/6"]
+[node name="a" type="RichTextLabel" parent="Shared/Tutorial text/7"]
 z_index = 100
 offset_left = -461.0
 offset_top = -222.0
@@ -617,7 +633,7 @@ scroll_active = false
 autowrap_mode = 0
 metadata/i18n_key = "ui.tutorial.6a"
 
-[node name="b" type="RichTextLabel" parent="Shared/Tutorial text/6"]
+[node name="b" type="RichTextLabel" parent="Shared/Tutorial text/7"]
 z_index = 100
 offset_left = 163.0
 offset_top = 16.0
@@ -647,7 +663,8 @@ gate = ExtResource("32_fv17y")
 distanceBar = NodePath("../../Shared/Bars/Distance Bar")
 counter_reference = NodePath("../../Shared/Bars/Control/Counter")
 in_tutorial = true
-gateCooldown = 18.5
+gateCooldown = 11.0
+gateTimer = 11.0
 foodCooldown = 10000.0
 obstacleCooldown = 1000000.0
 eventCooldown = 10000.0
@@ -861,10 +878,10 @@ position = Vector2(-250, 0)
 position = Vector2(250, 0)
 
 [node name="CollisionShape2D" parent="Falling_Section/laser gate" index="2"]
-shape = SubResource("RectangleShape2D_oq7l7")
+shape = SubResource("RectangleShape2D_b0w1x")
 
 [node name="beam" parent="Falling_Section/laser gate" index="3"]
-texture = SubResource("GradientTexture2D_emhi4")
+texture = SubResource("GradientTexture2D_ndl8n")
 
 [node name="move_up" parent="Falling_Section/laser gate" index="4"]
 Def_Speed = 160.0
@@ -882,10 +899,10 @@ position = Vector2(-150, 0)
 position = Vector2(150, 0)
 
 [node name="CollisionShape2D" parent="Falling_Section/laser gate2" index="2"]
-shape = SubResource("RectangleShape2D_t7ysk")
+shape = SubResource("RectangleShape2D_3vnur")
 
 [node name="beam" parent="Falling_Section/laser gate2" index="3"]
-texture = SubResource("GradientTexture2D_84vcq")
+texture = SubResource("GradientTexture2D_ktq20")
 
 [node name="move_up" parent="Falling_Section/laser gate2" index="4"]
 Def_Speed = 160.0

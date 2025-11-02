@@ -22,7 +22,7 @@ const FoodScript = preload("res://Scripts//Food.gd")
 
 @export_group("Settings")
 @export var gateCooldown: float = 30 #30
-var gateTimer: float = gateCooldown #/3
+@export var gateTimer: float = 69420 #/3
 var mid_gate: bool = false
 
 @export var foodCooldown: float = 0.75
@@ -46,7 +46,9 @@ var area_safe: float
 
 
 func _ready() -> void:
-	gateTimer = gateCooldown
+	if gateTimer == 69420:
+		gateTimer = gateCooldown
+		
 	foodTimer = foodCooldown
 	obstacleTimer = obstacleCooldown
 	eventTimer = eventCooldown
