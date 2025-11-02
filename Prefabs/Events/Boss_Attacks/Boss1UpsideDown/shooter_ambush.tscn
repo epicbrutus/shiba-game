@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bc6nujnpsmmkh"]
+
+[ext_resource type="PackedScene" uid="uid://ehtmd7vcq2sp" path="res://Prefabs/Events/Boss_Attacks/Boss1/shooter_ambush.tscn" id="1_v8tic"]
+
+[node name="Base Event" instance=ExtResource("1_v8tic")]
+
+[node name="Shooter Carousel" parent="." index="1"]
+position = Vector2(0, -201)
+rotation = 2.51851
+
+[editable path="Shooter Carousel/Anchor_0/Shooter"]
+[editable path="Shooter Carousel/Anchor_2/Shooter"]
+[editable path="Shooter Carousel/Anchor_4/Shooter"]
+[editable path="Shooter Carousel/Anchor_6/Shooter"]
+[editable path="Shooter Carousel/Anchor_8/Shooter"]

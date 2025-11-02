@@ -655,6 +655,7 @@ metadata/i18n_key = "ui.tutorial.6b"
 script = ExtResource("10_b0w1x")
 
 [node name="1" type="Node2D" parent="Shared/Tutorial text2"]
+visible = false
 
 [node name="1" type="RichTextLabel" parent="Shared/Tutorial text2/1"]
 z_index = 100
@@ -672,10 +673,11 @@ metadata/i18n_key = "ui.tutorial.1"
 
 [node name="2" type="RichTextLabel" parent="Shared/Tutorial text2/1"]
 z_index = 100
-offset_left = -511.0
-offset_top = 40.0
-offset_right = 574.0
-offset_bottom = 292.0
+offset_left = -540.0
+offset_top = 29.0
+offset_right = 545.0
+offset_bottom = 281.0
+size_flags_horizontal = 4
 theme_override_font_sizes/normal_font_size = 61
 text = "He jumped down the
 CIA's top secret pit to
@@ -690,9 +692,9 @@ metadata/i18n_key = "ui.tutorial.1"
 visible = false
 z_index = 100
 offset_left = -470.0
-offset_top = -138.0
+offset_top = -159.0
 offset_right = 481.0
-offset_bottom = -54.0
+offset_bottom = -75.0
 theme_override_font_sizes/normal_font_size = 61
 text = "He can move with WASD/Arrows"
 fit_content = true
@@ -705,9 +707,9 @@ metadata/i18n_key = "ui.tutorial.1"
 visible = false
 z_index = 100
 offset_left = -481.0
-offset_top = -145.0
+offset_top = -166.0
 offset_right = 491.0
-offset_bottom = -61.0
+offset_bottom = -82.0
 theme_override_font_sizes/normal_font_size = 61
 text = "and must eat food to gain weight"
 fit_content = true
@@ -765,12 +767,11 @@ autowrap_mode = 0
 metadata/i18n_key = "ui.tutorial.4"
 
 [node name="8" type="RichTextLabel" parent="Shared/Tutorial text2"]
-visible = false
 z_index = 100
 offset_left = -875.0
-offset_top = -207.0
+offset_top = -245.0
 offset_right = 380.0
-offset_bottom = 45.0
+offset_bottom = 7.0
 theme_override_font_sizes/normal_font_size = 61
 text = "more weight
 =
@@ -827,8 +828,8 @@ gate = ExtResource("32_fv17y")
 distanceBar = NodePath("../../Shared/Bars/Distance Bar")
 counter_reference = NodePath("../../Shared/Bars/Control/Counter")
 in_tutorial = true
-gateCooldown = 11.0
-gateTimer = 15.0
+gateCooldown = 13.0
+gateTimer = 16.0
 foodCooldown = 10000.0
 obstacleCooldown = 1000000.0
 eventCooldown = 10000.0
@@ -944,7 +945,7 @@ scale = Vector2(28.796778, 16.390018)
 color = Color(0, 0, 0, 0.078431375)
 
 [node name="Test Food" parent="Falling_Section" instance=ExtResource("31_ky4sh")]
-position = Vector2(-196, 3839)
+position = Vector2(-164, 3135)
 
 [node name="Area2D" parent="Falling_Section/Test Food" index="0"]
 is_preset = true
@@ -953,7 +954,7 @@ is_preset = true
 process_material = SubResource("ParticleProcessMaterial_bihrv")
 
 [node name="Test Food2" parent="Falling_Section" instance=ExtResource("31_ky4sh")]
-position = Vector2(377, 4116)
+position = Vector2(212, 3412)
 
 [node name="Area2D" parent="Falling_Section/Test Food2" index="0"]
 is_preset = true
@@ -963,16 +964,17 @@ preset_type = 1
 process_material = SubResource("ParticleProcessMaterial_bihrv")
 
 [node name="Test Food3" parent="Falling_Section" instance=ExtResource("31_ky4sh")]
-position = Vector2(-251, 4368)
+position = Vector2(-219, 3664)
 
 [node name="Area2D" parent="Falling_Section/Test Food3" index="0"]
 is_preset = true
+preset_type = 2
 
 [node name="GPUParticles2D" parent="Falling_Section/Test Food3/Area2D" index="2"]
 process_material = SubResource("ParticleProcessMaterial_bihrv")
 
 [node name="Test Food4" parent="Falling_Section" instance=ExtResource("31_ky4sh")]
-position = Vector2(187, 4596)
+position = Vector2(22, 3892)
 
 [node name="Area2D" parent="Falling_Section/Test Food4" index="0"]
 is_preset = true
@@ -981,7 +983,7 @@ is_preset = true
 process_material = SubResource("ParticleProcessMaterial_bihrv")
 
 [node name="Test Food5" parent="Falling_Section" instance=ExtResource("31_ky4sh")]
-position = Vector2(-6, 5238)
+position = Vector2(-6, 4534)
 
 [node name="Area2D" parent="Falling_Section/Test Food5" index="0"]
 is_preset = true
@@ -991,7 +993,7 @@ preset_type = 3
 process_material = SubResource("ParticleProcessMaterial_bihrv")
 
 [node name="Test Food6" parent="Falling_Section" instance=ExtResource("31_ky4sh")]
-position = Vector2(-6, 6043)
+position = Vector2(-6, 7152)
 
 [node name="Area2D" parent="Falling_Section/Test Food6" index="0"]
 is_preset = true
@@ -1001,7 +1003,7 @@ preset_type = 2
 process_material = SubResource("ParticleProcessMaterial_bihrv")
 
 [node name="Test Food7" parent="Falling_Section" instance=ExtResource("31_ky4sh")]
-position = Vector2(-6, 6093)
+position = Vector2(-6, 7202)
 
 [node name="Area2D" parent="Falling_Section/Test Food7" index="0"]
 is_preset = true
@@ -1011,7 +1013,7 @@ preset_type = 2
 process_material = SubResource("ParticleProcessMaterial_bihrv")
 
 [node name="Test Food8" parent="Falling_Section" instance=ExtResource("31_ky4sh")]
-position = Vector2(27, 6067)
+position = Vector2(27, 7176)
 
 [node name="Area2D" parent="Falling_Section/Test Food8" index="0"]
 is_preset = true
@@ -1021,7 +1023,7 @@ preset_type = 2
 process_material = SubResource("ParticleProcessMaterial_bihrv")
 
 [node name="Test Food9" parent="Falling_Section" instance=ExtResource("31_ky4sh")]
-position = Vector2(-34, 6067)
+position = Vector2(-34, 7176)
 
 [node name="Area2D" parent="Falling_Section/Test Food9" index="0"]
 is_preset = true
@@ -1031,7 +1033,7 @@ preset_type = 2
 process_material = SubResource("ParticleProcessMaterial_bihrv")
 
 [node name="laser gate" parent="Falling_Section" instance=ExtResource("42_oq7l7")]
-position = Vector2(-238, 6765)
+position = Vector2(-238, 7874)
 edited = true
 length = 500.0
 
@@ -1051,7 +1053,7 @@ texture = SubResource("GradientTexture2D_ndl8n")
 Def_Speed = 160.0
 
 [node name="laser gate2" parent="Falling_Section" instance=ExtResource("42_oq7l7")]
-position = Vector2(10, 7334.9995)
+position = Vector2(10, 8444)
 rotation = 0.68416905
 edited = true
 length = 300.0
@@ -1072,7 +1074,7 @@ texture = SubResource("GradientTexture2D_ktq20")
 Def_Speed = 160.0
 
 [node name="Spinner" parent="Falling_Section" instance=ExtResource("43_emhi4")]
-position = Vector2(-194, 6950)
+position = Vector2(-194, 8059)
 
 [node name="Blade" parent="Falling_Section/Spinner" index="0"]
 spin_direction_locked = true
@@ -1081,7 +1083,7 @@ spin_direction_locked = true
 Def_Speed = 160.0
 
 [node name="Spinner2" parent="Falling_Section" instance=ExtResource("43_emhi4")]
-position = Vector2(258, 6593)
+position = Vector2(258, 7702)
 
 [node name="Blade" parent="Falling_Section/Spinner2" index="0"]
 spin_direction_locked = true
@@ -1090,7 +1092,7 @@ spin_direction_locked = true
 Def_Speed = 160.0
 
 [node name="Bumper" parent="Falling_Section" instance=ExtResource("44_t7ysk")]
-position = Vector2(193.00002, 7088.0005)
+position = Vector2(193.00002, 8197)
 
 [node name="move_up" parent="Falling_Section/Bumper" index="1"]
 Def_Speed = 160.0
@@ -1231,7 +1233,6 @@ direction = Vector2(-1, 0)
 
 [node name="Tutorial Recording" type="Node" parent="."]
 script = ExtResource("53_84vcq")
-recording = true
 
 [editable path="Shared/Player"]
 [editable path="Falling_Section/Test Food"]

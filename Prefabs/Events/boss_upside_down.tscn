@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpwsbnfycyp12"]
+
+[ext_resource type="PackedScene" uid="uid://cse7iik4eonx7" path="res://Prefabs/Events/boss.tscn" id="1_0eaa1"]
+
+[node name="Base Event" instance=ExtResource("1_0eaa1")]
+
+[node name="Area2D" parent="." index="2"]
+position = Vector2(0, -225)
+rotation = 3.1415927

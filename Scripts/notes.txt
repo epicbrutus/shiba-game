@@ -11,11 +11,12 @@ THINGS TO FIX:
 (above should be fixed, though keep an eye out)
 
 [X] shooter ambush still needs to be added to boss extras preview
-- tutorial should show you can break through gates
+[X] tutorial should show you can break through gates
 - upwards and leftwards orientations
 - translate to japanese
 - food levels extras entries
 - polish some of the extras entries
+- more sound effects
 
 current changes:
 -

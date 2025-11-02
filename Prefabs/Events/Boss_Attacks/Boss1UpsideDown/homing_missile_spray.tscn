@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpy5tcsl16tx2"]
+
+[ext_resource type="PackedScene" uid="uid://brcw5y04jh5yj" path="res://Prefabs/Events/Boss_Attacks/Boss1/homing_missile_spray.tscn" id="1_w1tai"]
+
+[node name="Base Event" instance=ExtResource("1_w1tai")]
+
+[node name="Node2D" parent="." index="1"]
+position = Vector2(0, -314)
+rotation = 3.1415927

@@ -14,7 +14,8 @@ var orientation_index: int = 0
 
 var multipliers: Array[float] = [
 	2,
-	3
+	3,
+	2
 ]
 
 var multiplier: float = 2

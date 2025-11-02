@@ -5,13 +5,13 @@ var time_elapsed: float = 0
 var times: Array[float] = [
     0,
     5,
-    10,
+    8,
+    12,
     15,
-    18,
+    19,
     22,
-    24,
-    25,
-    26
+    26,
+    29.5
 ]
 
 @onready var texts: Array = get_children()
@@ -21,11 +21,11 @@ func _physics_process(delta: float):
     #print(time_elapsed)
     for i in range(0, times.size()):
         if time_elapsed > times[i] && (i == times.size() - 1 || time_elapsed < times[i + 1]):
-            print(texts.size())
+            #print(texts.size())
             for i2 in range(0, texts.size()):
                 if i2 == i:
                     texts[i2].visible = true
-                    print("VISIBLE")
+                    #print("VISIBLE")
                 else:
                     texts[i2].visible = false
 

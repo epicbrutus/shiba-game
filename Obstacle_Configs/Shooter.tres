@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("2_fvab6")
 scene = ExtResource("1_fvab6")
-chance = 0.0
+chance = 0.3
 innerCushion = 0.9
 metadata/_custom_type_script = "uid://3skymg3qrpff"
