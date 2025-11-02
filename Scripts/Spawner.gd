@@ -48,7 +48,7 @@ var area_safe: float
 func _ready() -> void:
 	if gateTimer == 69420:
 		gateTimer = gateCooldown
-		
+
 	foodTimer = foodCooldown
 	obstacleTimer = obstacleCooldown
 	eventTimer = eventCooldown
