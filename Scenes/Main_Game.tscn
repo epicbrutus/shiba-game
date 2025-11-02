@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://c14qwn6rgfy23"]
+[gd_scene load_steps=96 format=3 uid="uid://c14qwn6rgfy23"]
 
 [ext_resource type="Shader" uid="uid://ci8wfbw02mu88" path="res://scroll.gdshader" id="1_woxae"]
 [ext_resource type="Texture2D" uid="uid://8apg65mbsnv" path="res://Art Log 10-8/background.JPG" id="2_8melw"]
@@ -53,6 +53,7 @@
 [ext_resource type="PackedScene" uid="uid://c65f2t6vhjrba" path="res://Prefabs/Events/Horizontal/horizontal side missile formation.tscn" id="47_hlwbt"]
 [ext_resource type="PackedScene" uid="uid://db07b1pxe15r7" path="res://Prefabs/Events/Horizontal/horizontal_laser_pathways.tscn" id="48_8oyct"]
 [ext_resource type="PackedScene" uid="uid://bh8erro6jfify" path="res://Prefabs/Events/horizontal boss.tscn" id="51_bnj7a"]
+[ext_resource type="PackedScene" uid="uid://bfqrp88k6qgod" path="res://Prefabs/Events/horizontal_boss_mirrored.tscn" id="54_3epuw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(1152.5, 20)
@@ -270,6 +271,12 @@ metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 [sub_resource type="Resource" id="Resource_8xphf"]
 script = ExtResource("22_76tg3")
 scene = ExtResource("51_bnj7a")
+isBoss = true
+metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
+
+[sub_resource type="Resource" id="Resource_ey58j"]
+script = ExtResource("22_76tg3")
+scene = ExtResource("54_3epuw")
 isBoss = true
 metadata/_custom_type_script = "uid://bbt8tf65tbbdt"
 
@@ -1284,7 +1291,7 @@ position = Vector2(-700, 0)
 script = ExtResource("13_g8d6c")
 obstacle_configs = Array[ExtResource("14_56gb8")]([ExtResource("14_78gq4"), ExtResource("15_k2mhc"), ExtResource("16_wlcpx"), ExtResource("17_gxae2"), ExtResource("18_76tg3"), ExtResource("19_g8d6c"), ExtResource("20_56gb8")])
 event_configs = Array[ExtResource("22_76tg3")]([SubResource("Resource_mv27k"), SubResource("Resource_ek8cs"), SubResource("Resource_hlwbt"), SubResource("Resource_ns6we"), SubResource("Resource_bnj7a"), SubResource("Resource_lyk6h"), SubResource("Resource_bj2y4"), SubResource("Resource_3epuw")])
-boss_configs = Array[ExtResource("22_76tg3")]([SubResource("Resource_8xphf")])
+boss_configs = Array[ExtResource("22_76tg3")]([SubResource("Resource_ey58j")])
 food = ExtResource("20_apyqh")
 gate = ExtResource("21_e62ys")
 distanceBar = NodePath("../../Shared/Bars/Distance Bar")

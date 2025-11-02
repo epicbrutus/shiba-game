@@ -37,7 +37,7 @@ func _ready() -> void:
 		event_ender.tree_exited.connect(_on_screen_exited)
 
 	if direction_dependent:
-		if Utils.get_spawner().direction.y == 1 || Utils.get_spawner().direction.x == -1:
+		if Utils.get_spawner().direction.y == 1 || Utils.get_spawner().direction.x == 1:
 			rotation = PI
 
 func _on_screen_entered() -> void:

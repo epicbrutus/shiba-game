@@ -744,7 +744,7 @@ offset_right = 623.0
 offset_bottom = -38.0
 theme_override_font_sizes/normal_font_size = 61
 text = "so he can have enough force to
-break through the pits' barriers"
+break through the pit's barriers"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
