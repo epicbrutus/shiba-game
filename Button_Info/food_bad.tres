@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ButtonInfo" load_steps=3 format=3 uid="uid://dx7don5h47kxi"]
+
+[ext_resource type="PackedScene" uid="uid://btixakh6k8uwd" path="res://Button_Info/Previews/food_bad.tscn" id="1_hyyyp"]
+[ext_resource type="Script" uid="uid://c35oapxe3rd8b" path="res://Scripts/Configs/ButtonInfo.gd" id="1_uhs7h"]
+
+[resource]
+script = ExtResource("1_uhs7h")
+title = "Food (Bad)"
+body = "A piece of food that detracts from Samuel's weight.
+
+A special kind of brocolli engineered by the CIA to be as healthy as possible and turn their agents into super soldiers. However, the increase in vitality had the adverse effect of making the taste just as pungent. Less surprising to see it being thrown out than the rest."
+preview = ExtResource("1_hyyyp")
+metadata/_custom_type_script = "uid://c35oapxe3rd8b"

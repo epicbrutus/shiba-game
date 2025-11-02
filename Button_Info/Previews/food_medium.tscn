@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://qsdgaiug84b6"]
+
+[ext_resource type="PackedScene" uid="uid://dg8320gh42eni" path="res://Button_Info/Previews/food_small.tscn" id="1_whr52"]
+[ext_resource type="PackedScene" uid="uid://cl41uokriu21k" path="res://Prefabs/preview_medium_food.tscn" id="2_00wlt"]
+
+[node name="BaseScene" instance=ExtResource("1_whr52")]
+
+[node name="Viewport Spawner" parent="." index="8"]
+spawn_cooldown = 0.75
+to_instantiate = ExtResource("2_00wlt")
+
+[editable path="StaticBody2D/Player"]

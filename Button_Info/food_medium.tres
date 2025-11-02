@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ButtonInfo" load_steps=3 format=3 uid="uid://bgcoccva1ayv"]
+
+[ext_resource type="PackedScene" uid="uid://qsdgaiug84b6" path="res://Button_Info/Previews/food_medium.tscn" id="1_0g2lh"]
+[ext_resource type="Script" uid="uid://c35oapxe3rd8b" path="res://Scripts/Configs/ButtonInfo.gd" id="1_dn6f6"]
+
+[resource]
+script = ExtResource("1_dn6f6")
+title = "Food (Medium)"
+body = "A piece of food that adds a decent bit to Samuel's weight.
+
+Though not incredibly common, they're not particularly *un*common either. It's hard to imagine that many people dislike donuts to just throw them out, but when you're an organization as large as the CIA it must be bound to happen."
+preview = ExtResource("1_0g2lh")
+metadata/_custom_type_script = "uid://c35oapxe3rd8b"

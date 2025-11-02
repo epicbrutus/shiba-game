@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ButtonInfo" load_steps=3 format=3 uid="uid://c7eubvrjbo33v"]
+
+[ext_resource type="PackedScene" uid="uid://bdrdv5r0ag4qs" path="res://Prefabs/food_large.tscn" id="1_3w4yw"]
+[ext_resource type="Script" uid="uid://c35oapxe3rd8b" path="res://Scripts/Configs/ButtonInfo.gd" id="1_w1apc"]
+
+[resource]
+script = ExtResource("1_w1apc")
+title = "Food (Large)"
+body = "A piece of food that adds a noticeable amount to Samuel's weight.
+
+An entire cake. They're throwing out entire cakes at the CIA. Sure they're evil, but- who would do that?!"
+preview = ExtResource("1_3w4yw")
+metadata/_custom_type_script = "uid://c35oapxe3rd8b"

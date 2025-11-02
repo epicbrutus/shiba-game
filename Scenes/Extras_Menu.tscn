@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://byinfx75vor5m"]
+[gd_scene load_steps=25 format=3 uid="uid://byinfx75vor5m"]
 
 [ext_resource type="Script" uid="uid://rdq2odxjdbrc" path="res://Scripts/extras_menu.gd" id="1_rbbxf"]
 [ext_resource type="Script" uid="uid://cx21xpxmp52a5" path="res://Scripts/button_info_holder.gd" id="2_3y0fu"]
@@ -7,9 +7,12 @@
 [ext_resource type="Resource" uid="uid://dvvbjy6cumhj" path="res://Button_Info/Bumper.tres" id="4_3y0fu"]
 [ext_resource type="Resource" uid="uid://c2y5o7b0mygdi" path="res://Button_Info/food_small.tres" id="4_nqru5"]
 [ext_resource type="Resource" uid="uid://sd4uwblsfrpc" path="res://Button_Info/Laser_Gate.tres" id="5_tjioq"]
+[ext_resource type="Resource" uid="uid://bgcoccva1ayv" path="res://Button_Info/food_medium.tres" id="5_v7jt4"]
+[ext_resource type="Resource" uid="uid://c7eubvrjbo33v" path="res://Button_Info/food_large.tres" id="6_bqtr8"]
 [ext_resource type="Resource" uid="uid://72l2qbxlbd87" path="res://Button_Info/Flashing_Laser_Gate.tres" id="6_iepxc"]
 [ext_resource type="PackedScene" uid="uid://cebb58s410nks" path="res://Prefabs/exit_game.tscn" id="6_tjioq"]
 [ext_resource type="Resource" uid="uid://cnitsqhjva3n5" path="res://Button_Info/Bumper_Line.tres" id="7_7vxnw"]
+[ext_resource type="Resource" uid="uid://dx7don5h47kxi" path="res://Button_Info/food_bad.tres" id="7_ng8am"]
 [ext_resource type="Resource" uid="uid://chnfnul3xa587" path="res://Button_Info/Cruise_Missile.tres" id="8_ovpce"]
 [ext_resource type="Resource" uid="uid://dyh7hvpc0ub0f" path="res://Button_Info/Homing_Missile.tres" id="9_gwq88"]
 [ext_resource type="Resource" uid="uid://ca2aees155y41" path="res://Button_Info/Spinner.tres" id="10_7drl8"]
@@ -108,6 +111,36 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_v1vox")
 text = "Food (Small)"
 script = ExtResource("2_3y0fu")
 info_data = ExtResource("4_nqru5")
+
+[node name="Button17" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer" groups=["info_buttons"]]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_v1vox")
+text = "Food (Medium)"
+script = ExtResource("2_3y0fu")
+info_data = ExtResource("5_v7jt4")
+
+[node name="Button18" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer" groups=["info_buttons"]]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_v1vox")
+text = "Food (Large)"
+script = ExtResource("2_3y0fu")
+info_data = ExtResource("6_bqtr8")
+
+[node name="Button19" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer" groups=["info_buttons"]]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_v1vox")
+text = "Food (Bad)"
+script = ExtResource("2_3y0fu")
+info_data = ExtResource("7_ng8am")
 
 [node name="Shooter" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/GridContainer" groups=["info_buttons"]]
 custom_minimum_size = Vector2(100, 100)

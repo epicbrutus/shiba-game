@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="ButtonInfo" load_steps=2 format=3 uid="uid://c2y5o7b0mygdi"]
+[gd_resource type="Resource" script_class="ButtonInfo" load_steps=3 format=3 uid="uid://c2y5o7b0mygdi"]
 
 [ext_resource type="Script" uid="uid://c35oapxe3rd8b" path="res://Scripts/Configs/ButtonInfo.gd" id="1_6134i"]
+[ext_resource type="PackedScene" uid="uid://dg8320gh42eni" path="res://Button_Info/Previews/food_small.tscn" id="1_s1rnh"]
 
 [resource]
 script = ExtResource("1_6134i")
@@ -8,4 +9,5 @@ title = "Food (Small)"
 body = "A piece of food that adds a small bit to Samuel's weight.
 
 The most numerous of all the foods scattered around the pit. The pit actually serves as a duct to channel out all of the waste from the CIA's underground base, and it seems they're not very fond of chips. Luckily, Samuel is."
+preview = ExtResource("1_s1rnh")
 metadata/_custom_type_script = "uid://c35oapxe3rd8b"

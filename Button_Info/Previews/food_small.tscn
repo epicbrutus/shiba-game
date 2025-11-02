@@ -1,5 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://dg8320gh42eni"]
+[gd_scene load_steps=5 format=3 uid="uid://dg8320gh42eni"]
 
 [ext_resource type="PackedScene" uid="uid://h0oqlxqavdew" path="res://Button_Info/Previews/base_preview.tscn" id="1_iaar0"]
+[ext_resource type="PackedScene" uid="uid://cxr0ttp3no7lv" path="res://Prefabs/Dummy Player.tscn" id="2_aht0a"]
+[ext_resource type="PackedScene" uid="uid://bvhrcx0reu1gd" path="res://Prefabs/viewport_spawner.tscn" id="2_cqt0b"]
+[ext_resource type="PackedScene" uid="uid://18nqfo548eqr" path="res://Prefabs/preview_small_food.tscn" id="3_aht0a"]
 
 [node name="BaseScene" instance=ExtResource("1_iaar0")]
+
+[node name="Player" parent="StaticBody2D" index="4" instance=ExtResource("2_aht0a")]
+position = Vector2(476, 532)
+
+[node name="CharacterBody2D" parent="StaticBody2D/Player" index="0"]
+auto_regen = false
+regen_cooldown_time = 2.0
+regen_amount = 0
+intial_velocity = Vector2(800, 800)
+starting_food = 0
+
+[node name="Viewport Spawner" parent="." index="8" instance=ExtResource("2_cqt0b")]
+position = Vector2(379, 330)
+spawn_cooldown = 0.5
+to_instantiate = ExtResource("3_aht0a")
+direction = Vector2(0, -1)
+spawn_range = 737.0
+
+[editable path="StaticBody2D/Player"]

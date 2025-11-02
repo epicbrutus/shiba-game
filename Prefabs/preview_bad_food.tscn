@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpwuh64ld025k"]
+
+[ext_resource type="PackedScene" uid="uid://ct5gv0hehauba" path="res://Prefabs/test_food.tscn" id="1_gtvwa"]
+
+[sub_resource type="Curve" id="Curve_ipw0b"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5055762, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_1rq81"]
+curve = SubResource("Curve_ipw0b")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5uviv"]
+resource_local_to_scene = true
+particle_flag_disable_z = true
+angle_min = -179.99998
+angle_max = 180.00002
+gravity = Vector3(0, 0, 0)
+alpha_curve = SubResource("CurveTexture_1rq81")
+anim_offset_max = 1.0
+
+[node name="Test Food" instance=ExtResource("1_gtvwa")]
+
+[node name="Area2D" parent="." index="0"]
+is_preset = true
+preset_type = 3
+
+[node name="GPUParticles2D" parent="Area2D" index="2"]
+process_material = SubResource("ParticleProcessMaterial_5uviv")
