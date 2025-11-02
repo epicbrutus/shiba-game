@@ -4,12 +4,14 @@ var time_elapsed: float = 0
 
 var times: Array[float] = [
     0,
-    3.7,
-    7.7,
+    5,
     10,
-    12,
-    16,
-    18.5
+    15,
+    18,
+    22,
+    24,
+    25,
+    26
 ]
 
 @onready var texts: Array = get_children()
@@ -26,3 +28,13 @@ func _physics_process(delta: float):
                     print("VISIBLE")
                 else:
                     texts[i2].visible = false
+
+#1. This is Samuel
+#2. He jumped down the CIA's top secret pit to screw with the government
+#3. He can move with WASD/Arrows
+#4. and must eat food to gain weight
+#5. while avoiding obstacles and bad food to keep it
+#6. so he can have enough force to break through the pits' barriers
+#7. but be warned...
+#8. more weight = more inertia too!
+#9. and too little weight | by the time the bar runs out... 

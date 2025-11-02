@@ -525,6 +525,7 @@ grow_vertical = 2
 foodBar = NodePath("../../Bars/Food Bar")
 
 [node name="Tutorial text" type="Node" parent="Shared"]
+process_mode = 4
 script = ExtResource("10_b0w1x")
 
 [node name="1" type="RichTextLabel" parent="Shared/Tutorial text"]
@@ -572,6 +573,7 @@ horizontal_alignment = 1
 metadata/i18n_key = "ui.tutorial.3"
 
 [node name="4" type="RichTextLabel" parent="Shared/Tutorial text"]
+visible = false
 z_index = 100
 offset_left = -632.0
 offset_top = -206.0
@@ -619,6 +621,7 @@ horizontal_alignment = 1
 metadata/i18n_key = "ui.tutorial.5"
 
 [node name="7" type="Node2D" parent="Shared/Tutorial text"]
+visible = false
 
 [node name="a" type="RichTextLabel" parent="Shared/Tutorial text/7"]
 z_index = 100
@@ -634,6 +637,167 @@ autowrap_mode = 0
 metadata/i18n_key = "ui.tutorial.6a"
 
 [node name="b" type="RichTextLabel" parent="Shared/Tutorial text/7"]
+z_index = 100
+offset_left = 163.0
+offset_top = 16.0
+offset_right = 1418.0
+offset_bottom = 268.0
+theme_override_font_sizes/normal_font_size = 61
+text = "by the time
+the bar
+runs out..."
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+metadata/i18n_key = "ui.tutorial.6b"
+
+[node name="Tutorial text2" type="Node" parent="Shared"]
+script = ExtResource("10_b0w1x")
+
+[node name="1" type="Node2D" parent="Shared/Tutorial text2"]
+
+[node name="1" type="RichTextLabel" parent="Shared/Tutorial text2/1"]
+z_index = 100
+offset_left = -320.0
+offset_top = -156.0
+offset_right = 346.0
+offset_bottom = -72.0
+theme_override_font_sizes/normal_font_size = 61
+text = "This is Samuel"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+metadata/i18n_key = "ui.tutorial.1"
+
+[node name="2" type="RichTextLabel" parent="Shared/Tutorial text2/1"]
+z_index = 100
+offset_left = -511.0
+offset_top = 40.0
+offset_right = 574.0
+offset_bottom = 292.0
+theme_override_font_sizes/normal_font_size = 61
+text = "He jumped down the
+CIA's top secret pit to
+screw with the government"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+metadata/i18n_key = "ui.tutorial.1"
+
+[node name="3" type="RichTextLabel" parent="Shared/Tutorial text2"]
+visible = false
+z_index = 100
+offset_left = -470.0
+offset_top = -138.0
+offset_right = 481.0
+offset_bottom = -54.0
+theme_override_font_sizes/normal_font_size = 61
+text = "He can move with WASD/Arrows"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+metadata/i18n_key = "ui.tutorial.1"
+
+[node name="4" type="RichTextLabel" parent="Shared/Tutorial text2"]
+visible = false
+z_index = 100
+offset_left = -481.0
+offset_top = -145.0
+offset_right = 491.0
+offset_bottom = -61.0
+theme_override_font_sizes/normal_font_size = 61
+text = "and must eat food to gain weight"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/i18n_key = "ui.tutorial.2"
+
+[node name="5" type="RichTextLabel" parent="Shared/Tutorial text2"]
+visible = false
+z_index = 100
+offset_left = -632.0
+offset_top = -206.0
+offset_right = 623.0
+offset_bottom = -38.0
+theme_override_font_sizes/normal_font_size = 61
+text = "while avoiding obstacles
+and bad food to keep it"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+metadata/i18n_key = "ui.tutorial.3"
+
+[node name="6" type="RichTextLabel" parent="Shared/Tutorial text2"]
+visible = false
+z_index = 100
+offset_left = -632.0
+offset_top = -206.0
+offset_right = 623.0
+offset_bottom = -38.0
+theme_override_font_sizes/normal_font_size = 61
+text = "so he can have enough force to
+break through the pits' barriers"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/i18n_key = "ui.tutorial.3"
+
+[node name="7" type="RichTextLabel" parent="Shared/Tutorial text2"]
+visible = false
+z_index = 100
+offset_left = -241.0
+offset_top = -150.0
+offset_right = 1014.0
+offset_bottom = 18.0
+theme_override_font_sizes/normal_font_size = 61
+text = "but be warned..."
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+metadata/i18n_key = "ui.tutorial.4"
+
+[node name="8" type="RichTextLabel" parent="Shared/Tutorial text2"]
+visible = false
+z_index = 100
+offset_left = -875.0
+offset_top = -207.0
+offset_right = 380.0
+offset_bottom = 45.0
+theme_override_font_sizes/normal_font_size = 61
+text = "more weight
+=
+more inertia too!"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+metadata/i18n_key = "ui.tutorial.5"
+
+[node name="9" type="Node2D" parent="Shared/Tutorial text2"]
+visible = false
+
+[node name="a" type="RichTextLabel" parent="Shared/Tutorial text2/9"]
+z_index = 100
+offset_left = -461.0
+offset_top = -222.0
+offset_right = 794.0
+offset_bottom = -54.0
+theme_override_font_sizes/normal_font_size = 61
+text = "and too little weight"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+metadata/i18n_key = "ui.tutorial.6a"
+
+[node name="b" type="RichTextLabel" parent="Shared/Tutorial text2/9"]
 z_index = 100
 offset_left = 163.0
 offset_top = 16.0
@@ -664,7 +828,7 @@ distanceBar = NodePath("../../Shared/Bars/Distance Bar")
 counter_reference = NodePath("../../Shared/Bars/Control/Counter")
 in_tutorial = true
 gateCooldown = 11.0
-gateTimer = 11.0
+gateTimer = 15.0
 foodCooldown = 10000.0
 obstacleCooldown = 1000000.0
 eventCooldown = 10000.0
@@ -780,7 +944,7 @@ scale = Vector2(28.796778, 16.390018)
 color = Color(0, 0, 0, 0.078431375)
 
 [node name="Test Food" parent="Falling_Section" instance=ExtResource("31_ky4sh")]
-position = Vector2(-196, 1459)
+position = Vector2(-196, 3839)
 
 [node name="Area2D" parent="Falling_Section/Test Food" index="0"]
 is_preset = true
@@ -789,7 +953,7 @@ is_preset = true
 process_material = SubResource("ParticleProcessMaterial_bihrv")
 
 [node name="Test Food2" parent="Falling_Section" instance=ExtResource("31_ky4sh")]
-position = Vector2(377, 1736)
+position = Vector2(377, 4116)
 
 [node name="Area2D" parent="Falling_Section/Test Food2" index="0"]
 is_preset = true
@@ -799,7 +963,7 @@ preset_type = 1
 process_material = SubResource("ParticleProcessMaterial_bihrv")
 
 [node name="Test Food3" parent="Falling_Section" instance=ExtResource("31_ky4sh")]
-position = Vector2(-251, 1988)
+position = Vector2(-251, 4368)
 
 [node name="Area2D" parent="Falling_Section/Test Food3" index="0"]
 is_preset = true
@@ -808,7 +972,7 @@ is_preset = true
 process_material = SubResource("ParticleProcessMaterial_bihrv")
 
 [node name="Test Food4" parent="Falling_Section" instance=ExtResource("31_ky4sh")]
-position = Vector2(187, 2216)
+position = Vector2(187, 4596)
 
 [node name="Area2D" parent="Falling_Section/Test Food4" index="0"]
 is_preset = true
@@ -817,7 +981,7 @@ is_preset = true
 process_material = SubResource("ParticleProcessMaterial_bihrv")
 
 [node name="Test Food5" parent="Falling_Section" instance=ExtResource("31_ky4sh")]
-position = Vector2(-6, 2858)
+position = Vector2(-6, 5238)
 
 [node name="Area2D" parent="Falling_Section/Test Food5" index="0"]
 is_preset = true
@@ -827,7 +991,7 @@ preset_type = 3
 process_material = SubResource("ParticleProcessMaterial_bihrv")
 
 [node name="Test Food6" parent="Falling_Section" instance=ExtResource("31_ky4sh")]
-position = Vector2(-6, 3663)
+position = Vector2(-6, 6043)
 
 [node name="Area2D" parent="Falling_Section/Test Food6" index="0"]
 is_preset = true
@@ -837,7 +1001,7 @@ preset_type = 2
 process_material = SubResource("ParticleProcessMaterial_bihrv")
 
 [node name="Test Food7" parent="Falling_Section" instance=ExtResource("31_ky4sh")]
-position = Vector2(-6, 3713)
+position = Vector2(-6, 6093)
 
 [node name="Area2D" parent="Falling_Section/Test Food7" index="0"]
 is_preset = true
@@ -847,7 +1011,7 @@ preset_type = 2
 process_material = SubResource("ParticleProcessMaterial_bihrv")
 
 [node name="Test Food8" parent="Falling_Section" instance=ExtResource("31_ky4sh")]
-position = Vector2(27, 3687)
+position = Vector2(27, 6067)
 
 [node name="Area2D" parent="Falling_Section/Test Food8" index="0"]
 is_preset = true
@@ -857,7 +1021,7 @@ preset_type = 2
 process_material = SubResource("ParticleProcessMaterial_bihrv")
 
 [node name="Test Food9" parent="Falling_Section" instance=ExtResource("31_ky4sh")]
-position = Vector2(-34, 3687)
+position = Vector2(-34, 6067)
 
 [node name="Area2D" parent="Falling_Section/Test Food9" index="0"]
 is_preset = true
@@ -867,7 +1031,7 @@ preset_type = 2
 process_material = SubResource("ParticleProcessMaterial_bihrv")
 
 [node name="laser gate" parent="Falling_Section" instance=ExtResource("42_oq7l7")]
-position = Vector2(-238, 4385)
+position = Vector2(-238, 6765)
 edited = true
 length = 500.0
 
@@ -887,7 +1051,7 @@ texture = SubResource("GradientTexture2D_ndl8n")
 Def_Speed = 160.0
 
 [node name="laser gate2" parent="Falling_Section" instance=ExtResource("42_oq7l7")]
-position = Vector2(10, 4954.9995)
+position = Vector2(10, 7334.9995)
 rotation = 0.68416905
 edited = true
 length = 300.0
@@ -908,7 +1072,7 @@ texture = SubResource("GradientTexture2D_ktq20")
 Def_Speed = 160.0
 
 [node name="Spinner" parent="Falling_Section" instance=ExtResource("43_emhi4")]
-position = Vector2(-194, 4570)
+position = Vector2(-194, 6950)
 
 [node name="Blade" parent="Falling_Section/Spinner" index="0"]
 spin_direction_locked = true
@@ -917,7 +1081,7 @@ spin_direction_locked = true
 Def_Speed = 160.0
 
 [node name="Spinner2" parent="Falling_Section" instance=ExtResource("43_emhi4")]
-position = Vector2(258, 4213)
+position = Vector2(258, 6593)
 
 [node name="Blade" parent="Falling_Section/Spinner2" index="0"]
 spin_direction_locked = true
@@ -926,7 +1090,7 @@ spin_direction_locked = true
 Def_Speed = 160.0
 
 [node name="Bumper" parent="Falling_Section" instance=ExtResource("44_t7ysk")]
-position = Vector2(193.00002, 4708.0005)
+position = Vector2(193.00002, 7088.0005)
 
 [node name="move_up" parent="Falling_Section/Bumper" index="1"]
 Def_Speed = 160.0
@@ -1067,6 +1231,7 @@ direction = Vector2(-1, 0)
 
 [node name="Tutorial Recording" type="Node" parent="."]
 script = ExtResource("53_84vcq")
+recording = true
 
 [editable path="Shared/Player"]
 [editable path="Falling_Section/Test Food"]
